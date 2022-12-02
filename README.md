@@ -1,3 +1,3 @@
-# MarketPlace app Group project 
+# MarketPlace app
 
-## oded,david, blem, or, iden,yakov
+
