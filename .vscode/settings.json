@@ -1,7 +1,8 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#511E00",
-        "titleBar.activeBackground": "#712A00",
-        "titleBar.activeForeground": "#FFF9F5"
-    }
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#511E00",
+    "titleBar.activeBackground": "#712A00",
+    "titleBar.activeForeground": "#FFF9F5"
+  },
+  "cSpell.ignoreWords": ["darklogo", "lightlogo"]
 }
