@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
   _id: mongoose.Types.ObjectId(),
@@ -38,5 +38,5 @@ const ProductSchema = new mongoose.Schema({
   },
 });
 
-const model = mongoose.model("products", ProductSchema);
+const model = mongoose.model('products', ProductSchema);
 module.exports = model;
