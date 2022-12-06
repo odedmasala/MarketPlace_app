@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 
 const SectionSchema = new mongoose.Schema(
   {
-    id: String,
+    _id: mongoose.Types.ObjectId(),
     name: String,
-    image: string,
-    storesId: string,
-    departmentIds: string,
+    image: {
+      type: String,
+      required: true,
+    },
+    storesId: { type: mongoose.Types.ObjectId() },
+    departmentIds: { type: mongoose.Types.ObjectId() },
     createdAt: string,
     createdBy: string,
     updateAt: string,
