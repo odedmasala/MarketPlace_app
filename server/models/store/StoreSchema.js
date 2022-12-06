@@ -26,6 +26,5 @@ const StoreSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
 const model = mongoose.model('Store', StoreSchema);
 module.exports = model;
