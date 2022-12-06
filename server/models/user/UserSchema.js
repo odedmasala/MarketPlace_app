@@ -1,6 +1,7 @@
 const mongoose =require("mongoose")
 
 const UserSchema =new mongoose.Schema({
+    _id: mongoose.Types.ObjectId(),
     image:String,
     firstName:String,
     lastName:String,
