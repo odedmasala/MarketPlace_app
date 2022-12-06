@@ -17,9 +17,9 @@ const UserSchema = new mongoose.Schema({
   },
   phone2: { type: String, min: 9 },
   password: { type: String, required: true },
-  storeId: mongoose.Types.ObjectId(),
+  storeId: {type:mongoose.Types.ObjectId()},
   address: { type: Object, required: true },
-  paymentBillInfo: String,
+  paymentBillInfo: {type :mongoose.Types.ObjectId()},
   authToken: String,
 });
 
