@@ -1,12 +1,21 @@
 const mongoose = require("mongoose");
 
 const ProductSchema = new mongoose.Schema({
-  id: String,
-  image: String,
-  name: String,
-  price: String,
-  storeId: String,
-  subCategory: String,
+  _id: mongoose.Types.ObjectId(),
+  image: {
+    type: String,
+    required: true,
+  },
+  name: { type: String, required: true },
+  price:  { type: String, required: true },
+  storeId: {
+    type:mongoose.Types.ObjectId(),
+    required:true
+  },
+  subCategory: {
+    type:mongoose.Types.ObjectId(),
+    required:true
+  },
   weight: String,
   avgWeightPerUnit: String,
   weightUnit: String,
@@ -15,12 +24,18 @@ const ProductSchema = new mongoose.Schema({
   deliveryOrderPlace: String,
   contactInfo: String,
   manufacture: String,
-  brand: String,
+  brand: {
+    type:String,
+    required:true
+  },
   productStock: String,
   lastUpdate: String,
   description: String,
   createBy: String,
-  gender: String,
+  gender:  {
+    type:String,
+    required:true
+  },
 });
 
 const model = mongoose.model("products", ProductSchema);
