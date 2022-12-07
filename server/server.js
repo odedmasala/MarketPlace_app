@@ -2,11 +2,10 @@ const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { handleError } = require("./utils/errorSetting");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 const app = express();
 const helmet = require("helmet")
 const cors = require("cors")
-
 // CONNECT TO DATABASE
 const connectDB = require("./config/config");
 
