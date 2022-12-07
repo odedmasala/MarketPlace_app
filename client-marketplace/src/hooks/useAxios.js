@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-function useAxios({ url, method, body = null, headers = null }) {
+const useAxios = ({ url, method, body = null, headers = null }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -35,6 +35,5 @@ function useAxios({ url, method, body = null, headers = null }) {
   };
 
   return { data, loading, error, refetch };
-}
+};
 export default useAxios;
-
