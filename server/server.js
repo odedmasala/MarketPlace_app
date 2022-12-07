@@ -2,12 +2,15 @@ const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
 const { handleError } = require("./utils/errorSetting");
+const bodyParser = require("body-parser")
 const app = express();
 
 // CONNECT TO DATABASE
 const connectDB = require("./config/config");
-// /* CONFIGURATIONS */
 
+// /* CONFIGURATIONS */
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 /* ROUTES */
 app.use("/api/test", (req, res) => {
