@@ -10,7 +10,7 @@ const cors = require("cors")
 // const productRoute = require("./routes/product/product")
 // const receiptRoute = require("./routes/receipt/receipt")
 // const sectionRoute = require("./routes/section/section")
-// const storeRoute = require("./routes/store/store")
+const storeRoute = require("./routes/store/store")
 // const storeManagerRoute = require("./routes/storeManager/storeManager")
 // const userRoute = require("./routes/user/user")
 
@@ -30,7 +30,7 @@ app.use("/api/test", (req, res) => res.status(200).json("The server is up and ru
 // app.use("api/product",productRoute)
 // app.use("api/receipt",receiptRoute)
 // app.use("api/section",sectionRoute)
-// app.use("api/store",storeRoute)
+app.use("/api/store",storeRoute)
 // app.use("api/storeManager",storeManagerRoute)
 // app.use("api/user",userRoute)
 
