@@ -2,7 +2,7 @@ const storeModel = require("../../models/store/StoreSchema");
 
 const getAllStores = async () => {
   try {
-    const stores = await storeModel.find();
+    const stores = await storeModel.find().populate("sectionIds");
     return stores;
   } catch (error) {
     throw error;
@@ -11,7 +11,7 @@ const getAllStores = async () => {
 
 const getStoreById = async (id) => {
   try {
-    const store = await storeModel.findById(id);
+    const store = await storeModel.findById(id).populate("sectionIds");
     return store;
   } catch (error) {
     throw error;
