@@ -7,7 +7,7 @@ const app = express();
 const helmet = require("helmet")
 const cors = require("cors")
 const departmentRoute = require("./routes/department/department")
-// const productRoute = require("./routes/product/product")
+const productRoute = require("./routes/product/product")
 // const receiptRoute = require("./routes/receipt/receipt")
 // const sectionRoute = require("./routes/section/section")
 // const storeRoute = require("./routes/store/store")
@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 /* ROUTES */
 app.use("/api/test", (req, res) => res.status(200).json("The server is up and running"));
 app.use("/api/department",departmentRoute)
-// app.use("api/product",productRoute)
+app.use("/api/products",productRoute)
 // app.use("api/receipt",receiptRoute)
 // app.use("api/section",sectionRoute)
 // app.use("api/store",storeRoute)
