@@ -1,7 +1,6 @@
 const mongoose =require("mongoose")
 
 const ReceiptSchema =new mongoose.Schema({
-    _id: mongoose.Types.ObjectId(),
 
 })
 

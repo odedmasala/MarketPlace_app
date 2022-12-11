@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema(
   {
-    _id: new mongoose.Types.ObjectId(),
     image: {
       type: String,
       required: true,
@@ -47,7 +46,8 @@ const UserSchema = new mongoose.Schema(
       required: true,
     },
     storeId: {
-      type: mongoose.Types.ObjectId(),
+      type: mongoose.Types.ObjectId,
+      ref:"store"
     },
     storeIds: {
       type: [String],
@@ -74,7 +74,7 @@ const UserSchema = new mongoose.Schema(
       floor: Number,
       comment: String,
     },
-    paymentBillInfo: { type: mongoose.Types.ObjectId() },
+    paymentBillInfo: { type: mongoose.Types.ObjectId,ref:"receipt", },
     authToken: { type: String },
   },
   { timestamps: true }
