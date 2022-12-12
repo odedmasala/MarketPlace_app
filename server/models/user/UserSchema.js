@@ -1,5 +1,25 @@
 const mongoose = require("mongoose");
 
+const addressSchema = new mongoose.Schema({
+  city: {
+    type: String,
+    required: true,
+  },
+  street: {
+    type: String,
+    required: true,
+  },
+  building: {
+    type: Number,
+    required: true,
+  },
+  apartment: {
+    type: Number,
+    required: true,
+  },
+  floor: Number,
+  comment: String,
+});
 const UserSchema = new mongoose.Schema(
   {
     image: {
@@ -47,34 +67,13 @@ const UserSchema = new mongoose.Schema(
     },
     storeId: {
       type: mongoose.Types.ObjectId,
-      ref:"store"
+      ref: "store",
     },
     storeIds: {
       type: [String],
     },
-    address: {
-      type: Object,
-      required: true,
-      city: {
-        type: String,
-        required: true,
-      },
-      street: {
-        type: String,
-        required: true,
-      },
-      building: {
-        type: Number,
-        required: true,
-      },
-      apartment: {
-        type: Number,
-        required: true,
-      },
-      floor: Number,
-      comment: String,
-    },
-    paymentBillInfo: { type: mongoose.Types.ObjectId,ref:"receipt", },
+    address: { type: addressSchema, required: true },
+    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipt" },
     authToken: { type: String },
   },
   { timestamps: true }
