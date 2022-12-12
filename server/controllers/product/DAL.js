@@ -2,7 +2,9 @@ const productModel = require("../../models/product/ProductSchema");
 
 const getAllProducts = async () => {
   try {
-    const products = await productModel.find().populate(["storeId","subCategory"]);
+    const products = await productModel
+      .find()
+      // .populate(["storeId", "subCategory"]);
     return products;
   } catch (error) {
     throw error;
@@ -11,7 +13,9 @@ const getAllProducts = async () => {
 
 const getProductById = async (id) => {
   try {
-    const product = await productModel.findById(id).populate(["storeId","subCategory"]);
+    const product = await productModel
+      .findById(id)
+      // .populate(["storeId", "subCategory"]);
     return product;
   } catch (error) {
     throw error;
