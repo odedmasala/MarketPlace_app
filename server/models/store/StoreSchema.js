@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const StoreSchema = new mongoose.Schema(
   {
@@ -11,16 +11,16 @@ const StoreSchema = new mongoose.Schema(
     coverImage: String,
     phone: { type: String, required: true, min: 9, unique: true },
     email: { type: String, required: true, unique: true, min: 8, max: 50 },
-    sectionIds: { type:mongoose.Types.ObjectId,ref:"section"},
+    sectionIds: { type: mongoose.Types.ObjectId, ref: "section" },
     address: {
       type: Object,
       required: true,
     },
-    lastUpdate: String,
-    createdAt: String,
-    createdBy: String,
+    lastUpdate: { type: Date, default: Date.now },
+    createdAt: { type: Date, default: Date.now },
+    createdBy: { type: String, required: true, noSearch: true },
   },
   { timestamps: true }
 );
-const model = mongoose.model('store', StoreSchema);
+const model = mongoose.model("store", StoreSchema);
 module.exports = model;
