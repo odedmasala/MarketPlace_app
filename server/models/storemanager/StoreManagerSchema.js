@@ -23,7 +23,6 @@ const addressSchema = new mongoose.Schema({
 
 const StoreManagerSchema = new mongoose.Schema(
   {
-    id: new mongoose.Types.ObjectId(),
     image: {
       type: String,
       required: true,

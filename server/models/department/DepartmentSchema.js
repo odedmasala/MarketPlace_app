@@ -8,7 +8,7 @@ const DepartmentSchema = new mongoose.Schema({
   },
   active: Boolean,
   createdAt: { type: Date, default: Date.now },
-  createdBy: { type: String, required: true, noSearch: true },
+  createdBy: { type: String },
   updateAt: { type: Date, default: Date.now },
 });
 

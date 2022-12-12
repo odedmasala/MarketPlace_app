@@ -49,24 +49,12 @@ const UserSchema = new mongoose.Schema(
       unique: true,
     },
     loginCode: String,
-    meager: {
-      type: Boolean,
-      default: null,
-    },
-    role: {
-      type: String,
-      default: null,
-    },
-    phone2: {
-      type: String,
-      min: 9,
-    },
     password: {
       type: String,
       required: true,
     },
     storeId: {
-      type: mongoose.Types.ObjectId,
+      type: [mongoose.Types.ObjectId],
       ref: "store",
     },
     storeIds: {
