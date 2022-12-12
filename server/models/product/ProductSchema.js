@@ -35,7 +35,7 @@ const ProductSchema = new mongoose.Schema({
   createBy: String,
   gender: String,
   createdAt: { type: Date, default: Date.now },
-  createdBy: { type: String, required: true, noSearch: true },
+  createdBy: { type: String },
 });
 
 const model = mongoose.model("products", ProductSchema);

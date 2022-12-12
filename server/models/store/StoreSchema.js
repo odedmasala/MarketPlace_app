@@ -18,7 +18,7 @@ const StoreSchema = new mongoose.Schema(
     },
     lastUpdate: { type: Date, default: Date.now },
     createdAt: { type: Date, default: Date.now },
-    createdBy: { type: String, required: true, noSearch: true },
+    createdBy: { type: String},
   },
   { timestamps: true }
 );
