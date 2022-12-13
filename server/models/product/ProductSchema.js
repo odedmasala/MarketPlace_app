@@ -30,12 +30,11 @@ const ProductSchema = new mongoose.Schema({
     required: true,
   },
   productStock: String,
-  lastUpdate: { type: Date, default: Date.now },
   description: String,
-  createBy: String,
   gender: String,
+  createBy: String,
   createdAt: { type: Date, default: Date.now },
-  createdBy: { type: String },
+  lastUpdate: { type: Date, default: Date.now },
 });
 
 const model = mongoose.model("products", ProductSchema);
