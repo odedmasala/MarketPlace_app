@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 
 const DepartmentSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  // name: { type: String, required: true },
   image: {
-    type: String,
-    required: true,
+    public_id: { type: String},
+    url: { type: String},
   },
   active: Boolean,
-  createdAt: { type: Date, default: Date.now },
-  createdBy: { type: String, required: true, noSearch: true },
-  updateAt: { type: Date, default: Date.now },
+  createdAt: String,
+  createdBy: String,
+  updateAt: String,
 });
 
 const model = mongoose.model("department", DepartmentSchema);

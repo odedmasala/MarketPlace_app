@@ -1,4 +1,5 @@
 const departmentDAL = require("./DAL");
+const cludinary = require("../../utils/cludinary");
 
 const getAllDepartments = async (req, res, next) => {
   try {
@@ -21,9 +22,21 @@ const getDepartmentById = async (req, res, next) => {
 
 const createDepartment = async (req, res, next) => {
   try {
-    const obj = req.body;
-    const result = await departmentDAL.createDepartment(obj);
-    res.status(200).json(result);
+    console.log(req.body);
+    const { image, name } = req.body;
+    const results = await cludinary.uploader.upload(image,{
+      folder:"department"
+    })
+    const obj = {
+      name,
+      image : {
+        public_id:results.public_id,
+        url:results.secure_url,
+      }
+    }
+    console.log(obj);
+    // const result = await departmentDAL.createDepartment(obj);
+    // res.status(200).json(result);
   } catch (err) {
     next(err);
   }
