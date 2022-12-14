@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
 
+const imageSchema = new mongoose.Schema({
+  public_id: { type: String},
+  url: { type: String},
+
+})
 const DepartmentSchema = new mongoose.Schema({
   // name: { type: String, required: true },
-  image: {
-    public_id: { type: String},
-    url: { type: String},
-  },
+  image: imageSchema,
   active: Boolean,
   createdAt: String,
   createdBy: String,

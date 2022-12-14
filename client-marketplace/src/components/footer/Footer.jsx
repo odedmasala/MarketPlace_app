@@ -2,10 +2,37 @@ import { Footer } from "flowbite-react";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaFacebookF } from "react-icons/fa";
-
 import React from "react";
+import axios from "axios";
+
+import { useState } from "react";
+import { useEffect } from "react";
 
 export default function FooterContainer() {
+  const [image, setImage] = useState("");
+
+  const TransformFileData = (file) => {
+    const reader = new FileReader();
+    if (file) {
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+    } else {
+      setImage("");
+    }
+  };
+  const sandData = async () => {
+    try {
+      const res = await axios.post("http://localhost:6001/api/department", {
+        image: image,
+      });
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+ 
   return (
     <div>
       <Footer bgDark={true}>
@@ -74,6 +101,14 @@ export default function FooterContainer() {
           </div>
         </div>
       </Footer>
+      <div>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => TransformFileData(e.target.files[0])}
+        />
+        <button onClick={sandData}>sand</button>
+      </div>
     </div>
   );
 }
