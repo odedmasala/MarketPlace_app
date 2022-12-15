@@ -1,6 +1,6 @@
 const passport = require("passport");
 const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const User = require("../../models/user/UserSchema");
 
 const register = async (req, res, next) => {
   // if(!req.body) next(Error("need password and username"))
