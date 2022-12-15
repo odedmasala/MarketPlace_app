@@ -14,10 +14,10 @@ const importRouterFromAllFolders = {
 router.use("/api/test", importRouterFromAllFolders.testRoute);
 router.use("/api/department", importRouterFromAllFolders.departmentRoute);
 router.use("/api/products", importRouterFromAllFolders.productRoute);
-// app.use("api/receipt",receiptRoute)
+// app.use("api/receipt",importRouterFromAllFolders.receiptRoute)
 router.use("/api/section", importRouterFromAllFolders.sectionRoute);
 router.use("/api/store", importRouterFromAllFolders.storeRoute);
-// app.use("api/storeManager",storeManagerRoute)
-// app.use("api/user",userRoute)
+// app.use("api/storeManager",importRouterFromAllFolders.storeManagerRoute)
+// app.use("api/user",importRouterFromAllFolders.userRoute)
 
 module.exports = router;
