@@ -22,10 +22,7 @@ const addressSchema = new mongoose.Schema({
 });
 const UserSchema = new mongoose.Schema(
   {
-    image: {
-      type: String,
-      required: true,
-    },
+    image: String,
     firstName: {
       type: String,
       required: true,
@@ -44,14 +41,12 @@ const UserSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: true,
       min: 9,
       unique: true,
     },
     loginCode: String,
     password: {
       type: String,
-      required: true,
     },
     storeId: {
       type: [mongoose.Types.ObjectId],
@@ -60,9 +55,27 @@ const UserSchema = new mongoose.Schema(
     storeIds: {
       type: [String],
     },
-    address: { type: addressSchema, required: true },
+    address: { type: addressSchema },
     paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipt" },
     authToken: { type: String },
+    access_token: String,
+    facebookToken: {
+      type: String,
+      select: false,
+    },
+    googleToken: {
+      type: String,
+      select: false,
+    },
+    resetPassToken: {
+      type: String,
+      select: false,
+    },
+    registerType: {
+      type: String,
+      enum: ["email", "facebook", "google"],
+      default: "email",
+    },
   },
   { timestamps: true }
 );
