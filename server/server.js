@@ -8,7 +8,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const helmet = require("helmet");
 const cors = require("cors");
-const CombiningAllRoute = require("./routes");
+const CombiningAllRoutes = require("./routes");
 
 /*CONNECT TO PASSPORTS STRATEGY FUNCTIONS*/
 const passportStrategy = require("./config/passport");
@@ -23,7 +23,7 @@ app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 
 /* ROUTES */
-app.use(CombiningAllRoute);
+app.use(CombiningAllRoutes);
 
 /* HANDEL ALL ERROR BEFORE SENDING THEM TO THE CLIENT*/
 app.use(handleError);
