@@ -14,7 +14,7 @@ const CombiningAllRoute = require("./routes");
 const passportStrategy = require("./config/passport");
 
 /*CONNECT TO MONGODB ATLAS DATABASE FUNCTIONS*/
-const connectDB = require("./config/config");
+const connectDB = require("./config/configDB");
 
 /* CONFIGURATIONS */
 app.use(cors());
