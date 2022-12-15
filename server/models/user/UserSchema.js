@@ -1,5 +1,25 @@
 const mongoose = require("mongoose");
 
+const addressSchema = new mongoose.Schema({
+  city: {
+    type: String,
+    required: true,
+  },
+  street: {
+    type: String,
+    required: true,
+  },
+  building: {
+    type: Number,
+    required: true,
+  },
+  apartment: {
+    type: Number,
+    required: true,
+  },
+  floor: Number,
+  comment: String,
+});
 const UserSchema = new mongoose.Schema(
   {
     image: {
@@ -29,52 +49,19 @@ const UserSchema = new mongoose.Schema(
       unique: true,
     },
     loginCode: String,
-    meager: {
-      type: Boolean,
-      default: null,
-    },
-    role: {
-      type: String,
-      default: null,
-    },
-    phone2: {
-      type: String,
-      min: 9,
-    },
     password: {
       type: String,
       required: true,
     },
     storeId: {
-      type: mongoose.Types.ObjectId,
-      ref:"store"
+      type: [mongoose.Types.ObjectId],
+      ref: "store",
     },
     storeIds: {
       type: [String],
     },
-    address: {
-      type: Object,
-      required: true,
-      city: {
-        type: String,
-        required: true,
-      },
-      street: {
-        type: String,
-        required: true,
-      },
-      building: {
-        type: Number,
-        required: true,
-      },
-      apartment: {
-        type: Number,
-        required: true,
-      },
-      floor: Number,
-      comment: String,
-    },
-    paymentBillInfo: { type: mongoose.Types.ObjectId,ref:"receipt", },
+    address: { type: addressSchema, required: true },
+    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipt" },
     authToken: { type: String },
   },
   { timestamps: true }
