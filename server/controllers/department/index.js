@@ -32,7 +32,6 @@ const createDepartment = async (req, res, next) => {
         url:results.secure_url,
       }
     }
-    console.log(obj);
     const result = await departmentDAL.createDepartment(obj);
     res.status(200).json(result);
   } catch (err) {

@@ -18,18 +18,11 @@ const storeRoute = require("./routes/store/store");
 const connectDB = require("./config/config");
 
 // /* CONFIGURATIONS */
-app.use(express.json());
-app.use(
-  cors({
-    allowedHeaders:['Content-Type', 'Authorization'],
-    origin: process.env.CLIENT_URL,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-  })
-);
+// app.use(express.json());
+app.use(cors());
 app.use(helmet());
-// app.use(bodyParser.json({ limit: "30mb", extended: true }));
-// app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 
 /* ROUTES */
 app.use("/api/test", (req, res) =>
