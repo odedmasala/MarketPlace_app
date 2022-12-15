@@ -5,6 +5,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user/UserSchema");
 
 const passport = (passport) => {
+  /*LOCAL Strategy */
   passport.use(
     new LocalStrategy(
       {
@@ -33,6 +34,7 @@ const passport = (passport) => {
       }
     )
   );
+  /*GOOGLE Strategy */
   passport.use(
     new GoogleStrategy(
       {
@@ -58,7 +60,7 @@ const passport = (passport) => {
       }
     )
   );
-
+  /*FACEBOOK Strategy */
   passport.use(
     new FacebookStrategy(
       {
@@ -72,10 +74,11 @@ const passport = (passport) => {
       }
     )
   );
+  /*INSERT USER TO PASSPORT-SESSION  */
   passport.serializeUser((user, done) => {
     done(null, user);
   });
-
+  /*REMOVE USER TO PASSPORT-SESSION  */
   passport.deserializeUser((user, done) => {
     done(null, user);
   });
