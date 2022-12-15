@@ -20,7 +20,7 @@ const register = async (req, res, next) => {
     next(err);
   }
 };
-
+const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
 const loginSuccess = (req, res) => {
   console.log(req.user);
   if (req.user) {
@@ -55,6 +55,8 @@ const loginFailed = (req, res) => {
   });
 };
 
+// const login = (req, res) => res.redirect("/login/success");
+
 const logout = (req, res) => {
   req.logout();
   res.redirect("http://localhost:3000");
@@ -82,6 +84,8 @@ module.exports = {
   logout,
   register,
   loginSuccessUser,
+  redirectLogin,
+  // login,
   checkRegularUser,
   goToGoogle,
   googleCalBack,

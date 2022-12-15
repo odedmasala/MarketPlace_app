@@ -5,6 +5,7 @@ const {
   loginSuccess,
   logout,
   register,
+  redirectLogin,
   goToGoogle,
   googleCalBack,
   goToFacebook,
@@ -12,12 +13,11 @@ const {
   // login,
   checkRegularUser,
   loginSuccessUser,
-} = require("../controllers/auth");
+} = require("../../controllers/auth");
 
-router.post("/register", register, (req, res) =>
-req.redirect("http://localhost:3000/login")
-);
-router.post("/login", checkRegularUser,loginSuccess);
+router.post("/register", register, redirectLogin);
+
+router.post("/login", checkRegularUser, loginSuccess);
 
 router.get("/login/success", loginSuccessUser);
 

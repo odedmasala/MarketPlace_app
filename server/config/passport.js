@@ -2,7 +2,7 @@ const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
-const User = require("../models/User");
+const User = require("../models/user/UserSchema");
 
 const passport = (passport) => {
   passport.use(
@@ -13,8 +13,6 @@ const passport = (passport) => {
         session: false,
       },
       async (email, password, callback) => {
-        // console.log(email);
-
         const user = await User.find({ email: email });
         if (!user)
           return callback(null, false, {
@@ -48,10 +46,6 @@ const passport = (passport) => {
           google_id: profile.id,
           email: profile.emails[0].value,
           isAdmin: true,
-          // firstName: profile.name.givenName,
-          // lastName: profile.name.familyName,
-          // profilePhoto: profile.photos[0].value,
-          // accessToken: accessToken,
           source: "google",
         };
         const checkUser = await User.findOne({ email: user.email });
