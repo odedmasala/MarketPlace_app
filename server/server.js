@@ -18,7 +18,6 @@ const storeRoute = require("./routes/store/store")
 const connectDB = require('./config/config');
 
 // /* CONFIGURATIONS */
-app.use(express.json());
 app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
