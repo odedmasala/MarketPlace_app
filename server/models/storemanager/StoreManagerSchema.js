@@ -1,25 +1,5 @@
 const mongoose = require("mongoose");
-
-const addressSchema = new mongoose.Schema({
-  city: {
-    type: String,
-    required: true,
-  },
-  street: {
-    type: String,
-    required: true,
-  },
-  building: {
-    type: Number,
-    required: true,
-  },
-  apartment: {
-    type: Number,
-    required: true,
-  },
-  floor: Number,
-  comment: String,
-});
+const {addressSchema} = require("../helpModels")
 
 const StoreManagerSchema = new mongoose.Schema(
   {
