@@ -1,31 +1,9 @@
 const mongoose = require("mongoose");
+const {addressSchema} = require("../helpModels")
 
-const addressSchema = new mongoose.Schema({
-  city: {
-    type: String,
-    required: true,
-  },
-  street: {
-    type: String,
-    required: true,
-  },
-  building: {
-    type: Number,
-    required: true,
-  },
-  apartment: {
-    type: Number,
-    required: true,
-  },
-  floor: Number,
-  comment: String,
-});
 const UserSchema = new mongoose.Schema(
   {
-    image: {
-      type: String,
-      required: true,
-    },
+    image: String,
     firstName: {
       type: String,
       required: true,
@@ -44,25 +22,39 @@ const UserSchema = new mongoose.Schema(
     },
     phone: {
       type: String,
-      required: true,
       min: 9,
       unique: true,
     },
     loginCode: String,
     password: {
       type: String,
-      required: true,
+      min: 8,
     },
-    storeId: {
+    stores: {
       type: [mongoose.Types.ObjectId],
-      ref: "store",
+      ref: "stores",
     },
-    storeIds: {
-      type: [String],
-    },
-    address: { type: addressSchema, required: true },
-    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipt" },
+    address: { type: addressSchema },
+    paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },
     authToken: { type: String },
+    access_token: String,
+    facebookToken: {
+      type: String,
+      select: false,
+    },
+    googleToken: {
+      type: String,
+      select: false,
+    },
+    resetPassToken: {
+      type: String,
+      select: false,
+    },
+    registerType: {
+      type: String,
+      enum: ["email", "facebook", "google"],
+      default: "email",
+    },
   },
   { timestamps: true }
 );

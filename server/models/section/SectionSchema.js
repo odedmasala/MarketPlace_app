@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const SectionSchema = new mongoose.Schema(
   {
     name: String,
-    storesId: { type: mongoose.Types.ObjectId, ref: "store" },
-    productIds: { type: mongoose.Types.ObjectId, ref: "product" },
+    store: { type: mongoose.Types.ObjectId, ref: "stores" },
+    products: { type: [mongoose.Types.ObjectId], ref: "products" },
     createdAt: { type: Date, default: Date.now },
     createdBy: { type: String },
     updateAt: { type: Date, default: Date.now },
@@ -12,4 +12,4 @@ const SectionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("section", SectionSchema);
+module.exports = mongoose.model("sections", SectionSchema);

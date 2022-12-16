@@ -11,7 +11,9 @@ const StoreSchema = new mongoose.Schema(
     coverImage: String,
     phone: { type: String, required: true, min: 9, unique: true },
     email: { type: String, required: true, unique: true, min: 8, max: 50 },
-    sectionIds: { type: mongoose.Types.ObjectId, ref: "section" },
+    department_id :{ type: mongoose.Types.ObjectId, ref: "Departments" },
+    sections: { type:[mongoose.Types.ObjectId], ref: "sections" },
+    Products :{ type:[mongoose.Types.ObjectId], ref: "Products" },
     address: {
       type: Object,
       required: true,
@@ -22,5 +24,5 @@ const StoreSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-const model = mongoose.model("store", StoreSchema);
+const model = mongoose.model("stores", StoreSchema);
 module.exports = model;

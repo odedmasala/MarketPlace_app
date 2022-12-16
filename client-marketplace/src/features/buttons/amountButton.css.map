@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,MAAM,CAAA;EACF,MAAM,EAAE,iBAAiB;EACzB,aAAa,EAAE,KAAK;EACpB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;CAC1B",
-    "sources": [
-        "amountButton.scss"
-    ],
-    "names": [],
-    "file": "amountButton.css"
-}
