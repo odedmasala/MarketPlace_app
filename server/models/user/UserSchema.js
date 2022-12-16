@@ -1,25 +1,6 @@
 const mongoose = require("mongoose");
+const {addressSchema} = require("../helpModels")
 
-const addressSchema = new mongoose.Schema({
-  city: {
-    type: String,
-    required: true,
-  },
-  street: {
-    type: String,
-    required: true,
-  },
-  building: {
-    type: Number,
-    required: true,
-  },
-  apartment: {
-    type: Number,
-    required: true,
-  },
-  floor: Number,
-  comment: String,
-});
 const UserSchema = new mongoose.Schema(
   {
     image: String,
@@ -47,16 +28,14 @@ const UserSchema = new mongoose.Schema(
     loginCode: String,
     password: {
       type: String,
+      min: 8,
     },
-    storeId: {
+    stores_ids: {
       type: [mongoose.Types.ObjectId],
       ref: "store",
     },
-    storeIds: {
-      type: [String],
-    },
     address: { type: addressSchema },
-    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipt" },
+    paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },
     authToken: { type: String },
     access_token: String,
     facebookToken: {

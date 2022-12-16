@@ -13,9 +13,8 @@ const ProductSchema = new mongoose.Schema({
     required: true,
   },
   subCategory: {
-    type: mongoose.Types.ObjectId,
+    type: [mongoose.Types.ObjectId],
     ref: "section",
-    required: true,
   },
   weight: String,
   avgWeightPerUnit: String,
