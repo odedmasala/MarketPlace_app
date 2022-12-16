@@ -30,9 +30,9 @@ const UserSchema = new mongoose.Schema(
       type: String,
       min: 8,
     },
-    stores_ids: {
+    stores: {
       type: [mongoose.Types.ObjectId],
-      ref: "store",
+      ref: "stores",
     },
     address: { type: addressSchema },
     paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },

@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const {addressSchema} = require("../helpModels")
+const { addressSchema } = require("../helpModels");
 
 const StoreManagerSchema = new mongoose.Schema(
   {
@@ -42,11 +42,12 @@ const StoreManagerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    store_ids: {
+    stores: {
       type: [mongoose.Types.ObjectId],
+      ref: "stores",
     },
     address: { type: addressSchema, required: true },
-    paymentBillInfo: { type: mongoose.Types.ObjectId },
+    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipts" },
     authToken: { type: String },
     role: {
       type: String,

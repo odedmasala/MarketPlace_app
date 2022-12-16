@@ -7,14 +7,14 @@ const ProductSchema = new mongoose.Schema({
   },
   name: { type: String, required: true },
   price: { type: Number, required: true },
-  storeId: {
+  store: {
     type: mongoose.Types.ObjectId,
-    ref: "store",
+    ref: "stores",
     required: true,
   },
   subCategory: {
     type: [mongoose.Types.ObjectId],
-    ref: "section",
+    ref: "sections",
   },
   weight: String,
   avgWeightPerUnit: String,
