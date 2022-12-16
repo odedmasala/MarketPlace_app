@@ -28,16 +28,14 @@ const UserSchema = new mongoose.Schema(
     loginCode: String,
     password: {
       type: String,
+      min: 8,
     },
-    storeId: {
+    stores_ids: {
       type: [mongoose.Types.ObjectId],
       ref: "store",
     },
-    storeIds: {
-      type: [String],
-    },
     address: { type: addressSchema },
-    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipt" },
+    paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },
     authToken: { type: String },
     access_token: String,
     facebookToken: {

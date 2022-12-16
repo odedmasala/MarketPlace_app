@@ -12,5 +12,5 @@ const DepartmentSchema = new mongoose.Schema({
   updateAt: { type: Date, default: Date.now },
 });
 
-const model = mongoose.model("department", DepartmentSchema);
+const model = mongoose.model("departments", DepartmentSchema);
 module.exports = model;

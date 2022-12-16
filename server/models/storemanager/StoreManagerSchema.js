@@ -42,7 +42,7 @@ const StoreManagerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    storeIds: {
+    store_ids: {
       type: [mongoose.Types.ObjectId],
     },
     address: { type: addressSchema, required: true },
@@ -71,5 +71,5 @@ const StoreManagerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.model("storeManager", StoreManagerSchema);
+const model = mongoose.model("storeManagers", StoreManagerSchema);
 module.exports = model;
