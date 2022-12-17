@@ -6,7 +6,7 @@ const { handleError } = require("./utils/errorSetting");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const app = express();
-
+const cookieSession = require("cookie-session");
 const helmet = require("helmet");
 const cors = require("cors");
 const CombiningAllRoutes = require("./routes");
@@ -22,6 +22,7 @@ app.use(cors());
 app.use(helmet());
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+app.use(cookieSession({ name: "session", keys: ["lama"] }));
 
 /* ROUTES */
 app.use(CombiningAllRoutes);
