@@ -23,15 +23,12 @@ const getDepartmentById = async (req, res, next) => {
 const createDepartment = async (req, res, next) => {
   try {
     const { image } = req.body;
-    const results = await cludinary.uploader.upload(image,{
-      folder:"department"
-    })
+    const results = await cludinary.uploader.upload(image, {
+      folder: "department",
+    });
     const obj = {
-      image : {
-        public_id:results.public_id,
-        url:results.secure_url,
-      }
-    }
+      image: results.secure_url,
+    };
     const result = await departmentDAL.createDepartment(obj);
     res.status(200).json(result);
   } catch (err) {

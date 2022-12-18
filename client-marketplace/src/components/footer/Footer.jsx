@@ -9,8 +9,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 export default function FooterContainer() {
+  const [data, setData] = useState({ name: "" });
   const [image, setImage] = useState("");
-
+  const handleInput = (e) => {
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };
   const TransformFileData = (file) => {
     const reader = new FileReader();
     if (file) {
@@ -102,8 +106,10 @@ export default function FooterContainer() {
         </div>
       </Footer>
       <div>
+        <input type="text" name="name"  />
         <input
           type="file"
+          name="name"
           accept="image/*"
           onChange={(e) => TransformFileData(e.target.files[0])}
         />
