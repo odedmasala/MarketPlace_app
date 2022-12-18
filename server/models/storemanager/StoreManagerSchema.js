@@ -1,25 +1,5 @@
 const mongoose = require("mongoose");
-
-const addressSchema = new mongoose.Schema({
-  city: {
-    type: String,
-    required: true,
-  },
-  street: {
-    type: String,
-    required: true,
-  },
-  building: {
-    type: Number,
-    required: true,
-  },
-  apartment: {
-    type: Number,
-    required: true,
-  },
-  floor: Number,
-  comment: String,
-});
+const { addressSchema } = require("../helpModels");
 
 const StoreManagerSchema = new mongoose.Schema(
   {
@@ -62,11 +42,12 @@ const StoreManagerSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    storeIds: {
+    stores: {
       type: [mongoose.Types.ObjectId],
+      ref: "stores",
     },
     address: { type: addressSchema, required: true },
-    paymentBillInfo: { type: mongoose.Types.ObjectId },
+    paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipts" },
     authToken: { type: String },
     role: {
       type: String,
@@ -91,5 +72,5 @@ const StoreManagerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const model = mongoose.model("storeManager", StoreManagerSchema);
+const model = mongoose.model("storeManagers", StoreManagerSchema);
 module.exports = model;
