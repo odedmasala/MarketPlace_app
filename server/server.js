@@ -9,6 +9,7 @@ const app = express();
 const cookieSession = require("cookie-session");
 const helmet = require("helmet");
 const cors = require("cors");
+const cookieParser = require("cookie-parser")
 const CombiningAllRoutes = require("./routes");
 
 /*CONNECT TO PASSPORTS STRATEGY FUNCTIONS*/
@@ -19,10 +20,24 @@ const connectDB = require("./config/configDB");
 
 /* CONFIGURATIONS */
 app.use(cors());
+// app.use(
+//   cors({
+//     origin: "http://localhost:3000",
+//     methods: "GET,POST,PUT,DELETE",
+//     credentials: true,
+//   })
+// );
 app.use(helmet());
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
-app.use(cookieSession({ name: "session", keys: ["lama"] }));
+app.use(
+  cookieSession({
+    name: "marketplace",
+    keys: ["store"],
+    maxAge: 24 * 60 * 60 * 1000,
+  })
+);
+app.use(cookieParser())
 
 /* ROUTES */
 app.use(CombiningAllRoutes);
