@@ -5,7 +5,10 @@ const StoreSchema = new mongoose.Schema(
     bnNumber: String,
     name: { type: String, required: true },
     description: { type: String, required: true },
-    logo: String,
+    logo: {
+      public_id: String,
+      url: String,
+    },
     lightlogo: String,
     darklogo: String,
     coverImage: String,
