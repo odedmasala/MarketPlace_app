@@ -30,7 +30,6 @@ const ProductSchema = new mongoose.Schema({
   quantity: { type: Number, required: true, min: 0 },
   // clothing: { type: ClothingSizesSchema },
   manufacture: String,
-
   brand: String,
   active: { type: Boolean, required: true },
   description: String,
