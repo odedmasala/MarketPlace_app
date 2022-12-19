@@ -1,0 +1,482 @@
+[
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "באלוגה",
+    "price": 122,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "באלוגה",
+    "brand": "ruski standard",
+    "active": true,
+    "description": "באלוגה ליטר",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "רוסקי",
+    "price": 90,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "רוסקי",
+    "brand": "ruski standard",
+    "active": true,
+    "description": "רוסקי",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "ואן גוך",
+    "price": 120,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "ואן גוך",
+    "brand": "van gogh",
+    "active": true,
+    "description": "ואן גוך",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "גרייגוס",
+    "price": 120,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.75,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "גרייגוס",
+    "brand": "grey goose",
+    "active": true,
+    "description": "גרייגוס",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "פילנדיה",
+    "price": 120,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.75,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "פילנדיה",
+    "brand": "finlandia",
+    "active": true,
+    "description": "פילנדיה",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "קאלסברג",
+    "price": 12,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.3,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "קאלסברג",
+    "brand": "carlsberg",
+    "active": true,
+    "description": "קאלסברג",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "הייניקן",
+    "price": 12,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.3,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "הייניקן",
+    "brand": "heineken",
+    "active": true,
+    "description": "הייניקן",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "בלו נאן",
+    "price": 30,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.75,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "בלו נאן",
+    "brand": "blue nun",
+    "active": true,
+    "description": "בלו נאן",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "דרך ארץ קברנה סוביניון",
+    "price": 230,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "דרך ארץ קברנה סוביניון",
+    "brand": "דרך ארץ קברנה סוביניון",
+    "active": true,
+    "description": "דרך ארץ קברנה סוביניון",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "לה קצ'יאטורה קברנה ונטו",
+    "price": 430,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "לה קצ'יאטורה קברנה ונטו",
+    "brand": "לה קצ'יאטורה קברנה ונטו",
+    "active": true,
+    "description": "לה קצ'יאטורה קברנה ונטו",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "בלאק לאבל",
+    "price": 130,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "בלאק לאבל",
+    "brand": "black label",
+    "active": true,
+    "description": "בלאק לאבל",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "מקרס ברבן",
+    "price": 180,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "מקרס ברבן",
+    "brand": "makers barben",
+    "active": true,
+    "description": "מקרס ברבן",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "דלמור פורט ווד",
+    "price": 170,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "דלמור פורט ווד",
+    "brand": "דלמור פורט ווד",
+    "active": true,
+    "description": "דלמור פורט ווד",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "וויסקי טומטין",
+    "price": 110,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "וויסקי טומטין",
+    "brand": "tomatin",
+    "active": true,
+    "description": "וויסקי טומטין",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "ג'ק דניאלס",
+    "price": 115,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.75,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "ג'ק דניאלס",
+    "brand": "jack daniels",
+    "active": true,
+    "description": "ג'ק דניאלס",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "סנוטה קריסטלינו אנייחו",
+    "price": 175,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "סנוטה קריסטלינו אנייחו",
+    "brand": "סנוטה קריסטלינו אנייחו",
+    "active": true,
+    "description": "סנוטה קריסטלינו אנייחו",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "פאדרה אזול אנייחו",
+    "price": 185,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 2,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "פאדרה אזול אנייחו",
+    "brand": "פאדרה אזול אנייחו",
+    "active": true,
+    "description": "פאדרה אזול אנייחו",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "סיירה קינמון תפוז",
+    "price": 110,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "סיירה קינמון תפוז",
+    "brand": "סיירה קינמון תפוז",
+    "active": true,
+    "description": "סיירה קינמון תפוז",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "קא בלאנקו",
+    "price": 70,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "קא בלאנקו",
+    "brand": "קא בלאנקו",
+    "active": true,
+    "description": "קא בלאנקו",
+    "quantity": 10,
+    "createBy": "oded admin"
+  },
+  {
+    "image": {
+      "public_id": "",
+      "url": ""
+    },
+    "name": "רוסטר רוחו בלאנק",
+    "price": 470,
+    "storeId": "",
+    "subCategory": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 2,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
+    "manufacture": "רוסטר רוחו בלאנק",
+    "brand": "רוסטר רוחו בלאנק",
+    "active": true,
+    "description": "רוסטר רוחו בלאנק",
+    "quantity": 10,
+    "createBy": "oded admin"
+  }
+]

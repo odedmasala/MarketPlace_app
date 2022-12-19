@@ -4,8 +4,9 @@ const { addressSchema } = require("../helpModels");
 const StoreManagerSchema = new mongoose.Schema(
   {
     image: {
-      type: String,
-      required: true,
+      public_id: String,
+      url: String,
+      // required: true,
     },
     firstName: {
       type: String,
