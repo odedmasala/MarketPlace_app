@@ -4,13 +4,13 @@ import Footer from './components/footer/Footer';
 import NavBar from './components/navbar/NavBar';
 import Header from './components/header/Header';
 import Product from './components/product/Product';
+import HomePage from './components/homePage/HomePage';
 
 const App = () => {
   return (
     <div>
       <NavBar />
-      <Header />
-      <Product />
+      <HomePage/>
       <Footer />
     </div>
   );
