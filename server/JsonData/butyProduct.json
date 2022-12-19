@@ -1,8 +1,8 @@
 [
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/creed_o0vnoe",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359333/products/%D7%A4%D7%90%D7%A8%D7%9D/creed_o0vnoe.jpg"
     },
     "name": "CREED",
     "price": 500,
@@ -10,7 +10,7 @@
     "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 0.100,
+      "avgWeightPerUnit": 0.1,
       "weightUnit": "mls"
     },
     "manufacture": "CREED",
@@ -22,8 +22,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/dior_kdalah",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359333/products/%D7%A4%D7%90%D7%A8%D7%9D/dior_kdalah.jpg"
     },
     "name": "Dior",
     "price": 700,
@@ -31,7 +31,7 @@
     "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 0.100,
+      "avgWeightPerUnit": 0.1,
       "weightUnit": "mls"
     },
     "manufacture": "Dior",
@@ -43,8 +43,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/paco_roban_rguzm0",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/paco_roban_rguzm0.jpg"
     },
     "name": "INVICTUS א.ד.ט לגבר",
     "price": 249,
@@ -52,7 +52,7 @@
     "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 0.100,
+      "avgWeightPerUnit": 0.1,
       "weightUnit": "liters"
     },
 
@@ -66,8 +66,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/NARCISO_CRISTAL_א.ד.פ_לאשה_lq23nx",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671471605/products/%D7%A4%D7%90%D7%A8%D7%9D/NARCISO_CRISTAL_%D7%90.%D7%93.%D7%A4_%D7%9C%D7%90%D7%A9%D7%94_lq23nx.jpg"
     },
     "name": "NARCISO CRISTAL א.ד.פ לאשה",
     "price": 200,
@@ -75,7 +75,7 @@
     "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 0.100,
+      "avgWeightPerUnit": 0.1,
       "weightUnit": "liters"
     },
 
@@ -89,8 +89,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/ALIEN_GODDESS_א.ד.פ_לאשה_eyi8jd",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671471732/products/%D7%A4%D7%90%D7%A8%D7%9D/ALIEN_GODDESS_%D7%90.%D7%93.%D7%A4_%D7%9C%D7%90%D7%A9%D7%94_eyi8jd.jpg"
     },
     "name": "ALIEN GODDESS א.ד.פ לאשה",
     "price": 463,
@@ -98,7 +98,7 @@
     "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 0.100,
+      "avgWeightPerUnit": 0.1,
       "weightUnit": "liters"
     },
     "manufacture": "mugler",
@@ -110,8 +110,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/קרם_פנים_k6ht7e",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671471880/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A7%D7%A8%D7%9D_%D7%A4%D7%A0%D7%99%D7%9D_k6ht7e.webp"
     },
     "name": "קרם פנים",
     "price": 12,
@@ -133,8 +133,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/קרם_רגליים_pxsyfa",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671472139/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A7%D7%A8%D7%9D_%D7%A8%D7%92%D7%9C%D7%99%D7%99%D7%9D_pxsyfa.jpg"
     },
     "name": "קרם רגליים",
     "price": 19,
@@ -156,8 +156,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/ג_ל_עיניים_lr3a9j",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671472250/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%92_%D7%9C_%D7%A2%D7%99%D7%A0%D7%99%D7%99%D7%9D_lr3a9j.jpg"
     },
     "name": "ג'ל עיניים",
     "price": 19,
@@ -179,8 +179,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/קרם_ידיים_uglqhm",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359335/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A7%D7%A8%D7%9D_%D7%99%D7%93%D7%99%D7%99%D7%9D_uglqhm.jpg"
     },
     "name": "קרם ידיים",
     "price": 19,
@@ -202,8 +202,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/מסכה_פנים_miwmjt",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%9E%D7%A1%D7%9B%D7%94_%D7%A4%D7%A0%D7%99%D7%9D_miwmjt.jpg"
     },
     "name": "מסכה",
     "price": 25,
@@ -225,8 +225,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/עיפרון_לשפתיים_lkb5re",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A2%D7%99%D7%A4%D7%A8%D7%95%D7%9F_%D7%9C%D7%A9%D7%A4%D7%AA%D7%99%D7%99%D7%9D_lkb5re.jpg"
     },
     "name": "עיפרון לשפתיים",
     "price": 22,
@@ -248,8 +248,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/מסקרה_pl5dda",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%9E%D7%A1%D7%A7%D7%A8%D7%94_pl5dda.png"
     },
     "name": "מסקרה",
     "price": 334,
@@ -271,8 +271,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/קונסילר_ytqqb0",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359335/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A7%D7%95%D7%A0%D7%A1%D7%99%D7%9C%D7%A8_ytqqb0.jpg"
     },
     "name": "קונסילר",
     "price": 52,
@@ -294,8 +294,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/סומק_eqeex3",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A1%D7%95%D7%9E%D7%A7_eqeex3.jpg"
     },
     "name": "סומק",
     "price": 24,
@@ -317,8 +317,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "/products/פארם/פודרה_nvainb",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671472514/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A4%D7%95%D7%93%D7%A8%D7%94_nvainb.webp"
     },
     "name": "פודרה",
     "price": 77,
@@ -340,8 +340,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/שמפו_c4tqsk",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359337/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A9%D7%9E%D7%A4%D7%95_c4tqsk.jpg"
     },
     "name": "שמפו",
     "price": 45,
@@ -363,8 +363,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/מרכך_c6djmc",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%9E%D7%A8%D7%9B%D7%9A_c6djmc.jpg"
     },
     "name": "מרכך",
     "price": 74,
@@ -386,8 +386,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/צבע_לשיער_kwpxpc",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359335/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A6%D7%91%D7%A2_%D7%9C%D7%A9%D7%99%D7%A2%D7%A8_kwpxpc.jpg"
     },
     "name": "צבע לשיער",
     "price": 35,
@@ -409,10 +409,10 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/קרם_עיניים_t0o2ye",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359335/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A7%D7%A8%D7%9D_%D7%A2%D7%99%D7%A0%D7%99%D7%99%D7%9D_t0o2ye.jpg"
     },
-    "name": "קרם",
+    "name": "קרם עיניים",
     "price": 65,
     "storeId": "",
     "subCategory": "",
@@ -422,18 +422,18 @@
       "weightUnit": "liters"
     },
 
-    "manufacture": "קרם",
+    "manufacture": "קרם עיניים",
     "brand": "",
 
-    "description": "קרם",
+    "description": "קרם עיניים",
     "gender": " String",
     "quantity": 10,
     "createBy": "david admin"
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/שמן_קיק_jdk0th",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359337/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A9%D7%9E%D7%9F_%D7%A7%D7%99%D7%A7_jdk0th.jpg"
     },
     "name": "שמן קיק",
     "price": 45,
@@ -455,8 +455,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/גי_לט_סכין_גילוח_גבר_qszknp",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%92%D7%99_%D7%9C%D7%98_%D7%A1%D7%9B%D7%99%D7%9F_%D7%92%D7%99%D7%9C%D7%95%D7%97_%D7%92%D7%91%D7%A8_qszknp.jpg"
     },
     "name": "גי'לט סכין גילוח",
     "price": 88,
@@ -478,8 +478,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/גי_לט_סכין_גילוח_אישה_cyi8jm",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359334/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%92%D7%99_%D7%9C%D7%98_%D7%A1%D7%9B%D7%99%D7%9F_%D7%92%D7%99%D7%9C%D7%95%D7%97_%D7%90%D7%99%D7%A9%D7%94_cyi8jm.jpg"
     },
     "name": "ונוס סכין גילוח",
     "price": 55,
@@ -501,8 +501,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/שעווה_לרגליים_fbkfdb",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359337/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A9%D7%A2%D7%95%D7%95%D7%94_%D7%9C%D7%A8%D7%92%D7%9C%D7%99%D7%99%D7%9D_fbkfdb.jpg"
     },
     "name": "שעווה לרגליים",
     "price": 22,
@@ -524,8 +524,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/קצף_גילוח_גבר_qxa6ku",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359335/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A7%D7%A6%D7%A3_%D7%92%D7%99%D7%9C%D7%95%D7%97_%D7%92%D7%91%D7%A8_qxa6ku.jpg"
     },
     "name": "קצף גילוח",
     "price": 12,
@@ -547,8 +547,8 @@
   },
   {
     "image": {
-      "public_id": "",
-      "url": ""
+      "public_id": "products/פארם/שעווה_לפנים_גבר_cgcdcs",
+      "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359337/products/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A9%D7%A2%D7%95%D7%95%D7%94_%D7%9C%D7%A4%D7%A0%D7%99%D7%9D_%D7%92%D7%91%D7%A8_cgcdcs.jpg"
     },
     "name": "שעווה לפנים",
     "price": 22,
