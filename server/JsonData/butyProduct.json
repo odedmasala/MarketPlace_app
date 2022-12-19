@@ -7,18 +7,16 @@
     "name": "CREED",
     "price": 500,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 0.500,
+      "avgWeightPerUnit": 0.100,
       "weightUnit": "mls"
-    },
-    "unit": {
-      "measureUnits": "liters"
     },
     "manufacture": "CREED",
     "brand": "CREED",
-    "description": "CREED לגברים",
-    "gender": " men",
+    "description": "נוצר בהשראת החיים הדרמטיים של הקיסר נפוליאון אשר ניהל מלחמה, שלום ורומנטיקה במידה שווה.",
+    "gender": "men",
     "quantity": 10,
     "createBy": "david admin"
   },
@@ -30,18 +28,16 @@
     "name": "Dior",
     "price": 700,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 1,
-      "weightUnit": "liters"
-    },
-    "unit": {
-      "measureUnits": "liters"
+      "avgWeightPerUnit": 0.100,
+      "weightUnit": "mls"
     },
     "manufacture": "Dior",
-    "brand": "",
-    "description": "Dior",
-    "gender": " String",
+    "brand": "Dior",
+    "description": "דיור הום ספורט המכיל ריחות הדרים וגינגר המביא איתו ניחוח אלגנטי אבקתי פרחוני אשר משאיר שובל ריח מהפנט.",
+    "gender": "men",
     "quantity": 10,
     "createBy": "david admin"
   },
@@ -50,22 +46,21 @@
       "public_id": "",
       "url": ""
     },
-    "name": "Paco Rabanne",
-    "price": 1000,
+    "name": "INVICTUS א.ד.ט לגבר",
+    "price": 249,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 1,
+      "avgWeightPerUnit": 0.100,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
-    "manufacture": "Paco Rabanne",
-    "brand": "",
 
-    "description": "Paco Rabanne",
-    "gender": " String",
+    "manufacture": "Paco Rabanne",
+    "brand": "Paco Rabanne",
+
+    "description": "מעצב  האופנה פאקו ראבן ממוצא ספרדי הנודע כמעצב נועז ללא גבולות! ניחוח הניצחון לגבר בעל אומץ ועוצמה בלתי רגילה. מרכיבים: תווים ימיים, אשכולית, עלי דפנה, ענבר ופצ'ולי.",
+    "gender": " man",
     "quantity": 10,
     "createBy": "david admin"
   },
@@ -74,22 +69,21 @@
       "public_id": "",
       "url": ""
     },
-    "name": "Narciso Rodriguz",
+    "name": "NARCISO CRISTAL א.ד.פ לאשה",
     "price": 200,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 1,
+      "avgWeightPerUnit": 0.100,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
-    "manufacture": "Narciso Rodriguz",
-    "brand": "",
 
-    "description": "Narciso Rodriguz",
-    "gender": " String",
+    "manufacture": "Narciso Rodriguz",
+    "brand": "Narciso Rodriguz",
+
+    "description": "מעצב העל נרסיסו רודריגז משיק את הבושם החדש נרסיסו קריסטל שמצטרף לליין המוכר והאהוב NARCISO. או דה פרפיום בניחוח ממכר במחווה לנשיות זוהרת, המשקף את האור הפנימי של האישה, בדיוק כפי שאור המוקרן על קריסטל חושף את יופיו הטבעי. הילה זוהרת של ברגמוט מאירה את עלי הכותרת הרכים של זר וורדים ופרחים לבנים. לב המאסק מועצם על ידי תווים אלגנטיים של עץ וענבר המעניקים לניחוח שובל מסתורי וממגנט. נרסיסו קריסטל או דה פרפיום מציג סטנדרט חדש של טבעיות, עם יותר מ-85% מרכיבים ממקור טבעי.",
+    "gender": " women",
     "quantity": 10,
     "createBy": "david admin"
   },
@@ -98,22 +92,19 @@
       "public_id": "",
       "url": ""
     },
-    "name": "mugler",
-    "price": 400,
+    "name": "ALIEN GODDESS א.ד.פ לאשה",
+    "price": 463,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
-      "avgWeightPerUnit": 1,
+      "avgWeightPerUnit": 0.100,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
     "manufacture": "mugler",
-    "brand": "",
-
-    "description": "mugler",
-    "gender": " String",
+    "brand": "mugler",
+    "description": "הבושם החדש לבית האופנה האייקוני MUGLER מהמשפחה האגדית של בשמי Alien. חיבור מושלם לאלילה הפנימית שבך בהרמוניה מדוייקת בין הנפש לגוף . בקבוק מוזהב עם ניחוחות של הדרים ומי קוקוס לוכד בתוכו את תמצית הנשיות שמוציאה החוצה בעוצמתיות את הייחודיות שבך. נגיעות של תווי ריח וניליים יעצימו את החויה לאורך זמן. ",
+    "gender": " women",
     "quantity": 10,
     "createBy": "david admin"
   },
@@ -125,14 +116,13 @@
     "name": "קרם פנים",
     "price": 12,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "קרם פנים",
     "brand": "",
 
@@ -149,14 +139,13 @@
     "name": "קרם רגליים",
     "price": 19,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "קרם רגליים",
     "brand": "",
 
@@ -173,14 +162,13 @@
     "name": "ג'ל עיניים",
     "price": 19,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "ג'ל עיניים",
     "brand": "",
 
@@ -197,14 +185,13 @@
     "name": "קרם ידיים",
     "price": 19,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "קרם ידיים",
     "brand": "",
 
@@ -221,14 +208,13 @@
     "name": "מסכה",
     "price": 25,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "מסכה",
     "brand": "",
 
@@ -245,14 +231,13 @@
     "name": "עיפרון לשפתיים",
     "price": 22,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "עיפרון לשפתיים",
     "brand": "",
 
@@ -269,14 +254,13 @@
     "name": "מסקרה",
     "price": 334,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "מסקרה",
     "brand": "",
 
@@ -293,14 +277,13 @@
     "name": "קונסילר",
     "price": 52,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "קונסילר",
     "brand": "",
 
@@ -317,14 +300,13 @@
     "name": "סומק",
     "price": 24,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "סומק",
     "brand": "",
 
@@ -341,14 +323,13 @@
     "name": "פודרה",
     "price": 77,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "פודרה",
     "brand": "",
 
@@ -365,14 +346,13 @@
     "name": "שמפו",
     "price": 45,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "שמפו",
     "brand": "",
 
@@ -389,14 +369,13 @@
     "name": "מרכך",
     "price": 74,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "מרכך",
     "brand": "",
 
@@ -413,14 +392,13 @@
     "name": "צבע לשיער",
     "price": 35,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "צבע לשיער",
     "brand": "",
 
@@ -437,14 +415,13 @@
     "name": "קרם",
     "price": 65,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "קרם",
     "brand": "",
 
@@ -461,14 +438,13 @@
     "name": "שמן קיק",
     "price": 45,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "שמן קיק",
     "brand": "",
 
@@ -485,14 +461,13 @@
     "name": "גי'לט סכין גילוח",
     "price": 88,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "גי'לט סכין גילוח",
     "brand": "",
 
@@ -509,14 +484,13 @@
     "name": "ונוס סכין גילוח",
     "price": 55,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "ונוס סכין גילוח",
     "brand": "",
 
@@ -533,14 +507,13 @@
     "name": "שעווה לרגליים",
     "price": 22,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "שעווה לרגליים",
     "brand": "",
 
@@ -557,14 +530,13 @@
     "name": "קצף גילוח",
     "price": 12,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "קצף גילוח",
     "brand": "",
 
@@ -581,14 +553,13 @@
     "name": "שעווה לפנים",
     "price": 22,
     "storeId": "",
+    "subCategory": "",
     "weight": {
       "inWeight": true,
       "avgWeightPerUnit": 1,
       "weightUnit": "liters"
     },
-    "unit": {
-      "measureUnits": "liters"
-    },
+
     "manufacture": "שעווה לפנים",
     "brand": "",
 
