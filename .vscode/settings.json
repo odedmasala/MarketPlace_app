@@ -4,5 +4,11 @@
     "titleBar.activeBackground": "#712A00",
     "titleBar.activeForeground": "#FFF9F5"
   },
-  "cSpell.ignoreWords": ["darklogo", "lightlogo"]
+  "cSpell.ignoreWords": [
+    "darklogo",
+    "lightlogo"
+  ],
+  "cSpell.words": [
+    "בשדה"
+  ]
 }

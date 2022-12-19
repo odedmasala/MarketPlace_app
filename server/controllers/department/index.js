@@ -1,5 +1,5 @@
 const departmentDAL = require("./DAL");
-const cludinary = require("../../utils/cludinary");
+const cloudinary = require("../../utils/cludinary");
 
 const getAllDepartments = async (req, res, next) => {
   try {
@@ -24,7 +24,7 @@ const createDepartment = async (req, res, next) => {
   try {
     const data = req.body;
     const image = data.image;
-    const results = await cludinary.uploader.upload(image, {
+    const results = await cloudinary.uploader.upload(image, {
       folder: "department",
     });
     data.image = {

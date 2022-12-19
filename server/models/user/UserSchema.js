@@ -3,7 +3,11 @@ const {addressSchema} = require("../helpModels")
 
 const UserSchema = new mongoose.Schema(
   {
-    image: String,
+    image: {
+      public_id: String,
+      url: String,
+      // required: true,
+    },
     firstName: {
       type: String,
       required: true,
