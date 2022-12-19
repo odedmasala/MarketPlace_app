@@ -25,7 +25,7 @@ const ProductSchema = new mongoose.Schema({
   unit: { type: unitsSchema },
   gender: {
     type: String,
-    enum: ["women", "men", "children", "teenagers", "babies"],
+    enum: ["women", "men", "children", "teenagers", "babies","unisex"],
   },
   quantity: { type: Number, required: true, min: 0 },
   // clothing: { type: ClothingSizesSchema },
