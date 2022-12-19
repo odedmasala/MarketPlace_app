@@ -5,24 +5,20 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%9E%D7%9C%D7%A4%D7%A4%D7%95%D7%9F_gbtvn7.jpg"
     },
     "name": "מלפפון",
-    "price": 4,
+    "price": 7.90,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "ירק השרון",
-    "brand": "",
-    "productStock": "String",
     "description": "מלפפון",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 60,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -30,24 +26,22 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A2%D7%92%D7%91%D7%A0%D7%99%D7%94_ycfsfr.jpg"
     },
     "name": "עגבניה",
-    "price": 8,
+    "price": 8.90,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "ירק השרון",
-    "brand": "",
-    "productStock": "String",
+
     "description": "עגבניה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+
+    "quantity": 100,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -55,24 +49,22 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A1%D7%9C%D7%A7_w7bypx.jpg"
     },
     "name": "סלק",
-    "price": 14,
+    "price": 5.90,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "ירק השרון",
-    "brand": "",
-    "productStock": "String",
+
     "description": "סלק",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+
+    "quantity": 40,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -83,21 +75,10 @@
     "price": 6.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
-    "manufacture": "חסלט",
-    "brand": "",
-    "productStock": "String",
+    "manufacture": "ירקות מהגליל",
     "description": "תרד",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 50,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -108,21 +89,10 @@
     "price": 6.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
-    "manufacture": "חסלט",
-    "brand": "",
-    "productStock": "String",
+    "manufacture": "משק צוריאל",
     "description": "חסה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 45,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -133,21 +103,13 @@
     "price": 3.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
-    "manufacture": "חסלט",
-    "brand": "",
-    "productStock": "String",
+    "unit": {
+      "measureUnits": "units"
+    },
+    "manufacture": "משק הרצועה",
     "description": "סלרי",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 35,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -158,21 +120,17 @@
     "price": 13.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
-    "manufacture": "הפרדס",
-    "brand": "",
-    "productStock": "String",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
+    "manufacture": "פקדס הקיצובים",
     "description": "תפוז",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 200,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -183,21 +141,19 @@
     "price": 13.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
-    "manufacture": "הפרדס",
-    "brand": "",
-    "productStock": "String",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
+    "manufacture": "פרדס הגליל",
+
     "description": "אשכולית",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+
+    "quantity": 140,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -208,21 +164,19 @@
     "price": 5.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "הפרדס",
-    "brand": "",
-    "productStock": "String",
+
     "description": "מנדרינה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+
+    "quantity": 70,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -233,21 +187,19 @@
     "price": 16.7,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "הפרדס",
-    "brand": "",
-    "productStock": "String",
+
     "description": "פומלה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+
+    "quantity": 150,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -258,21 +210,19 @@
     "price": 8,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "הפרדס",
-    "brand": "",
-    "productStock": "String",
+
     "description": "פומלית",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+
+    "quantity": 100,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -283,21 +233,17 @@
     "price": 8.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "הפרדס",
-    "brand": "",
-    "productStock": "String",
     "description": "קלמנטינה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -308,21 +254,10 @@
     "price": 28.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
     "manufacture": "תאילנד על העץ",
-    "brand": "",
-    "productStock": "String",
     "description": "אסאי",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 45,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -333,21 +268,17 @@
     "price": 28.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "תאילנד על העץ",
-    "brand": "",
-    "productStock": "String",
     "description": "פיטאיה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 110,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -358,21 +289,17 @@
     "price": 23.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "תאילנד על העץ",
-    "brand": "",
-    "productStock": "String",
     "description": "גויאבה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -383,21 +310,17 @@
     "price": 18.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "תאילנד על העץ",
-    "brand": "",
-    "productStock": "String",
     "description": "מנגו",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 100,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -405,24 +328,20 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359378/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A7%D7%A8%D7%9E%D7%91%D7%95%D7%9C%D7%94_spwsis.jpg"
     },
     "name": "קרמבולה",
-    "price": 30.3,
+    "price": 49.9,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "תאילנד על העץ",
-    "brand": "",
-    "productStock": "String",
     "description": "קרמבולה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 30,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -430,24 +349,20 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359378/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A7%D7%99%D7%95%D7%95%D7%99_pkrskc.jpg"
     },
     "name": "קיווי",
-    "price": 50.3,
+    "price": 59.9,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "תאילנד על העץ",
-    "brand": "",
-    "productStock": "String",
     "description": "קיווי",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 75,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -455,24 +370,13 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A2%D7%A0%D7%91%D7%99%D7%9D_mk9nuy.jpg"
     },
     "name": "ענבים",
-    "price": 12.3,
+    "price": 33.9,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
     "manufacture": "הכרם",
-    "brand": "",
-    "productStock": "String",
     "description": "ענבים",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 125,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -483,21 +387,10 @@
     "price": 66.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
     "manufacture": "פירות השדה",
-    "brand": "",
-    "productStock": "String",
     "description": "תותים",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 115,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -508,21 +401,17 @@
     "price": 5.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "פירות השדה",
-    "brand": "",
-    "productStock": "String",
     "description": "אבטיח",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 125,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -533,21 +422,17 @@
     "price": 12.3,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "פירות השדה",
-    "brand": "",
-    "productStock": "String",
     "description": "בננה",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 145,
+    "createBy": "or admin"
   },
   {
     "image": {
@@ -555,23 +440,19 @@
       "url": "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359376/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%90%D7%92%D7%A1_lrossz.jpg"
     },
     "name": "אגס",
-    "price": 7.3,
+    "price": 11.9,
     "storeId": "",
     "subCategory": "",
-    "weight": "00.2",
-    "avgWeightPerUnit": "0.2",
-    "weightUnit": "קילו",
-    "amount": "",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.5
+    },
+    "unit": {
+      "measureUnits": "kgs"
+    },
     "manufacture": "פירות השדה",
-    "brand": "",
-    "productStock": "String",
     "description": "אגס",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 100,
+    "createBy": "or admin"
   }
 ]
