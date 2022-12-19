@@ -3,48 +3,9 @@ import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaFacebookF } from "react-icons/fa";
 import React from "react";
-import axios from "axios";
-
-import { useState } from "react";
-import { useEffect } from "react";
 
 export default function FooterContainer() {
-  const [data, setData] = useState({ name: "", image: "" });
-
-  const handleInput = (e) => {
-    const { name, value } = e.target;
-    if (name === "image") {
-      const file = e.target.files[0];
-      TransformFileData(file);
-    } else {
-      setData({ ...data, [name]: value });
-    }
-  };
-
-  const TransformFileData = (file) => {
-    const reader = new FileReader();
-    if (file) {
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        setData({ ...data, image: reader.result });
-      };
-    } else {
-      setData({ ...data, image: "" });
-    }
-  };
-  const sandData = async () => {
-    try {
-      const res = await axios.post(
-        "http://localhost:8001/api/department",
-        data
-      );
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  console.log(data);
+ 
   return (
     <div>
       <Footer bgDark={true}>
@@ -113,19 +74,6 @@ export default function FooterContainer() {
           </div>
         </div>
       </Footer>
-      <div>
-        name :
-        <input onChange={handleInput} type="text" name="name" />
-        <br />
-        <br />
-        <input
-          type="file"
-          name="image"
-          accept="image/*"
-          onChange={handleInput}
-        />
-        <button onClick={sandData}>sand</button>
-      </div>
     </div>
   );
 }
