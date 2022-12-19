@@ -1,4 +1,9 @@
 const mongoose = require("mongoose");
+const {
+  unitsSchema,
+  weightSchema,
+  ClothingSizesSchema,
+} = require("../helpModels");
 
 const ProductSchema = new mongoose.Schema({
   image: {
@@ -16,21 +21,19 @@ const ProductSchema = new mongoose.Schema({
     type: [mongoose.Types.ObjectId],
     ref: "sections",
   },
-  weight: String,
-  avgWeightPerUnit: String,
-  weightUnit: String,
-  amount: String,
-  measureUnits: String,
-  deliveryOrderPlace: String,
-  contactInfo: String,
-  manufacture: String,
-  brand: {
+  weight: { type: weightSchema },
+  unit: { type: unitsSchema },
+  gender: {
     type: String,
-    required: true,
+    enum: ["women", "men", "children", "teenagers", "babies"],
   },
-  productStock: String,
+  quantity: { type: Number, required: true, min: 0 },
+  // clothing: { type: ClothingSizesSchema },
+  manufacture: String,
+
+  brand: String,
+  active: { type: Boolean, required: true },
   description: String,
-  gender: String,
   createBy: String,
   createdAt: { type: Date, default: Date.now },
   lastUpdate: { type: Date, default: Date.now },

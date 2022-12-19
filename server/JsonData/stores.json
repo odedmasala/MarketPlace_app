@@ -1,11 +1,11 @@
 [
   {
     "bnNumber": "aaa111",
-    "name": "דוד בשדה",
-    "description": "דוד בשדה מביא אליך הביתה את כל טוב השדה ובאכות הכי גבוהה שיש",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "name": "נוי השדה",
+    "description": "נוי השדה מביאה אליך הביתה את כל טוב השדה ובאכות הכי גבוהה שיש",
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-1111111",
     "email": "aaa@aa.aa",
@@ -19,14 +19,13 @@
     },
     "createdBy": "Jacob admin"
   },
-
   {
     "bnNumber": "aaa222",
-    "name": "חוות הבית",
-    "description": "חוות הבית החווה הותיקה בשוק , הפרות והירקות שכולנו גדלנו עליהם",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "name": "המושבה",
+    "description": "המושבה יבואנית הפירות הותיקה בשוק , הפרות והירקות שכולנו גדלנו עליהם",
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-2222222222",
     "email": "dddd@aa.aa",
@@ -42,11 +41,11 @@
   },
   {
     "bnNumber": "bbbb22222",
-    "name": "עודד מפתח סול",
-    "description": "עודד מפתח סול חרטה על דגלה להביא ללקוחתייה את כלי הנגינה ברמה הגבוהה",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "name": "musicZol",
+    "description": "מיוסקזול חרטה על דגלה להביא ללקוחתייה את כלי הנגינה ברמה הגבוה ביותר",
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-44444444",
     "email": "bbbbb@aa.aa",
@@ -62,11 +61,11 @@
   },
   {
     "bnNumber": "bbb1111",
-    "name": "אור צלילים",
-    "description": "אור צלילים באה לתת לכם את כל כלי הנגינה במחיר שווה לכל כיס",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "name": "SARINA RECORDS",
+    "description": "סרינה רקורד'ס באה לתת לכם את כל כלי הנגינה במחיר שווה לכל כיס",
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-333333333",
     "email": "eeee@aa.aa",
@@ -84,9 +83,9 @@
     "bnNumber": "cccc1111",
     "name": "סופר פראם",
     "description": "סופר פארם הרשת הגדולה במדינה",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-55555555",
     "email": "cccccc@aa.aa",
@@ -104,9 +103,9 @@
     "bnNumber": "cccc22222",
     "name": "בי פארם",
     "description": "בי פארם הוקמה בשנת 2019 כשראתה את עליית המחירים והחליטה להפוך לרשת החברתית הראשונה בישראל  ",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-666666",
     "email": "fffffff@aa.aa",
@@ -124,9 +123,9 @@
     "bnNumber": "ddd11111",
     "name": "באר המשקאות",
     "description": "כשאתה מארגן אירוע ואתה נהיה צמא מרוב תכנון בוא לבאר המשקאות ואנחנו נרווה את הצמא שלך",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-777777",
     "email": "gggggg@aa.aa",
@@ -144,9 +143,9 @@
     "bnNumber": "ddd22222",
     "name": "בנא משקאות",
     "description": "בנא משקאות המקום של האלכוהל בישראל",
-    "logo":{
-        "public_id":"",
-        "url":""
+    "logo": {
+      "public_id": "",
+      "url": ""
     },
     "phone": "050-777777",
     "email": "gggggg@aa.aa",

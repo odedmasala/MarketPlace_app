@@ -1,5 +1,4 @@
 [
-    
   {
     "image": {
       "public_id": "",
@@ -8,22 +7,20 @@
     "name": "CREED",
     "price": 500,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 0.500,
+      "weightUnit": "mls"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "CREED",
-    "brand": "",
-    "productStock": "String",
-    "description": "CREED",
-    "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "brand": "CREED",
+    "description": "CREED לגברים",
+    "gender": " men",
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -33,22 +30,20 @@
     "name": "Dior",
     "price": 700,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "Dior",
     "brand": "",
-    "productStock": "String",
     "description": "Dior",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -58,22 +53,21 @@
     "name": "Paco Rabanne",
     "price": 1000,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "Paco Rabanne",
     "brand": "",
-    "productStock": "String",
+
     "description": "Paco Rabanne",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -83,22 +77,21 @@
     "name": "Narciso Rodriguz",
     "price": 200,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "Narciso Rodriguz",
     "brand": "",
-    "productStock": "String",
+
     "description": "Narciso Rodriguz",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -108,22 +101,21 @@
     "name": "mugler",
     "price": 400,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "mugler",
     "brand": "",
-    "productStock": "String",
+
     "description": "mugler",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -133,22 +125,21 @@
     "name": "קרם פנים",
     "price": 12,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "קרם פנים",
     "brand": "",
-    "productStock": "String",
+
     "description": "קרם פנים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -158,22 +149,21 @@
     "name": "קרם רגליים",
     "price": 19,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "קרם רגליים",
     "brand": "",
-    "productStock": "String",
+
     "description": "קרם רגליים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -183,22 +173,21 @@
     "name": "ג'ל עיניים",
     "price": 19,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "ג'ל עיניים",
     "brand": "",
-    "productStock": "String",
+
     "description": "ג'ל עיניים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -208,22 +197,21 @@
     "name": "קרם ידיים",
     "price": 19,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "קרם ידיים",
     "brand": "",
-    "productStock": "String",
+
     "description": "קרם ידיים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -233,22 +221,21 @@
     "name": "מסכה",
     "price": 25,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "מסכה",
     "brand": "",
-    "productStock": "String",
+
     "description": "מסכה",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -258,22 +245,21 @@
     "name": "עיפרון לשפתיים",
     "price": 22,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "עיפרון לשפתיים",
     "brand": "",
-    "productStock": "String",
+
     "description": "עיפרון לשפתיים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -283,22 +269,21 @@
     "name": "מסקרה",
     "price": 334,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "מסקרה",
     "brand": "",
-    "productStock": "String",
+
     "description": "מסקרה",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -308,22 +293,21 @@
     "name": "קונסילר",
     "price": 52,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "קונסילר",
     "brand": "",
-    "productStock": "String",
+
     "description": "קונסילר",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -333,22 +317,21 @@
     "name": "סומק",
     "price": 24,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "סומק",
     "brand": "",
-    "productStock": "String",
+
     "description": "סומק",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -358,22 +341,21 @@
     "name": "פודרה",
     "price": 77,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "פודרה",
     "brand": "",
-    "productStock": "String",
+
     "description": "פודרה",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -383,22 +365,21 @@
     "name": "שמפו",
     "price": 45,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "שמפו",
     "brand": "",
-    "productStock": "String",
+
     "description": "שמפו",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -408,22 +389,21 @@
     "name": "מרכך",
     "price": 74,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "מרכך",
     "brand": "",
-    "productStock": "String",
+
     "description": "מרכך",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -433,22 +413,21 @@
     "name": "צבע לשיער",
     "price": 35,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "צבע לשיער",
     "brand": "",
-    "productStock": "String",
+
     "description": "צבע לשיער",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -458,22 +437,21 @@
     "name": "קרם",
     "price": 65,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "קרם",
     "brand": "",
-    "productStock": "String",
+
     "description": "קרם",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -483,22 +461,21 @@
     "name": "שמן קיק",
     "price": 45,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "שמן קיק",
     "brand": "",
-    "productStock": "String",
+
     "description": "שמן קיק",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -508,22 +485,21 @@
     "name": "גי'לט סכין גילוח",
     "price": 88,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "גי'לט סכין גילוח",
     "brand": "",
-    "productStock": "String",
+
     "description": "גי'לט סכין גילוח",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -533,22 +509,21 @@
     "name": "ונוס סכין גילוח",
     "price": 55,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "ונוס סכין גילוח",
     "brand": "",
-    "productStock": "String",
+
     "description": "ונוס סכין גילוח",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -558,22 +533,21 @@
     "name": "שעווה לרגליים",
     "price": 22,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "שעווה לרגליים",
     "brand": "",
-    "productStock": "String",
+
     "description": "שעווה לרגליים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -583,22 +557,21 @@
     "name": "קצף גילוח",
     "price": 12,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "קצף גילוח",
     "brand": "",
-    "productStock": "String",
+
     "description": "קצף גילוח",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   },
   {
     "image": {
@@ -608,21 +581,20 @@
     "name": "שעווה לפנים",
     "price": 22,
     "storeId": "",
-    "subCategory": "",
-    "weight": "",
-    "avgWeightPerUnit": "",
-    "weightUnit": "",
-    "amount": "12",
-    "measureUnits": "",
-    "deliveryOrderPlace": "",
-    "contactInfo": "",
+    "weight": {
+      "inWeight": true,
+      "avgWeightPerUnit": 1,
+      "weightUnit": "liters"
+    },
+    "unit": {
+      "measureUnits": "liters"
+    },
     "manufacture": "שעווה לפנים",
     "brand": "",
-    "productStock": "String",
+
     "description": "שעווה לפנים",
     "gender": " String",
-    "lastUpdate": "12/12/2022",
-    "createBy": "12/12/2022",
-    "createdAt": "12/12/2022"
+    "quantity": 10,
+    "createBy": "david admin"
   }
 ]
