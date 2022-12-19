@@ -1,138 +1,70 @@
 [
-    {
-        "name": "פירות הדר",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "פירות (ללא הדר)",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "פירות טרופים",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "ירקות",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "כלי נשיפה",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "גיטרות וכלי מיתר",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "תופים וכלי הקשה",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "קלידים ופסנתרים",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "בישום יוקרה",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "טיפוח",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "איפור",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "טיפוח שיער מקצועי",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "גילוח והסרת שיער",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "יין ובירה",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "וודקה",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "וויסקי",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      },
-    {
-        "name": "טקילה",
-        "storesId": "",
-        "productIds": "",
-        "createdAt":"12/12/2022",
-        "createdBy": "יעקב",
-        "updateAt": "12/12/2022"
-      }
+  {
+    "name": "פירות הדר",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "פירות (ללא הדר)",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "פירות טרופים",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "ירקות",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "כלי נשיפה",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "גיטרות וכלי מיתר",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "תופים וכלי הקשה",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "קלידים ופסנתרים",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "בישום יוקרה",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "טיפוח",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "איפור",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "טיפוח שיער מקצועי",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "גילוח והסרת שיער",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "יין ובירה",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "וודקה",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "וויסקי",
+    "createdBy": "Jacob admin"
+  },
+  {
+    "name": "טקילה",
+    "createdBy": "Jacob admin"
+  }
 ]

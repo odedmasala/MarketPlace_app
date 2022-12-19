@@ -1,4 +1,5 @@
 const productDAL = require("./DAL");
+const cludinary = require("../../utils/cludinary");
 
 const getAllProducts = async (req, res, next) => {
   try {
@@ -21,8 +22,16 @@ const getProductById = async (req, res, next) => {
 
 const createProduct = async (req, res, next) => {
   try {
-    const obj = req.body;
-    const result = await productDAL.createProduct(obj);
+    const data = req.body;
+    const image = data.image;
+    const results = await cludinary.uploader.upload(image, {
+      folder: "product",
+    });
+    data.image = {
+      url: results.secure_url,
+      public_id: results.public_id,
+    };
+    const result = await productDAL.createProduct(data);
     res.status(200).json(result);
   } catch (err) {
     next(err);

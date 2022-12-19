@@ -3,10 +3,14 @@ const mongoose = require("mongoose");
 const DepartmentSchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: {
-    type: String,
-    required: true,
+    public_id: String,
+    url: String,
   },
   active: Boolean,
+  stores: {
+    type: [mongoose.Types.ObjectId],
+    ref: "stores",
+  },
   createdAt: { type: Date, default: Date.now },
   createdBy: { type: String },
   updateAt: { type: Date, default: Date.now },

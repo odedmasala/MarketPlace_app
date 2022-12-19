@@ -1,10 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import AmountButton from "../../features/buttons/AmountButton";
+import ProductPopUp from "./ProductPopUp";
 
 export default function Product() {
+    const [showPopUp, setShowPopUp] = useState(false)
+    const handleModal = ()=>{
+        setShowPopUp(!showPopUp)
+    }
+
   return (
     <div>
-      <div className="product">
+      <div className="product" onClick={handleModal}>
         <img
           src="https://www.santosfood.com/wp-content/uploads/2020/01/img-7.jpg"
           alt=""
@@ -28,6 +34,7 @@ export default function Product() {
           </p>
         </div>
       </div>
+      <ProductPopUp show={showPopUp} handleModal={handleModal}/>
     </div>
   );
 }

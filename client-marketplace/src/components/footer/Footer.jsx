@@ -2,10 +2,10 @@ import { Footer } from "flowbite-react";
 import { BsFacebook, BsInstagram } from "react-icons/bs";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaFacebookF } from "react-icons/fa";
-
 import React from "react";
 
 export default function FooterContainer() {
+ 
   return (
     <div>
       <Footer bgDark={true}>

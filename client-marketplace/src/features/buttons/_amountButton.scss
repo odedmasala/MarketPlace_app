@@ -1,9 +1,9 @@
 button{
-    border: 2px solid #08ACA2;
-    border-radius: 100px;
+    border: 1px solid #08ACA2;
+    border-radius: 100%;
     width: 25px;
     height: 25px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
 }
