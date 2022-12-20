@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
@@ -10,10 +11,12 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import MyOrders from "./pages/profile/MyOrders";
 import Product from "./components/product/Product";
 
+
 const App = () => {
   return (
     <div className="bg-slate-100">
       <NavBar />
+
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />}>
