@@ -19,7 +19,7 @@ export default function FooterHomePage() {
       </div>
       <Footer bgDark={true}>
         <div className="w-full flex flex-col items-center  bg-gray-900">
-          <div className="grid w-3/4 list-none text-gray-400 grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
+          <div className="grid w-3/4 list-none text-gray-400 grid-cols-2 gap-8 py-8 text-center px-6 md:grid-cols-5">
             <div>
               <Footer.Link href="#">צור קשר</Footer.Link>
             </div>
