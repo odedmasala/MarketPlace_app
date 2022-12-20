@@ -12,11 +12,7 @@ const ProductSchema = new mongoose.Schema({
   },
   name: { type: String, required: true },
   price: { type: Number, required: true },
-  store: {
-    type: mongoose.Types.ObjectId,
-    ref: "stores",
-    required: true,
-  },
+  storeId: { type: mongoose.Types.ObjectId, ref: "stores", required: true },
   subCategory: {
     type: mongoose.Types.ObjectId,
     ref: "sections",
@@ -25,13 +21,13 @@ const ProductSchema = new mongoose.Schema({
   unit: { type: unitsSchema },
   gender: {
     type: String,
-    enum: ["women", "men", "children", "teenagers", "babies","unisex"],
+    enum: ["women", "men", "children", "teenagers", "babies", "unisex"],
   },
   quantity: { type: Number, required: true, min: 0 },
   // clothing: { type: ClothingSizesSchema },
   manufacture: String,
   brand: String,
-  active: { type: Boolean, required: true },
+  active: { type: Boolean, default: true },
   description: String,
   createBy: String,
   createdAt: { type: Date, default: Date.now },

@@ -68,11 +68,11 @@ const alcoholSectionID1 = [
   new mongoose.Types.ObjectId(),
 ];
 const alcoholSectionID2 = [
-    new mongoose.Types.ObjectId(),
-    new mongoose.Types.ObjectId(),
-    new mongoose.Types.ObjectId(),
-    new mongoose.Types.ObjectId(),
-  ];
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+];
 // * PRODUCTS ID  *//
 // * ALCOHOL PRODUCTS ID *//
 const alcoholProductIDS1 = [
@@ -1829,7 +1829,7 @@ const BeautyProduct1 = [
     brand: "Paco Rabanne",
     description:
       "מעצב  האופנה פאקו ראבן ממוצא ספרדי הנודע כמעצב נועז ללא גבולות! ניחוח הניצחון לגבר בעל אומץ ועוצמה בלתי רגילה. מרכיבים: תווים ימיים, אשכולית, עלי דפנה, ענבר ופצ'ולי.",
-    gender: " man",
+    gender: "men",
     quantity: 10,
     createBy: "david admin",
   },
@@ -1852,7 +1852,7 @@ const BeautyProduct1 = [
     brand: "Narciso Rodriguz",
     description:
       "מעצב העל נרסיסו רודריגז משיק את הבושם החדש נרסיסו קריסטל שמצטרף לליין המוכר והאהוב NARCISO. או דה פרפיום בניחוח ממכר במחווה לנשיות זוהרת, המשקף את האור הפנימי של האישה, בדיוק כפי שאור המוקרן על קריסטל חושף את יופיו הטבעי. הילה זוהרת של ברגמוט מאירה את עלי הכותרת הרכים של זר וורדים ופרחים לבנים. לב המאסק מועצם על ידי תווים אלגנטיים של עץ וענבר המעניקים לניחוח שובל מסתורי וממגנט. נרסיסו קריסטל או דה פרפיום מציג סטנדרט חדש של טבעיות, עם יותר מ-85% מרכיבים ממקור טבעי.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -1875,7 +1875,7 @@ const BeautyProduct1 = [
     brand: "mugler",
     description:
       "הבושם החדש לבית האופנה האייקוני MUGLER מהמשפחה האגדית של בשמי Alien. חיבור מושלם לאלילה הפנימית שבך בהרמוניה מדוייקת בין הנפש לגוף . בקבוק מוזהב עם ניחוחות של הדרים ומי קוקוס לוכד בתוכו את תמצית הנשיות שמוציאה החוצה בעוצמתיות את הייחודיות שבך. נגיעות של תווי ריח וניליים יעצימו את החויה לאורך זמן. ",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -1898,7 +1898,7 @@ const BeautyProduct1 = [
     brand: "Jelixir",
     description:
       "קרם אורורה - קרם פנים עשיר בחומצה היאלרונית מכיל מיצוי פרי הסברס התורם להאטת ההזדקנות ומכיל סגולות ליצור קולגן טבעי והחלקת העור. ויטמין E ונוגדי חמצון להגנה על העור מפני רדיקלים חופשיים, נזקי האקלים והסביבה וחמאת שיאה בשילוב שמן חמניות המעניקה לחות והזנה לעור. החומצה ההיאלרונית המשולבת מסייעת לשמור על הלחות הטבעית של העור. ניתן לשימוש בשילוב עם מגוון הבוסטרים של JELIXIR: לחיצה אחת מהקרם, 2 טיפטופים מהבוסטר והתוצאה היא קרם משתנה ומותאם לעורך בכל פעם מחדש. כל המוצרים שלנו הם וגאן פרינדלי, לא נוסו על בעלי חיים, לא מכילים רכיבים מן החי, הם מכילים בתוכם רכיבים אורגניים, ללא פאראבנים, ללא סולפטים, ללא שמן מינרלי, והם מיוצרים בישראל, תוצרת כחול לבן. כל הקרמים והפורמולות בפיקוח ובאישור משרד הבריאות.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -1921,7 +1921,7 @@ const BeautyProduct1 = [
     brand: "קולגן פלוס",
     description:
       "קרם רגליים קולגן פלוס בעל אפקט לחות לכפות רגליים מטופחות, וצעירות, המעשיר את עור הרגליים בחומרי הזנה מרוכזים בתוספת חומצה היאלורונית, ומכיל 2% קולגן פטטיד מבוסס פטנט, אשר הוכח מחקרית כחודר את השכבה העליונה של העור, לתוצאות ניכרות.",
-    gender: " unisex",
+    gender: "unisex",
     quantity: 10,
     createBy: "david admin",
   },
@@ -1988,7 +1988,7 @@ const BeautyProduct1 = [
     brand: "כריסטינה",
     description:
       "CHRISTINA Forever Young Purifying Toner - מי פנים מי פנים על בסיס צמחים, עשיר בנוגדי חמצון ונטול אלכוהול . מכיל את חומרי הניקוי הצמחיים קוויאז’ה וספונאריה ,להסרת לכלוך עיקש, חומרים מזהמים, שאריות איפור ושומן עודף .",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2006,7 +2006,7 @@ const BeautyProduct1 = [
     brand: "MAYBELLINE",
     description:
       "עיפרון שפתון CRAYON  SUPER STAY INK של מייבלין ניו-יורק. עיפרון שפתון מכני, בעל פיגמנט אינטנסיבי המעניק גימור מאט מושלם. מרקם קליל ומריחה קלה ומדויקת. עד 8 שעות של עמידות.  עכשיו, במהדורה מוגבל עם עיצוב מהמם של גלגל המזלות. ",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2029,7 +2029,7 @@ const BeautyProduct1 = [
     brand: "NUDESTIX",
     description:
       "מסקרה מאריכה שאינה מתקלפת או מייצרת גושים. מותירה את הריסים רכים וגמישים. עשירה בפפטידים המחזקים את הריסים ומסייעים בצמיחתם. לא נוסה על בעלי חיים. טבעוני. ללא פראבנים, סולפאטים או פתאלטים.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2052,7 +2052,7 @@ const BeautyProduct1 = [
     brand: "L'OREAL PARIS",
     description:
       "קונסילר עם מברשת גדולה במיוחד הנותנת מענה לשימושים רבים: הסתרת כהויות מתחת לעיניים, כיסוי פגמים נקודתיים בעור, או לשימוש כמייק-אפ על כל שטח הפנים.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2070,7 +2070,7 @@ const BeautyProduct1 = [
     brand: "MAC",
     description:
       "סומק מינרלים אפויים נבנה בקלות לכיסוי עדין שאינו כבד, להדגשת הלחיים בגוונים נבחרים להענקת מראה מואר, זוהר ופנינתי. מיכל את התרכובת המינלים הייחודית של MAC",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2088,7 +2088,7 @@ const BeautyProduct1 = [
     brand: "MAC",
     description:
       "פודרה התורמת להענקת מראה שזוף וטבעי. בעלת גוון עדין שמתמזג בקלות עם הגוון הטבעי של עור הפנים, נוחה לשימוש ונספגת בקלות על העור, אינה סותמת נקבוביות. מתאימה לכל סוגי העור.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2156,7 +2156,7 @@ const BeautyProduct1 = [
     brand: "Herbatint",
     description:
       "צבע שיער קבוע גוון שחור N1- מסדרת צבעי הבסיס. צבע שיער לצביעה וטיפוח השיער על בסיס רכיבים צמחיים וטבעיים. פורמולה עדינה וייחודית המכילה תמציות צמחי מרפא אורגניים ואיכותיים. מכסה 100% שיער לבן, קל ונוח לשימוש, עדין לשיער ומעניק מראה בריא לשיער. 0% אמוניה, 0% פראבן, 0% אלכוהול, 0% רסוצינול. ללא גלוטן. מכיל 3% חמצן בלבד. טבעוני",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2178,7 +2178,7 @@ const BeautyProduct1 = [
     manufacture: "PAYOT",
     brand: "PAYOT",
     description: " קרם  לחות ליום על בסיס 'פירות על' ",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2201,7 +2201,6 @@ const BeautyProduct1 = [
     brand: "Spirulina Full Life",
     description:
       "שמן קיק טהור מופק מכבישה קרה של זרעי צמח הקיקיון המצוי, צבעו בהיר כמעט שקוף, טעמו עדין, הוא חסר ריח ויעיל למגוון שימושים הן כתכשיר קוסמטי והן כשמן טיפולי לבעיות בריאותיות. המרכיב העיקרי של השמן (כ-90%) הוא חומצה ריצינולאית, שידועה כמשככת כאבים וכאנטי דלקתית. בנוסף, שמן קיק עשיר מאוד בוויטמין E, חלבונים, מינרלים שונים ונוגדי חמצון, מה שמקנה לו תכונות אנטי פטרייתיות והופך אותו ליעיל בטיפול בבעיות קוסמטיות שונות, יש לו את היכולת לחדור לעומק העור, הודות למסה המולקולרית הנמוכה שלו, הוא חודר את השכבה החיצונית והנוקשה של העור, מזין אותו, מרכך, מעודד ייצור של קולגן ואלסטין - החלבונים האחראיים על גמישות ומוצקות העור, מסייע להחלקת קמטים ומעניק זוהר מיוחד לעור הפנים. שמן קיק יעיל גם במריחה על השיער לקצוות מפוצלים או שיער חלש וחסר ברק, על הקרקפת במקרים של קשקשת או גירוד בקרקפת, על הציפורניים לחיזוק וטיפוח ועל הריסים והגבות לעיבוי השיער ומראה זוהר",
-    gender: " String",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2221,7 +2220,7 @@ const BeautyProduct1 = [
     manufacture: "גי'לט",
     brand: "גי'לט",
     description: "מכשיר גילוח לגבר ג'ילט פיוז'ן - מארז ידית אחת + 6 סכינים!",
-    gender: "man",
+    gender: "men",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2241,7 +2240,7 @@ const BeautyProduct1 = [
     manufacture: "ונוס",
     brand: "ונוס",
     description: "ונוס סכין גילוח",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2263,7 +2262,7 @@ const BeautyProduct1 = [
     manufacture: "ויט",
     brand: "ויט",
     description: "ויט MINIMA רצועות שעווה מוכנות לרגליים ולגוף",
-    gender: " unisex",
+    gender: "unisex",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2286,7 +2285,7 @@ const BeautyProduct1 = [
     brand: "NIVEA",
     description:
       "קצף גילוח לעור רגיש בעל ניחוח עדין המאפשר גילוח חלק שאינו משאיר זיפים. מגן על העור מפני חתכים וגירויים. מכיל נוסחה ייחודית אשר פותחה במיוחד למניעת גירויים במהלך הגילוח, נוסחת טכנולוגיית ה- Ultra Glide. 'ל תוצאות: עור פנים נינוח, רך ומטופח.200 מ.",
-    gender: " man",
+    gender: "men",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2306,7 +2305,7 @@ const BeautyProduct1 = [
     manufacture: "ויט",
     brand: "ויט",
     description: "ויט MINIMA רצועות שעוונה מוכנות לשימוש לפנים",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2377,7 +2376,7 @@ const BeautyProduct2 = [
     brand: "Paco Rabanne",
     description:
       "מעצב  האופנה פאקו ראבן ממוצא ספרדי הנודע כמעצב נועז ללא גבולות! ניחוח הניצחון לגבר בעל אומץ ועוצמה בלתי רגילה. מרכיבים: תווים ימיים, אשכולית, עלי דפנה, ענבר ופצ'ולי.",
-    gender: " man",
+    gender: "men",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2400,7 +2399,7 @@ const BeautyProduct2 = [
     brand: "Narciso Rodriguz",
     description:
       "מעצב העל נרסיסו רודריגז משיק את הבושם החדש נרסיסו קריסטל שמצטרף לליין המוכר והאהוב NARCISO. או דה פרפיום בניחוח ממכר במחווה לנשיות זוהרת, המשקף את האור הפנימי של האישה, בדיוק כפי שאור המוקרן על קריסטל חושף את יופיו הטבעי. הילה זוהרת של ברגמוט מאירה את עלי הכותרת הרכים של זר וורדים ופרחים לבנים. לב המאסק מועצם על ידי תווים אלגנטיים של עץ וענבר המעניקים לניחוח שובל מסתורי וממגנט. נרסיסו קריסטל או דה פרפיום מציג סטנדרט חדש של טבעיות, עם יותר מ-85% מרכיבים ממקור טבעי.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2423,7 +2422,7 @@ const BeautyProduct2 = [
     brand: "mugler",
     description:
       "הבושם החדש לבית האופנה האייקוני MUGLER מהמשפחה האגדית של בשמי Alien. חיבור מושלם לאלילה הפנימית שבך בהרמוניה מדוייקת בין הנפש לגוף . בקבוק מוזהב עם ניחוחות של הדרים ומי קוקוס לוכד בתוכו את תמצית הנשיות שמוציאה החוצה בעוצמתיות את הייחודיות שבך. נגיעות של תווי ריח וניליים יעצימו את החויה לאורך זמן. ",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2446,7 +2445,7 @@ const BeautyProduct2 = [
     brand: "Jelixir",
     description:
       "קרם אורורה - קרם פנים עשיר בחומצה היאלרונית מכיל מיצוי פרי הסברס התורם להאטת ההזדקנות ומכיל סגולות ליצור קולגן טבעי והחלקת העור. ויטמין E ונוגדי חמצון להגנה על העור מפני רדיקלים חופשיים, נזקי האקלים והסביבה וחמאת שיאה בשילוב שמן חמניות המעניקה לחות והזנה לעור. החומצה ההיאלרונית המשולבת מסייעת לשמור על הלחות הטבעית של העור. ניתן לשימוש בשילוב עם מגוון הבוסטרים של JELIXIR: לחיצה אחת מהקרם, 2 טיפטופים מהבוסטר והתוצאה היא קרם משתנה ומותאם לעורך בכל פעם מחדש. כל המוצרים שלנו הם וגאן פרינדלי, לא נוסו על בעלי חיים, לא מכילים רכיבים מן החי, הם מכילים בתוכם רכיבים אורגניים, ללא פאראבנים, ללא סולפטים, ללא שמן מינרלי, והם מיוצרים בישראל, תוצרת כחול לבן. כל הקרמים והפורמולות בפיקוח ובאישור משרד הבריאות.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2469,7 +2468,7 @@ const BeautyProduct2 = [
     brand: "קולגן פלוס",
     description:
       "קרם רגליים קולגן פלוס בעל אפקט לחות לכפות רגליים מטופחות, וצעירות, המעשיר את עור הרגליים בחומרי הזנה מרוכזים בתוספת חומצה היאלורונית, ומכיל 2% קולגן פטטיד מבוסס פטנט, אשר הוכח מחקרית כחודר את השכבה העליונה של העור, לתוצאות ניכרות.",
-    gender: " unisex",
+    gender: "unisex",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2536,7 +2535,7 @@ const BeautyProduct2 = [
     brand: "כריסטינה",
     description:
       "CHRISTINA Forever Young Purifying Toner - מי פנים מי פנים על בסיס צמחים, עשיר בנוגדי חמצון ונטול אלכוהול . מכיל את חומרי הניקוי הצמחיים קוויאז’ה וספונאריה ,להסרת לכלוך עיקש, חומרים מזהמים, שאריות איפור ושומן עודף .",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2554,7 +2553,7 @@ const BeautyProduct2 = [
     brand: "MAYBELLINE",
     description:
       "עיפרון שפתון CRAYON  SUPER STAY INK של מייבלין ניו-יורק. עיפרון שפתון מכני, בעל פיגמנט אינטנסיבי המעניק גימור מאט מושלם. מרקם קליל ומריחה קלה ומדויקת. עד 8 שעות של עמידות.  עכשיו, במהדורה מוגבל עם עיצוב מהמם של גלגל המזלות. ",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2577,7 +2576,7 @@ const BeautyProduct2 = [
     brand: "NUDESTIX",
     description:
       "מסקרה מאריכה שאינה מתקלפת או מייצרת גושים. מותירה את הריסים רכים וגמישים. עשירה בפפטידים המחזקים את הריסים ומסייעים בצמיחתם. לא נוסה על בעלי חיים. טבעוני. ללא פראבנים, סולפאטים או פתאלטים.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2600,7 +2599,7 @@ const BeautyProduct2 = [
     brand: "L'OREAL PARIS",
     description:
       "קונסילר עם מברשת גדולה במיוחד הנותנת מענה לשימושים רבים: הסתרת כהויות מתחת לעיניים, כיסוי פגמים נקודתיים בעור, או לשימוש כמייק-אפ על כל שטח הפנים.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2618,7 +2617,7 @@ const BeautyProduct2 = [
     brand: "MAC",
     description:
       "סומק מינרלים אפויים נבנה בקלות לכיסוי עדין שאינו כבד, להדגשת הלחיים בגוונים נבחרים להענקת מראה מואר, זוהר ופנינתי. מיכל את התרכובת המינלים הייחודית של MAC",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2636,7 +2635,7 @@ const BeautyProduct2 = [
     brand: "MAC",
     description:
       "פודרה התורמת להענקת מראה שזוף וטבעי. בעלת גוון עדין שמתמזג בקלות עם הגוון הטבעי של עור הפנים, נוחה לשימוש ונספגת בקלות על העור, אינה סותמת נקבוביות. מתאימה לכל סוגי העור.",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2704,7 +2703,7 @@ const BeautyProduct2 = [
     brand: "Herbatint",
     description:
       "צבע שיער קבוע גוון שחור N1- מסדרת צבעי הבסיס. צבע שיער לצביעה וטיפוח השיער על בסיס רכיבים צמחיים וטבעיים. פורמולה עדינה וייחודית המכילה תמציות צמחי מרפא אורגניים ואיכותיים. מכסה 100% שיער לבן, קל ונוח לשימוש, עדין לשיער ומעניק מראה בריא לשיער. 0% אמוניה, 0% פראבן, 0% אלכוהול, 0% רסוצינול. ללא גלוטן. מכיל 3% חמצן בלבד. טבעוני",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2726,7 +2725,7 @@ const BeautyProduct2 = [
     manufacture: "PAYOT",
     brand: "PAYOT",
     description: " קרם  לחות ליום על בסיס 'פירות על' ",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2749,7 +2748,7 @@ const BeautyProduct2 = [
     brand: "Spirulina Full Life",
     description:
       "שמן קיק טהור מופק מכבישה קרה של זרעי צמח הקיקיון המצוי, צבעו בהיר כמעט שקוף, טעמו עדין, הוא חסר ריח ויעיל למגוון שימושים הן כתכשיר קוסמטי והן כשמן טיפולי לבעיות בריאותיות. המרכיב העיקרי של השמן (כ-90%) הוא חומצה ריצינולאית, שידועה כמשככת כאבים וכאנטי דלקתית. בנוסף, שמן קיק עשיר מאוד בוויטמין E, חלבונים, מינרלים שונים ונוגדי חמצון, מה שמקנה לו תכונות אנטי פטרייתיות והופך אותו ליעיל בטיפול בבעיות קוסמטיות שונות, יש לו את היכולת לחדור לעומק העור, הודות למסה המולקולרית הנמוכה שלו, הוא חודר את השכבה החיצונית והנוקשה של העור, מזין אותו, מרכך, מעודד ייצור של קולגן ואלסטין - החלבונים האחראיים על גמישות ומוצקות העור, מסייע להחלקת קמטים ומעניק זוהר מיוחד לעור הפנים. שמן קיק יעיל גם במריחה על השיער לקצוות מפוצלים או שיער חלש וחסר ברק, על הקרקפת במקרים של קשקשת או גירוד בקרקפת, על הציפורניים לחיזוק וטיפוח ועל הריסים והגבות לעיבוי השיער ומראה זוהר",
-    gender: " String",
+
     quantity: 10,
     createBy: "david admin",
   },
@@ -2769,7 +2768,7 @@ const BeautyProduct2 = [
     manufacture: "גי'לט",
     brand: "גי'לט",
     description: "מכשיר גילוח לגבר ג'ילט פיוז'ן - מארז ידית אחת + 6 סכינים!",
-    gender: "man",
+    gender: "men",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2789,7 +2788,7 @@ const BeautyProduct2 = [
     manufacture: "ונוס",
     brand: "ונוס",
     description: "ונוס סכין גילוח",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2811,7 +2810,7 @@ const BeautyProduct2 = [
     manufacture: "ויט",
     brand: "ויט",
     description: "ויט MINIMA רצועות שעווה מוכנות לרגליים ולגוף",
-    gender: " unisex",
+    gender: "unisex",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2834,7 +2833,7 @@ const BeautyProduct2 = [
     brand: "NIVEA",
     description:
       "קצף גילוח לעור רגיש בעל ניחוח עדין המאפשר גילוח חלק שאינו משאיר זיפים. מגן על העור מפני חתכים וגירויים. מכיל נוסחה ייחודית אשר פותחה במיוחד למניעת גירויים במהלך הגילוח, נוסחת טכנולוגיית ה- Ultra Glide. 'ל תוצאות: עור פנים נינוח, רך ומטופח.200 מ.",
-    gender: " man",
+    gender: "men",
     quantity: 10,
     createBy: "david admin",
   },
@@ -2854,7 +2853,7 @@ const BeautyProduct2 = [
     manufacture: "ויט",
     brand: "ויט",
     description: "ויט MINIMA רצועות שעוונה מוכנות לשימוש לפנים",
-    gender: " women",
+    gender: "women",
     quantity: 10,
     createBy: "david admin",
   },
@@ -4446,11 +4445,11 @@ const combineProducts = [
   ...musicProduct1,
   ...musicProduct2,
   ...fruitProduct1,
-  ...fruitProduct2
+  ...fruitProduct2,
 ];
 module.exports = {
-    combineProducts,
-    stores,
-    departments,
-    combineSections,
-}
+  combineProducts,
+  stores,
+  departments,
+  combineSections,
+};

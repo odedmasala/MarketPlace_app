@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+const { addressSchema } = require("../helpModels");
 const StoreSchema = new mongoose.Schema(
   {
     bnNumber: String,
@@ -13,13 +13,10 @@ const StoreSchema = new mongoose.Schema(
     lightlogo: String,
     darklogo: String,
     coverImage: String,
-    phone: { type: String, required: true, min: 9, unique: true },
-    email: { type: String, required: true, unique: true, min: 8, max: 50 },
+    phone: { type: String, required: true,},
+    email: { type: String, required: true, },
     department: { type: mongoose.Types.ObjectId, ref: "Departments" },
-    address: {
-      type: Object,
-      required: true,
-    },
+    address: { type: addressSchema, required: true },
     lastUpdate: { type: Date, default: Date.now },
     createdAt: { type: Date, default: Date.now },
     createdBy: { type: String },

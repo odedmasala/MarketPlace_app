@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
 
-const SectionSchema = new mongoose.Schema(
-  {
-    name: String,
-    store: { type: mongoose.Types.ObjectId, ref: "stores" },
-    createdAt: { type: Date, default: Date.now },
-    createdBy: { type: String },
-    updateAt: { type: Date, default: Date.now },
-  },
-  { timestamps: true }
-);
+const SectionSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  store: { type: mongoose.Types.ObjectId, ref: "stores" },
+  createdAt: { type: Date, default: Date.now },
+  createdBy: { type: String },
+  updateAt: { type: Date, default: Date.now },
+});
 
-module.exports = mongoose.model("sections", SectionSchema);
+const model = mongoose.model("sections", SectionSchema);
+module.exports = model;
