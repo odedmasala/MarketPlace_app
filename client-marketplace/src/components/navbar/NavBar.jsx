@@ -5,7 +5,7 @@ import {ImLocation} from 'react-icons/im'
 
 export default function NavBar() {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-white">
       <Navbar
         fluid={true}
         rounded={true}
