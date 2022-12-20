@@ -2,6 +2,7 @@ import React from "react";
 import HeaderStore from "../header/HeaderStore";
 import Product from "../product/Product";
 import Cart from "../cart/Cart";
+import FooterContainer from "../footer/Footer";
 
 const Store = () => {
   return (
@@ -27,6 +28,7 @@ const Store = () => {
           <Cart />
         </div>
       </div>
+      <FooterContainer/>
     </div>
   );
 };
