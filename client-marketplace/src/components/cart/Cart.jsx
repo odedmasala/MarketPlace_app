@@ -17,7 +17,8 @@ const Cart = () => {
   ];
 
   return (
-    <div className="w-[20%] border-solid border-gray-500 my-11 border">
+    <div className="w-full border-solid border-gray-500 
+    bg-white border">
       <div>
         <div className="bg-gray-800 text-white py-5 flex justify-center">
           <h1 className="text-2xl">עגלת קניות</h1>
@@ -39,7 +40,7 @@ const Cart = () => {
         </p>
       </div>
       <div className="">
-        <button className="bg-teal-400 w-full h-full rounded-none text-white text-4xl p-4 " > לתשלום 0 ש"ח</button>
+        <button className="bg-teal-400 hover:bg-lime-500 w-full h-full rounded-none text-white text-4xl p-4 " > לתשלום 0 ש"ח</button>
       </div>
     </div>
   );

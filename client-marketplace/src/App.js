@@ -10,6 +10,7 @@ import SuccessPayment from "./pages/successPayment/SuccessPayment";
 import ProfilePage from "./pages/profile/ProfilePage";
 import MyOrders from "./pages/profile/MyOrders";
 import Product from "./components/product/Product";
+import Store from "./components/store/Store";
 
 
 const App = () => {
@@ -24,11 +25,12 @@ const App = () => {
         </Route>
         <Route path="/successPage" element={<SuccessPayment />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/store" element={<Store />} />
       </Routes>
-      <Header />
+      {/* <Header /> */}
       {/* <HeaderStore /> */}
       {/* <HomePage /> */}
-      <Cart />
+      {/* <Cart /> */}
       {/* <SuccessPayment/> */}
 
       <Footer />

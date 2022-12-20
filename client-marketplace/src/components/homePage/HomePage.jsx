@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import FooterHomePage from '../footer/FooterHomePage';
 
+
 const HomePage = () => {
+  const naviget =useNavigate()
   const data = [
     {
       name: 'פירות וירקות',
@@ -33,6 +36,36 @@ const HomePage = () => {
       <div
         className="bg-[url('https://images.pexels.com/photos/4443494/pexels-photo-4443494.jpeg?auto=compress&cs=tinysrgb&w=1600')]
       bg-no-repeat bg-center bg-cover flex flex-col items-center h-full py-8 px-4 md:px-20 justify-between text-right"
+    >
+      <div className="w-full md:w-[80%] px-8 mb-6 md:mt-14 ">
+        <h1 className="text-4xl text-center mb-8">
+          ברוך הבא לעולם החנויות שלך
+        </h1>
+        <input
+          className="text-right w-full opacity-80 pr-10 border-none md:border-solid md:border-stone-400 rounded-sm"
+          type="text"
+          placeholder="מה תרצה לחפש היום"
+        />
+      </div>
+      <div className="w-full md:w-[80%]">
+        <h1 className="text-3xl text-center my-6">קטגוריות שונות</h1>
+        <div className="w-full flex flex-wrap items-center justify-center">
+          {data.map((section, i) => (
+            <div onClick={()=>naviget("store") }
+              key={i}
+              className="w-[47%] md:w-[32%] border-2 h-[160px] md:h-[260px] relative m-1 flex justify-center items-end cursor-pointer"
+            >
+              <img
+                className="absolute w-full h-full"
+                src={section.image}
+                alt={section.name}
+              />
+              <p className="z-10 py-3 md:p-6 w-full text-center bg-opacity-75 text-2xl bg-slate-100">
+                {section.name}
+              </p>
+            </div>
+          ))}
+
       >
         <div className="w-full md:w-[80%] px-8 mb-6 md:mt-14 ">
           <h1 className="text-4xl text-center mb-8">
@@ -43,6 +76,7 @@ const HomePage = () => {
             type="text"
             placeholder="מה תרצה לחפש היום"
           />
+
         </div>
         <div className="w-full md:w-[80%]">
           <h1 className="text-3xl text-center my-6">קטגוריות שונות</h1>
