@@ -1,4 +1,4 @@
-[
+const stores = [
     {
       bnNumber: "aaa111",
       name: "נוי השדה",
@@ -160,3 +160,6 @@
       createdBy: "Jacob admin"
     }
   ]
+
+  const {departments,stores} = require("../data")
+  

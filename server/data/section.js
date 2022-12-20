@@ -1,70 +1,25 @@
-[
-    {
-      name: "פירות הדר",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "פירות (ללא הדר)",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "פירות טרופים",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "ירקות",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "כלי נשיפה",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "גיטרות וכלי מיתר",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "תופים וכלי הקשה",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "קלידים ופסנתרים",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "בישום יוקרה",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "טיפוח",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "איפור",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "טיפוח שיער מקצועי",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "גילוח והסרת שיער",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "יין ובירה",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "וודקה",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "וויסקי",
-      createdBy: "Jacob admin"
-    },
-    {
-      name: "טקילה",
-      createdBy: "Jacob admin"
-    }
-  ]
+const fruitSection = [
+  { _id, name: "פירות הדר", store, products, createdBy: "Jacob admin" },
+  { _id, name: "פירות (ללא הדר)", store, products, createdBy: "Jacob admin" },
+  { _id, name: "פירות טרופים", store, products, createdBy: "Jacob admin" },
+  { _id, name: "ירקות", store, products, createdBy: "Jacob admin" },
+];
+const musicSection = [
+  { _id, name: "כלי נשיפה", store, products, createdBy: "Jacob admin" },
+  { _id, name: "גיטרות וכלי מיתר", store, products, createdBy: "Jacob admin" },
+  { _id, name: "תופים וכלי הקשה", store, products, createdBy: "Jacob admin" },
+  { _id, name: "קלידים ופסנתרים", store, products, createdBy: "Jacob admin" },
+];
+const butySection = [
+  { _id, name: "בישום יוקרה", store, products, createdBy: "Jacob admin" },
+  { _id, name: "טיפוח", store, products, createdBy: "Jacob admin" },
+  { _id, name: "איפור", store, products, createdBy: "Jacob admin" },
+  { _id, name: "טיפוח שיער מקצועי", store, products, createdBy: "Jacob admin" },
+  { _id, name: "גילוח והסרת שיער", store, products, createdBy: "Jacob admin" },
+];
+const alcoholSection = [
+  { _id, name: "יין ובירה", store, products, createdBy: "Jacob admin" },
+  { _id, name: "וודקה", store, products, createdBy: "Jacob admin" },
+  { _id, name: "וויסקי", store, products, createdBy: "Jacob admin" },
+  { _id, name: "טקילה", store, products, createdBy: "Jacob admin" },
+];

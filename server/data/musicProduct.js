@@ -1,4 +1,4 @@
-[
+const musicProduct = [
     {
       image: {
         public_id: "products/כלי נגינה /חלילית_nlzxum",

@@ -1,4 +1,116 @@
-[
+
+const vegtebal = [
+  {
+    image: {
+      public_id: "products/פירות וירקות/מלפפון_gbtvn7",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%9E%D7%9C%D7%A4%D7%A4%D7%95%D7%9F_gbtvn7.jpg"
+    },
+    name: "מלפפון",
+    price: 7.9,
+    storeId: "",
+    subCategory: "",
+    weight: {
+      inWeight: true,
+      avgWeightPerUnit: 0.5
+    },
+    unit: {
+      measureUnits: "kgs"
+    },
+    manufacture: "ירק השרון",
+    description: "מלפפון",
+    quantity: 60,
+    createBy: "or admin"
+  },
+  {
+    image: {
+      public_id: "products/פירות וירקות/עגבניה_ycfsfr",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A2%D7%92%D7%91%D7%A0%D7%99%D7%94_ycfsfr.jpg"
+    },
+    name: "עגבניה",
+    price: 8.9,
+    storeId: "",
+    subCategory: "",
+    weight: {
+      inWeight: true,
+      avgWeightPerUnit: 0.5
+    },
+    unit: {
+      measureUnits: "kgs"
+    },
+    manufacture: "ירק השרון",
+    description: "עגבניה",
+    quantity: 100,
+    createBy: "or admin"
+  },
+  {
+    image: {
+      public_id: "products/פירות וירקות/סלק_w7bypx",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A1%D7%9C%D7%A7_w7bypx.jpg"
+    },
+    name: "סלק",
+    price: 5.9,
+    storeId: "",
+    subCategory: "",
+    weight: {
+      inWeight: true,
+      avgWeightPerUnit: 0.5
+    },
+    unit: {
+      measureUnits: "kgs"
+    },
+    manufacture: "ירק השרון",
+    description: "סלק",
+    quantity: 40,
+    createBy: "or admin"
+  },
+  {
+    image: {
+      public_id: "products/פירות וירקות/תרד_pdagi6",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359380/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%AA%D7%A8%D7%93_pdagi6.jpg"
+    },
+    name: "תרד",
+    price: 6.7,
+    storeId: "",
+    subCategory: "",
+    manufacture: "ירקות מהגליל",
+    description: "תרד",
+    quantity: 50,
+    createBy: "or admin"
+  },
+  {
+    image: {
+      public_id: "products/פירות וירקות/חסה_m1itps",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%97%D7%A1%D7%94_m1itps.jpg"
+    },
+    name: "חסה",
+    price: 6.7,
+    storeId: "",
+    subCategory: "",
+    manufacture: "משק צוריאל",
+    description: "חסה",
+    quantity: 45,
+    createBy: "or admin"
+  },
+  {
+    image: {
+      public_id: "products/פירות וירקות/סלרי_ceqcda",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359377/products/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%95%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A1%D7%9C%D7%A8%D7%99_ceqcda.jpg"
+    },
+    name: "סלרי",
+    price: 3.7,
+    storeId: "",
+    subCategory: "",
+    unit: {
+      measureUnits: "units"
+    },
+    manufacture: "משק הרצועה",
+    description: "סלרי",
+    quantity: 35,
+    createBy: "or admin"
+  },
+]
+// const trop
+const fruitProduct = [
     {
       image: {
         public_id: "products/פירות וירקות/מלפפון_gbtvn7",
@@ -444,3 +556,5 @@
       createBy: "or admin"
     }
   ]
+
+  

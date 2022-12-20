@@ -1,4 +1,4 @@
-[
+const departments = [
     {
       name: "פירות וירקות",
       image: {

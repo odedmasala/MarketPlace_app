@@ -1,4 +1,14 @@
-const alcoaol = [
+const mongoose = require("mongoose");
+
+const vodkaID = [
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+]
+// const beerID =
+const alcoholProduct = [
     {
       image: {
         public_id: "products/משקאות/baluga_cwidk6",

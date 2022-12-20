@@ -1,4 +1,4 @@
-[
+ const butyProduct = [
     {
       image: {
         public_id: "products/פארם/creed_o0vnoe",
@@ -501,3 +501,4 @@
       createBy: "david admin"
     }
   ]
+  
