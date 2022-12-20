@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const naviget =useNavigate()
   const data = [
     {
       name: 'פירות וירקות',
@@ -46,7 +48,7 @@ const HomePage = () => {
         <h1 className="text-3xl text-center my-6">קטגוריות שונות</h1>
         <div className="w-full flex flex-wrap items-center justify-center">
           {data.map((section, i) => (
-            <div
+            <div onClick={()=>naviget("store") }
               key={i}
               className="w-[47%] md:w-[32%] border-2 h-[160px] md:h-[260px] relative m-1 flex justify-center items-end cursor-pointer"
             >
