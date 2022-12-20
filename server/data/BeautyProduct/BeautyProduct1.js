@@ -1,11 +1,11 @@
- const butyProduct = [
+ const BeautyProduct = [
     {
       image: {
         public_id: "products/פארם/creed_o0vnoe",
         url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359333/products/%D7%A4%D7%90%D7%A8%D7%9D/creed_o0vnoe.jpg"
       },
       name: "CREED",
-      price: 500,
+      price: 1000,
       storeId: "",
       subCategory: "",
       weight: {
@@ -26,7 +26,7 @@
         url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671359333/products/%D7%A4%D7%90%D7%A8%D7%9D/dior_kdalah.jpg"
       },
       name: "Dior",
-      price: 700,
+      price: 400,
       storeId: "",
       subCategory: "",
       weight: {
@@ -68,7 +68,7 @@
         url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671471605/products/%D7%A4%D7%90%D7%A8%D7%9D/NARCISO_CRISTAL_%D7%90.%D7%93.%D7%A4_%D7%9C%D7%90%D7%A9%D7%94_lq23nx.jpg"
       },
       name: "NARCISO CRISTAL א.ד.פ לאשה",
-      price: 200,
+      price: 450,
       storeId: "",
       subCategory: "",
       weight: {
@@ -89,7 +89,7 @@
         url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671471732/products/%D7%A4%D7%90%D7%A8%D7%9D/ALIEN_GODDESS_%D7%90.%D7%93.%D7%A4_%D7%9C%D7%90%D7%A9%D7%94_eyi8jd.jpg"
       },
       name: "ALIEN GODDESS א.ד.פ לאשה",
-      price: 463,
+      price: 700,
       storeId: "",
       subCategory: "",
       weight: {

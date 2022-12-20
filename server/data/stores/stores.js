@@ -161,5 +161,5 @@ const stores = [
     }
   ]
 
-  const {departments,stores} = require("../data")
+  const {departments,stores} = require("..")
   

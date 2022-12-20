@@ -374,5 +374,8 @@ const alcoholSection2 = [
   { _id:alcoholSectionID2[2], name: "וויסקי", store:storesIds[7], products, createdBy: "Jacob admin" },
   { _id:alcoholSectionID2[3], name: "טקילה", store:storesIds[7], products, createdBy: "Jacob admin" },
 ];
-// const combineSestion = [...BeautySection1,...]
+
+module.exports.combineSections = [...fruitSection1,...fruitSection2,...musicSection1,...musicSection2,...BeautySection1,...BeautySection2,...alcoholSection1,...alcoholSection2]
 // * INSERT DATA TO PRODUCTS *//
+
+
