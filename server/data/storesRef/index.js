@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const { departmentsIds } = require("../departments");
 const {
   BeautySectionID1,
@@ -10,6 +11,7 @@ const {
   musicSectionID2,
   musicSectionID1,
 } = require("../section");
+
 const storesIds = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
@@ -223,6 +225,6 @@ const stores = [
 ];
 
 module.exports = {
-  storesIds,
   stores,
+  storesIds
 };
