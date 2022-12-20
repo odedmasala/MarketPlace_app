@@ -58,6 +58,22 @@ const alcoholSectionID2 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
 ];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // * FRUIT SECTION *//
 const fruitSection1 = [
   {
