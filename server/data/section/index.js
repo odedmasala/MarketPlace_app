@@ -58,27 +58,48 @@ const alcoholSectionID2 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
 ];
+// * FRUIT SECTION *//
 
-const {fruitProductID1,fruitProductID2} = require("../fruitProduct")
+const { fruitProductID1, fruitProductID2 } = require("../fruitProduct");
 const fruitSection1 = [
   {
     _id: fruitSectionID1[0],
     name: "פירות הדר",
     store: storesIds[0],
-    products:[fruitProductID1[6],fruitProductID1[7],fruitProductID1[8],fruitProductID1[9],fruitProductID1[10],fruitProductID1[11]],
+    products: [
+      fruitProductID1[6],
+      fruitProductID1[7],
+      fruitProductID1[8],
+      fruitProductID1[9],
+      fruitProductID1[10],
+      fruitProductID1[11],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: fruitSectionID1[1],
     name: "פירות (ללא הדר)",
     store: storesIds[0],
-    products:[fruitProductID1[18],fruitProductID1[19],fruitProductID1[20],fruitProductID1[21],fruitProductID1[22]],
+    products: [
+      fruitProductID1[18],
+      fruitProductID1[19],
+      fruitProductID1[20],
+      fruitProductID1[21],
+      fruitProductID1[22],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: fruitSectionID1[2],
     name: "פירות טרופים",
-    products:[fruitProductID1[12],fruitProductID1[13],fruitProductID1[14],fruitProductID1[15],fruitProductID1[16],fruitProductID1[17]],
+    products: [
+      fruitProductID1[12],
+      fruitProductID1[13],
+      fruitProductID1[14],
+      fruitProductID1[15],
+      fruitProductID1[16],
+      fruitProductID1[17],
+    ],
     products,
     createdBy: "Jacob admin",
   },
@@ -86,7 +107,14 @@ const fruitSection1 = [
     _id: fruitSectionID1[3],
     name: "ירקות",
     store: storesIds[0],
-    products:[fruitProductID1[0],fruitProductID1[1],fruitProductID1[2],fruitProductID1[3],fruitProductID1[4],fruitProductID1[5]],
+    products: [
+      fruitProductID1[0],
+      fruitProductID1[1],
+      fruitProductID1[2],
+      fruitProductID1[3],
+      fruitProductID1[4],
+      fruitProductID1[5],
+    ],
     createdBy: "Jacob admin",
   },
 ];
@@ -96,58 +124,109 @@ const fruitSection2 = [
     _id: fruitSectionID2[0],
     name: "פירות הדר",
     store: storesIds[1],
-    products:[fruitProductID2[6],fruitProductID2[7],fruitProductID2[8],fruitProductID2[9],fruitProductID2[10],fruitProductID2[11]],
+    products: [
+      fruitProductID2[6],
+      fruitProductID2[7],
+      fruitProductID2[8],
+      fruitProductID2[9],
+      fruitProductID2[10],
+      fruitProductID2[11],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: fruitSectionID2[1],
     name: "פירות (ללא הדר)",
     store: storesIds[1],
-    products:[fruitProductID2[18],fruitProductID2[19],fruitProductID2[20],fruitProductID2[21],fruitProductID2[22]],
+    products: [
+      fruitProductID2[18],
+      fruitProductID2[19],
+      fruitProductID2[20],
+      fruitProductID2[21],
+      fruitProductID2[22],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: fruitSectionID2[2],
     name: "פירות טרופים",
     store: storesIds[1],
-    products:[fruitProductID2[12],fruitProductID2[13],fruitProductID2[14],fruitProductID2[15],fruitProductID2[16],fruitProductID2[17]],
+    products: [
+      fruitProductID2[12],
+      fruitProductID2[13],
+      fruitProductID2[14],
+      fruitProductID2[15],
+      fruitProductID2[16],
+      fruitProductID2[17],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: fruitSectionID2[3],
     name: "ירקות",
     store: storesIds[1],
-    products:[fruitProductID2[0],fruitProductID2[1],fruitProductID2[2],fruitProductID2[3],fruitProductID2[4],fruitProductID2[5]],
+    products: [
+      fruitProductID2[0],
+      fruitProductID2[1],
+      fruitProductID2[2],
+      fruitProductID2[3],
+      fruitProductID2[4],
+      fruitProductID2[5],
+    ],
     createdBy: "Jacob admin",
   },
 ];
-
+// * MUSIC SECTION *//
+const { musicProductIDS1, musicProductIDS2 } = require("../musicProduct");
 const musicSection1 = [
   {
     _id: musicSectionID1[0],
     name: "כלי נשיפה",
     store: storesIds[2],
-    products,
+    products: [
+      musicProductIDS1[0],
+      musicProductIDS1[1],
+      musicProductIDS1[2],
+      musicProductIDS1[3],
+      musicProductIDS1[4],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: musicSectionID1[1],
     name: "גיטרות וכלי מיתר",
     store: storesIds[2],
-    products,
+    products: [
+      musicProductIDS1[5],
+      musicProductIDS1[6],
+      musicProductIDS1[7],
+      musicProductIDS1[8],
+      musicProductIDS1[9],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: musicSectionID1[2],
     name: "תופים וכלי הקשה",
     store: storesIds[2],
-    products,
+    products: [
+      musicProductIDS1[10],
+      musicProductIDS1[11],
+      musicProductIDS1[12],
+      musicProductIDS1[13],
+      musicProductIDS1[14],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: musicSectionID1[3],
     name: "קלידים ופסנתרים",
-    store: storesIds[2],
+    products: [
+      musicProductIDS1[15],
+      musicProductIDS1[16],
+      musicProductIDS1[17],
+      musicProductIDS1[18],
+    ],
     products,
     createdBy: "Jacob admin",
   },
@@ -158,31 +237,55 @@ const musicSection2 = [
     _id: musicSectionID2[0],
     name: "כלי נשיפה",
     store: storesIds[3],
-    products,
+    products: [
+      musicProductIDS2[0],
+      musicProductIDS2[1],
+      musicProductIDS2[2],
+      musicProductIDS2[3],
+      musicProductIDS2[4],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: musicSectionID2[1],
     name: "גיטרות וכלי מיתר",
     store: storesIds[3],
-    products,
+    products: [
+      musicProductIDS2[5],
+      musicProductIDS2[6],
+      musicProductIDS2[7],
+      musicProductIDS2[8],
+      musicProductIDS2[9],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: musicSectionID2[2],
     name: "תופים וכלי הקשה",
     store: storesIds[3],
-    products,
+    products: [
+      musicProductIDS2[10],
+      musicProductIDS2[11],
+      musicProductIDS2[12],
+      musicProductIDS2[13],
+      musicProductIDS2[14],
+    ],
     createdBy: "Jacob admin",
   },
   {
     _id: musicSectionID2[3],
     name: "קלידים ופסנתרים",
     store: storesIds[3],
-    products,
+    products: [
+      musicProductIDS2[15],
+      musicProductIDS2[16],
+      musicProductIDS2[17],
+      musicProductIDS2[18],
+    ],
     createdBy: "Jacob admin",
   },
 ];
+// * BEAUTY SECTION *//
 
 const BeautySection1 = [
   {
@@ -259,7 +362,7 @@ const BeautySection2 = [
     createdBy: "Jacob admin",
   },
 ];
-
+// * ALCOHOL SECTION *//
 const alcoholSection1 = [
   {
     _id: alcoholSectionID1[0],

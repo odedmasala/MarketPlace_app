@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const {storesIds} = require("../storesRef")
+const {musicSectionID1,musicSectionID2} =require("../section")
+
 const musicProductIDS1 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
@@ -32,7 +34,7 @@ const musicProduct1 = [
     name: "STUDIO Tenor in 'C' pear Küng",
     price: 53,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[0],
     manufacture: "כלי שיר",
     brand: "STUDIO Tenor",
     description: "חלילית טנור מעץ אגס דגם 1501 מבית חברת Küng הגרמנית",
@@ -48,7 +50,7 @@ const musicProduct1 = [
     name: "Trumpet 390 Getzen",
     price: 253,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[0],
     manufacture: "כלי שיר",
     brand: "Trumpet",
     description: "חצוצרה דגם 390 Bb הכוללת ארגז קשיח ופיה מבית Getzen ",
@@ -64,7 +66,7 @@ const musicProduct1 = [
     name: "Alto Saxophone Antigua",
     price: 177,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[0],
     manufacture: "בטהובן ובניו",
     brand: "Antigua",
     description: "סקסופון אלט Eb עם תו #F נוסף מבית Antigua ",
@@ -80,7 +82,7 @@ const musicProduct1 = [
     name: "Harmonic Minor F#m Tombo",
     price: 90,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[0],
     manufacture: "בטהובן ובניו",
     brand: "Harmonic",
     description: "מפוחית מינור הרמוני פה דיאז מבית Lee Oskar מבית Tombo",
@@ -96,7 +98,7 @@ const musicProduct1 = [
     name: "Trombone Antigua",
     price: 940,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[0],
     manufacture: "בטהובן ובניו",
     brand: "Antigua",
     description:
@@ -113,7 +115,7 @@ const musicProduct1 = [
     name: "גיטרה קלאסית גודל",
     price: 220,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[1],
     manufacture: "Valencia",
     brand: "Valencia ",
     description:
@@ -130,7 +132,7 @@ const musicProduct1 = [
     name: "RMA5NA מנדולינה איכותית מעץ מהגוני מבית Ortega",
     price: 220,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[1],
     manufacture: "בטהובן ובניו",
     brand: "Ortega",
     description:
@@ -147,7 +149,7 @@ const musicProduct1 = [
     name: "Gibson Les Paul Standard '60s",
     price: 220,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[1],
     manufacture: "בטהובן ובניו",
     brand: "Gibson Les",
     description:
@@ -164,7 +166,7 @@ const musicProduct1 = [
     name: "גיטרה בס חשמליתIbanez TMB100",
     price: 220,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[1],
     manufacture: "כלי זמר",
     brand: "Ibanez",
     description:
@@ -181,7 +183,7 @@ const musicProduct1 = [
     name: "גיטרה אקוסטית ED-11N מבית Legrand",
     price: 400,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[1],
     manufacture: "כלי זמר",
     brand: "Legrand",
     description:
@@ -198,7 +200,7 @@ const musicProduct1 = [
     name: "מערכת תופים 5 חלקים Yamaha Recording Custom 5 Piece Shell Pack - Classic Walnut",
     price: 1999,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[2],
     manufacture: "כלי זמר",
     brand: "Yamaha",
     description:
@@ -215,7 +217,7 @@ const musicProduct1 = [
     name: "תוף מסגרת עם עור 10",
     price: 20,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[2],
     manufacture: "כלי זמר",
     brand: "Meinl",
     description:
@@ -232,7 +234,7 @@ const musicProduct1 = [
     name: "Sultan מצילתיים 16",
     price: 50,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[2],
     manufacture: "כלי זמר",
     brand: "Sultan",
     description: "SULTAM מצילתיים 16 MARCHCYMB 14",
@@ -248,7 +250,7 @@ const musicProduct1 = [
     name: "SULTAN GONG-16 גונג 16 עם מקל",
     price: 1.9,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[2],
     manufacture: "כלי זמר",
     brand: "Sultan",
     description: "גונג על סטנד בינוני",
@@ -264,7 +266,7 @@ const musicProduct1 = [
     name: "תוף בס למצעד 22*10 מבית STAGG",
     price: 350,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[2],
     manufacture: "כלי זמר",
     brand: "STAGG",
     description:
@@ -281,7 +283,7 @@ const musicProduct1 = [
     name: "אורגן/תחנת עבודהYamaha PSR-EW410 (מתצוגה)",
     price: 350,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[3],
     manufacture: "כלי ואן-גוך",
     brand: "Yamaha",
     description:
@@ -298,7 +300,7 @@ const musicProduct1 = [
     name: "Steinway & Sons Model B - Spirio | r",
     price: 1500,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[3],
     manufacture: "כלי ואן-גוך",
     brand: "Spirio",
     description:
@@ -315,7 +317,7 @@ const musicProduct1 = [
     name: "פסנתר חשמלי + ספק כוח מקוריYamaha NP-12",
     price: 25000,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[3],
     manufacture: "כלי ואן-גוך",
     brand: "Yamaha",
     description:
@@ -332,7 +334,7 @@ const musicProduct1 = [
     name: "פסנתר עומד Steinway & Sons Professional Model K-132",
     price: 12500,
     storeId: storesIds[2],
-    subCategory: "",
+    subCategory: musicSectionID1[3],
     manufacture: "כלי ואן-גוך",
     brand: "Steinway & Sons Professional",
     description:
