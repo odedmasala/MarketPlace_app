@@ -33,7 +33,7 @@ const App = () => {
       {/* <Cart /> */}
       {/* <SuccessPayment/> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
