@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
@@ -21,6 +22,12 @@ const App = () => {
         <Route path="/successPage" element={<SuccessPayment />} />
         <Route path="/product" element={<Product />} />
       </Routes>
+      <Header />
+      {/* <HeaderStore /> */}
+      {/* <HomePage /> */}
+      <Cart />
+      {/* <SuccessPayment/> */}
+
       <Footer />
     </div>
   );
