@@ -16,8 +16,6 @@ const StoreSchema = new mongoose.Schema(
     phone: { type: String, required: true, min: 9, unique: true },
     email: { type: String, required: true, unique: true, min: 8, max: 50 },
     department: { type: mongoose.Types.ObjectId, ref: "Departments" },
-    sections: { type: [mongoose.Types.ObjectId], ref: "sections" },
-    Products: { type: [mongoose.Types.ObjectId], ref: "Products" },
     address: {
       type: Object,
       required: true,

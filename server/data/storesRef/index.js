@@ -11,7 +11,7 @@ const {
   musicSectionID2,
   musicSectionID1,
 } = require("../section");
-
+// * STORE IDS *//
 const storesIds = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
@@ -23,6 +23,7 @@ const storesIds = [
   new mongoose.Types.ObjectId(),
 ];
 
+// * STORE OBJECT *//
 const stores = [
   {
     _id: storesIds[0],
@@ -37,7 +38,6 @@ const stores = [
     phone: "050-1111111",
     email: "aaa@aa.aa",
     department: departmentsIds[0],
-    sections: fruitSectionID1,
     Products: "",
     address: {
       city: "חיפה",
@@ -62,7 +62,6 @@ const stores = [
     phone: "050-2222222222",
     email: "dddd@aa.aa",
     department: departmentsIds[0],
-    sections: fruitSectionID2,
     Products: "",
     address: {
       city: "תל אביב",
@@ -87,7 +86,6 @@ const stores = [
     phone: "050-44444444",
     email: "bbbbb@aa.aa",
     department: departmentsIds[1],
-    sections: musicSectionID1,
     Products: "",
     address: {
       city: "לוד",
@@ -112,7 +110,6 @@ const stores = [
     phone: "050-333333333",
     email: "eeee@aa.aa",
     department: departmentsIds[1],
-    sections: musicSectionID2,
     Products: "",
     address: {
       city: "לוד",
@@ -127,7 +124,7 @@ const stores = [
   {
     _id: storesIds[4],
     bnNumber: "cccc1111",
-    name: "סופר פראם",
+    name: "סופר פארם",
     description: "סופר פארם הרשת הגדולה במדינה",
     logo: {
       public_id: "stores/פארם/סופר_פארם_thrdtw",
@@ -136,7 +133,6 @@ const stores = [
     phone: "050-55555555",
     email: "cccccc@aa.aa",
     department: departmentsIds[2],
-    sections: BeautySectionID1,
     Products: "",
     address: {
       city: "באר שבע",
@@ -161,7 +157,6 @@ const stores = [
     phone: "050-666666",
     email: "fffffff@aa.aa",
     department: departmentsIds[2],
-    sections: BeautySectionID2,
     Products: "",
     address: {
       city: "רמת גן",
@@ -186,7 +181,6 @@ const stores = [
     phone: "050-777777",
     email: "gggggg@aa.aa",
     department: departmentsIds[3],
-    sections: alcoholSectionID1,
     Products: "",
     address: {
       city: "רחובות",
@@ -210,7 +204,6 @@ const stores = [
     phone: "050-777777",
     email: "gggggg@aa.aa",
     department: departmentsIds[3],
-    sections: alcoholSectionID2,
     Products: "",
     address: {
       city: "קרית עקרון",

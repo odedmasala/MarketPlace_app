@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { storesIds } = require("../storesRef");
 const { fruitSectionID1, fruitSectionID2 } = require("../section");
-
+// ID
 const fruitProductID1 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
@@ -27,7 +27,33 @@ const fruitProductID1 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
 ];
+const fruitProductID2 = [
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+];
 
+// PRODUCT
 const fruitProduct1 = [
   {
     _id: fruitProductID1[0],
@@ -497,31 +523,7 @@ const fruitProduct1 = [
     createBy: "or admin",
   },
 ];
-const fruitProductID2 = [
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-];
+
 
 const fruitProduct2 = [
   {

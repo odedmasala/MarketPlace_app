@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { storesIds } = require("../storesRef");
 const { musicSectionID1, musicSectionID2 } = require("../section");
-
+// ID
 const musicProductIDS1 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
@@ -23,7 +23,28 @@ const musicProductIDS1 = [
   new mongoose.Types.ObjectId(),
   new mongoose.Types.ObjectId(),
 ];
-
+const musicProductIDS2 = [
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+  new mongoose.Types.ObjectId(),
+];
+// PRODUCT
 const musicProduct1 = [
   {
     _id: musicProductIDS1[0],
@@ -342,28 +363,6 @@ const musicProduct1 = [
     quantity: 15,
     createBy: "shely admin",
   },
-];
-
-const musicProductIDS2 = [
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
-  new mongoose.Types.ObjectId(),
 ];
 
 const musicProduct2 = [
