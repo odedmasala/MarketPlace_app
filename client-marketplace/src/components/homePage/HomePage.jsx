@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import FooterHomePage from '../footer/FooterHomePage';
+
 
 const HomePage = () => {
   const naviget =useNavigate()
@@ -30,8 +32,9 @@ const HomePage = () => {
     },
   ];
   return (
-    <div
-      className="bg-[url('https://images.pexels.com/photos/4443494/pexels-photo-4443494.jpeg?auto=compress&cs=tinysrgb&w=1600')]
+    <div>
+      <div
+        className="bg-[url('https://images.pexels.com/photos/4443494/pexels-photo-4443494.jpeg?auto=compress&cs=tinysrgb&w=1600')]
       bg-no-repeat bg-center bg-cover flex flex-col items-center h-full py-8 px-4 md:px-20 justify-between text-right"
     >
       <div className="w-full md:w-[80%] px-8 mb-6 md:mt-14 ">
@@ -62,36 +65,71 @@ const HomePage = () => {
               </p>
             </div>
           ))}
+
+      >
+        <div className="w-full md:w-[80%] px-8 mb-6 md:mt-14 ">
+          <h1 className="text-4xl text-center mb-8">
+            ברוך הבא לעולם החנויות שלך
+          </h1>
+          <input
+            className="text-right w-full outline-none opacity-80 pr-10 border-none md:border-solid md:border-stone-400 rounded-sm"
+            type="text"
+            placeholder="מה תרצה לחפש היום"
+          />
+
+        </div>
+        <div className="w-full md:w-[80%]">
+          <h1 className="text-3xl text-center my-6">קטגוריות שונות</h1>
+          <div className="w-full flex flex-wrap items-center justify-center">
+            {data.map((section, i) => (
+              <div
+                key={i}
+                className="w-[47%] md:w-[32%] border-2 h-[160px] md:h-[260px] relative m-1 flex justify-center items-end cursor-pointer"
+              >
+                <img
+                  className="absolute w-full h-full"
+                  src={section.image}
+                  alt={section.name}
+                />
+                <p className="z-10 py-3 md:p-6 w-full text-center bg-opacity-75 text-2xl bg-slate-100">
+                  {section.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex box-border overflow-x-scroll md:overflow-auto items-center w-full h-24 mt-10 md:w-[80%]">
+          <img
+            className="w-2/5 h-10 mx-5"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
+            alt=""
+          />
+          <img
+            className="w-2/5 h-10 mx-5"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"
+            alt=""
+          />
+          <img
+            className="w-2/5 h-10 mx-5"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
+            alt=""
+          />
+
+          <img
+            className="w-2/5 h-16 mx-5"
+            src="https://www.logo.wine/a/logo/Amazon_(company)/Amazon_(company)-Logo.wine.svg"
+            alt=""
+          />
+
+          <img
+            className="w-2/5 h-10 md:w-24 md:h-auto mx-5"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/2560px-Intel_logo_%282006-2020%29.svg.png"
+            alt=""
+          />
         </div>
       </div>
-      <div className="flex box-border overflow-x-scroll md:overflow-auto items-center w-full h-24 mt-10 md:w-[80%]">
-        <img
-          className="w-2/5 h-10 mx-5"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/2560px-Google_2015_logo.svg.png"
-          alt=""
-        />
-        <img
-          className="w-2/5 h-10 mx-5"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/2560px-Meta_Platforms_Inc._logo.svg.png"
-          alt=""
-        />
-        <img
-          className="w-2/5 h-10 mx-5"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/2491px-Twitter-logo.svg.png"
-          alt=""
-        />
-
-        <img
-          className="w-2/5 h-16 mx-5"
-          src="https://www.logo.wine/a/logo/Amazon_(company)/Amazon_(company)-Logo.wine.svg"
-          alt=""
-        />
-
-        <img
-          className="w-2/5 h-10 md:w-24 md:h-auto mx-5"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/2560px-Intel_logo_%282006-2020%29.svg.png"
-          alt=""
-        />
+      <div>
+        <FooterHomePage />
       </div>
     </div>
   );
