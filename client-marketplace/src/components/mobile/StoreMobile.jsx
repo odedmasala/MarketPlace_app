@@ -12,7 +12,7 @@ export default function StoreMobile({storeData}) {
           <div className="flex flex-row-reverse justify-between items-end">
             <div className="flex justify-end mt-1 font-thin">
               <p>
-                ,{storeData.address.street}<br /> {storeData.address.city}
+                {storeData.address.street}, {storeData.address.city}
               </p>
               <p className="mt-2 ml-2">
                 <IoStorefrontSharp className="text-[#0899A5]" />

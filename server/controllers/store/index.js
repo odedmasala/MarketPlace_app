@@ -5,12 +5,19 @@ const {
   deleteOneStore,
   findAllStores,
   findStoreById,
+  findStoresByDepartmentId,
 } = require("./DAL");
 
 
 const getAllStores = async (req, res, next) => {
   try {
-    const stores = await findAllStores();
+    let stores = [];
+    if(req.query.departmentId){
+      let departmentId = req.query.departmentId;
+      stores = await findStoresByDepartmentId(departmentId)
+    }else{
+      stores = await findAllStores();
+    }
     res.status(200).json(stores);
   } catch (err) {
     next(err);

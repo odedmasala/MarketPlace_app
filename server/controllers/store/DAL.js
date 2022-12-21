@@ -10,6 +10,15 @@ const findAllStores = async () => {
   }
 };
 
+const findStoresByDepartmentId = async (departmentId) => {
+  try {
+    const storesInDepartment = await storeModel.find({"department": departmentId});
+    return storesInDepartment
+  } catch (error) {
+    throw error;
+  }
+};
+
 const findStoreById = async (id) => {
   try {
     const store = await storeModel.findById(id);
@@ -59,4 +68,5 @@ module.exports = {
   deleteOneStore,
   updateOneStore,
   cloudinaryUpLoud,
+  findStoresByDepartmentId,
 };
