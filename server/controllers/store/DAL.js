@@ -1,6 +1,7 @@
 const storeModel = require("../../models/store/StoreSchema");
+const cloudinary = require("../../utils/cludinary");
 
-const getAllStores = async () => {
+const findAllStores = async () => {
   try {
     const stores = await storeModel.find();
     return stores;
@@ -9,7 +10,7 @@ const getAllStores = async () => {
   }
 };
 
-const getStoreById = async (id) => {
+const findStoreById = async (id) => {
   try {
     const store = await storeModel.findById(id);
     return store;
@@ -18,7 +19,7 @@ const getStoreById = async (id) => {
   }
 };
 
-const createStore = async (obj) => {
+const createOneStore = async (obj) => {
   try {
     const store = new storeModel(obj);
     await store.save();
@@ -28,7 +29,7 @@ const createStore = async (obj) => {
   }
 };
 
-const updateStore = async (id, obj) => {
+const updateOneStore = async (id, obj) => {
   try {
     await storeModel.findByIdAndUpdate(id, obj);
     return "Updated";
@@ -37,7 +38,7 @@ const updateStore = async (id, obj) => {
   }
 };
 
-const deleteStore = async (id) => {
+const deleteOneStore = async (id) => {
   try {
     await storeModel.findByIdAndDelete(id);
     return "Deleted";
@@ -45,17 +46,17 @@ const deleteStore = async (id) => {
     throw error;
   }
 };
-const cloudinaryUpLoud = async (image,folderPata)=> {
+const cloudinaryUpLoud = async (image, folderPata) => {
   const results = await cloudinary.uploader.upload(image, {
     folder: folderPata,
   });
-  return results
-}
+  return results;
+};
 module.exports = {
-  getAllStores,
-  getStoreById,
-  createStore,
-  updateStore,
-  deleteStore,
-  cloudinaryUpLoud
+  findAllStores,
+  findStoreById,
+  createOneStore,
+  deleteOneStore,
+  updateOneStore,
+  cloudinaryUpLoud,
 };

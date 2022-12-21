@@ -1,14 +1,14 @@
 const {
-  createReceipt,
-  deleteReceipt,
-  getAllReceipts,
-  getReceiptById,
-  updateReceipt,
+  createOneReceipt,
+  deleteOneReceipt,
+  findAllReceipts,
+  findReceiptById,
+  updateOneReceipt,
 } = require("./DAL");
 
 const getAllReceipts = async (req, res, next) => {
   try {
-    const receipts = await getAllReceipts();
+    const receipts = await findAllReceipts();
     res.status(200).json(receipts);
   } catch (err) {
     next(err);
@@ -18,7 +18,7 @@ const getAllReceipts = async (req, res, next) => {
 const getReceiptById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const receipt = await getReceiptById(id);
+    const receipt = await findReceiptById(id);
     res.status(200).json(receipt);
   } catch (err) {
     next(err);
@@ -28,7 +28,7 @@ const getReceiptById = async (req, res, next) => {
 const createReceipt = async (req, res, next) => {
   try {
     const obj = req.body;
-    const result = await createReceipt(obj);
+    const result = await createOneReceipt(obj);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -39,7 +39,7 @@ const updateReceipt = async (req, res, next) => {
   try {
     const { id } = req.params;
     const obj = req.body;
-    const result = await updateReceipt(id, obj);
+    const result = await updateOneReceipt(id, obj);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -49,7 +49,7 @@ const updateReceipt = async (req, res, next) => {
 const deleteReceipt = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await deleteReceipt(id);
+    const result = await deleteOneReceipt(id);
     res.status(200).json(result);
   } catch (err) {
     next(err);
