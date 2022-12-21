@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
@@ -13,8 +11,7 @@ import Product from "./components/product/Product";
 import PersonalDetails from "./pages/profile/PersonalDetails";
 import Store from "./pages/storePage/Store";
 import StoresListPage from "./pages/storeslist/StoresListPage";
-
-
+import LoginPopUP from "./components/auth/login/LoginPopUP";
 
 const App = () => {
   return (
@@ -28,10 +25,9 @@ const App = () => {
         </Route>
         <Route path="/successPage" element={<SuccessPayment />} />
         <Route path="/product" element={<Product />} />
-        <Route path="/stores" element={<StoresListPage/>}/>
+        <Route path="/stores" element={<StoresListPage />} />
         <Route path="/store" element={<Store />} />
       </Routes>
-
     </div>
   );
 };
