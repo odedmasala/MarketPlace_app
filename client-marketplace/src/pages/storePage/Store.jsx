@@ -1,8 +1,8 @@
 import React from "react";
-import HeaderStore from "../header/HeaderStore";
-import Product from "../product/Product";
-import Cart from "../cart/Cart";
-import FooterContainer from "../footer/Footer";
+import HeaderStore from "../../components/header/HeaderStore";
+import Product from "../../components/product/Product";
+import Cart from "../../components/cart/Cart";
+import FooterContainer from "../../components/footer/Footer";
 
 const Store = () => {
   return (
