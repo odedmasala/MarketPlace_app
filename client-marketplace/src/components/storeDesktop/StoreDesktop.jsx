@@ -3,7 +3,7 @@ import {IoStorefrontSharp} from 'react-icons/io5'
 
 export default function StoreDesktop() {
   return (
-    <div className="flex w-3/4 justify-end text-right border-2 border-black bg-white">
+    <div className="md:flex justify-end text-right border-[1px] bg-white hidden py-4 mb-1">
       <div className="mr-4 font-thin w-3/4">
         <h3 className="font-bold">חוות הבית</h3>
         <p>בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה</p>

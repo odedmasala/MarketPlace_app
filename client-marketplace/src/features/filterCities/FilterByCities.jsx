@@ -2,8 +2,8 @@ import React from "react";
 
 export default function FilterByCities() {
   return (
-    <div className="w-2/5 flex flex-col items-end h-[10rem] text-right border-black border-2">
-      <h1>:סנן תוצאות לפי</h1>
+    <div className=" flex flex-col items-end h-[10rem] text-right px-4 md:px-0">
+      <h1 className="text-2xl my-2">:סנן תוצאות לפי</h1>
       <div className="w-3/4 flex justify-around">
         <ul className="w-1/2 flex flex-row-reverse justify-around">
           <div>
