@@ -9,7 +9,7 @@ export default function Product() {
     }
 
   return (
-    <div>
+    <div className="border mb-3"> 
       <div className="product" onClick={handleModal}>
         <img
           src="https://www.santosfood.com/wp-content/uploads/2020/01/img-7.jpg"
