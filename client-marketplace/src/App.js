@@ -11,7 +11,8 @@ import ProfilePage from "./pages/profile/ProfilePage";
 import MyOrders from "./pages/profile/MyOrders";
 import Product from "./components/product/Product";
 import PersonalDetails from "./pages/profile/PersonalDetails";
-import Store from "./components/store/Store";
+import Store from "./pages/storePage/Store";
+import StoreMobile from "./components/mobile/StoreMobile";
 
 
 
@@ -30,7 +31,7 @@ const App = () => {
         <Route path="/product" element={<Product />} />
         <Route path="/store" element={<Store />} />
       </Routes>
-
+      <StoreMobile/>
       <Footer />
 
       {/* <Header /> */}
