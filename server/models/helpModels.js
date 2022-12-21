@@ -30,7 +30,6 @@ const weightSchema = new mongoose.Schema({
   avgWeightPerUnit: { type: Number, min: 0 },
   weightUnit: {
     type: String,
-    required: true,
     enum: ["kgs", "grams", "liters", "mls"],
     default: "kgs",
   },
