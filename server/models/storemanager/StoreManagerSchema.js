@@ -1,13 +1,9 @@
 const mongoose = require("mongoose");
-const { addressSchema } = require("../helpModels");
+const { addressSchema, cloudinarySchema } = require("../helpModels");
 
 const StoreManagerSchema = new mongoose.Schema(
   {
-    image: {
-      public_id: String,
-      url: String,
-      // required: true,
-    },
+    image: cloudinarySchema,
     firstName: {
       type: String,
       required: true,
@@ -47,7 +43,7 @@ const StoreManagerSchema = new mongoose.Schema(
       type: [mongoose.Types.ObjectId],
       ref: "stores",
     },
-    address: { type: addressSchema, required: true },
+    address: addressSchema,
     paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipts" },
     authToken: { type: String },
     role: {

@@ -1,11 +1,9 @@
 const mongoose = require("mongoose");
+const { cloudinarySchema } = require("../helpModels");
 
 const DepartmentSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  image: {
-    public_id: String,
-    url: String,
-  },
+  image: cloudinarySchema,
   active: Boolean,
   stores: {
     type: [mongoose.Types.ObjectId],
