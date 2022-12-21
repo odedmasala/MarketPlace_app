@@ -28,7 +28,6 @@ const App = () => {
         <Route path="/stores" element={<StoresListPage />} />
         <Route path="/store" element={<Store />} />
       </Routes>
-      <LoginPopUP />
     </div>
   );
 };
