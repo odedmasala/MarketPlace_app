@@ -8,7 +8,7 @@ const StoreSchema = new mongoose.Schema(
     logo: {
       public_id: String,
       url: String,
-      // required: true,
+      required: true,
     },
     lightlogo: String,
     darklogo: String,
@@ -21,7 +21,6 @@ const StoreSchema = new mongoose.Schema(
     createdAt: { type: Date, default: Date.now },
     createdBy: { type: String },
   },
-  { timestamps: true }
 );
 const model = mongoose.model("stores", StoreSchema);
 module.exports = model;

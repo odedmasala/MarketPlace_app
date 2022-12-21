@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import FooterHomePage from "../footer/FooterHomePage";
+import FooterHomePage from "../../components/footer/FooterHomePage";
 
 const HomePage = () => {
   const naviget = useNavigate();

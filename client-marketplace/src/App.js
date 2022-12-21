@@ -5,7 +5,7 @@ import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
-import HomePage from "./components/homePage/HomePage";
+import HomePage from "./pages/homePage/HomePage";
 import SuccessPayment from "./pages/successPayment/SuccessPayment";
 import ProfilePage from "./pages/profile/ProfilePage";
 import MyOrders from "./pages/profile/MyOrders";
@@ -20,7 +20,6 @@ const App = () => {
   return (
     <div className="bg-[#F5F5F5]">
       <NavBar />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/profile" element={<ProfilePage />}>
@@ -33,15 +32,6 @@ const App = () => {
       </Routes>
       <StoreMobile/>
       <Footer />
-
-      {/* <Header /> */}
-      {/* <HeaderStore /> */}
-      {/* <HomePage /> */}
-      {/* <Cart /> */}
-      {/* <SuccessPayment/> */}
-
-      {/* <Footer /> */}
-
     </div>
   );
 };
