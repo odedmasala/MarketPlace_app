@@ -3,13 +3,11 @@ const {
   unitsSchema,
   weightSchema,
   ClothingSizesSchema,
+  cloudinarySchema,
 } = require("../helpModels");
 
 const ProductSchema = new mongoose.Schema({
-  image: {
-    public_id: String,
-    url: String,
-  },
+  image: cloudinarySchema,
   name: { type: String, required: true },
   price: { type: Number, required: true },
   storeId: { type: mongoose.Types.ObjectId, ref: "stores", required: true },
@@ -17,8 +15,8 @@ const ProductSchema = new mongoose.Schema({
     type: mongoose.Types.ObjectId,
     ref: "sections",
   },
-  weight: { type: weightSchema },
-  unit: { type: unitsSchema },
+  weight: weightSchema,
+  unit: unitsSchema,
   gender: {
     type: String,
     enum: ["women", "men", "children", "teenagers", "babies", "unisex"],
