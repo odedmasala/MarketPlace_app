@@ -45,11 +45,17 @@ const deleteUser = async (id) => {
     throw error;
   }
 };
-
+const cloudinaryUpLoud = async (image,folderPata)=> {
+  const results = await cloudinary.uploader.upload(image, {
+    folder: folderPata,
+  });
+  return results
+}
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
   updateUser,
   deleteUser,
+  cloudinaryUpLoud
 };

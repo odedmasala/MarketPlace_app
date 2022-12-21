@@ -45,11 +45,17 @@ const deleteStore = async (id) => {
     throw error;
   }
 };
-
+const cloudinaryUpLoud = async (image,folderPata)=> {
+  const results = await cloudinary.uploader.upload(image, {
+    folder: folderPata,
+  });
+  return results
+}
 module.exports = {
   getAllStores,
   getStoreById,
   createStore,
   updateStore,
   deleteStore,
+  cloudinaryUpLoud
 };

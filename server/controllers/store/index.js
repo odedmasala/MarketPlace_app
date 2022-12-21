@@ -1,4 +1,11 @@
-const storeDAL = require("./DAL");
+const {
+  cloudinaryUpLoud,
+  createStore,
+  deleteStore,
+  getAllStores,
+  getStoreById,
+  updateStore,
+} = require("./DAL");
 const cludinary = require("../../utils/cludinary");
 
 const getAllStores = async (req, res, next) => {
@@ -24,9 +31,7 @@ const createStore = async (req, res, next) => {
   try {
     const data = req.body;
     const logo = data.logo;
-    const results = await cludinary.uploader.upload(logo, {
-      folder: "store",
-    });
+    const results = await cloudinaryUpLoud(logo, "store");
     data.logo = {
       url: results.secure_url,
       public_id: results.public_id,
@@ -37,7 +42,6 @@ const createStore = async (req, res, next) => {
     next(err);
   }
 };
-
 
 const updateStore = async (req, res, next) => {
   try {
