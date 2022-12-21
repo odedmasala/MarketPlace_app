@@ -1,4 +1,4 @@
-const userDAL = require("./DAL");
+const {createUser,deleteUser,getAllUsers,getUserById,updateUser,cloudinaryUpLoud} = require("./DAL");
 
 const getAllUsers = async (req, res, next) => {
   try {

@@ -45,11 +45,17 @@ const deleteDepartment = async (id) => {
     throw error;
   }
 };
-
+const cloudinaryUpLoud = async (image,folderPata)=> {
+  const results = await cloudinary.uploader.upload(image, {
+    folder: folderPata,
+  });
+  return results
+}
 module.exports = {
   getAllDepartments,
   getDepartmentById,
   createDepartment,
   updateDepartment,
   deleteDepartment,
+  cloudinaryUpLoud
 };
