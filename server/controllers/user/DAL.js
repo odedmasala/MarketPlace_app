@@ -1,6 +1,7 @@
 const userModel = require("../../models/user/UserSchema");
+const cloudinary = require("../../utils/cludinary");
 
-const getAllUsers = async () => {
+const findAllUsers = async () => {
   try {
     const users = await userModel.find().populate(["storeId","paymentBillInfo"]);;
     return users;
@@ -9,7 +10,7 @@ const getAllUsers = async () => {
   }
 };
 
-const getUserById = async (id) => {
+const findUserById = async (id) => {
   try {
     const user = await userModel.findById(id);
     return user;
@@ -18,7 +19,7 @@ const getUserById = async (id) => {
   }
 };
 
-const createUser = async (obj) => {
+const createOneUser = async (obj) => {
   try {
     const user = new userModel(obj);
     await user.save();
@@ -28,7 +29,7 @@ const createUser = async (obj) => {
   }
 };
 
-const updateUser = async (id, obj) => {
+const updateOneUser = async (id, obj) => {
   try {
     await userModel.findByIdAndUpdate(id, obj);
     return "Updated";
@@ -37,7 +38,7 @@ const updateUser = async (id, obj) => {
   }
 };
 
-const deleteUser = async (id) => {
+const deleteOneUser = async (id) => {
   try {
     await userModel.findByIdAndDelete(id);
     return "Deleted";
@@ -52,10 +53,10 @@ const cloudinaryUpLoud = async (image,folderPata)=> {
   return results
 }
 module.exports = {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
+  findAllUsers,
+  findUserById,
+  createOneUser,
+  updateOneUser,
+  deleteOneUser,
   cloudinaryUpLoud
 };

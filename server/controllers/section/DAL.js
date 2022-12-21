@@ -1,59 +1,59 @@
-const sectionModel = require('../../models/section/SectionSchema');
+const sectionModel = require("../../models/section/SectionSchema");
 
-const getAllSections = async () => {
+const findAllSections = async () => {
   try {
     const sections = await sectionModel
       .find()
-      .populate(['storeId', 'departmentIds']);
+      .populate(["storeId", "departmentIds"]);
     return sections;
   } catch (error) {
     throw error;
   }
 };
 
-const getSectionById = async (id) => {
+const findSectionById = async (id) => {
   try {
     const section = await sectionModel
       .findById(id)
-      .populate(['storeId', 'departmentIds']);
+      .populate(["storeId", "departmentIds"]);
     return section;
   } catch (error) {
     throw error;
   }
 };
 
-const createSection = async (obj) => {
+const createOneSection = async (obj) => {
   try {
     const section = new sectionModel(obj);
     await section.save();
-    return 'Created';
+    return "Created";
   } catch (error) {
     throw error;
   }
 };
 
-const updateSection = async (id, obj) => {
+const updateOneSection = async (id, obj) => {
   try {
     await sectionModel.findByIdAndUpdate(id, obj);
-    return 'Updated';
+    return "Updated";
   } catch (error) {
     throw error;
   }
 };
 
-const deleteSection = async (id) => {
+const deleteOneSection = async (id) => {
   try {
     await sectionModel.findByIdAndDelete(id);
-    return 'Deleted';
+    return "Deleted";
   } catch (error) {
     throw error;
   }
 };
 
 module.exports = {
-  getAllSections,
-  getSectionById,
-  createSection,
-  updateSection,
-  deleteSection,
+  findAllSections,
+  findSectionById,
+  createOneSection,
+  deleteOneSection,
+  updateOneSection,
 };

@@ -1,16 +1,15 @@
 const {
   cloudinaryUpLoud,
-  createDepartment,
-  deleteDepartment,
-  getAllDepartments,
-  getDepartmentById,
-  updateDepartment,
+  createOneDepartment,
+  deleteOneDepartment,
+  findAllDepartments,
+  findDepartmentById,
+  updateOneDepartment,
 } = require("./DAL");
-const cloudinary = require("../../utils/cludinary");
 
 const getAllDepartments = async (req, res, next) => {
   try {
-    const departments = await getAllDepartments();
+    const departments = await findAllDepartments();
     res.status(200).json(departments);
   } catch (err) {
     next(err);
@@ -20,7 +19,7 @@ const getAllDepartments = async (req, res, next) => {
 const getDepartmentById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const department = await getDepartmentById(id);
+    const department = await findDepartmentById(id);
     res.status(200).json(department);
   } catch (err) {
     next(err);
@@ -36,7 +35,7 @@ const createDepartment = async (req, res, next) => {
       url: results.secure_url,
       public_id: results.public_id,
     };
-    const result = await createDepartment(data);
+    const result = await createOneDepartment(data);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -47,7 +46,7 @@ const updateDepartment = async (req, res, next) => {
   try {
     const { id } = req.params;
     const obj = req.body;
-    const result = await updateDepartment(id, obj);
+    const result = await updateOneDepartment(id, obj);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -57,7 +56,7 @@ const updateDepartment = async (req, res, next) => {
 const deleteDepartment = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await deleteDepartment(id);
+    const result = await deleteOneDepartment(id);
     res.status(200).json(result);
   } catch (err) {
     next(err);
