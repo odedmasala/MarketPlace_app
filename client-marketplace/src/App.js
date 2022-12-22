@@ -1,3 +1,4 @@
+
 import React from "react";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
@@ -15,7 +16,7 @@ import LoginPopUP from "./components/auth/login/LoginPopUP";
 
 const App = () => {
   return (
-    <div className="bg-[#F5F5F5]">
+    <div>
       <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
