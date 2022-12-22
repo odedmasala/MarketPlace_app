@@ -1,15 +1,15 @@
 import React from "react";
 import {IoStorefrontSharp} from 'react-icons/io5'
 
-export default function StoreDesktop() {
+export default function StoreDesktop({storeData}) {
   return (
-    <div className="flex w-3/4 justify-end text-right border-2 border-black bg-white">
+    <div className="md:flex justify-end text-right border-[1px] bg-white hidden py-4 mb-1">
       <div className="mr-4 font-thin w-3/4">
-        <h3 className="font-bold">חוות הבית</h3>
-        <p>בלה בלה בלה בלה בלה בלה בלה בלה בלה בלה</p>
+        <h3 className="font-bold">{storeData.name}</h3>
+        <p>{storeData.description}</p>
         <div className="flex flex-row-reverse justify-between items-end">
         <div className="flex justify-end mt-2 font-thin">
-            <p>,עמק זבולון <br/> מודיעין אזור המרכז</p>
+            <p>,{storeData.address.street}<br/>{storeData.address.city}</p>
             <p className="mt-2 ml-2"><IoStorefrontSharp className="text-[#0899A5]"/></p>
         </div>
         <div>
@@ -17,7 +17,7 @@ export default function StoreDesktop() {
         </div>
         </div>
       </div>
-      <img src='https://www.logodesign.net/images/home-page-logo-07.png' alt="logo" className="w-[15%]" />
+      <img src={storeData.logo.url} alt="logo" className="w-[15%]" />
     </div>
   );
 }

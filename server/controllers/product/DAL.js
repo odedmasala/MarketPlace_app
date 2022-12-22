@@ -1,6 +1,7 @@
 const productModel = require("../../models/product/ProductSchema");
+const cloudinary = require("../../utils/cludinary");
 
-const getAllProducts = async () => {
+const findAllProducts = async () => {
   try {
     const products = await productModel
       .find()
@@ -11,7 +12,7 @@ const getAllProducts = async () => {
   }
 };
 
-const getProductById = async (id) => {
+const findProductById = async (id) => {
   try {
     const product = await productModel
       .findById(id)
@@ -22,7 +23,7 @@ const getProductById = async (id) => {
   }
 };
 
-const createProduct = async (obj) => {
+const createOneProduct = async (obj) => {
   try {
     const product = new productModel(obj);
     await product.save();
@@ -32,7 +33,7 @@ const createProduct = async (obj) => {
   }
 };
 
-const updateProduct = async (id, obj) => {
+const updateOneProduct = async (id, obj) => {
   try {
     await productModel.findByIdAndUpdate(id, obj);
     return "Updated";
@@ -41,7 +42,7 @@ const updateProduct = async (id, obj) => {
   }
 };
 
-const deleteProduct = async (id) => {
+const deleteOneProduct = async (id) => {
   try {
     await productModel.findByIdAndDelete(id);
     return "Deleted";
@@ -49,11 +50,17 @@ const deleteProduct = async (id) => {
     throw error;
   }
 };
-
+const cloudinaryUpLoud = async (image,folderPata)=> {
+  const results = await cloudinary.uploader.upload(image, {
+    folder: folderPata,
+  });
+  return results
+}
 module.exports = {
-  getAllProducts,
-  getProductById,
-  createProduct,
-  updateProduct,
-  deleteProduct,
+  findAllProducts,
+  findProductById,
+  deleteOneProduct,
+  updateOneProduct,
+  createOneProduct,
+  cloudinaryUpLoud
 };

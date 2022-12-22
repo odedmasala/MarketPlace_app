@@ -1,8 +1,14 @@
-const sectionDAL = require("./DAL");
+const {
+  createOneSection,
+  deleteOneSection,
+  findAllSections,
+  findSectionById,
+  updateOneSection,
+} = require("./DAL");
 
 const getAllSections = async (req, res, next) => {
   try {
-    const sections = await sectionDAL.getAllSections();
+    const sections = await findAllSections();
     res.status(200).json(sections);
   } catch (err) {
     next(err);
@@ -12,7 +18,7 @@ const getAllSections = async (req, res, next) => {
 const getSectionById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const section = await sectionDAL.getSectionById(id);
+    const section = await findSectionById(id);
     res.status(200).json(section);
   } catch (err) {
     next(err);
@@ -22,7 +28,7 @@ const getSectionById = async (req, res, next) => {
 const createSection = async (req, res, next) => {
   try {
     const obj = req.body;
-    const result = await sectionDAL.createSection(obj);
+    const result = await createOneSection(obj);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -33,7 +39,7 @@ const updateSection = async (req, res, next) => {
   try {
     const { id } = req.params;
     const obj = req.body;
-    const result = await sectionDAL.updateSection(id, obj);
+    const result = await updateOneSection(id, obj);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -43,7 +49,7 @@ const updateSection = async (req, res, next) => {
 const deleteSection = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const result = await sectionDAL.deleteSection(id);
+    const result = await deleteOneSection(id);
     res.status(200).json(result);
   } catch (err) {
     next(err);

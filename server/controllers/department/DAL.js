@@ -1,6 +1,7 @@
 const departmentModel = require("../../models/department/DepartmentSchema");
+const cloudinary = require("../../utils/cludinary");
 
-const getAllDepartments = async () => {
+const findAllDepartments = async () => {
   try {
     const departments = await departmentModel.find();
     return departments;
@@ -9,7 +10,7 @@ const getAllDepartments = async () => {
   }
 };
 
-const getDepartmentById = async (id) => {
+const findDepartmentById = async (id) => {
   try {
     const department = await departmentModel.findById(id);
     return department;
@@ -18,7 +19,7 @@ const getDepartmentById = async (id) => {
   }
 };
 
-const createDepartment = async (obj) => {
+const createOneDepartment = async (obj) => {
   try {
     const department = new departmentModel(obj);
     await department.save();
@@ -28,7 +29,7 @@ const createDepartment = async (obj) => {
   }
 };
 
-const updateDepartment = async (id, obj) => {
+const updateOneDepartment = async (id, obj) => {
   try {
     await departmentModel.findByIdAndUpdate(id, obj);
     return "Updated";
@@ -37,7 +38,7 @@ const updateDepartment = async (id, obj) => {
   }
 };
 
-const deleteDepartment = async (id) => {
+const deleteOneDepartment = async (id) => {
   try {
     await departmentModel.findByIdAndDelete(id);
     return "Deleted";
@@ -45,11 +46,17 @@ const deleteDepartment = async (id) => {
     throw error;
   }
 };
-
+const cloudinaryUpLoud = async (image,folderPata)=> {
+  const results = await cloudinary.uploader.upload(image, {
+    folder: folderPata,
+  });
+  return results
+}
 module.exports = {
-  getAllDepartments,
-  getDepartmentById,
-  createDepartment,
-  updateDepartment,
-  deleteDepartment,
+  findAllDepartments,
+  findDepartmentById,
+  createOneDepartment,
+  updateOneDepartment,
+  deleteOneDepartment,
+  cloudinaryUpLoud
 };

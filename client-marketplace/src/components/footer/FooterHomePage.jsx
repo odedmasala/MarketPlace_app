@@ -7,8 +7,8 @@ import React from 'react';
 export default function FooterHomePage() {
   return (
     <div>
-      <div className="bg-[url('https://images.pexels.com/photos/255501/pexels-photo-255501.jpeg?auto=compress&cs=tinysrgb&w=800')] md:h-96 h-64 bg-center bg-cover ">
-        <div className="h-full font-sans font-semibold subpixel-antialiased flex flex-col items-center justify-center text-center text-gray-200 text-[25px] md:text-[50px] lg:text-[80px]">
+      <div className="bg-[url('https://images.pexels.com/photos/952353/pexels-photo-952353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] md:h-96 h-64 bg-center bg-cover ">
+        <div className="h-full pt-14 font-sans font-semibold subpixel-antialiased flex flex-col items-center justify-center text-center text-gray-200 text-[25px] md:text-[50px] lg:text-[70px]">
           <p>
             ? אין לך <span className="text-yellow-300">כח</span> לעבור בסופר
           </p>

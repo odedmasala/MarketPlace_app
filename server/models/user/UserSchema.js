@@ -1,13 +1,9 @@
 const mongoose = require("mongoose");
-const {addressSchema} = require("../helpModels")
+const {addressSchema, cloudinarySchema} = require("../helpModels")
 
 const UserSchema = new mongoose.Schema(
   {
-    image: {
-      public_id: String,
-      url: String,
-      // required: true,
-    },
+    image: cloudinarySchema,
     firstName: {
       type: String,
       required: true,
@@ -38,7 +34,7 @@ const UserSchema = new mongoose.Schema(
       type: [mongoose.Types.ObjectId],
       ref: "stores",
     },
-    address: { type: addressSchema },
+    address: addressSchema,
     paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },
     authToken: { type: String },
     access_token: String,
