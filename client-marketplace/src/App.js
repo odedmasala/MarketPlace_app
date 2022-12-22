@@ -8,7 +8,6 @@ import SuccessPayment from "./pages/successPayment/SuccessPayment";
 import ProfilePage from "./pages/profile/ProfilePage";
 import MyOrders from "./pages/profile/MyOrders";
 import Product from "./components/product/Product";
-import Store from "./components/store/Store";
 import StoreManager from "./pages/storeManager/StoreManager";
 import MainInfo from "./components/info/MainInfo";
 import AboutPage from "./components/info/about/AboutPage";
@@ -33,6 +32,7 @@ const App = () => {
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>
           <Route path="myOrders" element={<MyOrders />} />
+          <Route path="details" element={<PersonalDetails />} />
         </Route>
         <Route path="successPage" element={<SuccessPayment />} />
         <Route path="product" element={<Product />} />
@@ -51,7 +51,7 @@ const App = () => {
           <Route path="suppliers" element={<SuppliersPage />} />
         </Route>
         <Route path=":id/stores" element={<StoresListPage />} />
-        <Route path="store" element={<Store />} />
+        <Route path="store/:id" element={<Store />} />
       </Routes>
     </div>
   );
