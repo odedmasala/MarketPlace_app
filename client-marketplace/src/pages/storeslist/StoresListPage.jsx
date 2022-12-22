@@ -7,18 +7,23 @@ import Cart from "../../components/cart/Cart";
 import Header from "../../components/header/Header";
 import { IoStorefrontSharp } from "react-icons/io5";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function StoresListPage() {
   const [stores, setStore] = useState([]);
   const windowSize = useWindowSize();
+  const { id } = useParams();
+
   const getStoresInDepartment = async () => {
-    const { data } = await axios.get("http://localhost:8001/api/store");
+    const { data } = await axios.get(
+      `http://localhost:8001/api/store?departmentId=${id}`
+    );
     setStore(data);
   };
 
   useEffect(() => {
     getStoresInDepartment();
-    console.log(windowSize);
+    console.log(windowSize)
   }, []);
   return (
     <div>
@@ -38,9 +43,13 @@ export default function StoresListPage() {
               </p>
               <IoStorefrontSharp className="text-4xl text-[#0899A5] ml-2 mr-5 md:mr-0" />
             </div>
-            {stores.map((store) => (
-             windowSize?.width < 765 ? <StoreMobile storeData={store}/> :<StoreDesktop storeData={store} key={store._id} />
-            ))}
+            {stores.map((store) =>
+              windowSize?.width < 765 ? (
+                <StoreMobile storeData={store} key={store._id}/>
+              ) : (
+                <StoreDesktop storeData={store} key={store._id} />
+              )
+            )}
           </div>
         </div>
       </div>
