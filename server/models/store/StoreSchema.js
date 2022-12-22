@@ -8,7 +8,6 @@ const StoreSchema = new mongoose.Schema(
     logo: {
       public_id: String,
       url: String,
-      required: true,
     },
     lightlogo: String,
     darklogo: String,
