@@ -33,7 +33,11 @@ const weightSchema = new mongoose.Schema({
     enum: ["kgs", "grams", "liters", "mls"],
     default: "kgs",
   },
-  tax: Number,
+  tax: Number, 
+});
+const cloudinarySchema = new mongoose.Schema({
+  public_id: {type:String, required:true},
+  url: {type:String, required:true},
 });
 
 const unitsSchema = new mongoose.Schema({
@@ -78,4 +82,5 @@ module.exports = {
   weightSchema,
   unitsSchema,
   ClothingSizesSchema,
+  cloudinarySchema
 };
