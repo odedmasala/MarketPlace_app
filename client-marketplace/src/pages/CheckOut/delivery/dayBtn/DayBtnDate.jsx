@@ -6,17 +6,21 @@ export default function DayBtnDate({ day, date }) {
   return (
     <div className=" m-1">
       <button
-        onClick={() => setBgColor(!bgColor)}
+        onClick={() => {
+          setBgColor(!bgColor);
+          console.log(day, date);
+        }}
         className={
           bgColor
-            ? "bg-teal-500 flex justify-center items-center rounded-md text-white px-12 py-6"
-            : "bg-slate-400 flex justify-center items-center border-0 rounded-md text-white px-12 py-6"
+            ? "bg-teal-500 flex justify-center items-center rounded-md text-white px-8 py-2 cursor-not-allowed"
+            : "bg-slate-400 flex justify-center items-center border-0 rounded-md text-white px-8 py-2"
         }
       >
         {day}
         <br />
         {date}
       </button>
+      
     </div>
   );
 }

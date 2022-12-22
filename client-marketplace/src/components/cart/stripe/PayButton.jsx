@@ -31,8 +31,8 @@ export default function PayButton() {
       .catch((err) => console.log(err.massage));
   };
   return (
-    <div>
-      <button onClick={() => handleCheckout()}> לתשלום 0 ש"ח</button>
+    <div className="text-center">
+      <button className="bg-green-400 text-white rounded-md p-4" onClick={() => handleCheckout()}> לתשלום 18 ש"ח</button>
     </div>
   );
 }
