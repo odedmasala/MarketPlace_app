@@ -9,7 +9,7 @@ const StoreManager = () => {
       <div className="px-3 md:px-48 bg-white md:flex justify-between ">
         <div className="border border-gray-300 p-0 flex justify-between md:flex-col text-center md:justify-start md:w-[25%]">
           <p
-            onClick={() => navigate("allProducts")}
+            onClick={() => navigate("allStores")}
             className="cursor-pointer border border-gray-300 text-gray-700 text-lg font-medium md:py-4 py-2 px-5 "
           >
             כל המוצרים
