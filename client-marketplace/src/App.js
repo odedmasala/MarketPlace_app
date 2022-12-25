@@ -16,13 +16,15 @@ import BlogPage from "./components/info/blog/BlogPage";
 import CompanyPage from "./components/info/company/CompanyPage";
 import HeadlinesPage from "./components/info/headlines/HeadlinesPage";
 import SuppliersPage from "./components/info/suppliers/SuppliersPage";
-import AllProducts from "./components/storeManager/allProducts/AllProducts";
 import AddProduct from "./components/storeManager/addProduct/AddProduct";
 import PersonalData from "./components/storeManager/personalData/PersonalData";
 import PersonalDetails from "./pages/profile/PersonalDetails";
 import Store from "./pages/storePage/Store";
 import StoresListPage from "./pages/storeslist/StoresListPage";
 import LoginPopUP from "./components/auth/login/LoginPopUP";
+import SectionStoreManager from "./components/storeManager/allProducts/sectionStoreManager/SectionStoreManager";
+import ProductPage from "./components/storeManager/allProducts/ProductPage";
+import AllStores from "./components/storeManager/allProducts/AllStores";
 
 const App = () => {
   return (
@@ -39,7 +41,9 @@ const App = () => {
         <Route path="product" element={<Product />} />
         <Route path="store" element={<Store />} />
         <Route path="storeManager" element={<StoreManager />}>
-          <Route path="allProducts" element={<AllProducts />} />
+          <Route path="allStores" element={<AllStores />} />
+          <Route path="section/:id" element={<SectionStoreManager />} />
+          <Route path="allProduct/:id" element={<ProductPage />} />
           <Route path="addProduct" element={<AddProduct />} />
           <Route path="personalData" element={<PersonalData />} />
         </Route>
