@@ -21,10 +21,11 @@ import PersonalData from "./components/storeManager/personalData/PersonalData";
 import PersonalDetails from "./pages/profile/PersonalDetails";
 import Store from "./pages/storePage/Store";
 import StoresListPage from "./pages/storeslist/StoresListPage";
-import LoginPopUP from "./components/auth/login/LoginPopUP";
+import LoginButton from "./components/auth/login/LoginButton";
 import SectionStoreManager from "./components/storeManager/allProducts/sectionStoreManager/SectionStoreManager";
 import ProductPage from "./components/storeManager/allProducts/ProductPage";
 import AllStores from "./components/storeManager/allProducts/AllStores";
+
 
 const App = () => {
   return (

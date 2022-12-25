@@ -7,6 +7,11 @@ const {
 } = require("../helpModels");
 
 const ProductSchema = new mongoose.Schema({
+  barcode: {
+    type: Number,
+    default: () => Math.floor(Math.random() * 1000000000000),
+    unique: true,
+  },
   image: cloudinarySchema,
   name: { type: String, required: true },
   price: { type: Number, required: true },
