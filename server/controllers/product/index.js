@@ -5,12 +5,19 @@ const {
   findProductById,
   updateOneProduct,
   cloudinaryUpLoud,
+  findProductsByStoreId
 } = require("./DAL");
 
 
 const getAllProducts = async (req, res, next) => {
-  try {
-    const products = await findAllProducts();
+  try {;
+    let products = []
+    if(req.query.storeId){
+      let storeId = req.query.storeId;
+      products = await findProductsByStoreId(storeId);
+    }else{
+      products = await findAllProducts()
+    }
     res.status(200).json(products);
   } catch (err) {
     next(err);
