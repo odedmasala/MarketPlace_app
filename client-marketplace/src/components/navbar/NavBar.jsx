@@ -21,14 +21,14 @@ export default function NavBar() {
           <img
             src={cartLogo}
             className="w-3/4 h-14  sm:h-20"
-            alt="Flowbite Logo"
+            alt="Logo"
           />
         <span className="self-center text-xl font-semibold text-[#3e8f7f] dark:text-white">
       MarketPlace
     </span>
         </Navbar.Brand>
-        <NavBarUserIsConnected/>
-        {/* <NavBarUserIsNotConnected/> */}
+        {/* <NavBarUserIsConnected/> */}
+        <NavBarUserIsNotConnected/>
       </Navbar>
     </div>
   );
