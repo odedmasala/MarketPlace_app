@@ -6,13 +6,14 @@ import { FaAddressCard } from "react-icons/fa";
 import { Outlet, Link } from "react-router-dom";
 
 export default function ProfilePage() {
+  const orders = [1,2,3];
   return (
-    <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto">
+    <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-screen">
       <div className="w-3/4">
         <Outlet />
       </div>
       <div className="">
-        <Sidebar aria-label="Default sidebar example">
+        <Sidebar className="text-right" aria-label="Default sidebar example">
           <Sidebar.Items>
             <Sidebar.ItemGroup>
               <div className="w-full ">
@@ -25,25 +26,23 @@ export default function ProfilePage() {
             </Sidebar.ItemGroup>
             <Sidebar.ItemGroup>
               <Link to={"/profile/myOrders"}>
-                <Sidebar.Item href="" icon={HiInbox} label="3">
+                <Sidebar.Item icon={HiInbox} label={orders.length}>
                   ההזמנות שלי
                 </Sidebar.Item>
               </Link>
               <Link to={"/profile/details"}>
-              <Sidebar.Item href="#" icon={FaAddressCard}>
-                מידע אישי
-              </Sidebar.Item>
+                <Sidebar.Item icon={FaAddressCard}>מידע אישי</Sidebar.Item>
               </Link>
-              <Sidebar.Item href="#" icon={BsFillHouseFill}>
-                כתובת שלי
-              </Sidebar.Item>
-              <Sidebar.Item href="#" icon={HiArrowSmRight}>
-                התנתקות
-              </Sidebar.Item>
+              <Link to={"/profile/myAddress"}>
+                <Sidebar.Item icon={BsFillHouseFill}>כתובת שלי</Sidebar.Item>
+              </Link>
+
+              <Sidebar.Item icon={HiArrowSmRight}>התנתקות</Sidebar.Item>
             </Sidebar.ItemGroup>
           </Sidebar.Items>
         </Sidebar>
       </div>
+
     </div>
   );
 }
