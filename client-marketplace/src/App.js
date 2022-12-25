@@ -59,7 +59,6 @@ const App = () => {
         <Route path=":id/stores" element={<StoresListPage />} />
         <Route path="store/:id" element={<Store />} />
       </Routes>
-      {/* <UserLocationPopUp />  */}
     </div>
   );
 };
