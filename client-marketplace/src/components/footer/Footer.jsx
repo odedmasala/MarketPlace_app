@@ -4,6 +4,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { FaFacebookF } from 'react-icons/fa';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavigationBar from '../mobile/NavBar';
 
 export default function FooterContainer() {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ export default function FooterContainer() {
     <div>
       <Footer bgDark={true}>
         <div className="w-full flex flex-col items-center  bg-gray-900">
-          <div className="grid w-3/4  text-center  grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
+          <div className="hidden md:grid w-3/4  text-center  text-gray-400  grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
             <div>
               <Footer.LinkGroup col={true}>
                 <span
@@ -78,6 +79,10 @@ export default function FooterContainer() {
           </div>
         </div>
       </Footer>
+      <br />
+      <br />
+      <br />
+      <NavigationBar />
     </div>
   );
 }
