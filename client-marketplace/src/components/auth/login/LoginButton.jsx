@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal,Button } from "flowbite-react";
+import { Modal, Button } from "flowbite-react";
 import LoginForm from "../form/LoginForm";
 import RegisterForm from "../form/RegisterForm";
 
@@ -15,14 +15,15 @@ const LoginButton = () => {
   return (
     <>
       <div className="flex flex-wrap gap-4">
-        <Button
+        <button
+          className="mx-1 nav-list"
           onClick={() => {
             handelView();
             setFormType("login");
           }}
         >
-          Toggle modal
-        </Button>
+          כניסת משתמש
+        </button>
       </div>
       <Modal
         size={"2xl"}
