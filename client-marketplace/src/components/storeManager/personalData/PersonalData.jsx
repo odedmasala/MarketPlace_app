@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
 const PersonalData = () => {
     const personalData = {  image: {
@@ -17,8 +18,22 @@ const PersonalData = () => {
       floor: "adda",
       comment: "sdavssfgvs asg asd gf asdg sdg s sdg asdgfa",
     }}
-    const [managerData,setManagerData] =useState(personalData)
+    const [managerData,setManagerData] =useState({})
+    
+const getDataFromServer = async()=>{
+const {data } = await axios.get("http://localhost:8001/api/storeManager/63a82c97c672788abe31e60f")
+console.log(data);
+setManagerData({...personalData,...data})
+}
+const changeDataInServer = async()=>{
+const {data } = await axios.put("http://localhost:8001/api/storeManager/63a82c97c672788abe31e60f",managerData)
+console.log(data);
+getDataFromServer()
+}
 
+useEffect(()=>{
+getDataFromServer()
+},[])
   const handleInput = (e) => {
     if(e.target.name === "image"){
         setManagerData({ ...managerData, image :{ url : e.target.value} });
@@ -34,51 +49,56 @@ const PersonalData = () => {
         <div className='md:w-[40%] flex flex-col'>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p  className="text-end">תמונה </p>
-            <input defaultValue={personalData.image.url} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0 "  name="image" type="text" />
+            <input value={managerData?.image?.url} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0 "  name="image" type="text" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">שם פרטי </p>
-            <input defaultValue={personalData.firstName} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="firstName" />
+            <input value={managerData?.firstName} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="firstName" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">שם משפחה </p>
-            <input defaultValue={personalData.lastName} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="lastName" />
+            <input value={managerData?.lastName} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="lastName" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">אימייל</p>
-            <input defaultValue={personalData.email} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="email" name="email" />
+            <input value={managerData?.email} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="email" name="email" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">פלאפון </p>
-            <input defaultValue={personalData.phone} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="phone" />
+            <input value={managerData?.phone} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="phone" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">פלאפון </p>
-            <input defaultValue={personalData.phone2} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="phone2" />
+            <input value={managerData?.phone2} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="phone2" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">עיר </p>
-            <input defaultValue={personalData.address.city} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="city" />
+            <input value={managerData?.address?.city} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="city" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">רחוב </p>
-            <input defaultValue={personalData.address.street} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="street" />
+            <input value={managerData?.address?.street} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="street" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">בניין </p>
-            <input defaultValue={personalData.address.building} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="building" />
+            <input value={managerData?.address?.building} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="building" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">דירה </p>
-            <input defaultValue={personalData.address.apartment} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="apartment" />
+            <input value={managerData?.address?.apartment} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="apartment" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">קומה </p>
-            <input defaultValue={personalData.address.floor} onClick={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="floor" />
+            <input value={managerData?.address?.floor} onChange={handleInput} className="text-end  border-r-0 border-t-0 border-l-0"  type="text" name="floor" />
           </div>
           <div className="flex flex-row-reverse justify-between py-3 px-2">
             <p className="text-end">הוראות </p>
-            <textarea className="text-end" defaultValue={personalData.address.comment} onClick={handleInput} type="text" name="comment" />
+            <textarea className="text-end" value={managerData?.address?.comment} onChange={handleInput} type="text" name="comment" />
+          </div>
+          <div className="flex flex-row-reverse justify-between py-3 px-2">
+            <button className='w-1/3 border-2 bg-green-500 text-white font-bold p-2 cursor-pointer ' onClick={()=>changeDataInServer()}> שמור שינויים</button>
+            <button className='w-1/3 border-2 bg-red-500 text-white font-bold p-2 cursor-pointer ' onClick={()=>getDataFromServer()}> ביטול</button>
+            
           </div>
         </div>
     </div>
