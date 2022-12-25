@@ -3,8 +3,10 @@ import { BsFacebook, BsInstagram } from 'react-icons/bs';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FaFacebookF } from 'react-icons/fa';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function FooterContainer() {
+  const navigate = useNavigate();
   return (
     <div>
       <Footer bgDark={true}>
@@ -12,27 +14,49 @@ export default function FooterContainer() {
           <div className="grid w-3/4  text-center  grid-cols-2 gap-8 py-8 px-6 md:grid-cols-5">
             <div>
               <Footer.LinkGroup col={true}>
-                <Footer.Link href="#">קצת עלינו</Footer.Link>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/about')}
+                >
+                  אודותינו
+                </span>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.LinkGroup col={true}>
-                <Footer.Link href="#">תמיכה</Footer.Link>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/questions')}
+                >
+                  שאלות נפוצות
+                </span>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.LinkGroup col={true}>
-                <Footer.Link href="#">לחנויות</Footer.Link>
+                <span className="cursor-pointer" onClick={() => navigate('/')}>
+                  למחלקות
+                </span>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.LinkGroup col={true}>
-                <Footer.Link href="#">מדיניות פרטיות</Footer.Link>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/company')}
+                >
+                  משרדי החברה
+                </span>
               </Footer.LinkGroup>
             </div>
             <div>
               <Footer.LinkGroup col={true}>
-                <Footer.Link href="#">צור קשר</Footer.Link>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/suppliers')}
+                >
+                  ספקים
+                </span>
               </Footer.LinkGroup>
             </div>
           </div>
