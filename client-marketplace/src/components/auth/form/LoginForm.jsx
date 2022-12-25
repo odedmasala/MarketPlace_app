@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Field, Formik, Form } from "formik";
 import * as Yup from "yup";
-import loginImage from "../../../assets/images/login-image.jpg";
 import { Modal, Select, Button } from "flowbite-react";
 import { MdEmail } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
@@ -15,7 +14,7 @@ import SocialButton from "./SocialButton";
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const passwordRegex =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
 const SignInSchema = Yup.object().shape({
   email: Yup.string()
     .matches(emailRegex, "אימייל לא תקין")
@@ -52,8 +51,8 @@ const LoginForm = ({ handelView, setFormType }) => {
       }) => (
         <div className="grid grid-cols-1 border rounded-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 row-span-3">
-            <div className="hidden md:flex h-full">
-              <img src={loginImage} alt="" className="w-full h-full" />
+            <div className="hidden md:flex h-full shadow-2xl">
+              <img src={'https://images.pexels.com/photos/9016541/pexels-photo-9016541.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'} alt="" className="w-full h-full" />
             </div>
             <div className="p-3">
               <div className="flex justify-end text-end hover:cursor-pointer">

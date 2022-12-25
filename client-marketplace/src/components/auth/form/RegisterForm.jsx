@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Field, Formik, Form } from "formik";
 import * as Yup from "yup";
-import loginImage from "../../../assets/images/login-image.jpg";
 import { Modal, Select, Button } from "flowbite-react";
 import { MdEmail } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
@@ -77,8 +76,8 @@ const RegisterForm = ({ handelView, setFormType }) => {
       }) => (
         <div className="grid grid-cols-1 border rounded-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 row-span-3">
-            <div className="hidden md:flex h-full">
-              <img src={loginImage} alt="" className="w-full h-full" />
+            <div className="hidden md:flex h-full shadow-2xl">
+              <img src={'https://images.pexels.com/photos/5632382/pexels-photo-5632382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'} alt="" className="w-full h-full" />
             </div>
             <div className="p-3">
               <div className="flex justify-end text-end hover:cursor-pointer">
@@ -88,7 +87,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                 <div>
                   <p className="text-2xl text-center">הירשם עכשיו</p>
                   <p className="text-sm text-center mb-2">
-                    ותוכל להנות משלל חניות בוטיק בלחיצת כפתור
+                    ותוכל להנות משלל חנויות בוטיק בלחיצת כפתור
                   </p>
                   <div className="flex justify-center items-center">
                     <div className="flex justify-center flex-col w-10/12">
@@ -132,7 +131,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           ) : null}
                         </div>
                       </>
-                      <div className="flex flex-row-reverse items-center border-b-4 border-blue-900 mb-3 mt-5 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 border-b-4 border-blue-900  focus-within:border-blue-200">
                         <MdEmail className="text-xl" />
                         <Field
                           onBlur={handleBlur}
@@ -149,7 +148,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.email}
                         </div>
                       ) : null}
-                      <div className="flex flex-row-reverse items-center border-b-4 border-blue-900 mb-3 mt-5 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 border-b-4 border-blue-900 focus-within:border-blue-200">
                         <AiFillPhone className="text-xl" />
                         <Field
                           onBlur={handleBlur}
@@ -166,7 +165,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.phone}
                         </div>
                       ) : null}
-                      <div className="flex flex-row-reverse items-center border-b-4 border-blue-900 mb-6 mt-5 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 border-b-4 border-blue-900  focus-within:border-blue-200">
                         {passwordType === "password" ? (
                           <AiOutlineEye
                             onClick={() => {
@@ -197,7 +196,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.password}
                         </div>
                       ) : null}
-                      <div className="flex flex-row-reverse items-center justify-center border-b-4 border-blue-900 mb-6 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 justify-center border-b-4 border-blue-900  focus-within:border-blue-200">
                         <Field
                           name="passwordVerification"
                           type={passwordType}
@@ -214,7 +213,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                       <button
                         type="submit"
                         onClick={handleSubmit}
-                        className="mb-2 border-2 border-blue-600 bg-[white] text-blue-700 hover:text-white hover:bg-blue-600  transform active:scale-y-75 transition-transform"
+                        className="mb-2 mt-2 border-2 border-blue-600 bg-[white] text-blue-700 hover:text-white hover:bg-blue-600  transform active:scale-y-75 transition-transform"
                       >
                         הירשם
                       </button>

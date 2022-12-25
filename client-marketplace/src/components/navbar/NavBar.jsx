@@ -5,6 +5,7 @@ import { ImLocation } from "react-icons/im";
 import { useNavigate } from "react-router-dom";
 import NavBarUserIsConnected from "./navBarUserIsConnected/NavBarUserIsConnected";
 import NavBarUserIsNotConnected from "./navBarUserIsNotConnected/NavBarUserIsNotConnected";
+import cartLogo from '../../assets/images/cart-logo.png'
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -18,13 +19,16 @@ export default function NavBar() {
       >
         <Navbar.Brand className="w-[25%] " onClick={() => navigate("/")}>
           <img
-            src={"https://i.postimg.cc/dtp2yysC/logo-removebg-preview.png"}
-            className="mr-3 w-full h-14  sm:h-20"
-            alt="Flowbite Logo"
+            src={cartLogo}
+            className="w-3/4 h-14  sm:h-20"
+            alt="Logo"
           />
+        <span className="self-center text-xl font-semibold text-[#3e8f7f] dark:text-white">
+      MarketPlace
+    </span>
         </Navbar.Brand>
-        <NavBarUserIsConnected/>
-        {/* <NavBarUserIsNotConnected/> */}
+        {/* <NavBarUserIsConnected/> */}
+        <NavBarUserIsNotConnected/>
       </Navbar>
     </div>
   );

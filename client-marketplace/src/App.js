@@ -14,7 +14,6 @@ import {
   SuppliersPage,
   AddProduct,
   PersonalData,
-  LoginButton,
   SectionStoreManager,
   ProductPage,
   AllStores,
@@ -64,7 +63,6 @@ const App = () => {
         <Route path=":id/stores" element={<StoresListPage />} />
         <Route path="store/:id" element={<Store />} />
       </Routes>
-      <LoginButton />
     </div>
   );
 };
