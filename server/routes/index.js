@@ -15,7 +15,7 @@ router.use("/api/products", productRoute);
 // app.use("api/receipt", receiptRoute);
 router.use("/api/section", sectionRoute);
 router.use("/api/store", storeRoute);
-// app.use("api/storeManager", storeManagerRoute);
+router.use("/api/storeManager", storeManagerRoute);
 // app.use("api/user", userRoute);
 router.use("/api/stripe", stripe);
 router.use("/api/test", testRoute);
