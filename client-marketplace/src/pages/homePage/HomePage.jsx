@@ -20,8 +20,10 @@ const HomePage = () => {
   return (
     <div>
       <div
+
         className="bg-[url('https://images.pexels.com/photos/4443494/pexels-photo-4443494.jpeg?auto=compress&cs=tinysrgb&w=1600')]
         bg-no-repeat bg-center bg-cover flex flex-col items-center h-full py-8 px-4 md:px-20 justify-between text-right"
+
       >
         <div className="w-full md:w-[80%] px-8 mb-6 md:mt-14 ">
           <h1 className="text-4xl text-center mb-8">

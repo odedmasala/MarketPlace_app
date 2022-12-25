@@ -1,8 +1,9 @@
 import React,{useState} from "react";
 import AmountButton from "../../features/buttons/AmountButton";
 import ProductPopUp from "./ProductPopUp";
+import { truncateString } from "../../utils";
 
-export default function Product() {
+export default function Product({productData}) {
     const [showPopUp, setShowPopUp] = useState(false)
     const handleModal = ()=>{
         setShowPopUp(!showPopUp)
@@ -10,31 +11,37 @@ export default function Product() {
 
   return (
     <div className="border mb-3"> 
-      <div className="product" onClick={handleModal}>
+      <div className="product">
         <img
-          src="https://www.santosfood.com/wp-content/uploads/2020/01/img-7.jpg"
-          alt=""
+          src={productData.image.url}
+          alt="product image"
+          className="product-img"
+          onClick={handleModal}
         />
         <div className="product-name">
-          <h3>תפוזים</h3>
+          <h3>{productData.name}</h3>
+            {productData.description.length > 50 ?
           <p className="description">
-            קצת על המוצר, קצת על המוצר קצת על המוצר קצת על המוצר קצת על המוצר
+            {truncateString(productData.description,50)}
+            <span className="read-more" onClick={handleModal}>...קרא עוד</span>
           </p>
+          : <p className="description">{productData.description}</p>
+             }
         </div>
         <div className="buttons-container my-2">
           <AmountButton button={"-"} />
-          <p>2</p>
+          <p>1</p>
           <AmountButton button={"+"} />
         </div>
         <div>
           <p>
             <span className="font-bold"> סה"כ</span>
-            <span className="mx-1">9.90</span>
+            <span className="mx-1">{productData.price}</span>
             ש"ח
           </p>
         </div>
       </div>
-      <ProductPopUp show={showPopUp} handleModal={handleModal}/>
+      <ProductPopUp show={showPopUp} handleModal={handleModal} productData={productData}/>
     </div>
   );
 }

@@ -1,7 +1,10 @@
 import React from "react";
 import {IoStorefrontSharp} from 'react-icons/io5'
+import { useNavigate } from "react-router-dom";
+
 
 export default function StoreDesktop({storeData}) {
+  const navigate = useNavigate()
   return (
     <div className="md:flex justify-end text-right border-[1px] bg-white hidden py-4 mb-1">
       <div className="mr-4 font-thin w-3/4">
@@ -13,7 +16,7 @@ export default function StoreDesktop({storeData}) {
             <p className="mt-2 ml-2"><IoStorefrontSharp className="text-[#0899A5]"/></p>
         </div>
         <div>
-            <button className="bg-[#0899A5] p-1 px-2 text-white">קנה בחנות זו</button>
+            <button className="bg-[#0899A5] p-1 px-2 text-white" onClick={()=>navigate(`/store/${storeData._id}`)}>קנה בחנות זו</button>
         </div>
         </div>
       </div>

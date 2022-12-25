@@ -1,0 +1,13 @@
+.homePage {
+  background: linear-gradient(rgba(255, 255, 255, 0.621), rgba(255, 255, 255, 0.495)),
+    url("https://images.pexels.com/photos/4443494/pexels-photo-4443494.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+  text-align: right;
+}

@@ -67,30 +67,6 @@ export default function CheckOut() {
     </div>
   );
 }
-{
-  /* <div className="flex justify-between ">
-<div>
-{toggle ? (
-     <RiArrowDropDownLine size={"50px"} /> 
-    ) : (
-      <RiArrowDropRightLine size={"50px"} />
-    )}
-</div>
-<div className="flex items-center">
-  <h3 className="px-2 text-2xl">זמן למשלוח</h3>
-  <AiFillClockCircle className="text-teal-500" size={"30px"} />
-</div>
-</div>
-<div className="flex justify-between ">
-<div>
-  <RiArrowDropDownLine size={"50px"} />
-</div>
-<div className="flex items-center">
-  <h3 className="px-2 text-2xl">תשלום</h3>
-  <BsCreditCard2FrontFill className="text-teal-500" size={"30px"} />
-</div>
-</div> */
-}
 
 // import React from "react";
 // import { Accordion } from "flowbite-react";
