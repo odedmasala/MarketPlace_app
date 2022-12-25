@@ -25,16 +25,18 @@ import LoginPopUP from "./components/auth/login/LoginPopUP";
 import SectionStoreManager from "./components/storeManager/allProducts/sectionStoreManager/SectionStoreManager";
 import ProductPage from "./components/storeManager/allProducts/ProductPage";
 import AllStores from "./components/storeManager/allProducts/AllStores";
+import MyAddress from "./pages/profile/MyAddress";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <NavBar />
       <Routes>
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>
           <Route path="myOrders" element={<MyOrders />} />
           <Route path="details" element={<PersonalDetails />} />
+          <Route path="myAddress" element={<MyAddress />} />
         </Route>
 
         <Route path="successPage" element={<SuccessPayment />} />

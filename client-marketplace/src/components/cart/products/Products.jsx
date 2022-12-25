@@ -5,21 +5,18 @@ export default function Products({ product }) {
   return (
     <div
       className="flex
-    h-[60px] px-2 my-6 gap-2 justify-between items-center "
+    h-[60px] px-2 my-6 justify-between items-center text-sm"
     >
-      <div className=" h-full flex flex-col justify-between items-center">
-        <div className="flex gap-1">
+      <div className=" h-full flex flex-col justify-end items-center">
+        <div className="flex">
           <AmountButton button={"-"} />
           <span>1</span>
           <AmountButton button={"+"} />
         </div>
-        <p>{product.price} ש"ח</p>
+        <p className="mt-1">{product.price} ש"ח</p>
       </div>
-      <div className=" flex items-end flex-col justify-between  ">
+      <div className=" flex items-end justify-between  ">
         <p className="text-end">{product.name}</p>
-        <p className="w-[80%] text-end text-sm text-gray-400">
-          {product.description}
-        </p>
       </div>
       <div className="h-[90%] ">
         <img className="h-full w-fit" src={product.image} alt="" />

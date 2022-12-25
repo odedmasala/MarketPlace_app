@@ -38,9 +38,7 @@ storeLogo:"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQTERUTEh
           <span>0 ש"ח</span>
         </p>
       </div>
-      <div className="">
-        <button className="bg-teal-400 hover:bg-lime-500 w-full h-full rounded-none text-white text-4xl p-4 " > לתשלום 0 ש"ח</button>
-      </div>
+        <button className="bg-teal-500 w-full h-[50px] text-white text-2xl " > לתשלום 0 ש"ח</button>
     </div>
   );
 };

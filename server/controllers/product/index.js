@@ -16,7 +16,7 @@ const getAllProducts = async (req, res, next) => {
       let storeId = req.query.storeId;
       products = await findProductsByStoreId(storeId);
     }else{
-      products = await findAllProducts()
+      products = await findAllProducts();
     }
     res.status(200).json(products);
   } catch (err) {
