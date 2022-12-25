@@ -33,13 +33,14 @@ import {
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <NavBar />
       <Routes>
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>
           <Route path="myOrders" element={<MyOrders />} />
           <Route path="details" element={<PersonalDetails />} />
+          <Route path="myAddress" element={<MyAddress />} />
         </Route>
 
         <Route path="successPage" element={<SuccessPayment />} />
