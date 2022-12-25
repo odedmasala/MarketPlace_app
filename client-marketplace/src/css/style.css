@@ -1,2 +1,6 @@
 @import url("../components/styleComponent/components.scss");
-/*# sourceMappingURL=style.css.map */
+@import url("../pages/pagesStyle/_pages.scss");
+
+@import url("../features/_featuresStyle.scss");/*# sourceMappingURL=style.css.map */
+
+

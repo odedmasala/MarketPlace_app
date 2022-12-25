@@ -1,0 +1,15 @@
+.details{
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+justify-content: space-between;
+height: 20%;
+width: 60%;
+border-bottom: 1px solid gray;
+padding-top: 10px;
+}
+
+.title-details{
+    font-weight: bold;
+    color: rgb(87, 86, 86);
+}

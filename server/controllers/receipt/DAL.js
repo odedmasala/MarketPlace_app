@@ -1,6 +1,6 @@
 const receiptModel = require("../../models/receipt/ReceiptSchema");
 
-const getAllReceipts = async () => {
+const findAllReceipts = async () => {
   try {
     const receipts = await receiptModel.find();
     return receipts;
@@ -9,7 +9,7 @@ const getAllReceipts = async () => {
   }
 };
 
-const getReceiptById = async (id) => {
+const findReceiptById = async (id) => {
   try {
     const receipt = await receiptModel.findById(id);
     return receipt;
@@ -18,7 +18,7 @@ const getReceiptById = async (id) => {
   }
 };
 
-const createReceipt = async (obj) => {
+const createOneReceipt = async (obj) => {
   try {
     const receipt = new receiptModel(obj);
     await receipt.save();
@@ -28,7 +28,7 @@ const createReceipt = async (obj) => {
   }
 };
 
-const updateReceipt = async (id, obj) => {
+const updateOneReceipt = async (id, obj) => {
   try {
     await receiptModel.findByIdAndUpdate(id, obj);
     return "Updated";
@@ -37,7 +37,7 @@ const updateReceipt = async (id, obj) => {
   }
 };
 
-const deleteReceipt = async (id) => {
+const deleteOneReceipt = async (id) => {
   try {
     await receiptModel.findByIdAndDelete(id);
     return "Deleted";
@@ -47,9 +47,9 @@ const deleteReceipt = async (id) => {
 };
 
 module.exports = {
-  getAllReceipts,
-  getReceiptById,
-  createReceipt,
-  updateReceipt,
-  deleteReceipt,
+  findAllReceipts,
+  findReceiptById,
+  createOneReceipt,
+  deleteOneReceipt,
+  updateOneReceipt,
 };

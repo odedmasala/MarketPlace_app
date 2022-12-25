@@ -29,11 +29,13 @@ export default function ProfilePage() {
                   ההזמנות שלי
                 </Sidebar.Item>
               </Link>
+              <Link to={"/profile/details"}>
               <Sidebar.Item href="#" icon={FaAddressCard}>
                 מידע אישי
               </Sidebar.Item>
+              </Link>
               <Sidebar.Item href="#" icon={BsFillHouseFill}>
-                כתובת
+                כתובת שלי
               </Sidebar.Item>
               <Sidebar.Item href="#" icon={HiArrowSmRight}>
                 התנתקות
