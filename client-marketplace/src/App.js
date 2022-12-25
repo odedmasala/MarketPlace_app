@@ -11,7 +11,7 @@ import Product from "./components/product/Product";
 import PersonalDetails from "./pages/profile/PersonalDetails";
 import Store from "./pages/storePage/Store";
 import StoresListPage from "./pages/storeslist/StoresListPage";
-import LoginPopUP from "./components/auth/login/LoginPopUP";
+import LoginButton from "./components/auth/login/LoginButton";
 
 const App = () => {
   return (
