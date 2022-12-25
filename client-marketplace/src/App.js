@@ -25,6 +25,7 @@ import LoginButton from "./components/auth/login/LoginButton";
 import SectionStoreManager from './components/storeManager/allProducts/sectionStoreManager/SectionStoreManager';
 import ProductPage from './components/storeManager/allProducts/ProductPage';
 import AllStores from './components/storeManager/allProducts/AllStores';
+import MyAddress from './pages/profile/MyAddress';
 import UserLocationPopUp from './components/userLocationPopup/UserLocationPopUp';
 
 
