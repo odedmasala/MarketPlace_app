@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 const SectionStoreManager = () => {
     const navigate =useNavigate()
     const {id}=useParams()
-    const sections = [
-        {id:"1",name:"A section"},
-        {id:"2",name:"B section"},
-        {id:"3",name:"C section"}
-    ]
+    const [sections,setSections] =useState([])
+    const findSections = ()=>{
+        const data =[
+            {id:"1",name:"A section",store:"1"},
+            {id:"2",name:"B section",store:"1"},
+            {id:"3",name:"C section",store:"2"}
+            
+        ]
+        const finalData = data.filter(section=>section.store === id)
+        setSections(finalData)
+    }
+    
+useEffect(()=>findSections(),[id])
+
   return (
     <div>
         {
