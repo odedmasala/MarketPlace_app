@@ -41,22 +41,21 @@ export default function HeaderStore({
         </div>
       </div>
       {/* Store details for mobile */}
-      <div className="flex md:hidden flex-col text-end  bg-[#e6dfdf74] bg-opacity-10 shadow-lg mb-10">
+      <div className=" flex md:hidden flex-row-reverse text-end items-center bg-[#e6dfdf74] bg-opacity-10 shadow-lg mb-10">
         <div className="flex justify-center">
-          <img className="h-[110px] w-[110px]" src={logo} alt="logo" />
+          <img className="h-[90px] w-[105px]" src={logo} alt="logo" />
         </div>
         <div className="flex flex-col items-end px-2 justify-end mb-1">
-          <h1 className="text-2xl">{name}</h1>
+          <h1 className="text-xl">{name}</h1>
           <p>{description}</p>
         </div>
-        <div className="flex-col items-end px-2 mb-1">
+        <div className="flex flex-col items-end mb-1">
           <p>
             <span className="px-1 items-end">{address?.city},</span>
             <span className="px-1 items-end"> {address?.street}</span>
             <span className="px-1 items-end">{address?.building}</span>
-            <span className="px-2 items-end">{address?.zone}</span>
           </p>
-          <p>{phone} : צרו קשר</p>
+          <p className="text-[11px]">{phone}</p>
         </div>
       </div>
       {/* Store details for mobile */}
