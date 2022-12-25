@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 
 export default function StoresListPage() {
   const [stores, setStore] = useState([]);
+  const [department, setDepartment] = useState({image:{url:""}})
   const windowSize = useWindowSize();
   const { id } = useParams();
 
@@ -21,13 +22,18 @@ export default function StoresListPage() {
     setStore(data);
   };
 
+  const getDepartmentById = async() =>{
+    const {data} = await axios.get(`http://localhost:8001/api/department/${id}`)
+    setDepartment(data)
+  }
+
   useEffect(() => {
     getStoresInDepartment();
-    console.log(windowSize)
+    getDepartmentById()
   }, []);
   return (
     <div>
-      <Header />
+      <Header department={department}/>
       <div className="w-full md:w-[80%] flex m-auto">
         <div className="w-[30%] hidden md:block">
           <Cart />

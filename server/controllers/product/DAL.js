@@ -3,10 +3,18 @@ const cloudinary = require("../../utils/cludinary");
 
 const findAllProducts = async () => {
   try {
-    const products = await productModel
-      .find()
-      // .populate(["storeId", "subCategory"]);
+    const products = await productModel.find();
+    // .populate(["storeId", "subCategory"]);
     return products;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const findProductsByStoreId = async (storeId) => {
+  try {
+    const productsInStore = await productModel.find({ storeId: storeId });
+    return productsInStore;
   } catch (error) {
     throw error;
   }
@@ -14,9 +22,8 @@ const findAllProducts = async () => {
 
 const findProductById = async (id) => {
   try {
-    const product = await productModel
-      .findById(id)
-      // .populate(["storeId", "subCategory"]);
+    const product = await productModel.findById(id);
+    // .populate(["storeId", "subCategory"]);
     return product;
   } catch (error) {
     throw error;
@@ -50,17 +57,18 @@ const deleteOneProduct = async (id) => {
     throw error;
   }
 };
-const cloudinaryUpLoud = async (image,folderPata)=> {
+const cloudinaryUpLoud = async (image, folderPata) => {
   const results = await cloudinary.uploader.upload(image, {
     folder: folderPata,
   });
-  return results
-}
+  return results;
+};
 module.exports = {
   findAllProducts,
   findProductById,
   deleteOneProduct,
   updateOneProduct,
   createOneProduct,
-  cloudinaryUpLoud
+  cloudinaryUpLoud,
+  findProductsByStoreId,
 };

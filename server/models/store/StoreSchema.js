@@ -16,5 +16,6 @@ const StoreSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
   createdBy: { type: String },
 });
+
 const model = mongoose.model("stores", StoreSchema);
 module.exports = model;

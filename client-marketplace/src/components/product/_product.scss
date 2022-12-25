@@ -5,7 +5,9 @@
     width: 200px;
     height: 300px;
     margin-bottom: 30px;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 .description{
     font-size: 12px;
@@ -14,10 +16,18 @@
     display: flex;
     justify-content: flex-end
 }
-img{
-    width: 100%;
+.product-img{
+    width: 75%;
+    height: 50%;
+    margin: auto;
 }
-.product-description{
+
+.product-img-popUp{
+    width: 60%;
+    height:8rem ;
+    margin: auto;
+}
+.product-description-popUp{
     font-size: 15px;
 }
 .description-section{
@@ -26,4 +36,12 @@ img{
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+.read-more{
+    color: #08ACA2;
+    font-weight: bold;
+}
+.read-more:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -8,7 +8,7 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
 
   useEffect(() => {
     setLoading(true);
-    axios[method](url, JSON.parse(headers), JSON.parse(body))
+    axios.get(url, JSON.parse(headers), JSON.parse(body))
       .then((res) => {
         setData(res.data);
       })
@@ -22,7 +22,7 @@ const useAxios = ({ url, method, body = null, headers = null }) => {
 
   const refetch = () => {
     setLoading(true);
-    axios[method](url, JSON.parse(headers), JSON.parse(body))
+    axios.get(url, JSON.parse(headers), JSON.parse(body))
       .then((res) => {
         setData(res.data);
       })

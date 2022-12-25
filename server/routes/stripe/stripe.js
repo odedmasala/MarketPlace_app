@@ -2,7 +2,6 @@ const express = require("express");
 const Stripe = require("stripe");
 const stripe = Stripe(process.env.STRIPE_KEY);
 const router = express.Router();
-console.log(process.env.STRIPE_KEY);
 
 router.post("/create-checkout-session", async (req, res) => {
   const line_items = req.body.cartItem.map((item) => {
@@ -22,7 +21,7 @@ router.post("/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items,
     mode: "payment",
-    success_url: `http://localhost:3000`,
+    success_url: `http://localhost:3000/successPage`,
     cancel_url: `http://localhost:3000`,
   });
 
