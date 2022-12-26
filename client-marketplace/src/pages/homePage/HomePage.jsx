@@ -50,7 +50,7 @@ const HomePage = () => {
         </div>
       </div>
       <FooterHomePage />
-      <UserLocationPopUp />
+      {/* <UserLocationPopUp /> */}
     </div>
   );
 };
