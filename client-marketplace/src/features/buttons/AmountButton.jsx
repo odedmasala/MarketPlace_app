@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function AmountButton({button}) {
+export default function AmountButton({button, setCount}) {
   return (
-    <button className='button mx-2'>
+    <button onClick={setCount} className='button mx-2'>
       {button}
     </button>
   )
