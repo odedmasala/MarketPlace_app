@@ -20,7 +20,7 @@ export default function NavBar() {
         <Navbar.Brand className="w-[25%] " onClick={() => navigate("/")}>
           <img
             src={cartLogo}
-            className="w-3/4 h-14  sm:h-20"
+            className="w-1/2 h-10  sm:h-20"
             alt="Logo"
           />
         <span className="self-center text-xl font-semibold text-[#3e8f7f] dark:text-white">
