@@ -79,9 +79,6 @@ export default function FooterContainer() {
           </div>
         </div>
       </Footer>
-      <br />
-      <br />
-      <br />
       <NavigationBar />
     </div>
   );

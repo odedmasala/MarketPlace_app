@@ -13,8 +13,8 @@ const addressSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  apartment: Number,
-  floor: Number,
+  apartment: String,
+  floor: String,
   comment: String,
 });
 
