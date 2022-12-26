@@ -1,9 +1,11 @@
+
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Department from "../../components/department/Department";
 import FooterHomePage from "../../components/footer/FooterHomePage";
 // import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
+
 
 import axios from "axios";
 
@@ -42,7 +44,7 @@ const HomePage = () => {
         </div>
       </div>
       <FooterHomePage />
-      {/* <UserLocationPopUp /> */}
+      <UserLocationPopUp />
     </div>
   );
 };
