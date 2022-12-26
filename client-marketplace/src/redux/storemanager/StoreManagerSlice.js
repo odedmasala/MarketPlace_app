@@ -1,114 +1,103 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import {
+  getProductsApi,
+  createProductApi,
+  updateProductApi,
+  deleteProductsApi,
+} from "./serverSlice";
 
-export const getProducts = createAsyncThunk(
+export const getProductsAsync = createAsyncThunk(
   "storeManagement/getProducts",
   async () => {
     try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      return response.data;
+      const data = await getProductsApi();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  );
+  export const getMangerAsync = createAsyncThunk(
+    "storeManagement/getMangerAsync",
+    async () => {
+      try {
+        const data = await getMangerAsync();
+        console.log(data);
+      return data;
     } catch (error) {
       console.log(error);
     }
   }
 );
 
-export const createProduct = createAsyncThunk(
+export const createProductAsync = createAsyncThunk(
   "storeManagement/createProduct",
   async (product) => {
     try {
-      const response = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        product
-      );
-      return response.data;
+      const response = await createProductApi(product);
+      return response;
     } catch (error) {
       console.log(error);
     }
   }
 );
 
-export const updateProduct = createAsyncThunk(
+export const updateProductAsync = createAsyncThunk(
   "storeManagement/updateProduct",
   async (product) => {
     try {
-      const response = await axios.put(
-        `https://jsonplaceholder.typicode.com/posts/products/${product.id}`,
-        product
-      );
-      return response.data;
+      const response = await updateProductApi(product);
+      return response;
     } catch (error) {
       console.log(error);
     }
   }
 );
 
-export const deleteProduct = createAsyncThunk(
+export const deleteProductAsync = createAsyncThunk(
   "storeManagement/deleteProduct",
   async (id) => {
     try {
-      await axios.delete(
-        `https://jsonplaceholder.typicode.com/posts/products/${id}`
-      );
+      await deleteProductsApi(id);
     } catch (error) {
       console.log(error);
     }
   }
 );
 
+const initialState = {
+  managerSystem: [],
+  stores: [],
+  sections: [],
+  products: [],
+  loading: false,
+  error: null,
+};
 const storeManagementSlice = createSlice({
   name: "storeManagement",
-  initialState: {
-    products: [],
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {},
-  extraReducers: (builder) => {
-    builder.addCase(getProducts.pending, (state, action) => {
-      state.loading = true;
-      state.error = null;
-    });
-    builder.addCase(getProducts.fulfilled, (state, action) => {
-      state.loading = false;
-      console.log(action);
+  extraReducers: {
+    [getProductsAsync.fulfilled]: (state, action) => {
       state.products = action.payload;
-    });
-    builder.addCase(getProducts.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.error;
-    });
-
-    builder.addCase(createProduct.pending, (state, action) => {
-      state.loading = true;
-      state.error = null;
-    });
-    builder.addCase(createProduct.fulfilled, (state, action) => {
-      state.loading = false;
+    },
+    [getMangerAsync.fulfilled]: (state, action) => {
+      console.log(action.payload);
+      state.managerSystem = action.payload;
+    },
+    [createProductAsync.fulfilled]: (state, action) => {
       state.products.push(action.payload);
-    });
-    builder.addCase(createProduct.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.error;
-    });
-
-    builder.addCase(updateProduct.pending, (state, action) => {
-      state.loading = true;
-      state.error = null;
-    });
-    builder.addCase(updateProduct.fulfilled, (state, action) => {
-      state.loading = false;
-      const index = state.products.findIndex(
+    },
+    [updateProductAsync.fulfilled]: (state, action) => {
+      const index = state.findIndex(
         (product) => product.id === action.payload.id
       );
-      state.products[index] = action.payload;
-    });
-    builder.addCase(updateProduct.rejected, (state, action) => {
-      state.loading = false;
-      state.error = action.error;
-    });
+      state[index] = action.payload;
+    },
+    [deleteProductAsync.fulfilled]: (state, action) => {
+      return state.filter((product) => product.id !== action.payload.id);
+    },
   },
 });
 
