@@ -23,7 +23,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="homePage">
+      <div className="homePage pt-5">
         <div className="w-full md:w-[80%] px-8 mb-6 md:mt-14 ">
           <h1 className="text-5xl text-center mb-8">
             ברוך הבא לעולם החנויות שלך

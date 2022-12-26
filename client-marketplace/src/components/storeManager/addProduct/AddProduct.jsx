@@ -52,23 +52,23 @@ const saveProduct = async()=>{
 }
 
   return (
-    <div>
+    <div className="bg-white py-5">
       <div>
-        <h1 className="text-4xl font-bold text-center">יצירה של מוצר</h1>
+        <h1 className="text-4xl font-bold text-center">מוצר חדש</h1>
       </div>
-      <div className="flex flex-col md:flex-row-reverse">
-        <div>
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
-            <p className="text-end">תמונה </p>
+      <div className="w-full flex flex-col md:flex-row-reverse md:justify-between">
+        <div className="md:w-[60%]">
+          <div className="input-product py-3 px-2">
+            <label className="text-end">תמונה </label>
             <input 
             value={product.image.url}
-              className="text-end  border-r-0 border-t-0 border-l-0 "
+              className="w-full text-end border-r-0 border-t-0 border-l-0 "
               onChange={handleInput}
               name="image"
               type="text"
             />
           </div>
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
+          <div className="input-product py-3 px-2">
             <p className="text-end">שם המוצר </p>
             <input 
             value={product.name}
@@ -78,7 +78,7 @@ const saveProduct = async()=>{
               name="name"
             />
           </div>
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
+          <div className="input-product py-3 px-2">
             <p className="text-end">תיאור המוצר </p>
             <input 
             value={product.description}
@@ -88,7 +88,7 @@ const saveProduct = async()=>{
               name="description"
             />
           </div>
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
+          <div className="input-product py-3 px-2">
             <p className="text-end">מחיר </p>
             <input 
             value={product.price}
@@ -99,7 +99,7 @@ const saveProduct = async()=>{
               name="price"
             />
           </div>
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
+          <div className="input-product py-3 px-2">
             <p className="text-end">קטגוריה </p>
             <input 
             value={product.subCategory}
@@ -109,7 +109,7 @@ const saveProduct = async()=>{
               name="subCategory"
             />
           </div>
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
+          <div className="input-product py-3 px-2">
             <p className="text-end">יצרן </p>
             <input 
             value={product.manufacture}
@@ -120,7 +120,7 @@ const saveProduct = async()=>{
             />
           </div>
           
-          <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
+          <div className="input-product py-3 px-2">
             <p className="text-end">זמין </p>
             <input 
             checked={product.active}
@@ -130,8 +130,8 @@ const saveProduct = async()=>{
             />
           </div>
           <div className="flex flex-row-reverse items-baseline justify-between py-3 px-2">
-            <button className="border-2 p-2 bg-green-500 cursor-pointer text-white font-bold">יצירה</button>
-            <button onClick={deleteAllChanges} className="border-2 p-2 bg-red-500 cursor-pointer text-white font-bold">מחיקה</button>
+            <button onClick={deleteAllChanges} className="button-form-product underline">איפוס</button>
+            <button className="button-form-product bg-green-400 w-1/3 hover:text-white">יצירה</button>
           </div>
         </div>
         <div className="flex justify-center items-center flex-col  md:w-[40%]">
