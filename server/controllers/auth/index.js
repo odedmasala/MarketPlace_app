@@ -1,37 +1,57 @@
 const passport = require("passport");
 const bcrypt = require("bcrypt");
-const User = require("../../models/user/UserSchema");
+const { createOneUser } = require("../user/DAL");
+const { createError } = require("../../utils/errorSetting");
 
 const register = async (req, res, next) => {
-  // if(!req.body) next(Error("need password and username"))
+  if (!req.body) next(createError(403, "need user form"));
+  if (!req.body.user) next(createError(403, "need user form"));
   try {
+    const { email, firstName, lastName, phone, password } = req.body.user;
     console.log(req.body);
     const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(req.body.password, salt);
-    const newUser = new User({
-      username: req.body.username,
-      password: req.body.password,
-      email: req.body.email,
-      source: "email",
+    const hash = bcrypt.hashSync(password, salt);
+    const createdMassage = createOneUser({
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      phone: phone,
+      password: hash,
+      email: "email",
     });
-    await newUser.save();
-    res.status(201).json("user created");
+    res.status(201).json({ createdMassage, create: true });
   } catch (err) {
     next(err);
   }
 };
+
 const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
 const loginSuccess = (req, res) => {
-  console.log(req.user);
-  if (req.user) {
-    res.status(200).json({
+  const { user } = req;
+  if (user) {
+    const hashToken = { id: user._id };
+    if (user.meager) hashToken.meager = user.meager;
+    if (user.isAdmin) hashToken.isAdmin = user.isAdmin;
+    const token = jwt.sign(hashToken, process.env.JWT);
+    const sendUserDataObj = {
+      firstName: user.firstName,
+      lastName: user.lastName,
+    };
+    if (user.social_image) sendUserDataObj.image = user.social_image;
+    if (user.image) {
+      if (user.image.url) sendUserDataObj.image = user.image.url;
+    }
+    if (user.email) sendUserDataObj.email = user.email;
+    console.log(sendUserDataObj);
+
+    res.cookie("access_token", token, { httpOnly: true }).status(200).json({
       error: false,
       message: "Successfully Logged In",
-      user: req.user,
+      user: sendUserDataObj,
     });
   } else {
     console.log("not access");
-    res.status(403).json({ error: true, message: "Not Authorized" });
+    res.status(403).json({ error: true, message: "Login error" });
   }
 };
 const loginSuccessUser = (req, res) => {
@@ -85,7 +105,6 @@ module.exports = {
   register,
   loginSuccessUser,
   redirectLogin,
-  // login,
   checkRegularUser,
   goToGoogle,
   googleCalBack,
