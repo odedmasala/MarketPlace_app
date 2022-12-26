@@ -35,7 +35,7 @@ const Store = () => {
         <div className="flex flex-row-reverse md:px-48 md:py-8 justify-between items-start">
           <div className="md:w-[75%] flex flex-wrap justify-between">
             {products.map((product) => (
-              <Product productData={product} key={product._id} />
+              <Product productData={product} key={product._id} storeData={store}/>
             ))}
           </div>
           <div className="md:w-[32%] hidden md:block mr-2">
