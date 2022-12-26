@@ -1,6 +1,4 @@
-import React from 'react'
-import { useState } from 'react'
-import ProductPopUp from '../../../product/ProductPopUp'
+import React,{ useState } from 'react'
 import PopStoreManagerProduct from './PopStoreManagerProduct'
 
 const StoreManagerProduct = ({product}) => {
@@ -12,7 +10,7 @@ const StoreManagerProduct = ({product}) => {
     
       <div  className="border mb-3 text-end p-5 flex flex-col w-[200px] ">
             <div className="grow flex items-end">
-              <img className="w-40 " src={product.image} alt="" />
+              <img className="w-40 " src={product.image.url} alt="" />
             </div>
             <div>
               <h3 className="font-bold text-lg">{product.name}</h3>

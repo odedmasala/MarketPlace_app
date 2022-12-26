@@ -13,9 +13,8 @@ import {
   HeadlinesPage,
   SuppliersPage,
   AddProduct,
-  PersonalData,
+  AddCategory,
   SectionStoreManager,
-  ProductPage,
   AllStores,
 } from "./components";
 import {
@@ -53,9 +52,8 @@ const App = () => {
         <Route path="storeManager" element={<StoreManager />}>
           <Route path="allStores" element={<AllStores />} />
           <Route path="section/:id" element={<SectionStoreManager />} />
-          <Route path="allProduct/:id" element={<ProductPage />} />
           <Route path="addProduct" element={<AddProduct />} />
-          <Route path="personalData" element={<PersonalData />} />
+          <Route path="personalData" element={<AddCategory />} />
         </Route>
         <Route path="info" element={<MainInfo />}>
           <Route path="about" element={<AboutPage />} />
