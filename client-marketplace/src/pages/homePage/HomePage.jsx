@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Department from "../../components/department/Department";
 import FooterHomePage from "../../components/footer/FooterHomePage";
-// import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
+import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
 import { useDispatch } from 'react-redux'
 import {getProducts} from "../../redux/storemanager/StoreManagerSlice"
 

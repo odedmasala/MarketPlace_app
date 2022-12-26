@@ -15,11 +15,11 @@ const {
   loginSuccessUser,
 } = require("../../controllers/auth");
 
-router.post("/register", register, redirectLogin);
+router.post("/register", register);
 
 router.post("/login", checkRegularUser, loginSuccess);
 
-router.get("/login/success", loginSuccessUser);
+router.get("/login/success", loginSuccess);
 
 router.get("/login/failed", loginFailed);
 

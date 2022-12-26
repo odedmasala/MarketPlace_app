@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Product from "../../product/Product";
 
 const AddProduct = () => {
@@ -18,6 +18,7 @@ const AddProduct = () => {
     brand: "",
     active: false,
   });
+  const [section,setSection] = useState([])
   const handleInput = (e) => {
     if (e.target.name === "image") {
       setProduct({ ...product, image: { url: e.target.value } });
@@ -45,7 +46,14 @@ setProduct({
   active: false,
 })
 }
+const findSection = async()=>{
+  const {data} = await axios.get(`http://localhost:8001/api/section?storeId=63a44ddaa01e048b498ff5f6`)
+  setSection(data);
+}
 
+useEffect(()=>{
+findSection()
+},[])
 
 const saveProduct = async()=>{
   const result = axios.post("http....")
@@ -61,11 +69,11 @@ const saveProduct = async()=>{
           <div className="input-product py-3 px-2">
             <label className="text-end">תמונה </label>
             <input 
-            value={product.image.url}
+            
               className="w-full text-end border-r-0 border-t-0 border-l-0 "
               onChange={handleInput}
               name="image"
-              type="text"
+              type="file"
             />
           </div>
           <div className="input-product py-3 px-2">
@@ -101,13 +109,13 @@ const saveProduct = async()=>{
           </div>
           <div className="input-product py-3 px-2">
             <p className="text-end">קטגוריה </p>
-            <input 
-            value={product.subCategory}
-              className="text-end  border-r-0 border-t-0 border-l-0 "
-              onChange={handleInput}
-              type="text"
-              name="subCategory"
-            />
+            <select name="subCategory" onClick={handleInput} className="text-right">
+              {
+                section.map(element=><option key={element._id}  value={element._id}>{element.name}</option>)
+              }
+              
+            </select>
+            
           </div>
           <div className="input-product py-3 px-2">
             <p className="text-end">יצרן </p>
@@ -124,7 +132,7 @@ const saveProduct = async()=>{
             <p className="text-end">זמין </p>
             <input 
             checked={product.active}
-              onClick={handleInput}
+              onChange={handleInput}
               type="checkBox"
               name="active"
             />

@@ -45,15 +45,15 @@ const cartSlice = createSlice({
     },
     removeItem: (state, action) => {
       const { storeId, product } = action.payload;
-      if (state.items[storeId]) {
-        const store = state.items[storeId];
-        const existingProduct = store.products.find(p => p._id === product._id);
-        if (existingProduct) {
+      if (state.items.has(storeId)) {
+        const store = state.items.get(storeId);
+        if (store.products.has(product.id)) {
           // remove the product from the store's products
-          existingProduct.quantity -= product.quantity;
-          if (existingProduct.quantity <= 0) {
-            store.products = store.products.filter(p => p._id !== product._id);
-            state.total -= existingProduct.price * existingProduct.quantity;
+          store.products.get(product.id).quantity -= product.quantity;
+          if (store.products.get(product.id).quantity <= 0) {
+            const product = store.products.get(product.id);
+            store.products.delete(product);
+            state.total -= product.price * product.quantity;
           }
         }
       }
