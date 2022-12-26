@@ -32,9 +32,9 @@ import {
 import useAxios from "./hooks/useAxios";
 
 const App = () => {
-  const { data, loading, error } = useAxios('https://jsonplaceholder.typicode.com/users');
+  // const { data, loading, error } = useAxios('https://jsonplaceholder.typicode.com/users');
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   }, []);
   return (
     <div className="bg-gray-100">

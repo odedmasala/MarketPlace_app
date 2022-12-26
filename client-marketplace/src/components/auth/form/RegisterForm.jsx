@@ -12,7 +12,7 @@ import {
 } from "react-icons/ai";
 import SocialButton from "./SocialButton";
 import LoginForm from "./LoginForm";
-import useAxios from "../../../hooks/useAxios";
+import axios from "axios";
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const passwordRegex =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
@@ -53,11 +53,65 @@ const registerFormValues = {
 };
 const RegisterForm = ({ handelView, setFormType }) => {
   const [passwordType, setPasswordType] = useState("password");
+  const [Succeeded, setSucceeded] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleFormSubmit = (values, onSubmitProps) => {
-    // same shape as initial values
-    console.log(values, onSubmitProps);
+  const register = async (user) => {
+    try {
+      const { data } = await axios.post(
+        `http://localhost:8001/api/auth/register`,
+        { user: user }
+      );
+      setSucceeded(data);
+      return data;
+    } catch (e) {
+      setError(e.response.data);
+    }
   };
+  const navigateUser = async (values) => {
+    try {
+      const sendData = { email: values.email, password: values.password };
+      const { data } = await axios.post(
+        `http://localhost:8001/api/auth/login`,
+        sendData
+      );
+      if (data) {
+        setSucceeded(data);
+        return data;
+      }
+    } catch (e) {
+      setError(e);
+    }
+  };
+
+  const handleNewUser = async (values, onSubmitProps) => {
+    try {
+      setLoading(true);
+      const checkIfRegister = await register(values, onSubmitProps);
+      if (checkIfRegister?.create) {
+        setTimeout(async () => {
+          let Succeeded = null;
+          Succeeded = await navigateUser(values);
+          if (Succeeded) {
+            handelView();
+            onSubmitProps.resetForm();
+            setLoading(false);
+          }
+        }, 2000);
+      }
+    } catch (e) {
+      setLoading(false);
+      return setError(e);
+    }
+  };
+  const handleFormSubmit = (values, onSubmitProps) => {
+    handleNewUser(values, onSubmitProps);
+  };
+  useEffect(() => {
+    setLoading(false);
+  }, [error]);
+
   return (
     <Formik
       onSubmit={handleFormSubmit}
@@ -87,7 +141,13 @@ const RegisterForm = ({ handelView, setFormType }) => {
             </div>
             <div className="p-3">
               <div className="flex justify-end text-end hover:cursor-pointer">
-                <GrFormClose onClick={handelView} />
+                <GrFormClose
+                  onClick={() => {
+                    handelView();
+                    resetForm();
+                    setError(null);
+                  }}
+                />
               </div>
               <Form>
                 <div>
@@ -216,24 +276,34 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.passwordVerification}
                         </div>
                       ) : null}
-                      <button
-                        onClick={(e) => {
-                          e.preventDefault();
-                        }}
-                        className="mb-2 mt-2 border-2 border-blue-600 bg-blue-600 text-white  transform active:scale-y-75 transition-transform"
-                      >
-                        <Spinner aria-label="Spinner button example" />
-                        <span className="pl-3">Loading...</span>
-                      </button>
-                      <button
-                        type="submit"
-                        onClick={handleSubmit}
-                        className="mb-2 mt-2 border-2 border-blue-600 bg-[white] text-blue-700 hover:text-white hover:bg-blue-600  transform active:scale-y-75 transition-transform"
-                      >
-                        הירשם
-                      </button>
+                      {loading ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                          }}
+                          className="mb-2 mt-2 border-2 border-blue-600 bg-blue-600 text-white  transform active:scale-y-75 transition-transform"
+                        >
+                          <Spinner aria-label="Spinner button example" />
+                          <span className="pl-3">Loading...</span>
+                        </button>
+                      ) : (
+                        <button
+                          type="submit"
+                          onClick={handleSubmit}
+                          className="mb-2 mt-2 border-2 border-blue-600 bg-[white] text-blue-700 hover:text-white hover:bg-blue-600  transform active:scale-y-75 transition-transform"
+                        >
+                          הירשם
+                        </button>
+                      )}
+                      {error?.response?.data?.status == 406 ? (
+                        <>
+                          <div className="text-center text text-red-600">
+                            {`משתמש קיים כבר במערכת, אנא התחבר כרגיל`}
+                          </div>
+                        </>
+                      ) : null}
                       <p className="text-center mb-5">
-                        רשום כבר ?{" "}
+                        רשום כבר ?
                         <span
                           onClick={() => {
                             setFormType("login");

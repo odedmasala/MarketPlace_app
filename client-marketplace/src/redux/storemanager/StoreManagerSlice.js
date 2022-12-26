@@ -73,7 +73,7 @@ const storeManagementSlice = createSlice({
     });
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.loading = false;
-      console.log(action);
+      // console.log(action);
       state.products = action.payload;
     });
     builder.addCase(getProducts.rejected, (state, action) => {

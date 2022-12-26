@@ -1,11 +1,18 @@
 import React from "react";
 
 const SocialButton = () => {
+  const googleAuth = () => {
+    window.open(`http://localhost:8001/api/auth/google/callback`, "_self");
+  };
+  const faceBookAuth = () => {
+    window.open(`http://localhost:8001/api/auth/facebook/callback`, "_self");
+  };
   return (
     <div className="flex justify-center flex-col w-12/12 items-center">
-        <div className="lex justify-center flex-col w-12/12">
+      <div className="lex justify-center flex-col w-12/12">
         <button
           type="button"
+          onClick={faceBookAuth}
           className="mb-3 w-12/12 text-center flex items-center justify-center text-white bg-[#3b5998] hover:bg-[#3b5998]/90 transform active:scale-75 transition-transform  font-medium  text-sm px-5 py-2.5"
         >
           <svg
@@ -26,6 +33,7 @@ const SocialButton = () => {
           Sign in with Facebook
         </button>
         <button
+        onClick={googleAuth}
           type="button"
           className="mb-3 12/12 text-center flex items-center justify-center text-white bg-[#d72525] hover:bg-[#f13c3c]/90 transform active:scale-75 transition-transform  font-medium  text-sm px-5 py-2.5"
         >
@@ -46,7 +54,7 @@ const SocialButton = () => {
           </svg>
           <p className="mr-4">Sign in with Google</p>
         </button>
-        </div>
+      </div>
     </div>
   );
 };

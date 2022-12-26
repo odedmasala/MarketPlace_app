@@ -2,32 +2,37 @@ const passport = require("passport");
 const bcrypt = require("bcrypt");
 const { createOneUser } = require("../user/DAL");
 const { createError } = require("../../utils/errorSetting");
+const User = require("../../models/user/UserSchema");
+const jwt = require("jsonwebtoken");
 
 const register = async (req, res, next) => {
   if (!req.body) next(createError(403, "need user form"));
   if (!req.body.user) next(createError(403, "need user form"));
   try {
     const { email, firstName, lastName, phone, password } = req.body.user;
-    console.log(req.body);
-    const salt = bcrypt.genSaltSync(10);
-    const hash = bcrypt.hashSync(password, salt);
+    const isUser = await User.findOne({ email: email });
+    if (isUser) return next(createError(406, "User already exists"));
+    const salt = await bcrypt.genSalt();
+    const hash = await bcrypt.hash(password, salt);
     const createdMassage = createOneUser({
       firstName: firstName,
       lastName: lastName,
       email: email,
       phone: phone,
       password: hash,
-      email: "email",
+      registerType: "email",
     });
-    res.status(201).json({ createdMassage, create: true });
+    return res.status(201).json({ create: true });
   } catch (err) {
     next(err);
   }
 };
 
 const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
+
 const loginSuccess = (req, res) => {
   const { user } = req;
+  console.log(user);
   if (user) {
     const hashToken = { id: user._id };
     if (user.meager) hashToken.meager = user.meager;
@@ -42,8 +47,6 @@ const loginSuccess = (req, res) => {
       if (user.image.url) sendUserDataObj.image = user.image.url;
     }
     if (user.email) sendUserDataObj.email = user.email;
-    console.log(sendUserDataObj);
-
     res.cookie("access_token", token, { httpOnly: true }).status(200).json({
       error: false,
       message: "Successfully Logged In",
@@ -81,15 +84,39 @@ const logout = (req, res) => {
   req.logout();
   res.redirect("http://localhost:3000");
 };
-const checkRegularUser = passport.authenticate("local", {
-  failureRedirect: "/login/failed",
-});
+const checkRegularUser = (req, res, next) => {
+  passport.authenticate("local", (err, user, message) => {
+    if (message) {
+      return next(createError(message.status, message.message));
+    }
+    if (user) {
+      req.user = user;
+      return next();
+    }
+  })(req, res, next);
+};
+
 const goToGoogle = passport.authenticate("google", ["profile", "email"]);
 
 const googleCalBack = passport.authenticate("google", {
   successRedirect: "http://localhost:3000",
   failureRedirect: "/login/failed",
 });
+// const googleCalBack = (req, res, next) => {
+//   passport.authenticate("google",{
+//     successRedirect: "http://localhost:3000",
+//     failureRedirect: "/login/failed",
+//   }, (err, user, info) => {
+//     if (err) {
+//       return next(createError(500, err));
+//     }
+//     if (!user) {
+//       return next(createError(401, "Authentication failed"));
+//     }
+//     req.user = user;
+//     return next();
+//   })(req, res, next);
+// };
 
 const goToFacebook = passport.authenticate("facebook", ["profile", "email"]);
 
