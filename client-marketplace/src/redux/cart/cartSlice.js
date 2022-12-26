@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  items: new Map(),
+  items: {},
   total: 0,
 };
 
@@ -8,43 +8,53 @@ const initialState = {
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: {
-    items: new Map(),
-    total: 0,
-  },
+  initialState:initialState ,
   reducers: {
     addItem: (state, action) => {
       const { storeId, product } = action.payload;
-      if (state.items.has(storeId)) {
+      if (state.items[storeId]) {
         // store already exists in the cart
-        const store = state.items.get(storeId);
-        if (store.products.has(product.id)) {
+        const store = state.items[storeId];
+        const existingProduct = store.products.find(p => p._id === product._id);
+        if (existingProduct) {
           // product already exists in the store, update its quantity
-          store.products.get(product.id).quantity += product.quantity;
+          existingProduct.quantity += product.quantity;
         } else {
           // product doesn't exist in the store, add it
-          store.products.set(product.id, product);
+          store.products.push(product);
         }
       } else {
         // store doesn't exist in the cart, create a new store with the product
-        state.items.set(storeId, {
+        state.items[storeId] = {
           id: storeId,
           name: action.payload.name,
           imageUrl: action.payload.imageUrl,
-          products: new Map([[product.id, product]]),
-        });
+          products: [product],
+        };
       }
       state.total += product.price * product.quantity;
     },
+    incrementQuantity:(state, action)=>{
+      const { storeId, product } = action.payload;
+      const store = state.items;
+      // const existingProduct = store.products.find(p => p._id === product._id);
+      // if (existingProduct) {
+      //   // product already exists in the store, update its quantity
+      //   existingProduct.quantity += product.quantity;
+      // }
+    },
     removeItem: (state, action) => {
-      const { storeId, productId } = action.payload;
+      const { storeId, product } = action.payload;
       if (state.items.has(storeId)) {
         const store = state.items.get(storeId);
-        if (store.products.has(productId)) {
+        if (store.products.has(product.id)) {
           // remove the product from the store's products
-          const product = store.products.get(productId);
-          store.products.delete(productId);
-          state.total -= product.price * product.quantity;
+          store.products.get(product.id).quantity -= product.quantity;
+          if (store.products.get(product.id).quantity <= 0) {
+            const product = store.products.get(product.id);
+            store.products.delete(product);
+            state.total -= product.price * product.quantity;
+          }
         }
       }
     },
@@ -52,6 +62,8 @@ const cartSlice = createSlice({
 });
 
 export const selectCartTotal = (state) => state.cart.total;
+export const selectState = (state) => state;
+export const selectCart = (state) => state.cart.items;
 export const selectCartItems = (state) => Array.from(state.cart.items.values());
 
 export const getStoreTotal = (store) => {
@@ -61,5 +73,5 @@ export const getStoreTotal = (store) => {
   );
 };
 
-export const { addItem, removeItem } = cartSlice.actions;
+export const { addItem, removeItem, incrementQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
