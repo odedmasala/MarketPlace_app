@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/style.css";
 import { Routes, Route } from "react-router-dom";
 import {
@@ -29,8 +29,13 @@ import {
   Store,
   StoresListPage,
 } from "./pages";
+import useAxios from "./hooks/useAxios";
 
 const App = () => {
+  const { data, loading, error } = useAxios('https://jsonplaceholder.typicode.com/users');
+  useEffect(() => {
+    console.log(data);
+  }, []);
   return (
     <div className="bg-gray-100">
       <NavBar />

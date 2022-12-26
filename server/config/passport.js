@@ -22,18 +22,18 @@ const passport = (passport) => {
         if (user.scope)
           if (user.scope != "email")
             return callback(null, false, {
-              message: `That user connected with social access, go to ${user.scope}`,
+              message: `That user connected with social access, get in with ${user.scope}`,
             });
         const isPasswordCorrect = await bcrypt.compare(password, user.password);
         if (!isPasswordCorrect)
           return callback(null, false, {
             message: "That password is not Correct",
           });
-        console.log(user);
         callback(null, user);
       }
     )
   );
+
   /*GOOGLE Strategy */
   passport.use(
     new GoogleStrategy(
@@ -45,15 +45,17 @@ const passport = (passport) => {
       },
       async (accessToken, refreshToken, profile, callback) => {
         const user = {
-          google_id: profile.id,
           email: profile.emails[0].value,
-          isAdmin: true,
+          firstName: profile._json.given_name,
+          lastName: profile._json.family_name,
+          google_id: profile.id,
+          social_image: profile._json.picture,
           source: "google",
         };
         const checkUser = await User.findOne({ email: user.email });
         if (!checkUser) {
           const newUser = await new User(user).save();
-          callback(null, newUser);
+          return callback(null, newUser);
         }
 
         callback(null, checkUser);
@@ -67,10 +69,29 @@ const passport = (passport) => {
         clientID: process.env.FACEBOOK_APP_ID,
         clientSecret: process.env.FACEBOOK_APP_SECRET,
         callbackURL: "/auth/facebook/callback",
-        profileFields: ["id", "email"],
+        profileFields: [
+          "id",
+          "name",
+          "displayName",
+          "email",
+          "picture.type(large)",
+        ],
       },
-      function (accessToken, refreshToken, profile, done) {
-        done(null, profile);
+      async (accessToken, refreshToken, profile, callback) => {
+        const user = {
+          facebook_id: profile._json.id,
+          firstName: profile._json.last_name,
+          lastName: profile._json.first_name,
+          social_image: profile.photos[0].value,
+          source: "facebook",
+        };
+        if (profile.email) user.email = profile.email;
+        const checkUser = await User.findOne({ email: user.email });
+        if (!checkUser) {
+          const newUser = await new User(user).save();
+          return callback(null, newUser);
+        }
+        callback(null, checkUser);
       }
     )
   );
