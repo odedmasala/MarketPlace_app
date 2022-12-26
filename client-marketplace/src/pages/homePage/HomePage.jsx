@@ -5,11 +5,16 @@ import { useNavigate } from "react-router-dom";
 import Department from "../../components/department/Department";
 import FooterHomePage from "../../components/footer/FooterHomePage";
 // import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
+import { useDispatch } from 'react-redux'
+import {getProducts} from "../../redux/storemanager/StoreManagerSlice"
 
+import {ad} from "../../app/store"
 
 import axios from "axios";
 
 const HomePage = () => {
+  const dispatch = useDispatch()
+
   const [allDepartments, setAllDepartments] = useState([]);
 
   const getDepartments = async () => {
@@ -18,8 +23,9 @@ const HomePage = () => {
   };
 
   useEffect(() => {
+    dispatch(getProducts())
     getDepartments();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
