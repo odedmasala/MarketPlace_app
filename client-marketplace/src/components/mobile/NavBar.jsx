@@ -1,15 +1,17 @@
 
 import React, { useState } from "react";
-// import { Navigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsShop } from "react-icons/bs";
 import { BiSearchAlt } from "react-icons/bi";
 import { CgMenuRightAlt } from "react-icons/cg";
 import NavBarSlider from "../navbar/navBarslider/NavBarSlider";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import SlideMenu from "../mobile/SlideMenu"
 
 export default function NavigationBar() {
   const [nav, setNav] = useState(false);
+  const navigate = useNavigate()
   const handelNav = ()=>{
     setNav(!nav)
   }
