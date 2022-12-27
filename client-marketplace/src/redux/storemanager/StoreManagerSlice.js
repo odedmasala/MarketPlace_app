@@ -80,6 +80,7 @@ const storeManagementSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getProductsAsync.fulfilled]: (state, action) => {
+
       state.products = action.payload;
     },
     [getMangerAsync.fulfilled]: (state, action) => {

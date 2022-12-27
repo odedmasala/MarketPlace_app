@@ -4,11 +4,18 @@ const {
   findAllSections,
   findSectionById,
   updateOneSection,
+  findSectionsByStoreId
 } = require("./DAL");
 
 const getAllSections = async (req, res, next) => {
   try {
-    const sections = await findAllSections();
+    let sections = [];
+    if (req.query.storeId) {
+      let storeId = req.query.storeId;
+      sections = await findSectionsByStoreId(storeId);
+    } else {
+      sections = await findAllSections();
+    }
     res.status(200).json(sections);
   } catch (err) {
     next(err);
