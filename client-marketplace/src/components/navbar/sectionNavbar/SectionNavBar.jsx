@@ -1,35 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
 
-export default function SectionNavBar() {
-  const { id } = useParams();
-  const [sections, setSections] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [showProducts, setShowProducts] = useState([]);
-
-  const findSections = async () => {
-    const { data } = await axios.get(
-      `http://localhost:8001/api/section?storeId=${id}`
-    );
-    setSections(data);
-  };
-  const findProducts = async () => {
-    const { data } = await axios.get(
-      `http://localhost:8001/api/products?storeId=${id}`
-    );
-    setProducts(data);
-    setShowProducts(data);
-  };
-  const categoryFilter = (id) => {
-    setShowProducts(products.filter((product) => product.subCategory === id));
-  };
-
-  useEffect(() => {
-    findSections();
-    findProducts();
-  }, [id]);
-
+export default function SectionNavBar({ categoryFilter, sections }) {
   return (
     <div className="text-center">
       {sections.map((element, index) => (
