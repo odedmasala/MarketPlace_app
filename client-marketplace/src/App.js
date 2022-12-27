@@ -39,10 +39,8 @@ import { useDispatch, useSelector } from "react-redux";
 const App = () => {
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-  
   useEffect(() => {
-    const action = {type:"UPDATE",payloud:""}
-    dispatch({type:"UPDATE",payloud:""})
+    dispatch(fetchUser)
     console.log(user);
   }, []);
   return (
