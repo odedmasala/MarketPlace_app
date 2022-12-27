@@ -10,7 +10,7 @@ const productRoute = require("express").Router();
 productRoute.get("/", getAllProducts);
 productRoute.get("/:id", getProductById);
 productRoute.post("/", createProduct);
-productRoute.put("/", updateProduct);
+productRoute.put("/:id", updateProduct);
 productRoute.delete("/:id", deleteProduct);
 
 module.exports = productRoute;

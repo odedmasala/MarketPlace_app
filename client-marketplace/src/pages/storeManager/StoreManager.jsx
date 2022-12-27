@@ -21,7 +21,7 @@ const StoreManager = () => {
           הוספת מוצר חדש לחנות
           </p>
           <p
-            onClick={() => navigate("personalData")}
+            onClick={() => navigate("addSection")}
             className="store-manager-menu md:py-4 py-2 px-5"
           >
             הוספת קטגוריה חדשה לחנות
