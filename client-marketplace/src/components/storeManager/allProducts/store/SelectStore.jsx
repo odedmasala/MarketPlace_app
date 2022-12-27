@@ -2,7 +2,6 @@ import axios from "axios";
 import { Textarea } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { notify } from "../../../../utils";
 
 const SelectStore = ({ store }) => {
@@ -203,7 +202,6 @@ const saveChange = async ()=>{
                       <div className="flex justify-between">
                         <button onClick={saveChange}
                           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                          onClick={updateStore}
                         >
                           שמור שינויים
                         </button>
