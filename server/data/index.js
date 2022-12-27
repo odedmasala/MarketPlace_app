@@ -322,7 +322,6 @@ const departments = [
 const stores = [
   {
     _id: storesIds[0],
-    bnNumber: "aaa111",
     name: "נוי השדה",
     description:
       "נוי השדה מביאה אליך הביתה את כל טוב השדה ובאכות הכי גבוהה שיש",
@@ -350,7 +349,6 @@ const stores = [
   },
   {
     _id: storesIds[1],
-    bnNumber: "aaa222",
     name: "המושבה",
     description:
       "המושבה יבואנית הפירות הותיקה בשוק , הפרות והירקות שכולנו גדלנו עליהם",
@@ -378,7 +376,6 @@ const stores = [
   },
   {
     _id: storesIds[2],
-    bnNumber: "bbbb22222",
     name: "musicZol",
     description:
       "מיוסקזול חרטה על דגלה להביא ללקוחתייה את כלי הנגינה ברמה הגבוה ביותר",
@@ -406,7 +403,6 @@ const stores = [
   },
   {
     _id: storesIds[3],
-    bnNumber: "bbb1111",
     name: "SARINA RECORDS",
     description:
       "סרינה רקורד'ס באה לתת לכם את כל כלי הנגינה במחיר שווה לכל כיס",
@@ -434,7 +430,6 @@ const stores = [
   },
   {
     _id: storesIds[4],
-    bnNumber: "cccc1111",
     name: "סופר פארם",
     description: "סופר פארם הרשת הגדולה במדינה",
     logo: {
@@ -461,7 +456,6 @@ const stores = [
   },
   {
     _id: storesIds[5],
-    bnNumber: "cccc22222",
     name: "בי פארם",
     description:
       "בי פארם הוקמה בשנת 2019 כשראתה את עליית המחירים והחליטה להפוך לרשת החברתית הראשונה בישראל  ",
@@ -489,7 +483,6 @@ const stores = [
   },
   {
     _id: storesIds[6],
-    bnNumber: "ddd11111",
     name: "באר המשקאות",
     description:
       "כשאתה מארגן אירוע ואתה נהיה צמא מרוב תכנון בוא לבאר המשקאות ואנחנו נרווה את הצמא שלך",
@@ -517,7 +510,6 @@ const stores = [
   },
   {
     _id: storesIds[7],
-    bnNumber: "ddd22222",
     name: "בנא משקאות",
     description: "בנא משקאות המקום של האלכוהל בישראל",
     logo: {

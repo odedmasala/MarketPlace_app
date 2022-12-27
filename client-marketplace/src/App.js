@@ -33,16 +33,22 @@ import {
 } from "./pages";
 import useAxios from "./hooks/useAxios";
 import { ToastContainer } from "react-toastify";
+import { fetchUser, getUser } from "./redux/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const App = () => {
-  // const { data, loading, error } = useAxios('https://jsonplaceholder.typicode.com/users');
+  const dispatch = useDispatch();
+  const user = useSelector(getUser);
+  
   useEffect(() => {
-    // console.log(data);
+    const action = {type:"UPDATE",payloud:""}
+    dispatch({type:"UPDATE",payloud:""})
+    console.log(user);
   }, []);
   return (
     <div className="bg-gray-100">
       <NavBar />
-     
+
       <Routes>
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>
@@ -54,7 +60,7 @@ const App = () => {
         <Route path="successPage" element={<SuccessPayment />} />
         <Route path="product" element={<Product />} />
         <Route path="store" element={<Store />} />
-        <Route path="checkOut" element={ <CheckOut/>} />
+        <Route path="checkOut" element={<CheckOut />} />
         <Route path="storeManager" element={<StoreManager />}>
           <Route path="allStores" element={<AllStores />} />
           <Route path="section/:id" element={<SectionStoreManager />} />
@@ -72,8 +78,7 @@ const App = () => {
         <Route path=":id/stores" element={<StoresListPage />} />
         <Route path="store/:id" element={<Store />} />
       </Routes>
-      
-      
+
       <ToastContainer />
     </div>
   );
