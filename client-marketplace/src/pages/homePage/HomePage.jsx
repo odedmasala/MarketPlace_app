@@ -1,3 +1,10 @@
+import React from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Department from '../../components/department/Department';
+import FooterHomePage from '../../components/footer/FooterHomePage';
+import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
+
 
 import React from "react";
 import { useState, useEffect } from "react";
@@ -8,22 +15,23 @@ import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPo
 import { useDispatch } from 'react-redux'
 import {getProducts} from "../../redux/storemanager/StoreManagerSlice"
 
-import {ad} from "../../app/store"
 
-import axios from "axios";
+import { ad } from '../../app/store';
+
+import axios from 'axios';
 
 const HomePage = () => {
-  const dispatch = useDispatch()
+  const dispatch = reactRedux.useDispatch();
 
   const [allDepartments, setAllDepartments] = useState([]);
 
   const getDepartments = async () => {
-    const { data } = await axios.get("http://localhost:8001/api/department");
+    const { data } = await axios.get('http://localhost:8001/api/department');
     setAllDepartments(data);
   };
 
   useEffect(() => {
-    dispatch(getProducts())
+    dispatch(getProducts());
     getDepartments();
   }, [dispatch]);
 

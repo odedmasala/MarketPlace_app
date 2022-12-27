@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 // import { Navigate } from 'react-router-dom';
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -12,10 +13,12 @@ export default function NavigationBar() {
   const handelNav = ()=>{
     setNav(!nav)
   }
-
   return (
     <div className="bg-white fixed bottom-0 inset-x-0 px-4 py-3  md:hidden flex items-center justify-around">
-      <div className="flex flex-col cursor-pointer text-[30px] items-center justify-center">
+      <div
+        onClick={() => navigate('/profile')}
+        className="flex flex-col cursor-pointer text-[30px] items-center justify-center"
+      >
         <BsShop />
         <p className="text-[15px]">אזור אישי</p>
       </div>
@@ -34,6 +37,7 @@ export default function NavigationBar() {
         <p className="text-[15px]">תפריט</p>
         <NavBarSlider handelNav={handelNav} nav={nav} />
       </div>
+      <SlideMenu />
     </div>
   );
 }
