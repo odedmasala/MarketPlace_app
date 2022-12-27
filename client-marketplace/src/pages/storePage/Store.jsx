@@ -1,41 +1,68 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import HeaderStore from "../../components/header/HeaderStore";
-import Product from "../../components/product/Product";
-import Cart from "../../components/cart/Cart";
-import FooterContainer from "../../components/footer/Footer";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import HeaderStore from '../../components/header/HeaderStore';
+import Product from '../../components/product/Product';
+import Cart from '../../components/cart/Cart';
+import FooterContainer from '../../components/footer/Footer';
+import { useParams } from 'react-router-dom';
 
 const Store = () => {
+  const [sections, setSections] = useState([]);
+  const [showProducts, setShowProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [store, setStore] = useState({});
   const { id } = useParams();
-  const getProductsInStore = async () => {
+
+  const findSections = async () => {
+    const { data } = await axios.get(
+      `http://localhost:8001/api/section?storeId=${id}`
+    );
+    setSections(data);
+  };
+  const findProducts = async () => {
     const { data } = await axios.get(
       `http://localhost:8001/api/products?storeId=${id}`
     );
     setProducts(data);
+    setShowProducts(data);
+  };
+  const categoryFilter = (id) => {
+    setShowProducts(products.filter((product) => product.subCategory === id));
   };
 
-  const getStoreById = async() =>{
-    const {data} = await axios.get(`http://localhost:8001/api/store/${id}`)
-    setStore(data)
-  }
+  useEffect(() => {
+    findSections();
+    findProducts();
+  }, [id]);
+
+  const getStoreById = async () => {
+    const { data } = await axios.get(`http://localhost:8001/api/store/${id}`);
+    setStore(data);
+  };
 
   useEffect(() => {
-    getProductsInStore();
     getStoreById();
   }, []);
 
   return (
     <div className="bg-white w-full max-w-full">
-      <HeaderStore storeDetails={store}/>
+      <HeaderStore
+        storeDetails={store}
+        categoryFilter={categoryFilter}
+        sections={sections}
+      />
       <div className="flex flex-col items-center mt-4">
-        <p className="my-3 text-xl">נמצאו <span className="text-[#0899A5]">{products.length}</span> מוצרים</p>
+        <p className="my-3 text-xl">
+          נמצאו <span className="text-[#0899A5]">{products.length}</span> מוצרים
+        </p>
         <div className="flex flex-row-reverse md:w-11/12  justify-between items-start">
           <div className="w-12/12 md:w-9/12 flex flex-wrap justify-around">
-            {products.map((product) => (
-              <Product  productData={product} key={product._id} storeData={store}/>
+            {showProducts.map((product) => (
+              <Product
+                productData={product}
+                key={product._id}
+                storeData={store}
+              />
             ))}
           </div>
           <div className="hidden md:flex md:w-3/12 mr-2">

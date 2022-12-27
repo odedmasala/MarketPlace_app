@@ -2,7 +2,11 @@ import React from 'react';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import SectionNavBar from '../navbar/sectionNavbar/SectionNavBar';
 
-export default function HeaderStore({ storeDetails }) {
+export default function HeaderStore({
+  storeDetails,
+  sections,
+  categoryFilter,
+}) {
   const { name, description, logo, coverImage, phone, address } = storeDetails;
 
   return (
@@ -65,7 +69,7 @@ export default function HeaderStore({ storeDetails }) {
       </div>
       {/* Store details for mobile */}
       <div>
-        <SectionNavBar />
+        <SectionNavBar categoryFilter={categoryFilter} sections={sections} />
       </div>
     </div>
   );
