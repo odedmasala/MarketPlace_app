@@ -34,18 +34,19 @@ setShowProducts(products.filter(product=>product.subCategory === id))
 
   return (
     <div>
-        <div className="flex justify-end">
-        <button onClick={()=>{setShowProducts(products)}} className="border-2 bg-green-600 hover:bg-green-400 p-3 text-white rounded font-bold">
-                  כל המוצרים
-                </button>
-        </div>
-      <div className="flex justify-between text-end">
+      <div className="flex flex-row justify-between flex-wrap text-end">
         {sections.map((section) => {
           return (
             <SectionComponent key={section._id} section={section} categoryFilter={categoryFilter}/>
           );
         })}
       </div>
+      <div className="flex justify-end">
+        <button onClick={()=>{setShowProducts(products)}} className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded">
+                  בטל סינון
+                </button>
+        </div>
+
       <div className="my-7 flex flex-wrap justify-between">
         {
             showProducts.map(product=><StoreManagerProduct key={product._id} product={product}/>)
