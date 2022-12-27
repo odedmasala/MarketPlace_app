@@ -4,7 +4,7 @@ const StoreSchema = new mongoose.Schema({
   bnNumber: {
     type: Number,
     default: () => Math.floor(Math.random() * 1000000),
-    unique: true,
+
   },
   name: { type: String, required: true },
   description: { type: String, required: true },

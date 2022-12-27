@@ -13,9 +13,12 @@ import {
 import SocialButton from "./SocialButton";
 import LoginForm from "./LoginForm";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../../redux/user/userSlice";
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
+const passwordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
 const phoneRegex = /^(\+972|0)(-|\s)?\d{2}(-|\s)?\d{7}$/;
 
 const registerSchema = Yup.object().shape({
@@ -57,12 +60,13 @@ const RegisterForm = ({ handelView, setFormType }) => {
   const [Succeeded, setSucceeded] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-
+  const dispatch = useDispatch();
   const register = async (user) => {
     try {
       const { data } = await axios.post(
         `http://localhost:8001/api/auth/register`,
-        { user: user }
+        { user: user },
+        { withCredentials: true }
       );
       setSucceeded(data);
       return data;
@@ -75,9 +79,11 @@ const RegisterForm = ({ handelView, setFormType }) => {
       const sendData = { email: values.email, password: values.password };
       const { data } = await axios.post(
         `http://localhost:8001/api/auth/login`,
-        sendData
+        sendData,
+        { withCredentials: true }
       );
       if (data) {
+        dispatch(setUser(data));
         setSucceeded(data);
         return data;
       }

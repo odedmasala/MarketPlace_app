@@ -15,7 +15,7 @@ const StoreManagerSchema = new mongoose.Schema({
     type: String,
     required: true,
     lowercase: true,
-    unique: true,
+
     min: 8,
     max: 50,
   },
@@ -23,7 +23,7 @@ const StoreManagerSchema = new mongoose.Schema({
     type: String,
     required: true,
     min: 9,
-    unique: true,
+
   },
   loginCode: String,
   meager: {

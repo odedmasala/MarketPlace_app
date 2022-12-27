@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { addressSchema, cloudinarySchema } = require("../helpModels");
+const { addressSchema, cloudinarySchema, userAddressSchema } = require("../helpModels");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema(
     phone: {
       type: String,
       min: 9,
-      unique: true,
+  
     },
     loginCode: String,
     password: {
@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema(
       type: [mongoose.Types.ObjectId],
       ref: "stores",
     },
-    address: addressSchema,
+    address: userAddressSchema,
     paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },
     authToken: { type: String },
     access_token: String,

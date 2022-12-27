@@ -31,7 +31,8 @@ const register = async (req, res, next) => {
 const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
 
 const loginSuccess = (req, res) => {
-  const { user } = req;
+  const { user } = req; 
+  console.log(req.session);
   console.log(user);
   if (user) {
     const hashToken = { id: user._id };
@@ -47,11 +48,15 @@ const loginSuccess = (req, res) => {
       if (user.image.url) sendUserDataObj.image = user.image.url;
     }
     if (user.email) sendUserDataObj.email = user.email;
-    res.cookie("access_token", token, { httpOnly: true }).status(200).json({
-      error: false,
-      message: "Successfully Logged In",
-      user: sendUserDataObj,
-    });
+    console.log(sendUserDataObj);
+    return res
+      .cookie("access_token", token, { httpOnly: true })
+      .status(200)
+      .json({
+        error: false,
+        message: "Successfully Logged In",
+        user: sendUserDataObj,
+      });
   } else {
     console.log("not access");
     res.status(403).json({ error: true, message: "Login error" });
@@ -78,8 +83,6 @@ const loginFailed = (req, res) => {
   });
 };
 
-// const login = (req, res) => res.redirect("/login/success");
-
 const logout = (req, res) => {
   req.logout();
   res.redirect("http://localhost:3000");
@@ -102,22 +105,6 @@ const googleCalBack = passport.authenticate("google", {
   successRedirect: "http://localhost:3000",
   failureRedirect: "/login/failed",
 });
-// const googleCalBack = (req, res, next) => {
-//   passport.authenticate("google",{
-//     successRedirect: "http://localhost:3000",
-//     failureRedirect: "/login/failed",
-//   }, (err, user, info) => {
-//     if (err) {
-//       return next(createError(500, err));
-//     }
-//     if (!user) {
-//       return next(createError(401, "Authentication failed"));
-//     }
-//     req.user = user;
-//     return next();
-//   })(req, res, next);
-// };
-
 const goToFacebook = passport.authenticate("facebook", ["profile", "email"]);
 
 const facebookCalBack = passport.authenticate("facebook", {
