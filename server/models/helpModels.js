@@ -16,6 +16,11 @@ const addressSchema = new mongoose.Schema({
   apartment: String,
   floor: String,
   comment: String,
+  zip: {
+    type: Number,
+    default: () => Math.floor(Math.random() * 10000000),
+    unique: true,
+  },
 });
 
 const billInfoSchema = new mongoose.Schema({

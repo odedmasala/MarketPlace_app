@@ -1,42 +1,43 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const initialState = {
+  user: null,
+  loading: false,
+  error: null,
+};
+
 export const fetchUser = createAsyncThunk(
-  "users/fetchUser",
-  async (userId, thunkAPI) => {
+  "user/fetchUser",
+  async ({ dispatch }) => {
     try {
-      const response = await axios.get(`/api/users/${userId}`);
-      return response.data;
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/users?id=1"
+      );
+      const user = response.data;
+      dispatch(setUser(user));
     } catch (error) {
-      throw error;
+      dispatch(clearUser());
     }
   }
 );
 
-// create a slice for the user state
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    user: null,
-    loading: false,
-    error: null,
-  },
+  initialState,
   reducers: {
-    // regular action to set the user
     setUser(state, action) {
-      state.user = action.payload;
-    },
-  },
-  extraReducers: {
-    // handle the async thunk action
-    [fetchUser.pending]: (state, action) => {
-      state.loading = true;
-      state.error = null;
-    },
-    [fetchUser.fulfilled]: (state, action) => {
       state.user = action.payload;
       state.loading = false;
       state.error = null;
+    },
+    clearUser(state) {
+      state.user = null;
+    },
+  },
+  extraReducers: {
+    [fetchUser.pending]: (state) => {
+      state.loading = true;
     },
     [fetchUser.rejected]: (state, action) => {
       state.loading = false;
@@ -45,6 +46,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, clearUser } = userSlice.actions;
+
 export default userSlice.reducer;
-export const selectUser = (state) => state.user;
+export const getUser = (state) => state.user;
