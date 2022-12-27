@@ -28,11 +28,11 @@ const Store = () => {
   }, []);
 
   return (
-    <div className="bg-white w-full max-w-7xl">
+    <div className="bg-white w-full max-w-full">
       <HeaderStore storeDetails={store}/>
       <div className="flex flex-col items-center mt-4">
         <p className="my-3 text-xl">נמצאו <span className="text-[#0899A5]">{products.length}</span> מוצרים</p>
-        <div className="flex flex-row-reverse md:w-9/12  justify-between items-start">
+        <div className="flex flex-row-reverse md:w-11/12  justify-between items-start">
           <div className="w-12/12 md:w-9/12 flex flex-wrap justify-around">
             {products.map((product) => (
               <Product  productData={product} key={product._id} storeData={store}/>

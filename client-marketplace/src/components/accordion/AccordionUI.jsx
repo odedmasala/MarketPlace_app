@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import { BsArrowDownCircle, BsArrowRightCircle } from "react-icons/bs";
-import { useSelector } from "react-redux";
-import { getStoreTotalPrice, selectState } from "../../../redux/cart/cartSlice";
-import Products from "../products/Products";
+import { BsArrowDownCircle,  BsArrowRightCircle } from "react-icons/bs";
+import Products from "../cart/products/Products";
 
-const CartStores = ({ store, activeIndex, indexStore, handleClick }) => {
-  const state = useSelector((state) => state);
-  const storeTotalPrice = useSelector((state) =>
-    getStoreTotalPrice(state, store.id)
-  );
-
-  useEffect(() => {
-  }, []);
+const AccordionUI = ({ store, activeIndex, indexStore, handleClick }) => {
+  
+  useEffect(() => {}, []);
   return (
     <div>
       <div>
@@ -27,10 +20,7 @@ const CartStores = ({ store, activeIndex, indexStore, handleClick }) => {
             </button>
           </div>
           <div className="flex flex-row-reverse h-16 justify-end items-center">
-            <div>
-              <h1 className="text-sm ml-1">{store.name}</h1>
-              <h1 className="text-sm ml-1 text-green-600"> ש"ח {storeTotalPrice}</h1>
-            </div>
+            <h1 className="text-sm ml-1">{store.name}</h1>
             <div className="w-4/12">
               <img className="h-full w-full" src={store.imageUrl} alt="" />
             </div>
@@ -47,4 +37,4 @@ const CartStores = ({ store, activeIndex, indexStore, handleClick }) => {
   );
 };
 
-export default CartStores;
+export default AccordionUI;

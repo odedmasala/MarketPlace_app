@@ -3,10 +3,7 @@ import Cart from "../../cart/Cart";
 import { TbLogout } from "react-icons/tb";
 import { useEffect } from "react";
 
-export default function NavBarSlider({ handelNav ,nav }) {
-  useEffect(()=>{
-    console.log(nav,handelNav);
-  },[])
+export default function NavBarSlider({ handelNav, nav }) {
   return (
     <div className="bg-black">
       <div

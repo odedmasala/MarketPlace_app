@@ -36,8 +36,8 @@ const weightSchema = new mongoose.Schema({
   tax: Number, 
 });
 const cloudinarySchema = new mongoose.Schema({
-  public_id: {type:String, required:true},
-  url: {type:String, required:true},
+  public_id: String, 
+  url: String,
 });
 
 const unitsSchema = new mongoose.Schema({

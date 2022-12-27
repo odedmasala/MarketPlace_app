@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getNumberOfProducts, selectCart, selectCartTotal } from "../../redux/cart/cartSlice";
+import { selectCart, selectCartTotal } from "../../redux/cart/cartSlice";
 import CartStores from "../cart/stores/CartStores";
+import AccordionUI from "./AccordionUI";
 
-const Cart = () => {
+const Accordion = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const handleClick = (index) => {
@@ -19,12 +20,9 @@ const Cart = () => {
   const cartStateArray = Object.keys(cartState);
   const totalPrice = useSelector(selectCartTotal);
   const [cart, setCart] = useState([]);
-  const numberOfproducts = useSelector((state) => getNumberOfProducts(state));
 
-  const storeTotalPrice = useSelector(selectCartTotal)
   useEffect(() => {
     setCart(cartStateArray.map((key) => cartState[key]));
-    console.log(storeTotalPrice);
   }, [cartState]);
 
   return (
@@ -40,20 +38,21 @@ const Cart = () => {
         ) : (
           <div>
             {cart.map((store, index) => (
-              <CartStores
-                key={index}
-                activeIndex={activeIndex}
-                indexStore={index}
-                handleClick={handleClick}
-                store={store}
-              />
+              // <CartStores key={i} store={store} />
+              <AccordionUI
+              key={index}
+              activeIndex={activeIndex}
+              indexStore={index}
+              handleClick={handleClick}
+              store={store} 
+            />
             ))}
           </div>
         )}
         <div className="border py-5 px-2 ">
           <p className="flex justify-between items-end flex-row-reverse">
             <span>:סה"כ</span>
-            <span className="text-end">{storeTotalPrice} ש"ח</span>
+            <span className="text-end"> ש"ח</span>
           </p>
           <p className="flex justify-between items-end flex-row-reverse">
             <span>:בקניה חסכת</span>
@@ -61,17 +60,17 @@ const Cart = () => {
           </p>
           <p className="flex justify-between items-end flex-row-reverse">
             <span>:מספר מוצרים </span>
-            <span>{numberOfproducts}</span>
+            <span>0 ש"ח</span>
           </p>
         </div>
         <button
           onClick={() => navigate("/checkOut")}
           className="bg-teal-500 w-full h-[50px] text-white text-2xl "
         >
-          לתשלום ש"ח {storeTotalPrice}
+          לתשלום 0 ש"ח
         </button>
       </div>
     </>
   );
 };
-export default Cart;
+export default Accordion;

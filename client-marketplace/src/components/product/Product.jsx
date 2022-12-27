@@ -24,7 +24,7 @@ export default function Product({ productData, storeData }) {
         product: {
           ...productData,
           quantity: quantity,
-          price: productData.price * quantity,
+          price: productData.price,
         },
       })
     );
@@ -76,7 +76,7 @@ export default function Product({ productData, storeData }) {
         <button
           className="add-to-cart-btn"
           onClick={() => {
-            addToCart()
+            addToCart();
             setQuantity(1);
           }}
         >
