@@ -24,7 +24,8 @@
     "passport-facebook": "^3.0.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
-    "stripe": "^11.4.0"
+    "stripe": "^11.4.0",
+    "twilio": "^3.84.0"
   },
   "description": ""
 }
