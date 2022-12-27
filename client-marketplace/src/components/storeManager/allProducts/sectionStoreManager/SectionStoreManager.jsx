@@ -16,6 +16,7 @@ const SectionStoreManager = () => {
       
     );
     setSections(data);
+    console.log(data);
   };
   const findProducts = async () => {
     const { data } = await axios.get(
@@ -37,7 +38,7 @@ setShowProducts(products.filter(product=>product.subCategory === id))
       <div className="flex flex-row justify-between flex-wrap text-end">
         {sections.map((section) => {
           return (
-            <SectionComponent key={section._id} section={section} categoryFilter={categoryFilter}/>
+            <SectionComponent findProducts={findProducts} findSections={findSections} key={section._id} section={section} categoryFilter={categoryFilter}/>
           );
         })}
       </div>
@@ -49,7 +50,7 @@ setShowProducts(products.filter(product=>product.subCategory === id))
 
       <div className="my-7 flex flex-wrap justify-between">
         {
-            showProducts.map(product=><StoreManagerProduct key={product._id} product={product}/>)
+            showProducts.map(product=><StoreManagerProduct findProducts={findProducts} key={product._id} product={product}/>)
         }
       </div>
     </div>

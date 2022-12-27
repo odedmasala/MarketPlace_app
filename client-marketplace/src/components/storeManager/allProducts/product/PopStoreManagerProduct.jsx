@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal, Textarea } from "flowbite-react";
 import { ModalFooter } from "flowbite-react/lib/esm/components/Modal/ModalFooter";
+import axios from "axios";
+import { notify } from "../../../../utils";
+import { useParams } from "react-router-dom";
 
-const PopStoreManagerProduct = ({ product, show, handleModal }) => {
+const PopStoreManagerProduct = ({ product, show, handleModal,findProducts }) => {
   const [productData, setProductData] = useState(product);
+  const [sections, setSections] = useState([]);
+  const { id } = useParams();
 
   const changeProductData = (e) => {
     if (e.target.name === "avgWeightPerUnit") {
@@ -23,6 +28,28 @@ const PopStoreManagerProduct = ({ product, show, handleModal }) => {
       setProductData({ ...productData, [e.target.name]: e.target.value });
     }
   };
+  const findSections = async () => {
+    const { data } = await axios.get(
+      `http://localhost:8001/api/section?storeId=${id}`
+      
+    );
+    setSections(data);
+  };
+
+  const saveChange = async () => {
+  console.log(productData);
+    const { data } = await axios.put(
+      `http://localhost:8001/api/products/${productData._id}`,
+      productData
+    );
+    if (data) {
+      notify(data);
+      findProducts()
+    }
+  };
+  useEffect(()=>{
+    findSections()
+  },[product._id])
   return (
     <>
       <div className="bg-black bg-opacity-10">
@@ -68,6 +95,20 @@ const PopStoreManagerProduct = ({ product, show, handleModal }) => {
                       />
                     </div>
                   </div>
+                  <div class="md:col-span-3">
+                      <label for="address">קטגוריה</label>
+                      <select
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        name="subCategory"
+                        onClick={changeProductData}
+                      >
+                        {sections.map((element) => (
+                          <option key={element._id} value={element._id}>
+                            {element.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
                   <div className="md:col-span-6 text-right">
                     <label htmlFor="description">תיאור המוצר</label>
                     <Textarea
@@ -131,8 +172,12 @@ const PopStoreManagerProduct = ({ product, show, handleModal }) => {
                 </div>
               </div>
               <ModalFooter>
-
-              <button className="bg-green-500 hover:bg-green-700 text-white font-thin py-1 px-4 rounded">שמירה</button>
+                <button
+                  onClick={saveChange}
+                  className="bg-green-500 hover:bg-green-700 text-white font-thin py-1 px-4 rounded"
+                >
+                  שמירה
+                </button>
               </ModalFooter>
             </Modal.Body>
           </Modal>

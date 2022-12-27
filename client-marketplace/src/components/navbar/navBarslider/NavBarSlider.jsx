@@ -4,9 +4,6 @@ import { TbLogout } from "react-icons/tb";
 import { useEffect } from "react";
 
 export default function NavBarSlider({ handelNav ,nav }) {
-  useEffect(()=>{
-    console.log(nav,handelNav);
-  },[])
   return (
     <div className="bg-black">
       <div
