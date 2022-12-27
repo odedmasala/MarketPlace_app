@@ -21,7 +21,8 @@ const Cart = () => {
   const [cart, setCart] = useState([]);
   const numberOfproducts = useSelector((state) => getNumberOfProducts(state));
 
-  const storeTotalPrice = useSelector(selectCartTotal)
+  const storeTotalPrice = parseFloat(useSelector(selectCartTotal)).toFixed(1) 
+
   useEffect(() => {
     setCart(cartStateArray.map((key) => cartState[key]));
     console.log(storeTotalPrice);
@@ -52,16 +53,16 @@ const Cart = () => {
         )}
         <div className="border py-5 px-2 ">
           <p className="flex justify-between items-end flex-row-reverse">
-            <span>:סה"כ</span>
-            <span className="text-end">{storeTotalPrice} ש"ח</span>
+            <span className="text-lg">:סה"כ</span>
+            <span className="text-end text-lg">{storeTotalPrice} ש"ח</span>
           </p>
           <p className="flex justify-between items-end flex-row-reverse">
-            <span>:בקניה חסכת</span>
-            <span>0 ש"ח</span>
+            <span className="text-lg">:בקניה חסכת</span>
+            <span className="text-lg">0 ש"ח</span>
           </p>
           <p className="flex justify-between items-end flex-row-reverse">
-            <span>:מספר מוצרים </span>
-            <span>{numberOfproducts}</span>
+            <span className="text-lg">:מספר מוצרים </span>
+            <span className="text-lg">{numberOfproducts}</span>
           </p>
         </div>
         <button

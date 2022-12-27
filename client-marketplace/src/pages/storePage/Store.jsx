@@ -17,10 +17,10 @@ const Store = () => {
     setProducts(data);
   };
 
-  const getStoreById = async() =>{
-    const {data} = await axios.get(`http://localhost:8001/api/store/${id}`)
-    setStore(data)
-  }
+  const getStoreById = async () => {
+    const { data } = await axios.get(`http://localhost:8001/api/store/${id}`);
+    setStore(data);
+  };
 
   useEffect(() => {
     getProductsInStore();
@@ -29,13 +29,19 @@ const Store = () => {
 
   return (
     <div className="bg-white w-full max-w-full">
-      <HeaderStore storeDetails={store}/>
+      <HeaderStore storeDetails={store} />
       <div className="flex flex-col items-center mt-4">
-        <p className="my-3 text-xl">נמצאו <span className="text-[#0899A5]">{products.length}</span> מוצרים</p>
+        <p className="my-3 text-xl">
+          נמצאו <span className="text-[#0899A5]">{products.length}</span> מוצרים
+        </p>
         <div className="flex flex-row-reverse md:w-11/12  justify-between items-start">
           <div className="w-12/12 md:w-9/12 flex flex-wrap justify-around">
             {products.map((product) => (
-              <Product  productData={product} key={product._id} storeData={store}/>
+              <Product
+                productData={product}
+                key={product._id}
+                storeData={store}
+              />
             ))}
           </div>
           <div className="hidden md:flex md:w-3/12 mr-2">

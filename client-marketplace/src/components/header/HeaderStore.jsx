@@ -9,7 +9,7 @@ export default function HeaderStore({ storeDetails }) {
     <div>
       <div
         className="bg-no-repeat bg-cover bg-center md:mb-3 h-72 md:h-[390px] w-full flex flex-col justify-end"
-        style={{ backgroundImage: `url(${coverImage})` }}
+        style={{ backgroundImage: `url(${coverImage?.url})` }}
       >
         <div className="hidden md:flex flex-wrap bg-[#ffffffd1] shadow-lg md:shadow-xl flex-row-reverse items-center justify-around">
           <img

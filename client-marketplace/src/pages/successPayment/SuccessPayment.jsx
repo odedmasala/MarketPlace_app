@@ -3,10 +3,15 @@ import { FiCheckCircle } from "react-icons/fi";
 import { CiFaceSmile } from "react-icons/ci";
 import { Button } from "flowbite-react";
 import { useNavigate } from "react-router-dom";
+import {clearCart} from "../../redux/cart/cartSlice"
+import { useDispatch } from "react-redux";
+
 export default function SuccessPayment() {
+  const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const clearFromLocalStorageAndSendDataToServer = () => {
+    dispatch(clearCart())
     navigate("/");
   };
 
