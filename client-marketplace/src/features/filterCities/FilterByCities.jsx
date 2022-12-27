@@ -9,7 +9,6 @@ export default function FilterByCities(props) {
   const [zone, setZone] = useState([]);
 
   const allStores = async () => {
-    console.log(props.stores)
     let citiesInStores = props.stores?.map((store) => store.address.city);
     citiesInStores = citiesInStores.filter(function (item, pos) {
       return citiesInStores.indexOf(item) == pos;
@@ -42,7 +41,6 @@ export default function FilterByCities(props) {
                   value={city}
                   onClick={(e) => {
                     setFilter(e.target.value);
-                    console.log(filter);
                   }}
                 >
                   {city}

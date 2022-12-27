@@ -6,26 +6,15 @@ import { removeItem } from "../../../redux/cart/cartSlice";
 import { selectState } from "../../../redux/products/productSlice";
 import { selectCartTotal } from "../../../redux/cart/cartSlice";
 
-
 export default function Products({ product, storeId }) {
-  const dispatch = useDispatch()
-  const stateQ = useSelector(selectState)
-const[quantity, setQuantity] = useState(product.quantity)
-// const increment = () => {
-//   dispatch(
-//     incrementQuantity({
-//       storeId: storeId,
-//       product: product,
-//     })
-//   );
-//   console.log(stateQ)
-// };
+  const dispatch = useDispatch();
+  const stateQ = useSelector(selectState);
+  const [quantity, setQuantity] = useState(product.quantity);
 
-const deleteProduct = ()=>{
-  dispatch(
-    removeItem({storeId: storeId, product:product})
-  )
-}
+
+  const deleteProduct = () => {
+    dispatch(removeItem({ storeId: storeId, product: product }));
+  };
 
   return (
     <div
@@ -35,11 +24,14 @@ const deleteProduct = ()=>{
       <div className=" h-full flex flex-col justify-end items-center">
         <button onClick={deleteProduct}>מחיקה</button>
         <div className="flex">
-          <AmountButton button={"-"} setCount={()=> setQuantity(quantity-1)}/>
+          <AmountButton
+            button={"-"}
+            setCount={() => setQuantity(quantity - 1)}
+          />
           <span>{quantity}</span>
           <AmountButton button={"+"} />
         </div>
-        <p className="mt-1">{product.price} ש"ח</p>
+        <p className="mt-1"> {parseFloat(product.price).toFixed(2)} ש"ח</p>
       </div>
       <div className=" flex items-end justify-between  ">
         <p className="text-end">{product.name}</p>

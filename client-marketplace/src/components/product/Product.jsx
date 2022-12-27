@@ -3,16 +3,17 @@ import AmountButton from "../../features/buttons/AmountButton";
 import ProductPopUp from "./ProductPopUp";
 import { truncateString } from "../../utils";
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, selectState } from "../../redux/cart/cartSlice";
+import { addItem, selectCart, selectState } from "../../redux/cart/cartSlice";
 import { useEffect } from "react";
 
 export default function Product({ productData, storeData }) {
   const [showPopUp, setShowPopUp] = useState(false);
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const handleModal = () => {
     setShowPopUp(!showPopUp);
   };
+  const store = useSelector(selectCart);
 
   const addToCart = () => {
     dispatch(
@@ -20,11 +21,18 @@ export default function Product({ productData, storeData }) {
         name: storeData.name,
         imageUrl: storeData.logo.url,
         storeId: productData.storeId,
-        product: { ...productData, quantity: quantity, price:productData.price*quantity},
+        product: {
+          ...productData,
+          quantity: quantity,
+          price: productData.price * quantity,
+        },
       })
     );
   };
 
+  useEffect(() => {
+    setQuantity(1);
+  }, []);
   return (
     <div className="border mb-3">
       <div className="product">
@@ -48,9 +56,15 @@ export default function Product({ productData, storeData }) {
           )}
         </div>
         <div className="buttons-container my-2">
-          <AmountButton button={"-"} setCount={()=>setQuantity(quantity-1)}/>
+          <AmountButton
+            button={"-"}
+            setCount={() => setQuantity(quantity > 1 ? quantity - 1 : 1)}
+          />
           <p>{quantity}</p>
-          <AmountButton button={"+"} setCount={()=>setQuantity(quantity+1)}/>
+          <AmountButton
+            button={"+"}
+            setCount={() => setQuantity(quantity + 1)}
+          />
         </div>
         <div>
           <p>
@@ -59,7 +73,13 @@ export default function Product({ productData, storeData }) {
             ש"ח
           </p>
         </div>
-        <button className="add-to-cart-btn" onClick={addToCart}>
+        <button
+          className="add-to-cart-btn"
+          onClick={() => {
+            addToCart()
+            setQuantity(1);
+          }}
+        >
           הוסף לעגלה
         </button>
       </div>

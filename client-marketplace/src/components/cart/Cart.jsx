@@ -12,10 +12,10 @@ const Cart = () => {
   const totalPrice = useSelector(selectCartTotal);
   const [cart, setCart] = useState([]);
 
-  useEffect(() => {
-    const cartStateArray = Object.keys(cartState);
-    setCart(cartStateArray.map((key) => cartState[key]));
-  }, [cartState]);
+  useEffect(()=>{
+    const cartStateArray = Object.keys(cartState)
+    setCart(cartStateArray.map((key)=> cartState[key]));
+  },[cartState])
 
   return (
     <div
