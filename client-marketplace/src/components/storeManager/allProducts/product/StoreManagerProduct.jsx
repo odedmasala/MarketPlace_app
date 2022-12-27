@@ -24,8 +24,8 @@ const StoreManagerProduct = ({product}) => {
 
             </div>
             <div className="flex justify-between mt-2">
-              <button className="border border-black bg-red-700 text-white font-medium p-2 rounded hover:bg-red-400 cursor-pointer ">DELTET</button>
-              <button className="border border-black bg-green-700 text-white font-medium p-2 rounded hover:bg-green-400 cursor-pointer " onClick={handleModal}>UPDATE</button>
+              <button className="text-red-600 hover:underline p-1 rounded cursor-pointer ">Delete</button>
+              <button  className="text-green-500 hover:underline px-4 rounded" onClick={handleModal}>Update</button>
             </div>
 
           <PopStoreManagerProduct product={product} show={showPopUp} handleModal={handleModal}/>
