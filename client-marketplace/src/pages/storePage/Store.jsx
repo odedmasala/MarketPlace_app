@@ -28,7 +28,7 @@ const Store = () => {
   }, []);
 
   return (
-    <div className="bg-white w-full max-w-7xl">
+    <div className="bg-white w-full max-w-full">
       <HeaderStore storeDetails={store}/>
       <div className="flex flex-col items-center mt-4">
         <p className="my-3 text-xl">נמצאו <span className="text-[#0899A5]">{products.length}</span> מוצרים</p>

@@ -32,6 +32,7 @@ import {
   CheckOut,
 } from "./pages";
 import useAxios from "./hooks/useAxios";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   // const { data, loading, error } = useAxios('https://jsonplaceholder.typicode.com/users');
@@ -58,7 +59,7 @@ const App = () => {
           <Route path="allStores" element={<AllStores />} />
           <Route path="section/:id" element={<SectionStoreManager />} />
           <Route path="addProduct" element={<AddProduct />} />
-          <Route path="personalData" element={<AddCategory />} />
+          <Route path="addSection" element={<AddCategory />} />
         </Route>
         <Route path="info" element={<MainInfo />}>
           <Route path="about" element={<AboutPage />} />
@@ -71,6 +72,9 @@ const App = () => {
         <Route path=":id/stores" element={<StoresListPage />} />
         <Route path="store/:id" element={<Store />} />
       </Routes>
+      
+      
+      <ToastContainer />
     </div>
   );
 };

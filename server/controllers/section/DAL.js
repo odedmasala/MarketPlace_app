@@ -22,7 +22,6 @@ const findSectionById = async (id) => {
   try {
     const section = await sectionModel
       .findById(id)
-      .populate(["storeId", "departmentIds"]);
     return section;
   } catch (error) {
     throw error;

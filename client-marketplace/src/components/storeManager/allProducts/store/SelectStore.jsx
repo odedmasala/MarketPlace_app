@@ -1,7 +1,9 @@
+import axios from "axios";
 import { Textarea } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { notify } from "../../../../utils";
 
 const SelectStore = ({ store }) => {
   const navigate = useNavigate();
@@ -62,18 +64,16 @@ const SelectStore = ({ store }) => {
     console.log(storeData)
   };
 
-  const updateStore = async () => {
-    const { data } = await axios.put(
-      `http://localhost:8001/api/store/${storeData._id}`,
-      storeData
-    );
-    console.log(data);
-    
-  };
+const saveChange = async ()=>{
+  const {data} = await axios.put(`http://localhost:8001/api/store/${storeData._id}`,storeData)
+  if(data){
+    notify(data);
+  }
+}
 
   useEffect(() => {
     setStoreData(store);
-  }, [store.bnNumber]);
+  }, [store?.bnNumber]);
   return (
     <>
       <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
@@ -94,7 +94,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="phone"
-                        value={storeData.phone}
+                        value={storeData?.phone}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -104,7 +104,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="name"
-                        value={storeData.name}
+                        value={storeData?.name}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -115,7 +115,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="email"
                         name="email"
-                        value={storeData.email}
+                        value={storeData?.email}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -126,7 +126,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="street"
-                        value={storeData.address.street}
+                        value={storeData?.address.street}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -137,7 +137,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="city"
-                        value={storeData.address.city}
+                        value={storeData?.address.city}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -148,7 +148,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="apartment"
-                        value={storeData.address.apartment}
+                        value={storeData?.address.apartment}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -158,7 +158,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="floor"
-                        value={storeData.address.floor}
+                        value={storeData?.address.floor}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -168,7 +168,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="building"
-                        value={storeData.address.building}
+                        value={storeData?.address.building}
                         className="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
                       />
                     </div>
@@ -178,7 +178,7 @@ const SelectStore = ({ store }) => {
                         onChange={handleInput}
                         type="text"
                         name="description"
-                        value={storeData.description}
+                        value={storeData?.description}
                         className="text-right"
                       />
                     </div>
@@ -201,7 +201,7 @@ const SelectStore = ({ store }) => {
 
                     <div className="md:col-span-5 mt-4 text-right">
                       <div className="flex justify-between">
-                        <button
+                        <button onClick={saveChange}
                           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
                           onClick={updateStore}
                         >
@@ -210,7 +210,7 @@ const SelectStore = ({ store }) => {
                         <button
                           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                           onClick={() =>
-                            navigate(`/storeManager/section/${storeData._id}`)
+                            navigate(`/storeManager/section/${storeData?._id}`)
                           }
                         >
                           לחנות

@@ -330,6 +330,10 @@ const stores = [
       public_id: "stores/פירות ירקות/נוי_השדה_drijdu",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465512/stores/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%A0%D7%95%D7%99_%D7%94%D7%A9%D7%93%D7%94_drijdu.png",
     },
+    coverImage: {
+      public_id: "stores/פירות ירקות/תמונת_רקע_נוי_בשדה_wrizju",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671723484/stores/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%A0%D7%95%D7%99_%D7%91%D7%A9%D7%93%D7%94_wrizju.avif",
+    },
     phone: "050-1111111",
     email: "aaa@aa.aa",
     department: departmentsIds[0],
@@ -353,6 +357,10 @@ const stores = [
     logo: {
       public_id: "stores/פירות ירקות/המושבה-לוגו-בלי-רקע_nxcvdi",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465533/stores/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%94%D7%9E%D7%95%D7%A9%D7%91%D7%94-%D7%9C%D7%95%D7%92%D7%95-%D7%91%D7%9C%D7%99-%D7%A8%D7%A7%D7%A2_nxcvdi.png",
+    },
+    coverImage: {
+      public_id: "stores/פירות ירקות/תמונת_רקע_המושבה_vvxsou",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671723483/stores/%D7%A4%D7%99%D7%A8%D7%95%D7%AA%20%D7%99%D7%A8%D7%A7%D7%95%D7%AA/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%94%D7%9E%D7%95%D7%A9%D7%91%D7%94_vvxsou.avif",
     },
     phone: "050-2222222222",
     email: "dddd@aa.aa",
@@ -378,6 +386,10 @@ const stores = [
       public_id: "stores/כלי נגינה/musicZol_ktfxze",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465114/stores/%D7%9B%D7%9C%D7%99%20%D7%A0%D7%92%D7%99%D7%A0%D7%94/musicZol_ktfxze.jpg",
     },
+    coverImage: {
+      public_id: "stores/כלי נגינה/תמונת_רקע_כלי_נגינהavif_a88zjx",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671723188/stores/%D7%9B%D7%9C%D7%99%20%D7%A0%D7%92%D7%99%D7%A0%D7%94/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%9B%D7%9C%D7%99_%D7%A0%D7%92%D7%99%D7%A0%D7%94avif_a88zjx.avif",
+    },
     phone: "050-44444444",
     email: "bbbbb@aa.aa",
     department: departmentsIds[1],
@@ -402,6 +414,10 @@ const stores = [
       public_id: "stores/כלי נגינה/sarina_oozqok",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465105/stores/%D7%9B%D7%9C%D7%99%20%D7%A0%D7%92%D7%99%D7%A0%D7%94/sarina_oozqok.jpg",
     },
+    coverImage: {
+      public_id: "stores/כלי נגינה/2_תמונת_רקע_כלי_נגינהavif_sloi3x",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671723187/stores/%D7%9B%D7%9C%D7%99%20%D7%A0%D7%92%D7%99%D7%A0%D7%94/2_%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%9B%D7%9C%D7%99_%D7%A0%D7%92%D7%99%D7%A0%D7%94avif_sloi3x.avif",
+    },
     phone: "050-333333333",
     email: "eeee@aa.aa",
     department: departmentsIds[1],
@@ -424,6 +440,10 @@ const stores = [
     logo: {
       public_id: "stores/פארם/סופר_פארם_thrdtw",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465181/stores/%D7%A4%D7%90%D7%A8%D7%9D/%D7%A1%D7%95%D7%A4%D7%A8_%D7%A4%D7%90%D7%A8%D7%9D_thrdtw.png",
+    },
+    coverImage: {
+      public_id: "stores/פארם/תמונת_רקע_סופר_פארם_swi9nd",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671722694/stores/%D7%A4%D7%90%D7%A8%D7%9D/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%A1%D7%95%D7%A4%D7%A8_%D7%A4%D7%90%D7%A8%D7%9D_swi9nd.avif",
     },
     phone: "050-55555555",
     email: "cccccc@aa.aa",
@@ -449,6 +469,10 @@ const stores = [
       public_id: "stores/פארם/בי_פארם_yfckph",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465441/stores/%D7%A4%D7%90%D7%A8%D7%9D/%D7%91%D7%99_%D7%A4%D7%90%D7%A8%D7%9D_yfckph.jpg",
     },
+    coverImage: {
+      public_id: "stores/פארם/תמונת_רקע_של_BE_hbwat7",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671722428/stores/%D7%A4%D7%90%D7%A8%D7%9D/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%A9%D7%9C_BE_hbwat7.avif",
+    },
     phone: "050-666666",
     email: "fffffff@aa.aa",
     department: departmentsIds[2],
@@ -473,6 +497,10 @@ const stores = [
       public_id: "stores/משקאות/באר_המשקאות_ecftae",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465142/stores/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%91%D7%90%D7%A8_%D7%94%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA_ecftae.jpg",
     },
+    coverImage: {
+      public_id: "stores/משקאות/תמונת_רקע_באר_המשקאותavif_wjczgy",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671724286/stores/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%91%D7%90%D7%A8_%D7%94%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AAavif_wjczgy.avif",
+    },
     phone: "050-777777",
     email: "gggggg@aa.aa",
     department: departmentsIds[3],
@@ -495,6 +523,10 @@ const stores = [
     logo: {
       public_id: "stores/משקאות/בנא_משקאות_i3wvvm",
       url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671465147/stores/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%91%D7%A0%D7%90_%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA_i3wvvm.png",
+    },
+    coverImage: {
+      public_id: "stores/משקאות/תמונת_רקע_בנא_משקאותavif_mc0y4e",
+      url: "https://res.cloudinary.com/dlcq6p2up/image/upload/v1671724284/stores/%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AA/%D7%AA%D7%9E%D7%95%D7%A0%D7%AA_%D7%A8%D7%A7%D7%A2_%D7%91%D7%A0%D7%90_%D7%9E%D7%A9%D7%A7%D7%90%D7%95%D7%AAavif_mc0y4e.avif",
     },
     phone: "050-777777",
     email: "gggggg@aa.aa",
