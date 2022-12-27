@@ -32,7 +32,7 @@ const createOneSection = async (obj) => {
   try {
     const section = new sectionModel(obj);
     await section.save();
-    return section;
+    return "Created";
   } catch (error) {
     throw error;
   }
