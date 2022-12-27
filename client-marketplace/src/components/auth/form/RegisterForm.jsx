@@ -13,9 +13,9 @@ import {
 import SocialButton from "./SocialButton";
 import LoginForm from "./LoginForm";
 import axios from "axios";
+
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-const passwordRegex =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
+const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&_]{8,}$/;
 const phoneRegex = /^(\+972|0)(-|\s)?\d{2}(-|\s)?\d{7}$/;
 
 const registerSchema = Yup.object().shape({
@@ -51,6 +51,7 @@ const registerFormValues = {
   password: "",
   passwordVerification: "",
 };
+
 const RegisterForm = ({ handelView, setFormType }) => {
   const [passwordType, setPasswordType] = useState("password");
   const [Succeeded, setSucceeded] = useState(null);

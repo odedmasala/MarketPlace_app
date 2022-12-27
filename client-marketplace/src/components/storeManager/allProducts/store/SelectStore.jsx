@@ -1,12 +1,12 @@
-import axios from "axios";
 import { Textarea } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { notify } from "../../../../utils";
+import axios from "axios";
 
 const SelectStore = ({ store }) => {
   const navigate = useNavigate();
-  const[imgUrl, setImgUrl] = useState('')
+  const [imgUrl, setImgUrl] = useState("");
   const [storeData, setStoreData] = useState({
     address: {
       apartment: "",
@@ -28,19 +28,18 @@ const SelectStore = ({ store }) => {
     phone: "",
   });
 
-  const handleImg = (e)=>{
+  const handleImg = (e) => {
     const file = e.target.files[0];
     setFileToBase(file);
-  }
+  };
 
-
-  const setFileToBase = (file)=>{
+  const setFileToBase = (file) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onloadend = ()=>{
-      setImgUrl(reader.result)
-    }
-  }
+    reader.onloadend = () => {
+      setImgUrl(reader.result);
+    };
+  };
 
   const handleInput = (e) => {
     if (e.target.name === "logo") {
@@ -60,15 +59,18 @@ const SelectStore = ({ store }) => {
     } else {
       setStoreData({ ...storeData, [e.target.name]: e.target.value });
     }
-    console.log(storeData)
+    console.log(storeData);
   };
 
-const saveChange = async ()=>{
-  const {data} = await axios.put(`http://localhost:8001/api/store/${storeData._id}`,storeData)
-  if(data){
-    notify(data);
-  }
-}
+  const saveChange = async () => {
+    const { data } = await axios.put(
+      `http://localhost:8001/api/store/${storeData._id}`,
+      storeData
+    );
+    if (data) {
+      notify(data);
+    }
+  };
 
   useEffect(() => {
     setStoreData(store);
@@ -79,9 +81,7 @@ const saveChange = async ()=>{
         <div className="container max-w-screen-lg mx-auto text-right">
           <div>
             <h2 className="font-semibold text-2xl text-gray-600">פרטי החנות</h2>
-            <p className="text-gray-500 mb-6">
-              ניתן לשנות במידת הצורך
-            </p>
+            <p className="text-gray-500 mb-6">ניתן לשנות במידת הצורך</p>
 
             <div className="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
               <div className="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-2">
@@ -194,14 +194,16 @@ const saveChange = async ()=>{
                     <div className="md:col-span-5 text-right">
                       <label htmlFor="logo">לוגו</label>
                       <div className="h-10 bg-gray-50 text-right flex border border-gray-200 rounded items-center mt-1">
-                        <input onChange={handleImg} type="file" name="logo"/>
+                        <input onChange={handleImg} type="file" name="logo" />
                       </div>
                     </div>
 
                     <div className="md:col-span-5 mt-4 text-right">
                       <div className="flex justify-between">
-                        <button onClick={saveChange}
+                        <button
+                          onClick={saveChange}
                           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+
                         >
                           שמור שינויים
                         </button>

@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getNumberOfProducts, selectCart, selectCartTotal } from "../../redux/cart/cartSlice";
+import {
+  getNumberOfProducts,
+  selectCart,
+  selectCartTotal,
+} from "../../redux/cart/cartSlice";
 import CartStores from "../cart/stores/CartStores";
 
 const Cart = () => {
@@ -21,12 +25,11 @@ const Cart = () => {
   const [cart, setCart] = useState([]);
   const numberOfproducts = useSelector((state) => getNumberOfProducts(state));
 
-  const storeTotalPrice = useSelector(selectCartTotal)
+  const storeTotalPrice = useSelector(selectCartTotal);
+
   useEffect(() => {
     setCart(cartStateArray.map((key) => cartState[key]));
-    console.log(storeTotalPrice);
   }, [cartState]);
-
   return (
     <>
       <div className="w-full border-solid border-gray-500 bg-white border">
@@ -53,7 +56,9 @@ const Cart = () => {
         <div className="border py-5 px-2 ">
           <p className="flex justify-between items-end flex-row-reverse">
             <span>:סה"כ</span>
-            <span className="text-end">{storeTotalPrice} ש"ח</span>
+            <span className="text-end">
+              {parseFloat(storeTotalPrice).toFixed(2)} ש"ח
+            </span>
           </p>
           <p className="flex justify-between items-end flex-row-reverse">
             <span>:בקניה חסכת</span>
@@ -68,7 +73,7 @@ const Cart = () => {
           onClick={() => navigate("/checkOut")}
           className="bg-teal-500 w-full h-[50px] text-white text-2xl "
         >
-          לתשלום ש"ח {storeTotalPrice}
+          לתשלום ש"ח {parseFloat(storeTotalPrice).toFixed(2)}
         </button>
       </div>
     </>
