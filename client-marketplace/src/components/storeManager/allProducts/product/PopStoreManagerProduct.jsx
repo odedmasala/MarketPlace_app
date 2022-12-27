@@ -1,125 +1,144 @@
 import React, { useState } from "react";
-import { Modal } from "flowbite-react";
+import { Modal, Textarea } from "flowbite-react";
+import { ModalFooter } from "flowbite-react/lib/esm/components/Modal/ModalFooter";
 
 const PopStoreManagerProduct = ({ product, show, handleModal }) => {
-  const [productData, setProductData] = useState(product)
+  const [productData, setProductData] = useState(product);
 
-  const changeProductData =(e)=>{
-    if(e.target.name === "avgWeightPerUnit"){
-      setProductData({...productData,weight:{...productData.weight,avgWeightPerUnit:e.target.value}})
-
-    }else if(e.target.name === "minimumOrderCartonsCount"||e.target.name === "measureUnits"){
-      setProductData({...productData,unit:{...productData.unit,[e.target.name]:e.target.value}})
-      
-    }else{
-      
-      setProductData({...productData,[e.target.name]:e.target.value})
+  const changeProductData = (e) => {
+    if (e.target.name === "avgWeightPerUnit") {
+      setProductData({
+        ...productData,
+        weight: { ...productData.weight, avgWeightPerUnit: e.target.value },
+      });
+    } else if (
+      e.target.name === "minimumOrderCartonsCount" ||
+      e.target.name === "measureUnits"
+    ) {
+      setProductData({
+        ...productData,
+        unit: { ...productData.unit, [e.target.name]: e.target.value },
+      });
+    } else {
+      setProductData({ ...productData, [e.target.name]: e.target.value });
     }
-
-  }
+  };
   return (
-    <div className="bg-black bg-opacity-10">
-      <React.Fragment>
-        <Modal show={show} size="md" popup={true}>
-          <Modal.Header onClick={handleModal} />
-          <Modal.Body>
-            <div className="space-y-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8 flex flex-col items-center">
-              <div>
-                <img src={productData.image.url} alt="product" />
-                <div className="flex flex-col items-end ">
-                  <p className="">תמונה</p>
-                  <input onChange={changeProductData} name="image" type={"file"} className="my-2 w-5/6" />{" "}
-                </div>
-              </div>
-              <div className="flex self-end">
-                <div
-                  className="flex w-20 flex-row-reverse font-bold items-center "
-                  style={{ color: "#09ACA2" }}
-                >
-                  <input onChange={changeProductData} name="price"
-                    className="mx-1 text-right  grow "
-                    type={"number"}
-                    value={productData.price}
-                  />
-                  <span>שח</span>
-                </div>
-              </div>
-              <div className="name">
-                <div className="text-right">
-                  <p className="my-3">
-                    <input onChange={changeProductData} name="name"
-                      type={"text"}
-                      className="text-right"
-                      value={productData.name}
-                    />{" "}
-                    שם
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="description"
-                      type={"text"}
-                      className="text-right text-xs w-fit"
-                      value={productData.description}
-                    />{" "}
-                    תיאור
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="barcode"
-                      type={"text"}
-                      className="text-right text-xs w-fit"
-                      value={productData.barcode}
-                    />{" "}
-                    מק"ט
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="manufacture"
-                      type={"text"}
-                      className="text-right text-xs w-fit"
-                      value={productData.manufacture}
-                    />{" "}
-                    יצרן{" "}
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="quantity"
+    <>
+      <div className="bg-black bg-opacity-10">
+        <React.Fragment>
+          <Modal show={show} size="md" popup={true}>
+            <Modal.Header onClick={handleModal} />
+            <Modal.Body>
+              <div class="lg:col-span-2">
+                <img
+                  src={productData.image.url}
+                  alt="product"
+                  className="w-1/3 m-auto"
+                />
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
+                  <div className="md:col-span-3 text-right">
+                    <label htmlFor="full_name">מחיר</label>
+                    <input
+                      min={0}
+                      onChange={changeProductData}
+                      name="price"
                       type={"number"}
-                      className="text-right text-xs w-fit"
+                      value={productData.price}
+                      className="h-8 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
+                    />
+                  </div>
+                  <div className="md:col-span-3 text-right">
+                    <label htmlFor="full_name">שם המוצר</label>
+                    <input
+                      onChange={changeProductData}
+                      name="name"
+                      type={"text"}
+                      value={productData.name}
+                      className="h-8 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
+                    />
+                  </div>
+                  <div className="md:col-span-6 flex flex-row-reverse items-center justify-between text-right">
+                    <label htmlFor="image">תמונה</label>
+                    <div className="h-10 w-3/4 bg-gray-50 text-right flex border border-gray-200 rounded items-center mt-1">
+                      <input
+                        type="file"
+                        name="image"
+                        onChange={changeProductData}
+                      />
+                    </div>
+                  </div>
+                  <div className="md:col-span-6 text-right">
+                    <label htmlFor="description">תיאור המוצר</label>
+                    <Textarea
+                      onChange={changeProductData}
+                      type="text"
+                      name="description"
+                      className="text-right"
+                      value={productData.description}
+                    />
+                  </div>
+                  <div class="md:col-span-3">
+                    <label for="manufacture">יצרן</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="manufacture"
+                      value={productData.manufacture}
+                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div class="md:col-span-3">
+                    <label for="barcode">מק"ט</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="barcode"
+                      value={productData.barcode}
+                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div class="md:col-span-2">
+                    <label for="quantity">כמות</label>
+                    <input
+                      onChange={changeProductData}
+                      type="number"
+                      name="quantity"
                       value={productData.quantity}
-                    />{" "}
-                    כמות{" "}
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="measureUnits"
-                      type={"text"}
-                      className="text-right text-xs w-fit"
+                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div class="md:col-span-2">
+                    <label for="measureUnits">יחידות מידה</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="measureUnits"
                       value={productData.unit?.measureUnits}
-                    />{" "}
-                    יחידת מידה{" "}
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="minimumOrderCartonsCount"
-                      type={"text"}
-                      className="text-right text-xs w-fit"
-                      value={productData.unit?.minimumOrderCartonsCount}
-                    />{" "}
-                    מינימום להזמנה{" "}
-                  </p>
-                  <p>
-                    <input onChange={changeProductData} name="avgWeightPerUnit"
-                      type={"text"}
-                      className="text-right text-xs w-fit"
+                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div class="md:col-span-2">
+                    <label for="avgWeightPerUnit">משקל ממוצע</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="avgWeightPerUnit"
                       value={productData.weight?.avgWeightPerUnit}
-                    />{" "}
-                    משקל ממוצע{" "}
-                  </p>
+                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <button className="border-2 bg-green-600 hover:bg-green-400 cursor-pointer p-2 text-white">שמירה</button>
-          </Modal.Footer>
-        </Modal>
-      </React.Fragment>
-    </div>
+              <ModalFooter>
+
+              <button className="bg-green-500 hover:bg-green-700 text-white font-thin py-1 px-4 rounded">שמירה</button>
+              </ModalFooter>
+            </Modal.Body>
+          </Modal>
+        </React.Fragment>
+      </div>
+    </>
   );
 };
 
