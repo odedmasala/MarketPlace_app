@@ -1,11 +1,3 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Department from '../../components/department/Department';
-import FooterHomePage from '../../components/footer/FooterHomePage';
-import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
-
-
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -13,15 +5,12 @@ import Department from "../../components/department/Department";
 import FooterHomePage from "../../components/footer/FooterHomePage";
 import UserLocationPopUp from '../../components/userLocationPopup/UserLocationPopUp';
 import { useDispatch } from 'react-redux'
-import {getProducts} from "../../redux/storemanager/StoreManagerSlice"
-
-
+import {getProductsAsync} from "../../redux/storemanager/StoreManagerSlice"
 import { ad } from '../../app/store';
-
 import axios from 'axios';
 
 const HomePage = () => {
-  const dispatch = reactRedux.useDispatch();
+  const dispatch = useDispatch();
 
   const [allDepartments, setAllDepartments] = useState([]);
 
@@ -31,7 +20,7 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    dispatch(getProducts());
+    dispatch(getProductsAsync());
     getDepartments();
   }, [dispatch]);
 
