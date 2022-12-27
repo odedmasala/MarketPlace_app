@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Cart from "../../cart/Cart";
 import { TbLogout } from "react-icons/tb";
 
+
 export default function NavBarSlider({ handelNav ,nav }) {
   return (
     <div>

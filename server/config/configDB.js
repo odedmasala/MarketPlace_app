@@ -29,12 +29,12 @@ const connectDB = () => {
       {
         useNewUrlParser: true,
       }
-      // async () => {
-      //   await Department.insertMany(departments);
-      //   await Stores.insertMany(stores);
-      //   await Section.insertMany(combineSections);
-      //   await Products.insertMany(combineProducts);
-      // }
+    //  , async () => {
+    //     await Department.insertMany(departments);
+    //     await Stores.insertMany(stores);
+    //     await Section.insertMany(combineSections);
+    //     await Products.insertMany(combineProducts);
+    //   }
     );
     console.log("The DB login was successful");
   } catch (error) {
