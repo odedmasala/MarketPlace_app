@@ -2,8 +2,14 @@ import React from "react";
 import { FiCheckCircle } from "react-icons/fi";
 import { CiFaceSmile } from "react-icons/ci";
 import { Button } from "flowbite-react";
-
+import { useNavigate } from "react-router-dom";
 export default function SuccessPayment() {
+  const navigate = useNavigate();
+
+  const clearFromLocalStorageAndSendDataToServer = () => {
+    navigate("/");
+  };
+
   return (
     <div className="w-5/12 bg-white flex flex-col items-center my-36 m-auto text-center pt-5 h-[40rem]">
       <FiCheckCircle className="text-8xl text-[#0899A5] mb-10" />
@@ -16,7 +22,11 @@ export default function SuccessPayment() {
       </div>
       <div className="flex flex-col items-center justify-between h-[5rem]">
         <p>מספר הזמנה: 111111111111111</p>
-        <Button outline={true} gradientDuoTone="greenToBlue">
+        <Button
+          onClick={clearFromLocalStorageAndSendDataToServer}
+          outline={true}
+          gradientDuoTone="greenToBlue"
+        >
           Green to Blue
         </Button>
       </div>
