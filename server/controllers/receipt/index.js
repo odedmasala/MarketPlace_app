@@ -4,11 +4,19 @@ const {
   findAllReceipts,
   findReceiptById,
   updateOneReceipt,
+  findAllReceiptForUser
 } = require("./DAL");
 
 const getAllReceipts = async (req, res, next) => {
   try {
-    const receipts = await findAllReceipts();
+    let receipts =[]
+    if(req.query.userId){
+      let user = req.query.userId;
+      stores = await findAllReceiptForUser(user)
+    }else{
+      receipts = await findAllReceipts();
+    }
+     
     res.status(200).json(receipts);
   } catch (err) {
     next(err);
