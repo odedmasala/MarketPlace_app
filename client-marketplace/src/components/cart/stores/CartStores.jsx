@@ -32,7 +32,7 @@ const CartStores = ({ store, activeIndex, indexStore, handleClick }) => {
               <h1 className="text-sm ml-1 text-green-600"> ש"ח {parseFloat(storeTotalPrice).toFixed(2)}</h1>
             </div>
             <div className="w-4/12">
-              <img className="h-full w-full" src={store.imageUrl} alt="" />
+              <img className="w-[80%] md:w-[60%]" src={store.imageUrl} alt="" />
             </div>
           </div>
         </div>

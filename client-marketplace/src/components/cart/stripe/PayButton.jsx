@@ -1,27 +1,16 @@
 import React from "react";
 import axios from "axios";
+import { selectCartTotal } from "../../../redux/cart/cartSlice";
+import { useSelector } from "react-redux";
 
 export default function PayButton() {
-  const cartItem = [
-    {
-      image:
-        "https://www.collinsdictionary.com/images/full/apple_158989157.jpg",
-      name: "תפוח",
-      price: "4.5",
-      qty: "2",
-    },
-    {
-      image:
-        "https://www.collinsdictionary.com/images/full/apple_158989157.jpg",
-      name: "תפוח",
-      price: "4.5",
-      qty: "2",
-    },
-  ];
+  const totalPrice = useSelector(selectCartTotal);
+  const total = parseFloat(totalPrice).toFixed(0)
+
   const handleCheckout = () => {
     axios
       .post(`http://localhost:8001/api/stripe/create-checkout-session`, {
-        cartItem,
+        total:total,
       })
       .then((res) => {
         if (res.data.url) {
@@ -32,7 +21,7 @@ export default function PayButton() {
   };
   return (
     <div className="text-center">
-      <button className="bg-green-400 text-white rounded-md p-4" onClick={() => handleCheckout()}> לתשלום 18 ש"ח</button>
+      <button className="bg-green-400 text-white rounded-md p-4" onClick={() => handleCheckout()}> לתשלום {total} ש"ח</button>
     </div>
   );
 }
