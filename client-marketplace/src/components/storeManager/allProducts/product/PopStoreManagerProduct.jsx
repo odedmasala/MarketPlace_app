@@ -30,7 +30,7 @@ const PopStoreManagerProduct = ({ product, show, handleModal }) => {
           <Modal show={show} size="md" popup={true}>
             <Modal.Header onClick={handleModal} />
             <Modal.Body>
-              <div class="lg:col-span-2">
+              <div className="lg:col-span-2">
                 <img
                   src={productData.image.url}
                   alt="product"
@@ -78,54 +78,54 @@ const PopStoreManagerProduct = ({ product, show, handleModal }) => {
                       value={productData.description}
                     />
                   </div>
-                  <div class="md:col-span-3">
-                    <label for="manufacture">יצרן</label>
+                  <div className="md:col-span-3">
+                    <label htmlFor="manufacture">יצרן</label>
                     <input
                       onChange={changeProductData}
                       type="text"
                       name="manufacture"
                       value={productData.manufacture}
-                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
                     />
                   </div>
-                  <div class="md:col-span-3">
-                    <label for="barcode">מק"ט</label>
+                  <div className="md:col-span-3">
+                    <label htmlFor="barcode">מק"ט</label>
                     <input
                       onChange={changeProductData}
                       type="text"
                       name="barcode"
                       value={productData.barcode}
-                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
                     />
                   </div>
-                  <div class="md:col-span-2">
-                    <label for="quantity">כמות</label>
+                  <div className="md:col-span-2">
+                    <label htmlFor="quantity">כמות</label>
                     <input
                       onChange={changeProductData}
                       type="number"
                       name="quantity"
                       value={productData.quantity}
-                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
                     />
                   </div>
-                  <div class="md:col-span-2">
-                    <label for="measureUnits">יחידות מידה</label>
+                  <div className="md:col-span-2">
+                    <label htmlFor="measureUnits">יחידות מידה</label>
                     <input
                       onChange={changeProductData}
                       type="text"
                       name="measureUnits"
                       value={productData.unit?.measureUnits}
-                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
                     />
                   </div>
-                  <div class="md:col-span-2">
-                    <label for="avgWeightPerUnit">משקל ממוצע</label>
+                  <div className="md:col-span-2">
+                    <label htmlFor="avgWeightPerUnit">משקל ממוצע</label>
                     <input
                       onChange={changeProductData}
                       type="text"
                       name="avgWeightPerUnit"
                       value={productData.weight?.avgWeightPerUnit}
-                      class="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
                     />
                   </div>
                 </div>

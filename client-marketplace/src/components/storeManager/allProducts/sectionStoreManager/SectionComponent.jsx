@@ -8,7 +8,7 @@ const SectionComponent = ({ section, categoryFilter }) => {
   };
 
   return (
-      <div className="flex flex-row-reverse items-end w-[40%] mb-4">
+      <div className=" md:flex md:flex-row-reverse items-end md:w-[40%] w-full mb-4">
         <div className="text-end" key={section._id}>
           <p> :שם קטגוריה</p>
           <input
@@ -18,7 +18,7 @@ const SectionComponent = ({ section, categoryFilter }) => {
             className="section-input"
           />
         </div>
-        <div className="flex w-1/2">
+        <div className="flex md:w-1/2">
           <button className="section-btn">שמור שינויים</button>
           <button
             onClick={() => {

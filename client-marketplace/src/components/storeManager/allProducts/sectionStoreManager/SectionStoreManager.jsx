@@ -34,7 +34,7 @@ setShowProducts(products.filter(product=>product.subCategory === id))
 
   return (
     <div>
-      <div className="flex flex-row justify-between flex-wrap text-end">
+      <div className="flex flex-col md:flex-row justify-center items-center md:justify-between flex-wrap text-end">
         {sections.map((section) => {
           return (
             <SectionComponent key={section._id} section={section} categoryFilter={categoryFilter}/>

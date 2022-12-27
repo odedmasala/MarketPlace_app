@@ -16,7 +16,7 @@ export default function NavigationBar() {
     setNav(!nav)
   }
   return (
-    <div className="bg-white fixed bottom-0 inset-x-0 px-4 py-3  md:hidden flex items-center justify-around">
+    <div className="bg-white fixed bottom-0 inset-x-0 px-4 py-3 md:hidden flex items-center justify-around">
       <div
         onClick={() => navigate('/profile')}
         className="flex flex-col cursor-pointer text-[30px] items-center justify-center"
