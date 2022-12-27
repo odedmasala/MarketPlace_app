@@ -11,7 +11,7 @@ export default function NavBarSlider({ handelNav ,nav }) {
         className={
           nav
             ? "fixed overflow-y-scroll z-20 left-0 top-0 w-[75%] sm:w-[60%] md:w-[45%] bg-[#ecf0f3] p-10 ease-in duration-500"
-            : "fixed left-[-200%] top-0 p-10 ease-in duration-500"
+            : "fixed left-[-400%] top-0 p-10 ease-in duration-500"
         }
       >
         <div className="w-full h-[100%]">

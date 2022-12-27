@@ -2,14 +2,18 @@ import React from 'react';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import SectionNavBar from '../navbar/sectionNavbar/SectionNavBar';
 
-export default function HeaderStore({ storeDetails }) {
+export default function HeaderStore({
+  storeDetails,
+  sections,
+  categoryFilter,
+}) {
   const { name, description, logo, coverImage, phone, address } = storeDetails;
 
   return (
     <div>
       <div
         className="bg-no-repeat bg-cover bg-center md:mb-3 h-72 md:h-[390px] w-full flex flex-col justify-end"
-        style={{ backgroundImage: `url(${coverImage})` }}
+        style={{ backgroundImage: `url(${coverImage?.url})` }}
       >
         <div className="hidden md:flex flex-wrap bg-[#ffffffd1] shadow-lg md:shadow-xl flex-row-reverse items-center justify-around">
           <img
@@ -65,7 +69,7 @@ export default function HeaderStore({ storeDetails }) {
       </div>
       {/* Store details for mobile */}
       <div>
-        <SectionNavBar />
+        <SectionNavBar categoryFilter={categoryFilter} sections={sections} />
       </div>
     </div>
   );
