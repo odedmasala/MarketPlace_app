@@ -3,8 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 export default function SectionNavBar() {
-  const navigate = useNavigate();
-
   const { id } = useParams();
   const [sections, setSections] = useState([]);
   const [products, setProducts] = useState([]);
@@ -26,6 +24,7 @@ export default function SectionNavBar() {
   const categoryFilter = (id) => {
     setShowProducts(products.filter((product) => product.subCategory === id));
   };
+
   useEffect(() => {
     findSections();
     findProducts();
@@ -35,7 +34,7 @@ export default function SectionNavBar() {
     <div className="text-center">
       {sections.map((element, index) => (
         <button
-          className="border-r-4 p-2 md:p-5"
+          className="border-r-4 p-2 md:p-5 bg-white hover:bg-gray-100"
           key={index}
           onClick={() => {
             categoryFilter(element._id);
