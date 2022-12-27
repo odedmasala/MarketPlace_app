@@ -73,6 +73,7 @@ export default function Product({ productData, storeData }) {
             ש"ח
           </p>
         </div>
+        <div className="flex justify-center">
         <button
           className="add-to-cart-btn"
           onClick={() => {
@@ -82,6 +83,7 @@ export default function Product({ productData, storeData }) {
         >
           הוסף לעגלה
         </button>
+        </div>
       </div>
       <ProductPopUp
         show={showPopUp}

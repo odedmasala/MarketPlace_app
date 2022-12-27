@@ -4,7 +4,6 @@ const cloudinary = require("../../utils/cludinary");
 const findAllProducts = async () => {
   try {
     const products = await productModel.find();
-    // .populate(["storeId", "subCategory"]);
     return products;
   } catch (error) {
     throw error;
@@ -20,10 +19,18 @@ const findProductsByStoreId = async (storeId) => {
   }
 };
 
+const findProductsBySectionId = async (sectionId) => {
+  try {
+    const productsInStore = await productModel.find({ subCategory: sectionId });
+    return productsInStore;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const findProductById = async (id) => {
   try {
     const product = await productModel.findById(id);
-    // .populate(["storeId", "subCategory"]);
     return product;
   } catch (error) {
     throw error;
@@ -70,5 +77,6 @@ module.exports = {
   updateOneProduct,
   createOneProduct,
   cloudinaryUpLoud,
+  findProductsBySectionId,
   findProductsByStoreId,
 };

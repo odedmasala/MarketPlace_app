@@ -1,8 +1,24 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { notify } from "../../../utils";
 
 const AddCategory = () => {
   const [newCategory, setNewCategory] = useState({});
+  const store ="63aaf54507d3e05c638e6e62"
+
+  const createSection = async ()=>{
+    const { data } = await axios.post(
+      `http://localhost:8001/api/section`,{
+        name:newCategory,
+        store
+      }
+    );
+    if (data) {
+      notify(data);
+     
+      
+    }
+  }
 
   return (
     <div className="flex justify-end">
@@ -18,7 +34,7 @@ const AddCategory = () => {
           />
         </div>
         <div>
-          <button className="border-2 bg-green-600 hover:bg-green-400 cursor-pointer p-2 text-white">
+          <button onClick={createSection} className="border-2 bg-green-600 hover:bg-green-400 cursor-pointer p-2 text-white">
             שמירה
           </button>
         </div>

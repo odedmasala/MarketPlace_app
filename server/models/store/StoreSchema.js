@@ -7,7 +7,7 @@ const StoreSchema = new mongoose.Schema({
   logo: cloudinarySchema,
   lightlogo: String,
   darklogo: String,
-  coverImage: String,
+  coverImage: cloudinarySchema,
   phone: { type: String, required: true },
   email: { type: String, required: true },
   department: { type: mongoose.Types.ObjectId, ref: "Departments" },

@@ -1,7 +1,10 @@
 import React from "react";
 import { IoStorefrontSharp } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 export default function StoreMobile({ storeData }) {
+  const navigate = useNavigate();
+
   const truncateString = (str, num) => {
     if (str?.length > num) {
       return str.slice(0, num) + "...קרא עוד";
@@ -29,7 +32,10 @@ export default function StoreMobile({ storeData }) {
               </p>
             </div>
             <div>
-              <button className="bg-[#0899A5] p-1 px-2 text-white">
+              <button
+                onClick={() => navigate(`/store/${storeData._id}`)}
+                className="bg-[#0899A5] p-1 px-2 text-white"
+              >
                 קנה בחנות זו
               </button>
             </div>
