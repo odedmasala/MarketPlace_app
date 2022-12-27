@@ -78,7 +78,7 @@ const passport = (passport) => {
           if (checkUser.registerType != "google")
             return callback(null, false, {
               status: 401,
-              message: `That user connected with social access, get in with ${checkUser.registerType}`,
+              message: `That user connected with social access, get in with ${checkUser?.registerType}`,
             });
         console.log(checkUser);
         callback(null, checkUser);
