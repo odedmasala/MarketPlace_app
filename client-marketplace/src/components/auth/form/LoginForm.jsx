@@ -12,6 +12,8 @@ import {
 } from "react-icons/ai";
 import SocialButton from "./SocialButton";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../../redux/user/userSlice";
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const passwordRegex =
@@ -29,19 +31,22 @@ const SignInSchema = Yup.object().shape({
 });
 const loginFormValues = { email: "", password: "" };
 const LoginForm = ({ handelView, setFormType }) => {
+  const dispatch =useDispatch()
   const [passwordType, setPasswordType] = useState("password");
   const [Succeeded, setSucceeded] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const navigateUser = async (values) => {
+  const userAuthenticationOnTheServer = async (values) => {
     try {
       const sendData = { email: values.email, password: values.password };
       const { data } = await axios.post(
         `http://localhost:8001/api/auth/login`,
-        sendData
+        sendData,
+        { withCredentials: true }
       );
       if (data) {
+        dispatch(setUser(data))
         setSucceeded(data);
         return data;
       }
@@ -49,11 +54,11 @@ const LoginForm = ({ handelView, setFormType }) => {
       setError(e);
     }
   };
-  const handleNewUser = async (values, onSubmitProps) => {
+  const handleUserLogged = async (values, onSubmitProps) => {
     setLoading(true);
     try {
       setTimeout(async () => {
-        const Succeeded = await navigateUser(values);
+        const Succeeded = await userAuthenticationOnTheServer(values);
         if (Succeeded) {
           handelView();
           setPasswordType("password");
@@ -69,7 +74,7 @@ const LoginForm = ({ handelView, setFormType }) => {
   };
   const handleFormSubmit = (values, onSubmitProps) => {
     // same shape as initial values
-    handleNewUser(values, onSubmitProps);
+    handleUserLogged(values, onSubmitProps);
   };
   useEffect(() => {
     setLoading(false);

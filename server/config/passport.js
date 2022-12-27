@@ -18,13 +18,16 @@ const passport = (passport) => {
           const user = await User.findOne({ email: email });
           if (!user) {
             return callback(null, false, {
-           status:404 , message: "כתובת אימייל לא נכונה או משתמש לא קיים, אנא בדוק את האימייל",
+              status: 404,
+              message:
+                "כתובת אימייל לא נכונה או משתמש לא קיים, אנא בדוק את האימייל",
             });
           }
           if (user.registerType) {
             if (user.registerType != "email") {
               return callback(null, false, {
-                status:401, message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר דרך ${user.registerType}`,
+                status: 401,
+                message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר דרך ${user.registerType}`,
               });
             }
           }
@@ -34,7 +37,9 @@ const passport = (passport) => {
           );
           if (!isPasswordCorrect) {
             return callback(null, false, {
-             status:401 , message: "כתובת אימייל לא נכונה או משתמש לא קיים"});
+              status: 401,
+              message: "כתובת אימייל לא נכונה או משתמש לא קיים",
+            });
           }
           callback(null, user);
         } catch (error) {
@@ -72,8 +77,10 @@ const passport = (passport) => {
         if (checkUser.registerType)
           if (checkUser.registerType != "google")
             return callback(null, false, {
-              status:401, message: `That user connected with social access, get in with ${checkUser.registerType}`,
+              status: 401,
+              message: `That user connected with social access, get in with ${checkUser.registerType}`,
             });
+        console.log(checkUser);
         callback(null, checkUser);
       }
     )
@@ -105,12 +112,13 @@ const passport = (passport) => {
         const checkUser = await User.findOne({ email: user.email });
         if (!checkUser) {
           const newUser = await new User(user).save();
-          return callback(null, newUser);
+          callback(null, newUser);
         }
         if (checkUser.registerType)
           if (checkUser.registerType != "google")
-            return callback(null, false, {
-              status:401, message: `That user connected with social access, get in with ${checkUser.registerType}`,
+            callback(null, false, {
+              status: 401,
+              message: `That user connected with social access, get in with ${checkUser.registerType}`,
             });
         callback(null, checkUser);
       }

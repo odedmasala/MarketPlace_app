@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/style.css";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -33,20 +33,33 @@ import {
 } from "./pages";
 import useAxios from "./hooks/useAxios";
 import { ToastContainer } from "react-toastify";
-import { fetchUser, getUser } from "./redux/user/userSlice";
+import { fetchUser, clearUser, getUser } from "./redux/user/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const App = () => {
+  const [userData, setUseData] = useState();
   const dispatch = useDispatch();
   const user = useSelector(getUser);
+  // const getUserAsync = async () => {
+  //   try {
+  //     const url = `http://localhost:8001/api/auth/login/success`;
+  //     const { data } = await axios.get(url, { withCredentials: true });
+  //     if (data) {
+  //       dispatch(clearUser());
+  //       setUseData(data);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
   useEffect(() => {
-    dispatch(fetchUser)
+    dispatch(fetchUser());
     console.log(user);
   }, []);
   return (
     <div className="bg-gray-100">
       <NavBar />
-
       <Routes>
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>

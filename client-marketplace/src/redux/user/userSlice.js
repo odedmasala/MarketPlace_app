@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { fetchUserApi } from "./AsyncCall";
 
 const initialState = {
   user: null,
@@ -7,21 +7,14 @@ const initialState = {
   error: null,
 };
 
-export const fetchUser = createAsyncThunk(
-  "user/fetchUser",
-  async ({ dispatch }) => {
-    try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/users?id=1"
-      );
-      const user = response.data;
-      dispatch(setUser(user));
-    } catch (error) {
-      dispatch(clearUser());
-    }
+export const fetchUser = createAsyncThunk("user/fetchUser", async () => {
+  try {
+    const data = await fetchUserApi();
+    return data;
+  } catch (error) {
+    console.log(error);
   }
-);
-
+});
 const userSlice = createSlice({
   name: "user",
   initialState,
@@ -36,6 +29,9 @@ const userSlice = createSlice({
     },
   },
   extraReducers: {
+    [fetchUser.fulfilled]: (state,action) => {
+      state.user = action.payload;
+    },
     [fetchUser.pending]: (state) => {
       state.loading = true;
     },
