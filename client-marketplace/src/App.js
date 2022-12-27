@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import "./css/style.css";
+import "react-toastify/dist/ReactToastify.css";
+
 import { Routes, Route } from "react-router-dom";
 import {
   Footer,
@@ -27,6 +29,7 @@ import {
   PersonalDetails,
   Store,
   StoresListPage,
+  CheckOut,
 } from "./pages";
 import useAxios from "./hooks/useAxios";
 
@@ -38,6 +41,7 @@ const App = () => {
   return (
     <div className="bg-gray-100">
       <NavBar />
+     
       <Routes>
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>
@@ -49,6 +53,7 @@ const App = () => {
         <Route path="successPage" element={<SuccessPayment />} />
         <Route path="product" element={<Product />} />
         <Route path="store" element={<Store />} />
+        <Route path="checkOut" element={ <CheckOut/>} />
         <Route path="storeManager" element={<StoreManager />}>
           <Route path="allStores" element={<AllStores />} />
           <Route path="section/:id" element={<SectionStoreManager />} />
