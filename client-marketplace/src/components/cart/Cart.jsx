@@ -19,7 +19,7 @@ const Cart = () => {
 
   return (
     <div
-      className="w-full border-solid border-gray-500 
+      className="z-[1000] w-full border-solid border-gray-500 
     bg-white border"
     >
       <div>
