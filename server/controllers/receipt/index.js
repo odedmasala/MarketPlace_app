@@ -12,7 +12,7 @@ const getAllReceipts = async (req, res, next) => {
     let receipts =[]
     if(req.query.userId){
       let user = req.query.userId;
-      stores = await findAllReceiptForUser(user)
+      receipts = await findAllReceiptForUser(user)
     }else{
       receipts = await findAllReceipts();
     }

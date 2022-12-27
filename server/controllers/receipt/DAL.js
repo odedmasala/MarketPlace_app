@@ -10,7 +10,7 @@ const findAllReceipts = async () => {
 };
 const findAllReceiptForUser = async (user) => {
   try {
-    const receipts = await receiptModel.find({users:user});
+    const receipts = await receiptModel.find({"users":user});
     return receipts;
   } catch (error) {
     throw error;
