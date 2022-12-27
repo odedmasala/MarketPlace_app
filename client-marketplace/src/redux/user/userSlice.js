@@ -1,35 +1,50 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-const initialState = {
-  user: null,
-};
-// First, create the thunk
-const USERS_URL = ``;
-export const fetchUsers = createAsyncThunk("user/fetchUsers", async () => {
-  const response = await axios.get(USERS_URL);
-  return response.data;
-});
+
+export const fetchUser = createAsyncThunk(
+  "users/fetchUser",
+  async (userId, thunkAPI) => {
+    try {
+      const response = await axios.get(`/api/users/${userId}`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);
+
+// create a slice for the user state
 const userSlice = createSlice({
   name: "user",
-  initialState: initialState,
+  initialState: {
+    user: null,
+    loading: false,
+    error: null,
+  },
   reducers: {
-    resetUser: (state) => {
-      state.user = null;
+    // regular action to set the user
+    setUser(state, action) {
+      state.user = action.payload;
     },
   },
   extraReducers: {
-    extraReducers(builder) {
-      builder.addCase(fetchUsers.fulfilled, (state, action) => {
-        state.user = {
-          firstName: action.payload.firstName,
-          lastName: action.payload.firstName,
-          email: action.payload.email,
-          image: action.payload.image.url ? action.payload.image.url : null,
-        };
-      });
+    // handle the async thunk action
+    [fetchUser.pending]: (state, action) => {
+      state.loading = true;
+      state.error = null;
+    },
+    [fetchUser.fulfilled]: (state, action) => {
+      state.user = action.payload;
+      state.loading = false;
+      state.error = null;
+    },
+    [fetchUser.rejected]: (state, action) => {
+      state.loading = false;
+      state.error = action.error;
     },
   },
 });
-export const selectUser = (state) => state.user;
-export const { resetUser } = userSlice.actions;
+
+export const { setUser } = userSlice.actions;
 export default userSlice.reducer;
+export const selectUser = (state) => state.user;

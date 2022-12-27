@@ -13,7 +13,6 @@ const Cart = () => {
   useEffect(()=>{
     const cartStateArray = Object.keys(cartState)
     setCart(cartStateArray.map((key)=> cartState[key]));
-    console.log(cartState)
   },[cartState])
 
   return (

@@ -12,7 +12,7 @@ const CartStores = ({store}) => {
             {store.products.map((product)=><Products key={product._id} product={product} storeId={store.id}/>)}
         </div>
         <div className='flex p-2'>
-            <p className='border-t '>סה"כ : {} ש"ח</p>
+            <p className='border-t '>סה"כ : {1652} ש"ח</p>
         </div>
     </>
   )
