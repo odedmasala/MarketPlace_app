@@ -17,7 +17,7 @@ const StoreManagerProduct = ({product,findProducts}) => {
   }
   return (
     
-      <div  className="border mb-3 text-end p-5 flex flex-col w-[200px] ">
+      <div  className="border mb-3 text-end p-5 flex flex-col w-[190px] ">
             <div className="grow flex items-end">
               <img className="w-40 " src={product.image.url} alt="" />
             </div>

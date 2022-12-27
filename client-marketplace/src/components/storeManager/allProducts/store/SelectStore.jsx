@@ -2,10 +2,12 @@ import axios from "axios";
 import { Textarea } from "flowbite-react";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { notify } from "../../../../utils";
 
 const SelectStore = ({ store }) => {
   const navigate = useNavigate();
+  const[imgUrl, setImgUrl] = useState('')
   const [storeData, setStoreData] = useState({
     address: {
       apartment: "",
@@ -27,9 +29,23 @@ const SelectStore = ({ store }) => {
     phone: "",
   });
 
+  const handleImg = (e)=>{
+    const file = e.target.files[0];
+    setFileToBase(file);
+  }
+
+
+  const setFileToBase = (file)=>{
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = ()=>{
+      setImgUrl(reader.result)
+    }
+  }
+
   const handleInput = (e) => {
     if (e.target.name === "logo") {
-      setStoreData({ ...storeData, logo: { url: e.target.value } });
+      setStoreData({ ...storeData, logo: { url: imgUrl } });
     } else if (
       e.target.name === "city" ||
       e.target.name === "street" ||
@@ -45,6 +61,7 @@ const SelectStore = ({ store }) => {
     } else {
       setStoreData({ ...storeData, [e.target.name]: e.target.value });
     }
+    console.log(storeData)
   };
 
 const saveChange = async ()=>{
@@ -178,7 +195,7 @@ const saveChange = async ()=>{
                     <div className="md:col-span-5 text-right">
                       <label htmlFor="logo">לוגו</label>
                       <div className="h-10 bg-gray-50 text-right flex border border-gray-200 rounded items-center mt-1">
-                        <input onChange={handleInput} type="file" name="logo"/>
+                        <input onChange={handleImg} type="file" name="logo"/>
                       </div>
                     </div>
 
@@ -186,6 +203,7 @@ const saveChange = async ()=>{
                       <div className="flex justify-between">
                         <button onClick={saveChange}
                           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                          onClick={updateStore}
                         >
                           שמור שינויים
                         </button>

@@ -20,7 +20,7 @@ export default function FooterHomePage() {
           </p>
         </div>
       </div>
-      <Footer bgDark={true} className="mb-20">
+      <Footer bgDark={true} className="mb-20 md:mb-0">
         <div className="w-full flex flex-col items-center  bg-gray-900">
           <div className="hidden  md:grid w-3/4 list-none text-gray-400 grid-cols-2 gap-8 py-8 text-center px-6 md:grid-cols-5">
             <div>
