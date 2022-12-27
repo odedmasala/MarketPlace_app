@@ -1,4 +1,4 @@
-export {default as CheckOut } from "./CheckOut/CheckOut"
+export {default as CheckOut } from "./CheckOut"
 export {default as HomePage } from "./homePage/HomePage"
 export {default as SuccessPayment } from "./successPayment/SuccessPayment"
 export {default as MyOrders } from "./profile/MyOrders"

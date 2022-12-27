@@ -4,17 +4,18 @@ import CartStores from "./stores/CartStores";
 import { selectCart, selectCartTotal } from "../../redux/cart/cartSlice";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
+  const navigate = useNavigate();
   const cartState = useSelector(selectCart);
-  const totalPrice = useSelector(selectCartTotal)
-  const[cart, setCart] = useState([])
+  const totalPrice = useSelector(selectCartTotal);
+  const [cart, setCart] = useState([]);
 
-  useEffect(()=>{
-    const cartStateArray = Object.keys(cartState)
-    setCart(cartStateArray.map((key)=> cartState[key]));
-    console.log(cartState)
-  },[cartState])
+  useEffect(() => {
+    const cartStateArray = Object.keys(cartState);
+    setCart(cartStateArray.map((key) => cartState[key]));
+  }, [cartState]);
 
   return (
     <div
@@ -25,17 +26,17 @@ const Cart = () => {
         <div className="bg-gray-800 text-white py-5 flex justify-center">
           <h1 className="text-2xl">עגלת קניות</h1>
         </div>
-        {cart.length <=0 ? 
-        <div className="flex justify-center">
-          <p className="my-10 text-xl">אין מוצרים בעגלה</p>
-        </div>
-      :
-        <div>
-          {cart.map((store, i) => (
-            <CartStores key={i} store={store} />
-          ))}
-        </div>
-      }
+        {cart.length <= 0 ? (
+          <div className="flex justify-center">
+            <p className="my-10 text-xl">אין מוצרים בעגלה</p>
+          </div>
+        ) : (
+          <div>
+            {cart.map((store, i) => (
+              <CartStores key={i} store={store} />
+            ))}
+          </div>
+        )}
       </div>
       <div className="border py-5 px-2 ">
         <p className="flex justify-between items-end flex-row-reverse">
@@ -51,7 +52,10 @@ const Cart = () => {
           <span>0 ש"ח</span>
         </p>
       </div>
-      <button className="bg-teal-500 w-full h-[50px] text-white text-2xl ">
+      <button
+        onClick={() => navigate("/checkOut")}
+        className="bg-teal-500 w-full h-[50px] text-white text-2xl "
+      >
         {" "}
         לתשלום 0 ש"ח
       </button>
