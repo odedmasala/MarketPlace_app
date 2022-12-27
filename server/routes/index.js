@@ -8,11 +8,12 @@ const storeManagerRoute = require("./storeManager/storeManager");
 const userRoute = require("./user/user");
 const testRoute = require("./test/test");
 const stripe = require("./stripe/stripe");
+const receiptRoute =require("./receipt/receipt")
 
 router.use("/api/auth", authRoute);
 router.use("/api/department", departmentRoute);
 router.use("/api/products", productRoute);
-// app.use("api/receipt", receiptRoute);
+router.use("/api/receipt", receiptRoute);
 router.use("/api/section", sectionRoute);
 router.use("/api/store", storeRoute);
 router.use("/api/storeManager", storeManagerRoute);

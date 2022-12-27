@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
-const { addressSchema ,cloudinarySchema} = require("../helpModels");
+const { addressSchema, cloudinarySchema } = require("../helpModels");
 const StoreSchema = new mongoose.Schema({
-  bnNumber: String,
+  bnNumber: {
+    type: Number,
+    default: () => Math.floor(Math.random() * 1000000),
+    unique: true,
+  },
   name: { type: String, required: true },
   description: { type: String, required: true },
   logo: cloudinarySchema,

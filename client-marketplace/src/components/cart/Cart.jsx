@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getNumberOfProducts, selectCart, selectCartTotal } from "../../redux/cart/cartSlice";
+import {
+  getNumberOfProducts,
+  selectCart,
+  selectCartTotal,
+} from "../../redux/cart/cartSlice";
 import CartStores from "../cart/stores/CartStores";
 
 const Cart = () => {
@@ -23,11 +27,10 @@ const Cart = () => {
 
   const storeTotalPrice = parseFloat(useSelector(selectCartTotal)).toFixed(1) 
 
+
   useEffect(() => {
     setCart(cartStateArray.map((key) => cartState[key]));
-    console.log(storeTotalPrice);
   }, [cartState]);
-
   return (
     <>
       <div className="w-full border-solid border-gray-500 bg-white border">
@@ -53,6 +56,7 @@ const Cart = () => {
         )}
         <div className="border py-5 px-2 ">
           <p className="flex justify-between items-end flex-row-reverse">
+
             <span className="text-lg">:סה"כ</span>
             <span className="text-end text-lg">{storeTotalPrice} ש"ח</span>
           </p>
@@ -69,7 +73,7 @@ const Cart = () => {
           onClick={() => navigate("/checkOut")}
           className="bg-teal-500 w-full h-[50px] text-white text-2xl "
         >
-          לתשלום ש"ח {storeTotalPrice}
+          לתשלום ש"ח {parseFloat(storeTotalPrice).toFixed(2)}
         </button>
       </div>
     </>

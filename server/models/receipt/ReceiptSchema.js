@@ -7,7 +7,7 @@ const ReceiptSchema = new mongoose.Schema({
     ref: "store",
     required: true,
   },
-  users: { type: mongoose.Types.ObjectId, ref: "users", required: true },
+  users: { type: mongoose.Types.ObjectId, ref: "users", required: false },
   products: { type: [mongoose.Types.ObjectId], ref: "products", required: true },
   billInfo: billInfoSchema,
   address: addressSchema,

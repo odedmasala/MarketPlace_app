@@ -1,21 +1,39 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import HeaderStore from "../../components/header/HeaderStore";
-import Product from "../../components/product/Product";
-import Cart from "../../components/cart/Cart";
-import FooterContainer from "../../components/footer/Footer";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import HeaderStore from '../../components/header/HeaderStore';
+import Product from '../../components/product/Product';
+import Cart from '../../components/cart/Cart';
+import FooterContainer from '../../components/footer/Footer';
+import { useParams } from 'react-router-dom';
 
 const Store = () => {
+  const [sections, setSections] = useState([]);
+  const [showProducts, setShowProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [store, setStore] = useState({});
   const { id } = useParams();
-  const getProductsInStore = async () => {
+
+  const findSections = async () => {
+    const { data } = await axios.get(
+      `http://localhost:8001/api/section?storeId=${id}`
+    );
+    setSections(data);
+  };
+  const findProducts = async () => {
     const { data } = await axios.get(
       `http://localhost:8001/api/products?storeId=${id}`
     );
     setProducts(data);
+    setShowProducts(data);
   };
+  const categoryFilter = (id) => {
+    setShowProducts(products.filter((product) => product.subCategory === id));
+  };
+
+  useEffect(() => {
+    findSections();
+    findProducts();
+  }, [id]);
 
   const getStoreById = async () => {
     const { data } = await axios.get(`http://localhost:8001/api/store/${id}`);
@@ -23,7 +41,6 @@ const Store = () => {
   };
 
   useEffect(() => {
-    getProductsInStore();
     getStoreById();
   }, []);
 

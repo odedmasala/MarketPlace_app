@@ -49,7 +49,6 @@ const LoginForm = ({ handelView, setFormType }) => {
       setError(e);
     }
   };
-
   const handleNewUser = async (values, onSubmitProps) => {
     setLoading(true);
     try {
