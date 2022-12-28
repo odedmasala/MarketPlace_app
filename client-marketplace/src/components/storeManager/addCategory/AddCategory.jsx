@@ -8,7 +8,7 @@ const AddCategory = () => {
 
   const createSection = async ()=>{
     const { data } = await axios.post(
-      `http://localhost:8001/api/section`,{
+      `${process.env.REACT_APP_BASE_URL}/api/section`,{
         name:newCategory,
         store
       }

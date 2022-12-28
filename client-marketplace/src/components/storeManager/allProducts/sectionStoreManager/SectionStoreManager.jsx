@@ -12,15 +12,14 @@ const SectionStoreManager = () => {
 
   const findSections = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/section?storeId=${id}`
+      `${process.env.REACT_APP_BASE_URL}/api/section?storeId=${id}`
       
     );
     setSections(data);
-    console.log(data);
   };
   const findProducts = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/products?storeId=${id}`
+      `${process.env.REACT_APP_BASE_URL}/api/products?storeId=${id}`
     );
     setProducts(data);
     setShowProducts(data);

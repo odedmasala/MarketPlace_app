@@ -59,12 +59,11 @@ const SelectStore = ({ store }) => {
     } else {
       setStoreData({ ...storeData, [e.target.name]: e.target.value });
     }
-    console.log(storeData);
   };
 
   const saveChange = async () => {
     const { data } = await axios.put(
-      `http://localhost:8001/api/store/${storeData._id}`,
+      `${process.env.REACT_APP_BASE_URL}/api/store/${storeData._id}`,
       storeData
     );
     if (data) {

@@ -51,7 +51,7 @@ const MainInfo = () => {
             className="w-1/6 cursor-pointer md:w-full md:h-24 h-full text-center md:text-end md:py-6 md:px-10 md:text-xl border-x md:border py-3 border-gray-300 "
           >
             {' '}
-            כותרות
+            מדיניות פרטיות
           </p>
         </div>
       </div>

@@ -88,7 +88,6 @@ const passport = (passport) => {
               status: 401,
               message: `That user connected with social access, get in with ${checkUser?.registerType}`,
             });
-        console.log(checkUser);
         callback(null, checkUser);
       }
     )
@@ -128,7 +127,6 @@ const passport = (passport) => {
               status: 401,
               message: `That user connected with social access, get in with ${checkUser?.registerType}`,
             });
-        console.log(checkUser);
         callback(null, checkUser);
       }
     )

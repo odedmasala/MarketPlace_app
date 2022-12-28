@@ -7,7 +7,7 @@ export default function OtpPopUp({ showPopUp, show }) {
   const [phone, setPhone] = useState({});
 
   const getPassword = async(obj)=>{
-    const {data} = await axios.post(`http://localhost:8001/api/otp`,obj)
+    const {data} = await axios.post(`${process.env.REACT_APP_BASE_URL}/api/otp`,obj)
     console.log("data")
   }
   return (

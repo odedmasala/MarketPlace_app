@@ -23,9 +23,6 @@ const LogoutButton = () => {
       console.log(err);
     }
   };
-  useEffect(() => {
-    console.log(user);
-  }, []);
   return (
     <div onClick={LogoutUserWithServer}>
       <Button className="border-none underline " color="light">

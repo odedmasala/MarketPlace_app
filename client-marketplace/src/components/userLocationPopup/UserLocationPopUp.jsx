@@ -12,7 +12,7 @@ export default function UserLocationPopUp() {
   };
 
   const getCities = async () => {
-    const { data } = await axios.get('http://localhost:8001/api/store');
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/store`);
     setCities(data);
   };
 

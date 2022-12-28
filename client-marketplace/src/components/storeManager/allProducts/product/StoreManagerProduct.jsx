@@ -9,7 +9,7 @@ const StoreManagerProduct = ({product,findProducts}) => {
       setShowPopUp(!showPopUp)
   }
   const deleteProduct = async ()=>{
-    const {data } = await axios.delete(`http://localhost:8001/api/products/${product._id}`)
+    const {data } = await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/products/${product._id}`)
     if (data) {
       notify(data);
       findProducts()

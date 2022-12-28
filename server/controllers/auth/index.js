@@ -32,7 +32,6 @@ const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
 
 const loginSuccess = (req, res) => {
   const { user } = req;
-  console.log(req.session);
   if (user) {
     req.user = user;
     const hashToken = { id: user._id };

@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { BsCartXFill } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
   getNumberOfProducts,
   selectCart,
   selectCartTotal,
+  clearCart,
 } from "../../redux/cart/cartSlice";
 import CartStores from "../cart/stores/CartStores";
 
 const Cart = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
-
+  const dispatch = useDispatch();
   const handleClick = (index) => {
     if (activeIndex === index) {
       setActiveIndex(-1);
@@ -25,9 +27,10 @@ const Cart = () => {
   const [cart, setCart] = useState([]);
   const numberOfproducts = useSelector((state) => getNumberOfProducts(state));
 
-  const storeTotalPrice = parseFloat(useSelector(selectCartTotal)).toFixed(1) 
-
-
+  const storeTotalPrice = parseFloat(useSelector(selectCartTotal)).toFixed(1);
+  const cleanAllCart = () => {
+    dispatch(clearCart());
+  };
   useEffect(() => {
     setCart(cartStateArray.map((key) => cartState[key]));
   }, [cartState]);
@@ -55,8 +58,13 @@ const Cart = () => {
           </div>
         )}
         <div className="border py-5 px-2 ">
+          <p className="flex mb-1 justify-between items-end flex-row-reverse">
+            <span className="text-lg">: נקה עגלה</span>
+            <span onClick={cleanAllCart} className="text-end text-2xl cursor-pointer text-red-300">
+              <BsCartXFill />
+            </span>
+          </p>
           <p className="flex justify-between items-end flex-row-reverse">
-
             <span className="text-lg">:סה"כ</span>
             <span className="text-end text-lg">{storeTotalPrice} ש"ח</span>
           </p>

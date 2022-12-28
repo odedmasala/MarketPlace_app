@@ -9,7 +9,7 @@ export default function PayButton() {
 
   const handleCheckout = () => {
     axios
-      .post(`http://localhost:8001/api/stripe/create-checkout-session`, {
+      .post(`${process.env.REACT_APP_BASE_URL}/api/stripe/create-checkout-session`, {
         total:total,
       })
       .then((res) => {

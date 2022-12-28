@@ -15,7 +15,7 @@ const HomePage = () => {
   const [allDepartments, setAllDepartments] = useState([]);
 
   const getDepartments = async () => {
-    const { data } = await axios.get('http://localhost:8001/api/department');
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/department`);
     setAllDepartments(data);
   };
 

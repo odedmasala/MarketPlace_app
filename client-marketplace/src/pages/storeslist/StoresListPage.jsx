@@ -18,13 +18,13 @@ export default function StoresListPage() {
 
   const getStoresInDepartment = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/store?departmentId=${id}`
+      `${process.env.REACT_APP_BASE_URL}/api/store?departmentId=${id}`
     );
     setStores(data);
   };
 
   const getDepartmentById = async() =>{
-    const {data} = await axios.get(`http://localhost:8001/api/department/${id}`)
+    const {data} = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/department/${id}`)
     setDepartment(data)
   }
 
