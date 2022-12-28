@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Avatar } from "flowbite-react";
 import SearchInput from "../../../features/searchInput/SearchInput";
@@ -17,7 +18,13 @@ export default function NavBarUserIsConnected({user}) {
             img={user.social_image}
             rounded={true}
           />
+
         </div>
+        <Avatar
+          img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+          rounded={true}
+        />
       </div>
+    </div>
   );
 }
