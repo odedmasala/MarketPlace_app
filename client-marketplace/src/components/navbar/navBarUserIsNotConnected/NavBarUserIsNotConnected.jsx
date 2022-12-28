@@ -16,7 +16,6 @@ export default function NavBarUserIsNotConnected() {
         צור קשר
       </a>
       <span>
-        {' '}
         <BackButton />
       </span>
     </div>

@@ -37,6 +37,7 @@ const userSlice = createSlice({
       state.loading = true;
     },
     [fetchUser.rejected]: (state, action) => {
+      state.user = null
       state.loading = false;
       state.error = action.payload.message;
     },
