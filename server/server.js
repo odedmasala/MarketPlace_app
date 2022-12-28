@@ -33,7 +33,7 @@ app.use(
     keys: ["key1", "key2"],
   })
 );
-
+console.log
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
