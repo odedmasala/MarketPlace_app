@@ -48,7 +48,6 @@ const loginSuccess = (req, res) => {
       if (user.image.url) sendUserDataObj.image = user.image.url;
     }
     if (user.email) sendUserDataObj.email = user.email;
-    console.log(sendUserDataObj);
     return res
       .cookie("access_token", token, { httpOnly: true })
       .status(200)

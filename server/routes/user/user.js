@@ -1,11 +1,16 @@
-// const {getUserById} = require("../../controllers/user/index");
+const {
+  getUserById,
+  createUser,
+  deleteUser,
+  getAllUsers,
+  updateUser,
+} = require("../../controllers/user/index");
+const { verifyUser } = require("../../middleware/verifyToken");
+const router = require("express").Router();
 
-// const router = require("express").Router()
+router.get("/", verifyUser, getAllUsers);
+router.get("/:id", verifyUser, getUserById);
+router.put("/:id", verifyUser, updateUser);
+router.delete("/:id", verifyUser, deleteUser);
 
-// router.get("/",getAllStores)
-// router.post("/",createStore)
-// router.get("/:id",getStoreById)
-// router.put("/:id",updateStore)
-// router.delete("/:id",deleteStore)
-
-// module.exports = router;
+module.exports = router;
