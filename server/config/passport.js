@@ -35,7 +35,7 @@ const passport = (passport) => {
             if (user.registerType != "email") {
               callback(null, false, {
                 status: 401,
-                message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר דרך ${user?.registerType}`,
+                message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר בדרך אחרת`,
               });
             }
           }
