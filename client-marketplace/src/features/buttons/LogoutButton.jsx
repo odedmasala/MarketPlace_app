@@ -16,7 +16,6 @@ const LogoutButton = () => {
       const { data } = await axios.get(url, { withCredentials: true });
       if (data) {
         dispatch(clearUser());
-        console.log("hi hi");
         window.location.reload();
         navigate("/");
       }

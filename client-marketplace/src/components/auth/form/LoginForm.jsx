@@ -64,6 +64,7 @@ const LoginForm = ({ handelView, setFormType }) => {
           setPasswordType("password");
           onSubmitProps.resetForm();
           setLoading(false);
+          window.location.reload();
         }
       }, 3000);
     } catch (e) {
