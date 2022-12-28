@@ -9,7 +9,7 @@ export default function ProfilePage() {
   const orders = [1,2,3];
   return (
     <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-screen">
-      <div className="border-2 w-3/4">
+      <div className="w-3/4">
         <Outlet />
       </div>
       <div className="">
