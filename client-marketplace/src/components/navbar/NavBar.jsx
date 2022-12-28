@@ -1,14 +1,18 @@
-import React from 'react';
-import { Avatar, Navbar } from 'flowbite-react';
-import SearchInput from '../../features/searchInput/SearchInput';
-import { ImLocation } from 'react-icons/im';
-import { useNavigate } from 'react-router-dom';
-import NavBarUserIsConnected from './navBarUserIsConnected/NavBarUserIsConnected';
-import NavBarUserIsNotConnected from './navBarUserIsNotConnected/NavBarUserIsNotConnected';
-import cartLogo from '../../assets/images/cart-logo.png';
+import React from "react";
+import { Avatar, Navbar } from "flowbite-react";
+import SearchInput from "../../features/searchInput/SearchInput";
+import { ImLocation } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
+import NavBarUserIsConnected from "./navBarUserIsConnected/NavBarUserIsConnected";
+import NavBarUserIsNotConnected from "./navBarUserIsNotConnected/NavBarUserIsNotConnected";
+import cartLogo from "../../assets/images/cart-logo.png";
+import { useSelector } from "react-redux";
+import { getUser } from "../../redux/user/userSlice";
 
 export default function NavBar() {
   const navigate = useNavigate();
+  const user = useSelector(getUser);
+  console.log(user?.email);
 
   return (
     <div className="flex justify-center bg-white">
@@ -19,7 +23,7 @@ export default function NavBar() {
       >
         <Navbar.Brand
           className="w-[25%] cursor-pointer"
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
         >
           <img
             src={cartLogo}
@@ -30,8 +34,7 @@ export default function NavBar() {
             MarketPlace
           </span>
         </Navbar.Brand>
-        {/* <NavBarUserIsConnected/> */}
-        <NavBarUserIsNotConnected />
+        {user.email ? <NavBarUserIsConnected user={user} /> : <NavBarUserIsNotConnected />}
       </Navbar>
     </div>
   );
