@@ -30,13 +30,14 @@ const userSlice = createSlice({
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, action) => {
-      state.user = action.payload.user;
+      state.user = action.payload?.user;
       state.loading = false;
     },
     [fetchUser.pending]: (state) => {
       state.loading = true;
     },
     [fetchUser.rejected]: (state, action) => {
+      state.user = null
       state.loading = false;
       state.error = action.payload.message;
     },
@@ -46,4 +47,4 @@ const userSlice = createSlice({
 export const { setUser, clearUser } = userSlice.actions;
 
 export default userSlice.reducer;
-export const getUser = (state) => state.user.user;
+export const getUser = (state) => state.user?.user;

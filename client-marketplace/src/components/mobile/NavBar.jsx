@@ -31,10 +31,6 @@ export default function NavigationBar() {
         <AiOutlineShoppingCart />
         <p className="text-[15px]">העגלה שלי</p>
       </div>
-      {/* <div className="flex flex-col cursor-pointer text-[30px] items-center justify-center">
-        <BiSearchAlt />
-        <p className="text-[15px]">חיפוש</p>
-      </div> */}
       <div className="flex flex-col cursor-pointer items-center justify-center">
         <BiLogIn className="text-[30px]" />
         <LoginButton className="text-[9px]" />

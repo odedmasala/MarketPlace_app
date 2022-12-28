@@ -1,3 +1,6 @@
+
+import BackButton from '../../features/buttons/BackButton';
+
 import React from "react";
 import { Avatar, Navbar } from "flowbite-react";
 import SearchInput from "../../features/searchInput/SearchInput";
@@ -8,6 +11,7 @@ import NavBarUserIsNotConnected from "./navBarUserIsNotConnected/NavBarUserIsNot
 import cartLogo from "../../assets/images/cart-logo.png";
 import { useSelector } from "react-redux";
 import { getUser } from "../../redux/user/userSlice";
+
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -31,8 +35,12 @@ export default function NavBar() {
           <span className="self-center text-xl font-semibold text-[#3e8f7f] dark:text-white">
             MarketPlace
           </span>
+          <span className="ml-40 md:hidden">
+            <BackButton />
+          </span>
+
         </Navbar.Brand>
-        {user.email ? <NavBarUserIsConnected user={user} /> : <NavBarUserIsNotConnected />}
+        {user && user.email ? <NavBarUserIsConnected user={user} /> : <NavBarUserIsNotConnected />}
       </Navbar>
     </div>
   );

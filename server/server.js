@@ -31,6 +31,7 @@ app.use(
   cookieSession({
     name: "marketplace",
     keys: ["key1", "key2"],
+    maxAge: 12 * 60 * 60 * 1000 // 24 hours
   })
 );
 console.log

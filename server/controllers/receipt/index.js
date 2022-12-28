@@ -36,6 +36,10 @@ const getReceiptById = async (req, res, next) => {
 const createReceipt = async (req, res, next) => {
   try {
     const obj = req.body;
+    const sendRecpitData = {
+      address : req.body.address,
+      user : req.user._id
+    }
     const result = await createOneReceipt(obj);
     res.status(200).json(result);
   } catch (err) {
