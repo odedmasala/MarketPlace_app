@@ -29,7 +29,7 @@ const connectDB = () => {
       {
         useNewUrlParser: true,
       }
-      // async () => {
+      // ,async () => {
       //   await Department.insertMany(departments);
       //   await Stores.insertMany(stores);
       //   await Section.insertMany(combineSections);
