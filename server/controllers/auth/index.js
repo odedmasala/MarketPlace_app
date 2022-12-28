@@ -31,10 +31,10 @@ const register = async (req, res, next) => {
 const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
 
 const loginSuccess = (req, res) => {
-  const { user } = req; 
+  const { user } = req;
   console.log(req.session);
   if (user) {
-    req.user = user
+    req.user = user;
     const hashToken = { id: user._id };
     if (user.meager) hashToken.meager = user.meager;
     if (user.isAdmin) hashToken.isAdmin = user.isAdmin;
@@ -57,6 +57,7 @@ const loginSuccess = (req, res) => {
         user: sendUserDataObj,
       });
   } else {
+    req.logout();
     console.log("not access");
     res.status(403).json({ error: true, message: "Login error" });
   }
@@ -84,7 +85,7 @@ const loginFailed = (req, res) => {
 
 const logout = (req, res) => {
   req.logout();
-  res.redirect("http://localhost:3000");
+  res.status(200).json("logout");
 };
 const checkRegularUser = (req, res, next) => {
   passport.authenticate("local", (err, user, message) => {
@@ -92,7 +93,7 @@ const checkRegularUser = (req, res, next) => {
       return next(createError(message.status, message.message));
     }
     if (user) {
-      req.login(user, function(err) {
+      req.login(user, function (err) {
         if (err) {
           return next(err);
         }

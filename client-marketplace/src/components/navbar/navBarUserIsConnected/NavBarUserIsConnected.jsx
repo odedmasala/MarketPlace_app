@@ -3,6 +3,7 @@ import { Avatar } from "flowbite-react";
 import SearchInput from "../../../features/searchInput/SearchInput";
 import { ImLocation } from "react-icons/im";
 import BackButton from "../../../features/buttons/BackButton";
+import LogoutButton from "../../../features/buttons/LogoutButton";
 export default function NavBarUserIsConnected({ user }) {
   return (
     <div className="flex justify-evenly md:w-3/4 items-center ">
@@ -15,6 +16,9 @@ export default function NavBarUserIsConnected({ user }) {
           <p>שלום {user.firstName}</p>
         </div>
         <Avatar img={user.social_image} rounded={true} />
+      </div>
+      <div>
+        <LogoutButton />
       </div>
       <div>
         <BackButton />
