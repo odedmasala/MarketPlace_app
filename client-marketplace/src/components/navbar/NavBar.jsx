@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import NavBarUserIsConnected from './navBarUserIsConnected/NavBarUserIsConnected';
 import NavBarUserIsNotConnected from './navBarUserIsNotConnected/NavBarUserIsNotConnected';
 import cartLogo from '../../assets/images/cart-logo.png';
+import BackButton from '../../features/buttons/BackButton';
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -28,6 +29,9 @@ export default function NavBar() {
           />
           <span className="self-center text-xl font-semibold text-[#3e8f7f] dark:text-white">
             MarketPlace
+          </span>
+          <span className="ml-40 md:hidden">
+            <BackButton />
           </span>
         </Navbar.Brand>
         {/* <NavBarUserIsConnected/> */}
