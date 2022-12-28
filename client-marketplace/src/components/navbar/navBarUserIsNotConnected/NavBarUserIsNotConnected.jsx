@@ -1,4 +1,5 @@
 import React from 'react';
+import BackButton from '../../../features/buttons/BackButton';
 import LoginButton from '../../auth/login/LoginButton';
 
 export default function NavBarUserIsNotConnected() {
@@ -14,6 +15,9 @@ export default function NavBarUserIsNotConnected() {
       <a className="mx-1 nav-list" href="#">
         צור קשר
       </a>
+      <span>
+        <BackButton />
+      </span>
     </div>
   );
 }

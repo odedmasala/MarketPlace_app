@@ -5,7 +5,6 @@ const router = express.Router();
 
 router.post("/create-checkout-session", async (req, res) => {
   const total = +req.body.total;
-  console.log(total);
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
     line_items: [

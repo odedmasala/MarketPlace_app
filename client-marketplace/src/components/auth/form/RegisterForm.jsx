@@ -104,6 +104,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
             handelView();
             onSubmitProps.resetForm();
             setLoading(false);
+            window.location.reload();
           }
         }, 2000);
       }

@@ -1,13 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { getUser } from "../../redux/user/userSlice";
 
 export default function PersonalDetails() {
+  const user = useSelector(getUser);
   return (
     <div className="flex flex-col w-full items-end justify-around mr-2 h-[20rem]">
       <h1 className="text-xl text-right m-5">מידע אישי</h1>
       <div className="details">
         <p className="title-details">שם פרטי</p>
         <input
-          defaultValue={"דנה"}
+          defaultValue={user.firstName}
           className="details-input w-full"
           type="text"
         />
@@ -15,13 +18,13 @@ export default function PersonalDetails() {
       <div className="details">
         <p className="title-details">שם משפחה</p>
         <input
-          defaultValue={"כהן"}
+          defaultValue={user.lastName}
           className="details-input w-full"
           type="text"
         />
       </div>
       <div className="details">
-        <p className="title-details">דואר אלקטרוני</p>
+        <p className="title-details">{user.email}</p>
         <input
           defaultValue={"dana@gmail.com"}
           className="details-input w-full"
