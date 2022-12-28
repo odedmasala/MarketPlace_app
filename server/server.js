@@ -13,8 +13,7 @@ const cookieParser = require("cookie-parser");
 const CombiningAllRoutes = require("./routes");
 /*CONNECT TO PASSPORTS STRATEGY FUNCTIONS*/
 const passportStrategy = require("./config/passport");
-/*CONNECT TO MONGODB ATLAS DATABASE FUNCTIONS*/
-const connectDB = require("./config/configDB");
+
 /* CONFIGURATIONS */
 // app.use(cors());
 app.use(helmet());
@@ -31,10 +30,10 @@ app.use(
   cookieSession({
     name: "marketplace",
     keys: ["key1", "key2"],
-    maxAge: 12 * 60 * 60 * 1000 // 24 hours
+    maxAge: 12 * 60 * 60 * 1000, // 24 hours
   })
 );
-console.log
+console.log;
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
@@ -49,14 +48,22 @@ mongoose.connection.on("disconnected", () => {
   console.log("mongo DB disconnected");
 });
 
-/* SET SERVER PORT */
-const PORT = process.env.PORT || 6001;
+/*CONNECT TO MONGODB ATLAS DATABASE FUNCTIONS*/
+const connectDB = () => {
+  try {
+    mongoose.set("strictQuery", true);
+    mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+    });
+    console.log("The DB login was successful");
 
-/* SETON THE SERVER */
-app.listen(PORT, () => {
-  /* CONNECT TO DB */
-  connectDB();
-  /* INITIALIZE PASSPORT TO SERVER*/
-  passportStrategy(passport);
-  console.log(`app listen http://localhost:${PORT}`);
-});
+    // Start the server only if the connection to the database is successful
+    const PORT = process.env.PORT || 6001;
+    app.listen(PORT, () => {
+      console.log(`app listen http://localhost:${PORT}`);
+    });
+  } catch (error) {
+    throw error;
+  }
+};
+connectDB();
