@@ -29,8 +29,8 @@ const LogoutButton = () => {
   }, []);
   return (
     <div onClick={LogoutUserWithServer}>
-      <Button color="light" pill={true}>
-        Light
+      <Button className="border-none underline " color="light">
+        logout
       </Button>
     </div>
   );

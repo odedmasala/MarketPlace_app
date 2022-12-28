@@ -65,6 +65,9 @@ const cartSlice = createSlice({
           const index = store.products.indexOf(existingProduct);
           store.products.splice(index, 1);
           state.total -= existingProduct.price * existingProduct.quantity;
+          if (store.products.length === 0) {
+            delete state.items[storeId];
+          }
         }
       }
     },
