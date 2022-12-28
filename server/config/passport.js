@@ -86,7 +86,7 @@ const passport = (passport) => {
           if (checkUser.registerType != "google")
             callback(null, false, {
               status: 401,
-              message: `That user connected with social access, get in with ${checkUser?.registerType}`,
+              message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר בדרך אחרת`,
             });
         callback(null, checkUser);
       }
@@ -125,7 +125,7 @@ const passport = (passport) => {
           if (checkUser.registerType != "facebook")
             callback(null, false, {
               status: 401,
-              message: `That user connected with social access, get in with ${checkUser?.registerType}`,
+              message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר בדרך אחרת`,
             });
         callback(null, checkUser);
       }
