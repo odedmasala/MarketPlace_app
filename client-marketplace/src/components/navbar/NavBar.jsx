@@ -12,8 +12,6 @@ import { getUser } from "../../redux/user/userSlice";
 export default function NavBar() {
   const navigate = useNavigate();
   const user = useSelector(getUser);
-  console.log(user?.email);
-
   return (
     <div className="flex justify-center bg-white">
       <Navbar

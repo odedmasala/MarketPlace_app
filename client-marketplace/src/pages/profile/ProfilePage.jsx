@@ -6,7 +6,7 @@ import { FaAddressCard } from "react-icons/fa";
 import { Outlet, Link } from "react-router-dom";
 
 export default function ProfilePage() {
-  const orders = [1,2,3];
+  const orders = [1];
   return (
     <div className="flex flex-col-reverse md:flex-row w-full md:w-3/4 bg-white mt-1 items-center m-auto md:h-screen">
       <div className="w-3/4">

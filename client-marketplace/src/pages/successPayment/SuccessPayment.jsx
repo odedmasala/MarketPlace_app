@@ -26,7 +26,7 @@ export default function SuccessPayment() {
         </p>
       </div>
       <div className="flex flex-col items-center justify-between h-[5rem]">
-        <p>מספר הזמנה: 111111111111111</p>
+        {/* <p>מספר הזמנה: 111111111111111</p> */}
         <Button
           onClick={clearFromLocalStorageAndSendDataToServer}
           outline={true}
