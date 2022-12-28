@@ -60,7 +60,7 @@ const Cart = () => {
         <div className="border py-5 px-2 ">
           <p className="flex mb-1 justify-between items-end flex-row-reverse">
             <span className="text-lg">: נקה עגלה</span>
-            <span onClick={cleanAllCart} className="text-end text-2xl cursor-pointer text-red-500">
+            <span onClick={cleanAllCart} className="text-end text-2xl cursor-pointer text-red-300">
               <BsCartXFill />
             </span>
           </p>
