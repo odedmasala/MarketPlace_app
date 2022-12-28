@@ -7,7 +7,7 @@ const AllStores = () => {
  
   const getData = async () => {
     const { data: storeManager } = await axios.get(
-      `${process.env.REACT_APP_BASE_URL}/api/storeManager/63aaf5fc851ad9693dfe27b1`
+      `${process.env.REACT_APP_BASE_URL}/api/storeManager/63abc8f68e3c44866c2f202e`
     );
     await storeManager.stores.forEach((store) =>getStoresData(store)
     );   

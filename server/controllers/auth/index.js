@@ -37,7 +37,7 @@ const loginSuccess = (req, res) => {
     const hashToken = { id: user._id };
     if (user.meager) hashToken.meager = user.meager;
     if (user.isAdmin) hashToken.isAdmin = user.isAdmin;
-    const token = jwt.sign(hashToken, process.env.JWT, { expiresIn: "1d" });
+    const token = jwt.sign(hashToken, process.env.JWT);
     const sendUserDataObj = {
       firstName: user.firstName,
       lastName: user.lastName,

@@ -9,7 +9,8 @@ import {
   clearCart,
 } from "../../redux/cart/cartSlice";
 import CartStores from "../cart/stores/CartStores";
-
+import { getUser } from "../../redux/user/userSlice";
+import {notifyError} from "../../utils/index";
 const Cart = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const dispatch = useDispatch();
@@ -26,13 +27,14 @@ const Cart = () => {
   const totalPrice = useSelector(selectCartTotal);
   const [cart, setCart] = useState([]);
   const numberOfproducts = useSelector((state) => getNumberOfProducts(state));
-
+  const isUser = useSelector(getUser);
   const storeTotalPrice = parseFloat(useSelector(selectCartTotal)).toFixed(1);
   const cleanAllCart = () => {
     dispatch(clearCart());
   };
   useEffect(() => {
     setCart(cartStateArray.map((key) => cartState[key]));
+    console.log(isUser);
   }, [cartState]);
   return (
     <>
@@ -60,7 +62,10 @@ const Cart = () => {
         <div className="border py-5 px-2 ">
           <p className="flex mb-1 justify-between items-end flex-row-reverse">
             <span className="text-lg">: נקה עגלה</span>
-            <span onClick={cleanAllCart} className="text-end text-2xl cursor-pointer text-red-300">
+            <span
+              onClick={cleanAllCart}
+              className="text-end text-2xl cursor-pointer text-red-300"
+            >
               <BsCartXFill />
             </span>
           </p>
@@ -78,7 +83,13 @@ const Cart = () => {
           </p>
         </div>
         <button
-          onClick={() => navigate("/checkOut")}
+          onClick={() => {
+            if(isUser){
+              navigate("/checkOut");
+            }else{
+              notifyError("אנא התבחר / הירשם לפני")
+            }
+          }}
           className="bg-teal-500 w-full h-[50px] text-white text-2xl "
         >
           לתשלום ש"ח {parseFloat(storeTotalPrice).toFixed(2)}
