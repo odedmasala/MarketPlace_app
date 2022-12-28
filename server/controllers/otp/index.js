@@ -1,5 +1,5 @@
 const twilio = require("twilio")(process.env.SID, process.env.AUTH_TOKEN);
-const { findAllUsers } = require('../user/DAL');
+const { findOneUser } = require('../user/DAL');
 
 const randomPassword = ()=>{
     return Math.floor(1000 + Math.random() * 9000);
@@ -8,7 +8,7 @@ const randomPassword = ()=>{
 const sendOneTimePassword = async (req, res, next) => {
   try {
     const userPhone = req.body.phone;
-    const user = await findAllUsers({ phone: userPhone });
+    const user = await findOneUser({ phone: userPhone });
     if (user) {
       twilio.messages
         .create({
@@ -16,7 +16,9 @@ const sendOneTimePassword = async (req, res, next) => {
           to: "+972524450562",
           body: `${randomPassword()}`,
         })
-        .then((res) => res.body)
+        .then((res) =>{ 
+         return res.body
+        })
         .catch((err) => console.log(err));
     }
   } catch (e) {

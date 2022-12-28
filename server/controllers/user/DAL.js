@@ -10,6 +10,16 @@ const findAllUsers = async () => {
   }
 };
 
+const findOneUser = async (obj) =>{
+  try {
+    const users = await userModel.findOne(obj);
+    return users;
+  } catch (error) {
+    throw error;
+  }
+
+}
+
 const findUserById = async (id) => {
   try {
     const user = await userModel.findById(id);
@@ -54,6 +64,7 @@ const cloudinaryUpLoud = async (image,folderPata)=> {
 }
 module.exports = {
   findAllUsers,
+  findOneUser,
   findUserById,
   createOneUser,
   updateOneUser,
