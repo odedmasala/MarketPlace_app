@@ -1,39 +1,37 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const useAxios = ({ url, method, body = null, headers = null }) => {
+function useAxios(url, method = 'GET', body = null, options = { headers: { 'Content-Type': 'application/json' } }) {
   const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    axios.get(url, JSON.parse(headers), JSON.parse(body))
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
+    const fetchData = async () => {
+      try {
+        const result = await axios(url, { method, body, ...options });
+        setData(result.data);
         setLoading(false);
-      });
-  }, [url]);
+      } catch (error) {
+        setError(error);
+      }
+    };
 
-  const refetch = () => {
+    fetchData();
+  }, [url, method, body, options]);
+
+  const refetch = async () => {
     setLoading(true);
-    axios.get(url, JSON.parse(headers), JSON.parse(body))
-      .then((res) => {
-        setData(res.data);
-      })
-      .catch((err) => {
-        setError(err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    setError(null);
+    try {
+      const result = await axios(url, { method, body, ...options });
+      setData(result.data);
+    } catch (error) {
+      setError(error);
+    }
+    setLoading(false);
   };
 
   return { data, loading, error, refetch };
-};
+}
 export default useAxios;

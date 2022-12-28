@@ -8,6 +8,14 @@ const findAllReceipts = async () => {
     throw error;
   }
 };
+const findAllReceiptForUser = async (user) => {
+  try {
+    const receipts = await receiptModel.find({"users":user});
+    return receipts;
+  } catch (error) {
+    throw error;
+  }
+};
 
 const findReceiptById = async (id) => {
   try {
@@ -52,4 +60,5 @@ module.exports = {
   createOneReceipt,
   deleteOneReceipt,
   updateOneReceipt,
+  findAllReceiptForUser
 };

@@ -1,65 +1,189 @@
-import React from "react";
-import { Modal } from "flowbite-react";
+import React, { useEffect, useState } from "react";
+import { Modal, Textarea } from "flowbite-react";
+import { ModalFooter } from "flowbite-react/lib/esm/components/Modal/ModalFooter";
+import axios from "axios";
+import { notify } from "../../../../utils";
+import { useParams } from "react-router-dom";
 
-const PopStoreManagerProduct = ({ product, show, handleModal }) => {
+const PopStoreManagerProduct = ({ product, show, handleModal,findProducts }) => {
+  const [productData, setProductData] = useState(product);
+  const [sections, setSections] = useState([]);
+  const { id } = useParams();
+
+  const changeProductData = (e) => {
+    if (e.target.name === "avgWeightPerUnit") {
+      setProductData({
+        ...productData,
+        weight: { ...productData.weight, avgWeightPerUnit: e.target.value },
+      });
+    } else if (
+      e.target.name === "minimumOrderCartonsCount" ||
+      e.target.name === "measureUnits"
+    ) {
+      setProductData({
+        ...productData,
+        unit: { ...productData.unit, [e.target.name]: e.target.value },
+      });
+    } else {
+      setProductData({ ...productData, [e.target.name]: e.target.value });
+    }
+  };
+  const findSections = async () => {
+    const { data } = await axios.get(
+      `http://localhost:8001/api/section?storeId=${id}`
+      
+    );
+    setSections(data);
+  };
+
+  const saveChange = async () => {
+  console.log(productData);
+    const { data } = await axios.put(
+      `http://localhost:8001/api/products/${productData._id}`,
+      productData
+    );
+    if (data) {
+      notify(data);
+      findProducts()
+    }
+  };
+  useEffect(()=>{
+    findSections()
+  },[product._id])
   return (
-    <div className="bg-black bg-opacity-10">
-      <React.Fragment>
-        <Modal show={show} size="sm" popup={true}>
-          <Modal.Header onClick={handleModal} />
-          <Modal.Body>
-            <div className="space-y-6 pb-4 sm:pb-6 lg:px-8 xl:pb-8 flex flex-col items-center">
-              <div>
-                <img src={product.image} alt="product" />
-                <div className="flex flex-row-reverse">
-                  <p className="">תמונה</p>
-                  <input
-                    type={"text"}
-                    className="text-right"
-                    defaultValue={product.image}
-                  />{" "}
-                </div>
-              </div>
-              <div className="flex self-end">
-                <div
-                  className="flex w-20 flex-row-reverse font-bold items-center "
-                  style={{ color: "#09ACA2" }}
-                >
-                  <input
-                    className="mx-1 text-right  grow "
-                    type={"number"}
-                    defaultValue={product.price}
-                  />
-                  <span>שח</span>
-                </div>
-              </div>
-              <div className="">
-                <div className="text-right">
-                  <p className="font-bold">מידע</p>
-
-                  <p className="my-3">
+    <>
+      <div className="bg-black bg-opacity-10">
+        <React.Fragment>
+          <Modal show={show} size="md" popup={true}>
+            <Modal.Header onClick={handleModal} />
+            <Modal.Body>
+              <div className="lg:col-span-2">
+                <img
+                  src={productData.image.url}
+                  alt="product"
+                  className="w-1/3 m-auto"
+                />
+                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-6">
+                  <div className="md:col-span-3 text-right">
+                    <label htmlFor="full_name">מחיר</label>
                     <input
+                      min={0}
+                      onChange={changeProductData}
+                      name="price"
+                      type={"number"}
+                      value={productData.price}
+                      className="h-8 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
+                    />
+                  </div>
+                  <div className="md:col-span-3 text-right">
+                    <label htmlFor="full_name">שם המוצר</label>
+                    <input
+                      onChange={changeProductData}
+                      name="name"
                       type={"text"}
+                      value={productData.name}
+                      className="h-8 border mt-1 rounded px-4 w-full bg-gray-50 text-right"
+                    />
+                  </div>
+                  <div className="md:col-span-6 flex flex-row-reverse items-center justify-between text-right">
+                    <label htmlFor="image">תמונה</label>
+                    <div className="h-10 w-3/4 bg-gray-50 text-right flex border border-gray-200 rounded items-center mt-1">
+                      <input
+                        type="file"
+                        name="image"
+                        onChange={changeProductData}
+                      />
+                    </div>
+                  </div>
+                  <div class="md:col-span-3">
+                      <label for="address">קטגוריה</label>
+                      <select
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        name="subCategory"
+                        onClick={changeProductData}
+                      >
+                        {sections.map((element) => (
+                          <option key={element._id} value={element._id}>
+                            {element.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  <div className="md:col-span-6 text-right">
+                    <label htmlFor="description">תיאור המוצר</label>
+                    <Textarea
+                      onChange={changeProductData}
+                      type="text"
+                      name="description"
                       className="text-right"
-                      defaultValue={product.name}
-                    />{" "}
-                    שם
-                  </p>
-                  <p>
+                      value={productData.description}
+                    />
+                  </div>
+                  <div className="md:col-span-3">
+                    <label htmlFor="manufacture">יצרן</label>
                     <input
-                      type={"text"}
-                      className="text-right text-xs w-fit"
-                      defaultValue={product.description}
-                    />{" "}
-                    תיאור
-                  </p>
+                      onChange={changeProductData}
+                      type="text"
+                      name="manufacture"
+                      value={productData.manufacture}
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div className="md:col-span-3">
+                    <label htmlFor="barcode">מק"ט</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="barcode"
+                      value={productData.barcode}
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label htmlFor="quantity">כמות</label>
+                    <input
+                      onChange={changeProductData}
+                      type="number"
+                      name="quantity"
+                      value={productData.quantity}
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label htmlFor="measureUnits">יחידות מידה</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="measureUnits"
+                      value={productData.unit?.measureUnits}
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
+                  <div className="md:col-span-2">
+                    <label htmlFor="avgWeightPerUnit">משקל ממוצע</label>
+                    <input
+                      onChange={changeProductData}
+                      type="text"
+                      name="avgWeightPerUnit"
+                      value={productData.weight?.avgWeightPerUnit}
+                      className="h-8 text-right border mt-1 rounded px-4 w-full bg-gray-50"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
-          </Modal.Body>
-        </Modal>
-      </React.Fragment>
-    </div>
+              <ModalFooter>
+                <button
+                  onClick={saveChange}
+                  className="bg-green-500 hover:bg-green-700 text-white font-thin py-1 px-4 rounded"
+                >
+                  שמירה
+                </button>
+              </ModalFooter>
+            </Modal.Body>
+          </Modal>
+        </React.Fragment>
+      </div>
+    </>
   );
 };
 

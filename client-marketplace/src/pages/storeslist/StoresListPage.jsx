@@ -10,8 +10,9 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 export default function StoresListPage() {
-  const [stores, setStore] = useState([]);
+  const [stores, setStores] = useState([]);
   const [department, setDepartment] = useState({image:{url:""}})
+  const[address, setAddress] = useState('')
   const windowSize = useWindowSize();
   const { id } = useParams();
 
@@ -19,12 +20,25 @@ export default function StoresListPage() {
     const { data } = await axios.get(
       `http://localhost:8001/api/store?departmentId=${id}`
     );
-    setStore(data);
+    setStores(data);
   };
 
   const getDepartmentById = async() =>{
     const {data} = await axios.get(`http://localhost:8001/api/department/${id}`)
     setDepartment(data)
+  }
+
+  const filteredByLocation = ()=>{
+    const filtered = stores.filter((store)=>{
+      if(store.address.city == address){
+        return store;
+      }
+    })
+    if(filtered.length <= 0){
+      return stores;
+    }else{
+      return filtered;
+    }
   }
 
   useEffect(() => {
@@ -40,16 +54,16 @@ export default function StoresListPage() {
         </div>
 
         <div className="w-full md:w-[70%] ml-1">
-          <FilterByCities />
+          <FilterByCities callback={(filter)=> setAddress(filter)} stores= {stores}/>
           <div>
             <div className="flex justify-end items-center">
               <p className="text-right text-xl">
-                נמצאו <span className="text-[#0899A5]">{stores.length}</span>{" "}
+                נמצאו <span className="text-[#0899A5]">{filteredByLocation()?.length}</span>{" "}
                 חנויות
               </p>
               <IoStorefrontSharp className="text-4xl text-[#0899A5] ml-2 mr-5 md:mr-0" />
             </div>
-            {stores.map((store) =>
+            {filteredByLocation()?.map((store) =>
               windowSize?.width < 765 ? (
                 <StoreMobile storeData={store} key={store._id}/>
               ) : (

@@ -1,52 +1,73 @@
-import React from 'react';
-import './css/style.css';
-import { Routes, Route } from 'react-router-dom';
-import Footer from './components/footer/Footer';
-import NavBar from './components/navbar/NavBar';
-import HomePage from './pages/homePage/HomePage';
-import SuccessPayment from './pages/successPayment/SuccessPayment';
-import ProfilePage from './pages/profile/ProfilePage';
-import MyOrders from './pages/profile/MyOrders';
-import Product from './components/product/Product';
-import StoreManager from './pages/storeManager/StoreManager';
-import MainInfo from './components/info/MainInfo';
-import AboutPage from './components/info/about/AboutPage';
-import QuestionsPage from './components/info/questions/QuestionsPage';
-import BlogPage from './components/info/blog/BlogPage';
-import CompanyPage from './components/info/company/CompanyPage';
-import HeadlinesPage from './components/info/headlines/HeadlinesPage';
-import SuppliersPage from './components/info/suppliers/SuppliersPage';
-import AddProduct from './components/storeManager/addProduct/AddProduct';
-import PersonalData from './components/storeManager/personalData/PersonalData';
-import PersonalDetails from './pages/profile/PersonalDetails';
-import Store from './pages/storePage/Store';
-import StoresListPage from './pages/storeslist/StoresListPage';
-import LoginButton from "./components/auth/login/LoginButton";
-import SectionStoreManager from './components/storeManager/allProducts/sectionStoreManager/SectionStoreManager';
-import ProductPage from './components/storeManager/allProducts/ProductPage';
-import AllStores from './components/storeManager/allProducts/AllStores';
-import UserLocationPopUp from './components/userLocationPopup/UserLocationPopUp';
+import React, { useEffect, useState } from "react";
+import "./css/style.css";
+import "react-toastify/dist/ReactToastify.css";
+
+import { Routes, Route } from "react-router-dom";
+import {
+  Footer,
+  NavBar,
+  Product,
+  MainInfo,
+  AboutPage,
+  QuestionsPage,
+  BlogPage,
+  CompanyPage,
+  HeadlinesPage,
+  SuppliersPage,
+  AddProduct,
+  AddCategory,
+  SectionStoreManager,
+  AllStores,
+} from "./components";
+import {
+  HomePage,
+  SuccessPayment,
+  ProfilePage,
+  MyOrders,
+  MyAddress,
+  StoreManager,
+  PersonalDetails,
+  Store,
+  StoresListPage,
+  CheckOut,
+} from "./pages";
+import useAxios from "./hooks/useAxios";
+import { ToastContainer } from "react-toastify";
+import { fetchUser, clearUser, getUser } from "./redux/user/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const App = () => {
+  const [userData, setUseData] = useState();
+  const dispatch = useDispatch();
+  const user = useSelector(getUser);
+
+  useEffect(() => {
+    dispatch(clearUser());
+    dispatch(fetchUser());
+
+    console.log(user);
+  }, []);
   return (
-    <div>
+    <div className="bg-gray-100">
       <NavBar />
       <Routes>
         <Route path="" element={<HomePage />} />
         <Route path="profile" element={<ProfilePage />}>
           <Route path="myOrders" element={<MyOrders />} />
           <Route path="details" element={<PersonalDetails />} />
+          <Route path="myAddress" element={<MyAddress />} />
         </Route>
 
         <Route path="successPage" element={<SuccessPayment />} />
         <Route path="product" element={<Product />} />
         <Route path="store" element={<Store />} />
+        <Route path="checkOut" element={<CheckOut />} />
         <Route path="storeManager" element={<StoreManager />}>
           <Route path="allStores" element={<AllStores />} />
           <Route path="section/:id" element={<SectionStoreManager />} />
-          <Route path="allProduct/:id" element={<ProductPage />} />
           <Route path="addProduct" element={<AddProduct />} />
-          <Route path="personalData" element={<PersonalData />} />
+          <Route path="addSection" element={<AddCategory />} />
         </Route>
         <Route path="info" element={<MainInfo />}>
           <Route path="about" element={<AboutPage />} />
@@ -59,6 +80,8 @@ const App = () => {
         <Route path=":id/stores" element={<StoresListPage />} />
         <Route path="store/:id" element={<Store />} />
       </Routes>
+
+      <ToastContainer />
     </div>
   );
 };

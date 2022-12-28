@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,600;0,700;1,400;1,500;1,600&display=swap");
 
-input:focus{
-box-shadow: none !important;
-border-bottom: 1px solid rgb(81, 81, 180);
+* {
+  font-family: "Rubik", sans-serif;
+}
+::-webkit-scrollbar{
+  width: 5px ;
+}
+::-webkit-scrollbar-thumb{
+background-color: none;
+}
+input:focus {
+  box-shadow: none !important;
+  border-bottom: 1px solid rgb(81, 81, 180);
 }

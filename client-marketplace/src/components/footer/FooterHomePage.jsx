@@ -4,12 +4,13 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { FaFacebookF } from 'react-icons/fa';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import NavigationBar from '../mobile/NavBar';
 
 export default function FooterHomePage() {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="bg-[url('https://images.pexels.com/photos/952353/pexels-photo-952353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')] md:h-96 h-64 bg-center bg-cover ">
+      <div className="footer-image md:h-96 h-64 ">
         <div className="h-full pt-14 font-sans font-semibold subpixel-antialiased flex flex-col items-center justify-center text-center text-gray-200 text-[25px] md:text-[50px] lg:text-[70px]">
           <p>
             ? אין לך <span className="text-yellow-300">כח</span> לעבור בסופר
@@ -19,42 +20,58 @@ export default function FooterHomePage() {
           </p>
         </div>
       </div>
-      <Footer bgDark={true}>
+      <Footer bgDark={true} className="mb-20 md:mb-0">
         <div className="w-full flex flex-col items-center  bg-gray-900">
-          <div className="grid w-3/4 list-none text-gray-400 grid-cols-2 gap-8 py-8 text-center px-6 md:grid-cols-5">
+          <div className="hidden  md:grid w-3/4 list-none text-gray-400 grid-cols-2 gap-8 py-8 text-center px-6 md:grid-cols-5">
             <div>
-              <Footer.Link>
+              <Footer.LinkGroup col={true}>
                 <span
                   className="cursor-pointer"
                   onClick={() => navigate('/info/blog')}
                 >
                   בלוג
                 </span>
-              </Footer.Link>
+              </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Link>
-                <span className="cursor-pointer" onClick={() => navigate('/info/about')}>אודותינו</span>
-              </Footer.Link>
+              <Footer.LinkGroup col={true}>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/about')}
+                >
+                  אודותינו
+                </span>
+              </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Link>
-                <span className="cursor-pointer" onClick={() => navigate('/info/suppliers')}>ספקים</span>
-              </Footer.Link>
+              <Footer.LinkGroup col={true}>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/suppliers')}
+                >
+                  ספקים
+                </span>
+              </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Link>
-                <span className="cursor-pointer" onClick={() => navigate('/info/questions')}>
+              <Footer.LinkGroup col={true}>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/questions')}
+                >
                   שאלות נפוצות
                 </span>
-              </Footer.Link>
+              </Footer.LinkGroup>
             </div>
             <div>
-              <Footer.Link>
-                <span className="cursor-pointer" onClick={() => navigate('/info/company')}>
+              <Footer.LinkGroup col={true}>
+                <span
+                  className="cursor-pointer"
+                  onClick={() => navigate('/info/company')}
+                >
                   משרדי החברה
                 </span>
-              </Footer.Link>
+              </Footer.LinkGroup>
             </div>
           </div>
           <div className="w-full flex flex-col justify-center text-center bg-gray-900 p-4">
@@ -75,6 +92,9 @@ export default function FooterHomePage() {
           </div>
         </div>
       </Footer>
+      <NavigationBar />
     </div>
+
+    
   );
 }

@@ -4,8 +4,15 @@ const findAllSections = async () => {
   try {
     const sections = await sectionModel
       .find()
-      .populate(["storeId", "departmentIds"]);
     return sections;
+  } catch (error) {
+    throw error;
+  }
+};
+const findSectionsByStoreId = async (storeId) => {
+  try {
+    const sectionsInStore = await sectionModel.find({"store": storeId});
+    return sectionsInStore
   } catch (error) {
     throw error;
   }
@@ -15,7 +22,6 @@ const findSectionById = async (id) => {
   try {
     const section = await sectionModel
       .findById(id)
-      .populate(["storeId", "departmentIds"]);
     return section;
   } catch (error) {
     throw error;
@@ -56,4 +62,5 @@ module.exports = {
   createOneSection,
   deleteOneSection,
   updateOneSection,
+  findSectionsByStoreId
 };

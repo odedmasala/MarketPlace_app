@@ -1,0 +1,29 @@
+.button-form-product{
+    padding: 5px;
+    font-weight: bold;
+    width: 70px;
+}
+
+.input-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.section-input{
+    border: none;
+    border-bottom: 1px solid gray;
+    text-align: right;
+}
+
+.section-btn{
+    color: black;
+    font-size: 12px;
+    width: 130px;
+    height: 25px;
+    padding: 0px;
+}
+
+.section-btn:hover{
+    text-decoration: underline;
+}

@@ -3,7 +3,7 @@
     text-align: right;
     padding: 10px;
     width: 200px;
-    height: 300px;
+    height: 350px;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
 }
 .product-img{
     width: 75%;
-    height: 50%;
+    height: 40%;
     margin: auto;
 }
 
@@ -44,4 +44,12 @@
 .read-more:hover{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.add-to-cart-btn{
+    background-color: #08ACA2;
+    color: white;
+    width: 50%;
+    margin-top: 20px;
+    padding: 3px;
 }

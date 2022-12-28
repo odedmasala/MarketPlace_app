@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { addressSchema, cloudinarySchema } = require("../helpModels");
 
 const StoreManagerSchema = new mongoose.Schema({
-  image: cloudinarySchema,
+  // image: cloudinarySchema,
   firstName: {
     type: String,
     required: true,
@@ -15,7 +15,7 @@ const StoreManagerSchema = new mongoose.Schema({
     type: String,
     required: true,
     lowercase: true,
-    unique: true,
+
     min: 8,
     max: 50,
   },
@@ -23,7 +23,7 @@ const StoreManagerSchema = new mongoose.Schema({
     type: String,
     required: true,
     min: 9,
-    unique: true,
+
   },
   loginCode: String,
   meager: {
@@ -43,7 +43,7 @@ const StoreManagerSchema = new mongoose.Schema({
     ref: "stores",
   },
   address: addressSchema,
-  paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipts" },
+  // paymentBillInfo: { type: mongoose.Types.ObjectId, ref: "receipts" },
   authToken: { type: String },
   role: {
     type: String,

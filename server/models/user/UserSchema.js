@@ -1,9 +1,10 @@
 const mongoose = require("mongoose");
-const {addressSchema, cloudinarySchema} = require("../helpModels")
+const { addressSchema, cloudinarySchema, userAddressSchema } = require("../helpModels");
 
 const UserSchema = new mongoose.Schema(
   {
     image: cloudinarySchema,
+    social_image: String,
     firstName: {
       type: String,
       required: true,
@@ -14,16 +15,15 @@ const UserSchema = new mongoose.Schema(
     },
     email: {
       type: String,
-      required: true,
       lowercase: true,
-      unique: true,
       min: 8,
       max: 50,
+      
     },
     phone: {
       type: String,
       min: 9,
-      unique: true,
+  
     },
     loginCode: String,
     password: {
@@ -34,21 +34,18 @@ const UserSchema = new mongoose.Schema(
       type: [mongoose.Types.ObjectId],
       ref: "stores",
     },
-    address: addressSchema,
+    address: userAddressSchema,
     paymentBillInfo: { type: [mongoose.Types.ObjectId], ref: "receipts" },
     authToken: { type: String },
     access_token: String,
-    facebookToken: {
+    facebook_id: {
       type: String,
-      select: false,
     },
     googleToken: {
       type: String,
-      select: false,
     },
     resetPassToken: {
       type: String,
-      select: false,
     },
     registerType: {
       type: String,

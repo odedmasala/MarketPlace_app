@@ -6,28 +6,28 @@ const StoreManager = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="px-3 md:px-48 bg-white md:flex justify-between ">
-        <div className="border border-gray-300 p-0 flex justify-between md:flex-col text-center md:justify-start md:w-[25%]">
+      <div className="px-3 md:px-48 bg-white flex flex-col justify-between ">
+        <div className=" p-0 flex justify-around mb-10">
           <p
             onClick={() => navigate("allStores")}
-            className="cursor-pointer border border-gray-300 text-gray-700 text-lg font-medium md:py-4 py-2 px-5 "
+            className="store-manager-menu md:py-4 py-2 px-5"
           >
-            כל המוצרים
+            כל החנויות
           </p>
           <p
             onClick={() => navigate("addProduct")}
-            className="cursor-pointer border border-gray-300 text-gray-700 text-lg font-medium py-2 md:py-4 px-5 "
+            className="store-manager-menu md:py-4 py-2 px-5"
           >
-            הוספה
+          הוספת מוצר חדש לחנות
           </p>
           <p
-            onClick={() => navigate("personalData")}
-            className="cursor-pointer border border-gray-300 text-gray-700 text-lg font-medium py-2 md:py-4 px-5 "
+            onClick={() => navigate("addSection")}
+            className="store-manager-menu md:py-4 py-2 px-5"
           >
-            פרטים אישים
+            הוספת קטגוריה חדשה לחנות
           </p>
         </div>
-        <div className="border md:w-[74%] min-h-screen">
+        <div className="md:w-[100%] min-h-screen">
           <Outlet />
         </div>
       </div>

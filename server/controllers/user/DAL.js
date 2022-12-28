@@ -3,7 +3,7 @@ const cloudinary = require("../../utils/cludinary");
 
 const findAllUsers = async () => {
   try {
-    const users = await userModel.find().populate(["storeId","paymentBillInfo"]);;
+    const users = await userModel.find();
     return users;
   } catch (error) {
     throw error;

@@ -1,6 +1,4 @@
-
-
-@import url("../product/_product.scss");/*# sourceMappingURL=components.css.map */
-
-
-
+@import url("../navbar/_navbar.scss");
+@import url("../product/_product.scss");
+@import url("../footer/_footer.scss");
+@import url("../storeManager/_storeManager.scss");/*# sourceMappingURL=components.css.map */

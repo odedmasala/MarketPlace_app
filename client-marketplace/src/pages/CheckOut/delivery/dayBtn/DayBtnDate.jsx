@@ -1,14 +1,22 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import { notify } from "../../../../utils";
 
 export default function DayBtnDate({ day, date }) {
   const [bgColor, setBgColor] = useState(false);
+  const address = JSON.parse(localStorage.getItem("Address"));
+  address.day = day;
+  address.date = date;
+ 
   return (
     <div className=" m-1">
       <button
         onClick={() => {
           setBgColor(!bgColor);
-          console.log(day, date);
+          notify(' !התאריך נוסף בהצלחה')
+          localStorage.setItem("Address", JSON.stringify(address));
         }}
         className={
           bgColor
@@ -20,7 +28,6 @@ export default function DayBtnDate({ day, date }) {
         <br />
         {date}
       </button>
-      
     </div>
   );
 }

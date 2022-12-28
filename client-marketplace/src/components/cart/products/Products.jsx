@@ -1,28 +1,73 @@
 import React from "react";
-import AmountButton from "../../../features/buttons/AmountButton";
+import { useState } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 
-export default function Products({ product }) {
+import { useDispatch, useSelector } from "react-redux";
+import AmountButton from "../../../features/buttons/AmountButton";
+import {
+  addItem,
+  getProductTotalPrice,
+  removeItem,
+  selectAllCartItems,
+  clearProduct
+} from "../../../redux/cart/cartSlice";
+import { truncateString } from "../../../utils/index";
+import { useEffect } from "react";
+export default function Products({ product, storeId }) {
+  const dispatch = useDispatch();
+  const store = useSelector(selectAllCartItems)[storeId];
+  const productTotalPrice = useSelector((state) =>
+    getProductTotalPrice(state, product._id)
+  );
+
+  const productQuantity = product.quantity;
+  //  Increase the amount of product
+  const AddQuantityOfTheProduct = () => {
+    dispatch(addItem({ storeId, product: { ...product, quantity: 1 } }));
+  };
+  const clearProductFunction = () => {
+    dispatch(clearProduct({ storeId, product}));
+  };
+  const removeQuantityFromTheProduct = () => {
+    const addProduct = { _id: product._id };
+
+    dispatch(removeItem({ storeId, product: addProduct }));
+  };
+  useEffect(() => {}, []);
   return (
-    <div
-      className="flex
-    h-[60px] px-2 my-6 gap-2 justify-between items-center "
-    >
-      <div className=" h-full flex flex-col justify-between items-center">
-        <div className="flex gap-1">
-          <AmountButton button={"-"} />
-          <span>1</span>
-          <AmountButton button={"+"} />
+    <div className="flex items-center gap-4">
+      <div className="flex w-full">
+        <div>
+          <div className="w-full flex justify-center my-3">
+            <div className="flex">
+              <AmountButton
+                setCount={removeQuantityFromTheProduct}
+                button={"-"}
+              />
+              <span className="text-base">{productQuantity}</span>
+              <AmountButton setCount={AddQuantityOfTheProduct} button={"+"} />
+            </div>
+          </div>
+          <p className=" text-center text-base mt-1">
+            {parseFloat(productTotalPrice).toFixed(2)} ש"ח
+          </p>
         </div>
-        <p>{product.price} ש"ח</p>
       </div>
-      <div className=" flex items-end flex-col justify-between  ">
-        <p className="text-end">{product.name}</p>
-        <p className="w-[80%] text-end text-sm text-gray-400">
-          {product.description}
-        </p>
+      <div onClick={clearProductFunction} className="w-full flex justify-center md:text-4xl text-red-500">
+        <AiOutlineDelete />
       </div>
-      <div className="h-[90%] ">
-        <img className="h-full w-fit" src={product.image} alt="" />
+      <div>
+        <div className="flex flex-col">
+          <div className=" flex justify-center items-center w-full">
+            <img className="h-full w-8/12" src={product.image.url} alt="" />
+          </div>
+          <div className="flex items-center justify-center w-full">
+            <p className="text-center text-xs">{`${truncateString(
+              product.name,
+              20
+            )}`}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

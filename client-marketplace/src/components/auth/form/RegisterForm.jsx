@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Field, Formik, Form } from "formik";
 import * as Yup from "yup";
-import loginImage from "../../../assets/images/login-image.jpg";
-import { Modal, Select, Button } from "flowbite-react";
+import { Modal, Select, Button, Spinner } from "flowbite-react";
 import { MdEmail } from "react-icons/md";
 import { GrFormClose } from "react-icons/gr";
 import { BsFillLockFill } from "react-icons/bs";
@@ -13,6 +12,9 @@ import {
 } from "react-icons/ai";
 import SocialButton from "./SocialButton";
 import LoginForm from "./LoginForm";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../../redux/user/userSlice";
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 const passwordRegex =
@@ -52,13 +54,71 @@ const registerFormValues = {
   password: "",
   passwordVerification: "",
 };
+
 const RegisterForm = ({ handelView, setFormType }) => {
   const [passwordType, setPasswordType] = useState("password");
-
-  const handleFormSubmit = (values, onSubmitProps) => {
-    // same shape as initial values
-    console.log(values, onSubmitProps);
+  const [Succeeded, setSucceeded] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const register = async (user) => {
+    try {
+      const { data } = await axios.post(
+        `http://localhost:8001/api/auth/register`,
+        { user: user },
+        { withCredentials: true }
+      );
+      setSucceeded(data);
+      return data;
+    } catch (e) {
+      setError(e.response.data);
+    }
   };
+  const navigateUser = async (values) => {
+    try {
+      const sendData = { email: values.email, password: values.password };
+      const { data } = await axios.post(
+        `http://localhost:8001/api/auth/login`,
+        sendData,
+        { withCredentials: true }
+      );
+      if (data) {
+        dispatch(setUser(data));
+        setSucceeded(data);
+        return data;
+      }
+    } catch (e) {
+      setError(e);
+    }
+  };
+
+  const handleNewUser = async (values, onSubmitProps) => {
+    try {
+      setLoading(true);
+      const checkIfRegister = await register(values, onSubmitProps);
+      if (checkIfRegister?.create) {
+        setTimeout(async () => {
+          let Succeeded = null;
+          Succeeded = await navigateUser(values);
+          if (Succeeded) {
+            handelView();
+            onSubmitProps.resetForm();
+            setLoading(false);
+          }
+        }, 2000);
+      }
+    } catch (e) {
+      setLoading(false);
+      return setError(e);
+    }
+  };
+  const handleFormSubmit = (values, onSubmitProps) => {
+    handleNewUser(values, onSubmitProps);
+  };
+  useEffect(() => {
+    setLoading(false);
+  }, [error]);
+
   return (
     <Formik
       onSubmit={handleFormSubmit}
@@ -77,18 +137,30 @@ const RegisterForm = ({ handelView, setFormType }) => {
       }) => (
         <div className="grid grid-cols-1 border rounded-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 row-span-3">
-            <div className="hidden md:flex h-full">
-              <img src={loginImage} alt="" className="w-full h-full" />
+            <div className="hidden md:flex h-full shadow-2xl">
+              <img
+                src={
+                  "https://images.pexels.com/photos/5632382/pexels-photo-5632382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                }
+                alt=""
+                className="w-full h-full"
+              />
             </div>
             <div className="p-3">
               <div className="flex justify-end text-end hover:cursor-pointer">
-                <GrFormClose onClick={handelView} />
+                <GrFormClose
+                  onClick={() => {
+                    handelView();
+                    resetForm();
+                    setError(null);
+                  }}
+                />
               </div>
               <Form>
                 <div>
                   <p className="text-2xl text-center">הירשם עכשיו</p>
                   <p className="text-sm text-center mb-2">
-                    ותוכל להנות משלל חניות בוטיק בלחיצת כפתור
+                    ותוכל להנות משלל חנויות בוטיק בלחיצת כפתור
                   </p>
                   <div className="flex justify-center items-center">
                     <div className="flex justify-center flex-col w-10/12">
@@ -132,7 +204,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           ) : null}
                         </div>
                       </>
-                      <div className="flex flex-row-reverse items-center border-b-4 border-blue-900 mb-3 mt-5 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 border-b-4 border-blue-900  focus-within:border-blue-200">
                         <MdEmail className="text-xl" />
                         <Field
                           onBlur={handleBlur}
@@ -149,7 +221,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.email}
                         </div>
                       ) : null}
-                      <div className="flex flex-row-reverse items-center border-b-4 border-blue-900 mb-3 mt-5 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 border-b-4 border-blue-900 focus-within:border-blue-200">
                         <AiFillPhone className="text-xl" />
                         <Field
                           onBlur={handleBlur}
@@ -166,7 +238,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.phone}
                         </div>
                       ) : null}
-                      <div className="flex flex-row-reverse items-center border-b-4 border-blue-900 mb-6 mt-5 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 border-b-4 border-blue-900  focus-within:border-blue-200">
                         {passwordType === "password" ? (
                           <AiOutlineEye
                             onClick={() => {
@@ -197,7 +269,7 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.password}
                         </div>
                       ) : null}
-                      <div className="flex flex-row-reverse items-center justify-center border-b-4 border-blue-900 mb-6 focus-within:border-blue-200">
+                      <div className="flex flex-row-reverse items-center mt-2 justify-center border-b-4 border-blue-900  focus-within:border-blue-200">
                         <Field
                           name="passwordVerification"
                           type={passwordType}
@@ -211,15 +283,34 @@ const RegisterForm = ({ handelView, setFormType }) => {
                           {errors.passwordVerification}
                         </div>
                       ) : null}
-                      <button
-                        type="submit"
-                        onClick={handleSubmit}
-                        className="mb-2 border-2 border-blue-600 bg-[white] text-blue-700 hover:text-white hover:bg-blue-600  transform active:scale-y-75 transition-transform"
-                      >
-                        הירשם
-                      </button>
+                      {loading ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                          }}
+                          className="mb-2 mt-2 border-2 border-blue-600 bg-blue-600 text-white  transform active:scale-y-75 transition-transform"
+                        >
+                          <Spinner aria-label="Spinner button example" />
+                          <span className="pl-3">Loading...</span>
+                        </button>
+                      ) : (
+                        <button
+                          type="submit"
+                          onClick={handleSubmit}
+                          className="mb-2 mt-2 border-2 border-blue-600 bg-[white] text-blue-700 hover:text-white hover:bg-blue-600  transform active:scale-y-75 transition-transform"
+                        >
+                          הירשם
+                        </button>
+                      )}
+                      {error?.response?.data?.status == 406 ? (
+                        <>
+                          <div className="text-center text text-red-600">
+                            {`משתמש קיים כבר במערכת, אנא התחבר כרגיל`}
+                          </div>
+                        </>
+                      ) : null}
                       <p className="text-center mb-5">
-                        רשום כבר ?{" "}
+                        רשום כבר ?
                         <span
                           onClick={() => {
                             setFormType("login");

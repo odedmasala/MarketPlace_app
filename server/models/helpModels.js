@@ -13,11 +13,37 @@ const addressSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  apartment: Number,
-  floor: Number,
+  apartment: String,
+  floor: String,
   comment: String,
-});
+  zip: {
+    type: Number,
+    default: () => Math.floor(Math.random() * 1000000000000),
 
+  },
+});
+const userAddressSchema = new mongoose.Schema({
+  city: {
+    type: String,
+    required: true,
+  },
+  street: {
+    type: String,
+    required: true,
+  },
+  building: {
+    type: String,
+    required: true,
+  },
+  apartment: String,
+  floor: String,
+  comment: String,
+  zip: {
+    type: Number,
+    default: () => Math.floor(Math.random() * 1000000000000),
+
+  },
+});
 const billInfoSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   totalPrice: { type: Number, required: true },
@@ -36,8 +62,8 @@ const weightSchema = new mongoose.Schema({
   tax: Number, 
 });
 const cloudinarySchema = new mongoose.Schema({
-  public_id: {type:String, required:true},
-  url: {type:String, required:true},
+  public_id: String, 
+  url: String,
 });
 
 const unitsSchema = new mongoose.Schema({
@@ -82,5 +108,6 @@ module.exports = {
   weightSchema,
   unitsSchema,
   ClothingSizesSchema,
-  cloudinarySchema
+  cloudinarySchema,
+  userAddressSchema
 };

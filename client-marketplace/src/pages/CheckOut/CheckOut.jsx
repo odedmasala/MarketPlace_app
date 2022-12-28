@@ -67,36 +67,3 @@ export default function CheckOut() {
     </div>
   );
 }
-
-// import React from "react";
-// import { Accordion } from "flowbite-react";
-// import DetailsUser from "./details/DetailsUser";
-// import Delivery from "./delivery/Delivery";
-// import Payment from "./payment/Payment";
-
-// export default function CheckOut() {
-//   return (
-//     <div className="w-[75%]">
-//       <Accordion className="w-full">
-//         <Accordion.Panel>
-//           <Accordion.Title>פרטי משלוח</Accordion.Title>
-//           <Accordion.Content>
-//             <DetailsUser />
-//           </Accordion.Content>
-//         </Accordion.Panel>
-//         <Accordion.Panel>
-//           <Accordion.Title>זמן משלוח</Accordion.Title>
-//           <Accordion.Content>
-//             <Delivery />
-//           </Accordion.Content>
-//         </Accordion.Panel>
-//         <Accordion.Panel>
-//           <Accordion.Title>תשלום</Accordion.Title>
-//           <Accordion.Content>
-//             <Payment />
-//           </Accordion.Content>
-//         </Accordion.Panel>
-//       </Accordion>
-//     </div>
-//   );
-// }

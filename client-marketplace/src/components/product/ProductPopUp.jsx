@@ -22,11 +22,6 @@ export default function ProductPopUp({ show, handleModal, productData }) {
                   <p>ש"ח</p>
                 </div>
               </div>
-              <div className="flex">
-                <AmountButton button={"-"} />
-                <p>2</p>
-                <AmountButton button={"+"} />
-              </div>
               <div className="product-description-popUp w-full">
                     <div className="description-section">
                         <p>{productData.barcode}</p>
