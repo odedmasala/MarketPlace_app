@@ -5,6 +5,14 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user/UserSchema");
 
 const passport = (passport) => {
+  /*INSERT USER TO PASSPORT-SESSION  */
+  passport.serializeUser((user, done) => {
+    done(null, user);
+  });
+  /*REMOVE USER TO PASSPORT-SESSION  */
+  passport.deserializeUser((user, done) => {
+    done(null, user);
+  });
   /*LOCAL Strategy */
   passport.use(
     new LocalStrategy(
@@ -17,7 +25,7 @@ const passport = (passport) => {
         try {
           const user = await User.findOne({ email: email });
           if (!user) {
-            return callback(null, false, {
+            callback(null, false, {
               status: 404,
               message:
                 "כתובת אימייל לא נכונה או משתמש לא קיים, אנא בדוק את האימייל",
@@ -25,9 +33,9 @@ const passport = (passport) => {
           }
           if (user.registerType) {
             if (user.registerType != "email") {
-              return callback(null, false, {
+              callback(null, false, {
                 status: 401,
-                message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר דרך ${user.registerType}`,
+                message: `המשמתש רשום תחת חיבור ממדיה חברתית, אנא נסה להתחבר דרך ${user?.registerType}`,
               });
             }
           }
@@ -36,7 +44,7 @@ const passport = (passport) => {
             user.password
           );
           if (!isPasswordCorrect) {
-            return callback(null, false, {
+            callback(null, false, {
               status: 401,
               message: "כתובת אימייל לא נכונה או משתמש לא קיים",
             });
@@ -44,7 +52,7 @@ const passport = (passport) => {
           callback(null, user);
         } catch (error) {
           console.error(error);
-          return callback(error);
+          callback(error);
         }
       }
     )
@@ -72,11 +80,11 @@ const passport = (passport) => {
 
         if (!checkUser) {
           const newUser = await new User(user).save();
-          return callback(null, newUser);
+          callback(null, newUser);
         }
         if (checkUser.registerType)
           if (checkUser.registerType != "google")
-            return callback(null, false, {
+            callback(null, false, {
               status: 401,
               message: `That user connected with social access, get in with ${checkUser?.registerType}`,
             });
@@ -115,23 +123,16 @@ const passport = (passport) => {
           callback(null, newUser);
         }
         if (checkUser.registerType)
-          if (checkUser.registerType != "google")
+          if (checkUser.registerType != "facebook")
             callback(null, false, {
               status: 401,
-              message: `That user connected with social access, get in with ${checkUser.registerType}`,
+              message: `That user connected with social access, get in with ${checkUser?.registerType}`,
             });
+        console.log(checkUser);
         callback(null, checkUser);
       }
     )
   );
-  /*INSERT USER TO PASSPORT-SESSION  */
-  passport.serializeUser((user, done) => {
-    done(null, user);
-  });
-  /*REMOVE USER TO PASSPORT-SESSION  */
-  passport.deserializeUser((user, done) => {
-    done(null, user);
-  });
 };
 
 module.exports = passport;
