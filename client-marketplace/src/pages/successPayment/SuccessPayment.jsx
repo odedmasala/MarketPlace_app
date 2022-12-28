@@ -26,13 +26,13 @@ export default function SuccessPayment() {
         </p>
       </div>
       <div className="flex flex-col items-center justify-between h-[5rem]">
-        <p>מספר הזמנה: 111111111111111</p>
+        <p>מספר הזמנה: {Math.floor(Math.random() * 1000000000000)}</p>
         <Button
           onClick={clearFromLocalStorageAndSendDataToServer}
           outline={true}
           gradientDuoTone="greenToBlue"
         >
-          Green to Blue
+          חזרה לאתר
         </Button>
       </div>
     </div>
