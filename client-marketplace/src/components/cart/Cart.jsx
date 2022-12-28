@@ -10,7 +10,7 @@ import {
 } from "../../redux/cart/cartSlice";
 import CartStores from "../cart/stores/CartStores";
 import { getUser } from "../../redux/user/userSlice";
-
+import {notifyError} from "../../utils/index";
 const Cart = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
   const dispatch = useDispatch();
@@ -83,7 +83,13 @@ const Cart = () => {
           </p>
         </div>
         <button
-          onClick={() => navigate("/checkOut")}
+          onClick={() => {
+            if(isUser){
+              navigate("/checkOut");
+            }else{
+              notifyError("אנא התבחר / הירשם לפני")
+            }
+          }}
           className="bg-teal-500 w-full h-[50px] text-white text-2xl "
         >
           לתשלום ש"ח {parseFloat(storeTotalPrice).toFixed(2)}
