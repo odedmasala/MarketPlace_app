@@ -14,7 +14,7 @@ export default function TimeBtn({ time }) {
       <div className="flex justify-between px-2 items-center">
         <button
           onClick={() => {
-            notify('בוצע בהצלחה')
+            notify(` בין השעות ${time}`)
             localStorage.setItem("Address", JSON.stringify(address))
           }}
           outline={true}
