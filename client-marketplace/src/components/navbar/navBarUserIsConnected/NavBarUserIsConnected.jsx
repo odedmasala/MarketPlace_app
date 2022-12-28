@@ -2,7 +2,7 @@ import React from "react";
 import { Avatar } from "flowbite-react";
 import SearchInput from "../../../features/searchInput/SearchInput";
 import { ImLocation } from "react-icons/im";
-export default function NavBarUserIsConnected() {
+export default function NavBarUserIsConnected({user}) {
   return (
       <div className="flex justify-evenly md:w-3/4 items-center ">
         <SearchInput />
@@ -11,10 +11,10 @@ export default function NavBarUserIsConnected() {
             <p className="flex items-center justify-end">
               מודיעין <ImLocation className="text-green-400" />
             </p>
-            <p>שלום דנה</p>
+            <p>שלום {user.firstName}</p>
           </div>
           <Avatar
-            img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+            img={user.social_image}
             rounded={true}
           />
         </div>
