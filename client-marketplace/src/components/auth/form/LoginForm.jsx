@@ -41,7 +41,7 @@ const LoginForm = ({ handelView, setFormType }) => {
     try {
       const sendData = { email: values.email, password: values.password };
       const { data } = await axios.post(
-        `http://localhost:8001/api/auth/login`,
+        `${process.env.REACT_APP_BASE_URL}/api/auth/login`,
         sendData,
         { withCredentials: true }
       );

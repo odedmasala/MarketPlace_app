@@ -3,7 +3,7 @@ import axios from "axios";
 export const getProductsApi = async () => {
   try {
     const { data } = await axios.get(
-      "http://localhost:8001/api/products"
+      `${process.env.REACT_APP_BASE_URL}/api/products`
     );
     return data;
   } catch (error) {
@@ -13,7 +13,7 @@ export const getProductsApi = async () => {
 export const getMangerApi = async () => {
     try {
       const { data } = await axios.get(
-        `http://localhost:8001/api/storeManager/63a82c97c672788abe31e60f`
+        `${process.env.REACT_APP_BASE_URL}/api/storeManager/63a82c97c672788abe31e60f`
       );
       return data;
     } catch (error) {

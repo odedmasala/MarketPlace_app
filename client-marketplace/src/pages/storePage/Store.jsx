@@ -15,13 +15,13 @@ const Store = () => {
 
   const findSections = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/section?storeId=${id}`
+      `${process.env.REACT_APP_BASE_URL}/api/section?storeId=${id}`
     );
     setSections(data);
   };
   const findProducts = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/products?storeId=${id}`
+      `${process.env.REACT_APP_BASE_URL}/api/products?storeId=${id}`
     );
     setProducts(data);
     setShowProducts(data);
@@ -36,7 +36,7 @@ const Store = () => {
   }, [id]);
 
   const getStoreById = async () => {
-    const { data } = await axios.get(`http://localhost:8001/api/store/${id}`);
+    const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/store/${id}`);
     setStore(data);
   };
 

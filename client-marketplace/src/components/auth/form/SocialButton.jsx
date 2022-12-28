@@ -2,10 +2,10 @@ import React from "react";
 
 const SocialButton = () => {
   const googleAuth = () => {
-    window.open(`http://localhost:8001/api/auth/google/callback`, "_self");
+    window.open(`${process.env.REACT_APP_BASE_URL}/api/auth/google/callback`, "_self");
   };
   const faceBookAuth = () => {
-    window.open(`http://localhost:8001/api/auth/facebook/callback`, "_self");
+    window.open(`${process.env.REACT_APP_BASE_URL}/api/auth/facebook/callback`, "_self");
   };
   return (
     <div className="flex justify-center flex-col w-12/12 items-center">

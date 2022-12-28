@@ -15,7 +15,7 @@ const SectionComponent = ({
   };
   const saveChange = async () => {
     const { data } = await axios.put(
-      `http://localhost:8001/api/section/${category._id}`,
+      `${process.env.REACT_APP_BASE_URL}/api/section/${category._id}`,
       category
     );
     if (data) {
@@ -25,16 +25,16 @@ const SectionComponent = ({
   const saveProduct = async (product) => {
     const obj = { ...product };
     obj.subCategory = null;
-    await axios.put(`http://localhost:8001/api/products/${product._id}`, obj);
+    await axios.put(`${process.env.REACT_APP_BASE_URL}/api/products/${product._id}`, obj);
   };
   const deleteCategory = async () => {
     const { data: section } = await axios.delete(
-      `http://localhost:8001/api/section/${category._id}`
+      `${process.env.REACT_APP_BASE_URL}/api/section/${category._id}`
     );
     if (section) {
       notify(section);
       const { data } = await axios.get(
-        `http://localhost:8001/api/products?sectionId=${category._id}`
+        `${process.env.REACT_APP_BASE_URL}/api/products?sectionId=${category._id}`
       );
       if (data.length > 0) {
         data.forEach((element) => {

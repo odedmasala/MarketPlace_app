@@ -49,7 +49,7 @@ const AddProduct = () => {
   };
   const findSection = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/section?storeId=63a44ddaa01e048b498ff5f6`
+      `${process.env.REACT_APP_BASE_URL}/api/section?storeId=63a44ddaa01e048b498ff5f6`
     );
     setSection(data);
   };

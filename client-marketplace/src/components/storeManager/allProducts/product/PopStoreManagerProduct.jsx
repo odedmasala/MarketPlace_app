@@ -30,7 +30,7 @@ const PopStoreManagerProduct = ({ product, show, handleModal,findProducts }) => 
   };
   const findSections = async () => {
     const { data } = await axios.get(
-      `http://localhost:8001/api/section?storeId=${id}`
+      `${process.env.REACT_APP_BASE_URL}/api/section?storeId=${id}`
       
     );
     setSections(data);
@@ -38,7 +38,7 @@ const PopStoreManagerProduct = ({ product, show, handleModal,findProducts }) => 
 
   const saveChange = async () => {
     const { data } = await axios.put(
-      `http://localhost:8001/api/products/${productData._id}`,
+      `${process.env.REACT_APP_BASE_URL}/api/products/${productData._id}`,
       productData
     );
     if (data) {
