@@ -95,7 +95,7 @@ export default function DetailsUser({ toggle }) {
             notify();
             localStorage.setItem("Address", JSON.stringify(address));
           }}
-          className="bg-teal-500 flex justify-center items-center rounded-md text-white px-12 py-5 "
+          className="bg-teal-500 flex justify-center items-center rounded-md text-white px-5 py-2 my-2 "
         >
           שמור
         </button>
