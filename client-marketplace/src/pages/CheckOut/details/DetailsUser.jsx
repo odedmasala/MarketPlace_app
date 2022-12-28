@@ -38,7 +38,7 @@ export default function DetailsUser({ toggle }) {
           name="street"
           required
           onChange={handleInput}
-          placeholder="טקסט חופשי"
+          placeholder="רחוב"
         />
       </div>
       <div className="flex justify-end mt-2 flex-col text-end border-b-2">
@@ -49,7 +49,7 @@ export default function DetailsUser({ toggle }) {
           name="city"
           required
           onChange={handleInput}
-          placeholder="טקסט חופשי"
+          placeholder="עיר "
         />
       </div>
       <div className="flex justify-end mt-2 flex-col text-end border-b-2">
@@ -60,7 +60,7 @@ export default function DetailsUser({ toggle }) {
           required
           name="building"
           onChange={handleInput}
-          placeholder="טקסט חופשי"
+          placeholder="בניין "
         />
       </div>
       <div className="flex justify-end mt-2 flex-col text-end border-b-2">
@@ -71,7 +71,7 @@ export default function DetailsUser({ toggle }) {
           name="apartment"
           required
           onChange={handleInput}
-          placeholder="טקסט חופשי"
+          placeholder="דירה "
         />
       </div>
       <div className="flex justify-end mt-2 flex-col text-end border-b-2">
@@ -82,7 +82,7 @@ export default function DetailsUser({ toggle }) {
           name="zip"
           required
           onChange={handleInput}
-          placeholder="טקסט חופשי"
+          placeholder="מיקוד "
         />
       </div>
       <div className="flex justify-end items-center mt-2 text-end border-b-2">
