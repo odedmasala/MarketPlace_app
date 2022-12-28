@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 export default function PayButton() {
   const totalPrice = useSelector(selectCartTotal);
-  const total = parseFloat(totalPrice).toFixed(0)
+  const total = parseFloat(totalPrice).toFixed(1)
 
   const handleCheckout = () => {
     axios
