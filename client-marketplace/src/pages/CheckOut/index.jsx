@@ -6,10 +6,6 @@ import NavigationBar from "../../components/mobile/NavBar";
 import CheckOut from "./CheckOut";
 
 export default function Index() {
-  const selector = useSelector((state) => state);
-  useEffect(() => {
-    console.log(selector);
-  }, []);
   return (
     <div>
       <div className="flex flex-col items-center md:items-start  md:flex-row md:justify-evenly pt-5">

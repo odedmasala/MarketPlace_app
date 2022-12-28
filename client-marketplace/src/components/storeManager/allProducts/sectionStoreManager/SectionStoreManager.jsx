@@ -16,7 +16,6 @@ const SectionStoreManager = () => {
       
     );
     setSections(data);
-    console.log(data);
   };
   const findProducts = async () => {
     const { data } = await axios.get(

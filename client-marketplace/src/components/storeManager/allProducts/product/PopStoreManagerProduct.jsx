@@ -37,7 +37,6 @@ const PopStoreManagerProduct = ({ product, show, handleModal,findProducts }) => 
   };
 
   const saveChange = async () => {
-  console.log(productData);
     const { data } = await axios.put(
       `http://localhost:8001/api/products/${productData._id}`,
       productData

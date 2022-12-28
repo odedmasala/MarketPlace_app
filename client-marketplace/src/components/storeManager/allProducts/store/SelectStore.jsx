@@ -59,7 +59,6 @@ const SelectStore = ({ store }) => {
     } else {
       setStoreData({ ...storeData, [e.target.name]: e.target.value });
     }
-    console.log(storeData);
   };
 
   const saveChange = async () => {
