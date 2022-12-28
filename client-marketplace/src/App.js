@@ -41,11 +41,20 @@ const App = () => {
   const [userData, setUseData] = useState();
   const dispatch = useDispatch();
   const user = useSelector(getUser);
-
+  // const getUserAsync = async () => {
+  //   try {
+  //     const url = `http://localhost:8001/api/auth/login/success`;
+  //     const { data } = await axios.get(url, { withCredentials: true });
+  //     if (data) {
+  //       dispatch(clearUser());
+  //       setUseData(data);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
   useEffect(() => {
-    dispatch(clearUser());
     dispatch(fetchUser());
-
     console.log(user);
   }, []);
   return (
