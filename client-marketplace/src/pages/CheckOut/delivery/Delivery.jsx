@@ -7,13 +7,12 @@ import TimeBtn from "./timeBtn/TimeBtn";
 
 export default function Delivery({ nextPage }) {
   const [paymentTabs, setPaymentTabs] = useState(false);
-  const data = new Date();
   const daysArray = [
-    { day: "חמישי", date: `${data.getDate() + 4} / ${data.getMonth() + 1}` },
-    { day: "רביעי", date: `${data.getDate() + 3} / ${data.getMonth() + 1}` },
-    { day: "שלישי", date: `${data.getDate() + 2} / ${data.getMonth() + 1}` },
-    { day: "שני", date: `${data.getDate() + 1} / ${data.getMonth() + 1}` },
-    { day: "ראשון", date: `${data.getDate()} / ${data.getMonth() + 1}` },
+    { day: "חמישי", date: `29/12` },
+    { day: "רביעי", date: `28/12` },
+    { day: "שלישי", date: `27/12` },
+    { day: "שני", date: `26/12` },
+    { day: "ראשון", date: `25/12` },
   ];
 
   const timeArray = [
