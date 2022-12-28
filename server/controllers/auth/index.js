@@ -33,8 +33,8 @@ const redirectLogin = (req, res) => req.redirect("http://localhost:3000/login");
 const loginSuccess = (req, res) => {
   const { user } = req; 
   console.log(req.session);
-  console.log(user);
   if (user) {
+    req.user = user
     const hashToken = { id: user._id };
     if (user.meager) hashToken.meager = user.meager;
     if (user.isAdmin) hashToken.isAdmin = user.isAdmin;
@@ -93,8 +93,13 @@ const checkRegularUser = (req, res, next) => {
       return next(createError(message.status, message.message));
     }
     if (user) {
-      req.user = user;
-      return next();
+      req.login(user, function(err) {
+        if (err) {
+          return next(err);
+        }
+        req.user = user;
+        return next();
+      });
     }
   })(req, res, next);
 };
