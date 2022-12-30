@@ -1,6 +1,6 @@
 # MarketPlace (B2C App)
 
-Welcome to MarketPlace, a B2C (Business-to-Consumer) application built using the MERN (MongoDB, Express, React, Node.js) stack and authentication libraries such as formik and redux toolkit.
+Welcome to MarketPlace, a B2C (Business-to-Consumer) application built using the MERN (MongoDB, Express, React, Node.js) stack and authentication libraries such as formik and State management such as the redux toolkit.
 
 ## Project Description
 
@@ -10,7 +10,7 @@ The user interface of the application was designed using tailwindcss, a utility-
 
 ## Notable Features
 
-- Authentication: Users are able to create accounts and log in to the application using formik and redux toolkit for form validation and state management. The application also supports third-party authentication using Google and Facebook.
+- Authentication: Users are able to create accounts and log in to the application using formik for form validation and state management. The application also supports third-party authentication using Google and Facebook.
 
 - Authorization: The application implements various levels of authorization to ensure that only certain users have access to certain features. This helps to maintain security and prevent unauthorized access.
 
