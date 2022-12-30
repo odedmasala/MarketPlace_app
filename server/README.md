@@ -32,7 +32,6 @@ The MarketPlace server uses a MongoDB database to store data for the application
 To get started with the MarketPlace server, you will need to have the following prerequisites installed on your machine:
 
 - Node.js
-- MongoDB
 
 You will also need to set up accounts with the following services to use their APIs:
 
@@ -44,11 +43,10 @@ You will also need to set up accounts with the following services to use their A
 
 Once you have these prerequisites installed and accounts set up with the necessary services, you can follow the steps below to set up the server:
 
-1. Clone the repository to your local machine using `git clone https://github.com/[your-username]/marketplace.git`.
+1. Clone the repository to your local machine using `git clone https://github.com/odedmasala/MarketPlace_app.git`.
 2. Navigate to the `server` directory in the project and create a file named `.env` to store the environment variables.
 3. Set the values for the environment variables in the `.env` file.
 4. Install the dependencies using `npm install`.
-5. Start the MongoDB server by running `mongod`.
 6. In a separate terminal, navigate to the `server` directory and start the server using `npm start`.
 7. The server should now be running on `http://localhost:8001`.
 
