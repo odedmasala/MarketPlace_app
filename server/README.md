@@ -47,8 +47,8 @@ Once you have these prerequisites installed and accounts set up with the necessa
 2. Navigate to the `server` directory in the project and create a file named `.env` to store the environment variables.
 3. Set the values for the environment variables in the `.env` file.
 4. Install the dependencies using `npm install`.
-6. In a separate terminal, navigate to the `server` directory and start the server using `npm start`.
-7. The server should now be running on `http://localhost:8001`.
+5. In a separate terminal, navigate to the `server` directory and start the server using `npm start`.
+6. The server should now be running on `http://localhost:8001`.
 
 ## Contributing
 
